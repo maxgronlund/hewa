@@ -1,0 +1,11 @@
+- if can?(:admin, User)
+  | all users
+  br/
+  
+  - @users.each do |user|
+    =user.email
+    = link_to 'edit user', edit_user_path(user)
+    br/
+
+-else
+  | sorry no access
