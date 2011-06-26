@@ -36,6 +36,7 @@ GEM
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
     cancan (1.4.1)
+    client_side_validations (3.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -117,6 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   cancan
+  client_side_validations
   coffee-script
   inherited_resources
   jquery-rails

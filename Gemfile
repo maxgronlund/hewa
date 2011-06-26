@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'inherited_resources'
 gem "cancan"
 gem "slim"
+gem 'client_side_validations'
 
 # Use unicorn as the web server
 # gem 'unicorn'
