@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  b Title:
+  = @text_content.title
+p
+  b Body:
+  = @text_content.body
+
+= link_to 'Edit', edit_text_content_path(@text_content)
+'|
+= link_to 'Back', text_contents_path

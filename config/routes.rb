@@ -1,6 +1,8 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+  resources :text_contents
+
   get "admin/index"
 
   get "log_in" => "sessions#new", :as => "log_in"
