@@ -3,11 +3,18 @@
 
 en:
   admin: "admin"
-  email: "email"
   home: "home"
+
+session:
+  log_in: "log in"
+  log_out: "log out"
+  
+user:
+  email: "email"
   name: "name"
   password: "password"
   password_confirmation: "password confirmation"
   users: "users"
+
   
   
