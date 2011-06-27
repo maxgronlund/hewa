@@ -3,5 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.users {
-  // Place scoped styles here
+	
+	.field_with_errors {  
+	  display: inline;  
+	}  
+
+	.field_with_errors .message {  
+	  color:#f00;  
+	  padding-left: 5px;  
+	  font-size: 12px;  
+	}
+	
 }

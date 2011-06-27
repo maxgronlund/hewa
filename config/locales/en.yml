@@ -3,7 +3,11 @@
 
 en:
   admin: "admin"
+  email: "email"
   home: "home"
+  name: "name"
+  password: "password"
+  password_confirmation: "password confirmation"
   users: "users"
   
   
