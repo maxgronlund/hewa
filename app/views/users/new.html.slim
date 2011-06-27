@@ -1,7 +1,7 @@
 h1 
   | sign up 
 
-= form_for @user do |f| 
+= form_for @user, :validate => true do |f| 
   - if @user.errors.any?   
     .error_messages 
       h2 Form is invalid  
@@ -21,6 +21,12 @@ h1
   .field
     = f.label :password_confirmation  
     = f.password_field :password_confirmation
+
+  .field
+    = f.label :image
+    = image_tag(@user.image_url) if @user.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
+
   .actions
     = f.submit
-  

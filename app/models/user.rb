@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates_presence_of :email  
   validates_uniqueness_of :email
 
+  attr_accessible :image, :image_cache, :remote_image_url, :remove_image
+  mount_uploader :image, ImageUploader
   
   ROLES = %w[member admin super]
   
