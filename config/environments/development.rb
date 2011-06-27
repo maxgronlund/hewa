@@ -26,4 +26,5 @@ RailsTemplateR31::Application.configure do
   config.assets.compress = false
 end
 
-
+# configure slim to generate pretty html in development
+Slim::Engine.set_default_options :pretty => true
