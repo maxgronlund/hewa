@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :role
+  attr_accessible :name, :email, :password, :password_confirmation, :role
   has_secure_password
   validates_presence_of :password, :on => :create  
   validates_presence_of :name
@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image
   mount_uploader :image, ImageUploader
-  #include ImageCrop
+  include ImageCrop
   
   ROLES = %w[member admin super]
   
