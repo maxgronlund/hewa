@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image
   mount_uploader :image, ImageUploader
+  #include ImageCrop
   
   ROLES = %w[member admin super]
   
@@ -26,6 +27,5 @@ class User < ActiveRecord::Base
   def member?
     role == 'member'
   end
-  
   
 end
