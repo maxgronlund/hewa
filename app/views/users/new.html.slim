@@ -9,24 +9,35 @@ h1
         - for message in @user.errors.full_messages  
           li message
 
-
   .field
-    = f.label :email 
+    = t("name")
+    br 
+    = f.text_field :name
+  br
+  .field
+    = t("email")
+    br
     = f.text_field :email 
-
+  br
   .field
-    = f.label :password 
+    = t("password")
+    br
     = f.password_field :password 
-
+  br
   .field
-    = f.label :password_confirmation  
+    = t("password_confirmation")
+    br 
     = f.password_field :password_confirmation
 
+  br
   .field
     = f.label :image
+    br
     = image_tag(@user.image_url) if @user.image?
+    br
     = f.file_field :image
     = f.hidden_field :image_cache
 
+  br
   .actions
     = f.submit

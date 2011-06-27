@@ -1,0 +1,21 @@
+h1 Listing text_contents
+
+table
+  tr
+    th Title
+    th Body
+    th
+    th
+    th
+
+  - @text_contents.each do |text_content|
+    tr
+      td= text_content.title
+      td= text_content.body
+      td= link_to 'Show', text_content
+      td= link_to 'Edit', edit_text_content_path(text_content)
+      td= link_to 'Destroy', text_content, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Text content', new_text_content_path

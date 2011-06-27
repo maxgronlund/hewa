@@ -21,7 +21,7 @@ class UsersController < InheritedResources::Base
 #  end
 #  
 #  def edit
-#    @users = User.find[params(:id)]
+#    @users = User.find[params(:user_id)]
 #  end
   
 end

@@ -14,8 +14,11 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem "cancan"
-gem "slim"
+gem "slim-rails"
 gem 'client_side_validations'
+gem 'kaminari'
+
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
