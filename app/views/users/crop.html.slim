@@ -1,0 +1,8 @@
+= image_tag @user.image_url(:large), :id => "cropbox"
+h3 Preview
+.preview
+  = image_tag @user.image_url(:large), :id => "preview"
+= form_for @user, :as => :account, :url => { :action => "crop_update" } do |f|
+  - for attribute in [:crop_x, :crop_y, :crop_h, :crop_w]
+    = f.hidden_field attribute, :id => attribute
+  p= f.submit "Crop"

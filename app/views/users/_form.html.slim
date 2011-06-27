@@ -24,7 +24,22 @@
     = f.password_field :password_confirmation
 
   .field
+    = f.label :image
+    = image_tag(@user.image_url) if @user.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
+
+  /.field
+  /  = f.label :remote_image_url
+  /  = f.text_field :remote_image_url
+
+  .field
+    = f.label :remove_image
+    = f.check_box :remove_image
+
+  .field
     = f.label :role  
     = f.select(:role, User::ROLES)
+
   .actions
     = f.submit 

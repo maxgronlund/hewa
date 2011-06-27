@@ -1,8 +1,6 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-  
-
   get "admin/index"
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out" 
@@ -12,10 +10,13 @@ RailsTemplateR31::Application.routes.draw do
   root :to => "home#index"
    
   resources :text_contents,
-  :sessions,
-  :users 
-    
-    
+    :sessions,
+    :users do
+      member do
+        get 'crop'
+        put 'crop_update'
+      end
+    end
 
   
 #  get "home/index"

@@ -28,7 +28,16 @@ h1
     = t("password_confirmation")
     br 
     = f.password_field :password_confirmation
+
+  br
+  .field
+    = f.label :image
+    br
+    = image_tag(@user.image_url) if @user.image?
+    br
+    = f.file_field :image
+    = f.hidden_field :image_cache
+
   br
   .actions
     = f.submit
-  

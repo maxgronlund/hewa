@@ -2,5 +2,6 @@ h1
   | show user
 
 = @user.email
+= image_tag(@user.image_url) if @user.image?
 br /
 = link_to 'edit', edit_user_path(@user)
