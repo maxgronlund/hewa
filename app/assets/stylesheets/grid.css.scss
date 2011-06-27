@@ -1,0 +1,23 @@
+// 960gs sample
+@import "960/grid", "960/text";
+
+$ninesixty-columns: 16;
+
+#wrap {
+  @include grid-container;
+  #header {
+    @include grid(16);
+  }
+  #middle {
+    @include grid(16);
+    #left-nav {
+      @include grid(5);
+      @include alpha;
+    }
+    #main-content {
+      @include grid-prefix(1);
+      @include grid(10);
+      @include omega;
+    }
+  }
+}

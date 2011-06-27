@@ -33,3 +33,6 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
+gem "compass-960-plugin", :require => "ninesixty"

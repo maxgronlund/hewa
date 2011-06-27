@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Rails 3.1 Template
+    /!= stylesheet_link_tag :all
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag 'javascript_include_tag "application'
+    = javascript_include_tag 'jquery', 'rails.validations'
+    = csrf_meta_tag
+
+    javascript:
+      var session_key      = '#{cookies[Rails.application.config.session_options[:key]]}';
+      var session_key_name = '#{Rails.application.config.session_options[:key]}';
+    = yield :head 
+  body
+
+      = render :partial => "shared/menu"
+      = yield
+
+      .clear
+
+
+
+
+
