@@ -7,7 +7,7 @@
 <%= javascript_include_tag 'jquery', 'rails.validations'-%>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller.controller_name %>">
 	<% flash.each do |name, msg| %>  
 	    <%= content_tag :div, msg, :id => "flash#{name}" %>  
 	  <% end %>
