@@ -1,9 +1,16 @@
 .headline
   h1 
-    = t('show_user')
+    = @user.name
 
-.left-column-3
-  = @user.email
-  br /
+.grid-12
+
   = image_tag(@user.image_url :thumb) if @user.image?
+  br /
+  = t('system.email')
+  ':
+  br
+  = @user.email
+  - if can?(:manage, @user)
+    br/
+    = link_to t('system.edit'), edit_user_path(@user)
 

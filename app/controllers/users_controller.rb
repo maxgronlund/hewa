@@ -1,19 +1,22 @@
 class UsersController < InheritedResources::Base  
+  load_and_authorize_resource
+  helper_method :sort_column, :sort_direction
   
   def index
-    return_path users_path
+    return_path users_path # !!! same as line 6?
     @is_first_user = User.first.id == 1
-    index!
+    session[:go_to_after_edit] = users_path
+    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
   end
 
   def show
-    return_path user_path
+    return_path user_path  # !!! perhaps a system vide helper ?
     show!
   end
 
   def new  
-    @is_first_user = User.first.id == 1
     @user = User.new  
+    @is_first_user = @user.id == 1  # !!! will it work
   end  
   
   def create  
@@ -30,7 +33,7 @@ class UsersController < InheritedResources::Base
   end  
   
   def edit
-    @is_first_user = User.first.id == 1
+    @is_first_user = @user.id == 1
     edit!
   end
   
@@ -60,19 +63,8 @@ class UsersController < InheritedResources::Base
     end
    end
    
-#  def index
-#    @users = User.all
-#  end
-#  
-#  def show
-#    @users = User.find[params(:user_id)]
-#  end
-#  
-#  def edit
-#    @users = User.find[params(:user_id)]
-#  end
   
-  private
+private
 
   def return_path=(path)
     session[:go_to_after_edit] = path
@@ -84,4 +76,11 @@ class UsersController < InheritedResources::Base
     end
   end
 
+  def sort_column  
+    User.column_names.include?(params[:sort]) ? params[:sort] : "name"  
+  end 
+
+  def sort_direction  
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"  
+  end
 end

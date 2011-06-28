@@ -22,50 +22,56 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 		min-height:32px;
 		margin-bottom:16px;
 	}	
-	.left-column-2{ @include grid(2);}
-	.left-column-3{ @include grid(3);}
-	.left-column-4{ @include grid(4);}
-	.center-column-4{ @include grid(4);}
-	.center-column-5{ @include grid(5);}
-	.center-column-6{ @include grid(6);}
-	.center-column-7{ @include grid(7);}
-	.center-column-8{ @include grid(8);}
-	.right-column-2{ @include grid(2); }
-	.right-column-3{ @include grid(3); }
-	.right-column-4{ @include grid(4); }
-	.right-column-9{ @include grid(9); }
-	.right-column-10{ @include grid(10); }
-	.grid-12{ @include grid(12); }
-	.grid-1-alpha{  @include grid(1); @include alpha; }
-	.grid-1{ @include grid(1); }
-	.grid-1-omega{ @include grid(1); @include omega; }
-	.grid-2-alpha{  @include grid(2); @include alpha; }
-	.grid-2{ @include grid(2);}
-	.grid-2-omega{ @include grid(2); @include omega;}
-	.grid-3-alpha{ @include grid(3); @include alpha;}
-	.grid-3{ @include grid(3);}
-	.grid-3-omega{ @include grid(3); @include omega;}
-	.grid-4-alpha{ @include grid(4); @include alpha;}
-	.grid-4{ @include grid(4);}
-	.grid-4-omega{ @include grid(4); @include omega;}
+	.left-column-2{ @include grid(2);min-height:1px;}
+	.left-column-3{ @include grid(3);min-height:1px;}
+	.left-column-4{ @include grid(4);min-height:1px;}
+	.center-column-2{ @include grid(2);min-height:1px;}
+	.center-column-3{ @include grid(3);min-height:1px;}
+	.center-column-4{ @include grid(4);min-height:1px;}
+	.center-column-5{ @include grid(5);min-height:1px;}
+	.center-column-6{ @include grid(6);min-height:1px;}
+	.center-column-7{ @include grid(7);min-height:1px;}
+	.center-column-8{ @include grid(8);min-height:1px;}
+	.right-column-2{ @include grid(2);min-height:1px; }
+	.right-column-3{ @include grid(3);min-height:1px; }
+	.right-column-4{ @include grid(4);min-height:1px; }
+	.right-column-9{ @include grid(9); min-height:1px;}
+	.right-column-10{ @include grid(10);min-height:1px; }
+	.grid-12{ @include grid(12);min-height:1px; }
+	.grid-1-alpha{  @include grid(1); @include alpha;min-height:1px; }
+	.grid-1{ @include grid(1);min-height:1px; }
+	.grid-1-omega{ @include grid(1); @include omega;min-height:1px; }
+	.grid-2-alpha{  @include grid(2); @include alpha;min-height:1px; }
+	.grid-2{ @include grid(2);min-height:1px;}
+	.grid-2-omega{ @include grid(2); @include omega;min-height:1px;}
+	.grid-3-alpha{ @include grid(3); @include alpha;min-height:1px;}
+	.grid-3{ @include grid(3);min-height:1px;}
+	.grid-3-omega{ @include grid(3); @include omega;min-height:1px;}
+	.grid-4-alpha{ @include grid(4); @include alpha;min-height:1px;}
+	.grid-4{ @include grid(4);min-height:1px;}
+	.grid-4-omega{ @include grid(4); @include omega;min-height:1px;}
 	.grid-5-alpha{ @include grid(5); @include alpha;}
-	.grid-5{ @include grid(5);}
-	.grid-5-omega{ @include grid(5); @include omega;}
-	.grid-6-alpha{ @include grid(6); @include alpha;}
-	.grid-6{ @include grid(6);}
-	.grid-6-omega{ @include grid(6); @include omega;}
-	.grid-7-alpha{ @include grid(7); @include alpha;}
-	.grid-7{ @include grid(7);}
-	.grid-7-omega{ @include grid(7); @include omega;}
+	.grid-5{ @include grid(5);min-height:1px;min-height:1px;}
+	.grid-5-omega{ @include grid(5); @include omega;min-height:1px;}
+	.grid-6-alpha{ @include grid(6); @include alpha;min-height:1px;}
+	.grid-6{ @include grid(6);min-height:1px;}
+	.grid-6-omega{ @include grid(6); @include omega;min-height:1px;}
+	.grid-7-alpha{ @include grid(7); @include alpha;min-height:1px;}
+	.grid-7{ @include grid(7);min-height:1px;}
+	.grid-7-omega{ @include grid(7); @include omega;min-height:1px;}
 	.alpha{ @include alpha; }
 	.omega{@include omega;}
 	.pagination-12{
 		@include grid(12);
 		text-align:center;
-		margin-top:0px;
-		
+		margin-top:0px;	
+	}
+	.divider-12{
+		@include grid(12);
+		min-height:16px;
 	}
 }
+
 
 
 

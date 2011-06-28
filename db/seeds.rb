@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+TextContent.create(:identity => "welcome" , :title => 'Velkommen', :body => 'Lorem ipsum dolor sit amet')

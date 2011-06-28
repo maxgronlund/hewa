@@ -9,4 +9,14 @@ class TextContent < ActiveRecord::Base
     end
   end
   
+  
+  
+  def self.with_identity(identity)
+    where(:identity => identity).first
+  end
+
+  def self.welcome 
+    with_identity('welcome')
+  end
+  
 end

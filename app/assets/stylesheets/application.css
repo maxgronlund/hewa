@@ -6,10 +6,9 @@
  *= require_tree . 
  * require_directory . 
 */
+
 body{
 	margin-top:0px;
-	background-color:#f00;
-
 }
 
 /* JCrop preview */
@@ -56,5 +55,9 @@ body{
 	background-repeat:no-repeat;
 	background-color:transparent;
 	background-position:right top;
+}
+
+.edit{
+	text-align:right;
 }
 

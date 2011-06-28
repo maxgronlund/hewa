@@ -6,18 +6,15 @@
   = form_tag text_contents_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 
     = submit_tag t('text_contents.search'), :title => nil
-
-
-
-	
-	
+    '
+    = link_to t('system.show_all'), text_contents_path
+.divider-12
 div class="sort-list-header grid-12"
-  b
-    .grid-3-alpha
-      = sortable 'title', t('text_contents.title')
-    .grid-7
-      = sortable 'body', t('text_contents.body')
-    .grid-2-omega
+  .grid-3-alpha
+    = sortable 'title', t('text_contents.title')
+  .grid-7
+    = sortable 'body', t('text_contents.body')
+  .grid-2-omega
 - @text_contents.each do |text_content|
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
     .grid-3-alpha
