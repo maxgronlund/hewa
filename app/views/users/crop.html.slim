@@ -1,8 +1,42 @@
+- content_for :head do
+  javascript:
+    $(function() {
+      $('#cropbox').Jcrop({
+        onChange: update_crop,
+        onSelect: update_crop,
+        bgColor:    'none',
+        //bgColor:    'transparent',
+        //bgOpacity:   .4,
+        //setSelect: [0, 0, 500, 500],
+        //aspectRatio: 1
+        setSelect: [0, 0, 754, 887],
+        aspectRatio: 0.85
+      });
+    });
+
+    function update_crop_max(coords) {
+      var rx = 238/coords.w;
+      var ry = 288/coords.h;
+      $('#preview').css({
+        // skal rettes til aktuelle version's width/height
+        width: Math.round(rx * #{ @user.image_geometry[:width] }) + 'px',
+        height: Math.round(ry * #{ @user.image_geometry[:height] }) + 'px',
+        marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+        marginTop: '-' + Math.round(ry * coords.y) + 'px'
+      });
+        // ratio: original.width / version.width
+        var ratio = #{ @user.image_geometry[:width] } / #{ @user.image_geometry[:width] };
+        $("#crop_x").val(Math.round(coords.x * ratio));
+        $("#crop_y").val(Math.round(coords.y * ratio));
+        $("#crop_w").val(Math.round(coords.w * ratio));
+        $("#crop_h").val(Math.round(coords.h * ratio));
+    }
+
 = image_tag @user.image_url(:large), :id => "cropbox"
 h3 Preview
-.preview
+.preview style="width:238px; height:280px; overflow:hidden"
   = image_tag @user.image_url(:large), :id => "preview"
-= form_for @user, :as => :account, :url => { :action => "crop_update" } do |f|
+= form_for @user, :as => :user, :url => { :action => "crop_update" } do |f|
   - for attribute in [:crop_x, :crop_y, :crop_h, :crop_w]
     = f.hidden_field attribute, :id => attribute
   p= f.submit "Crop"

@@ -25,13 +25,14 @@
 
   .field
     = t('user.email') 
-    = image_tag(@user.image_url) if @user.image?
+    = image_tag(@user.image_url :thumb) if @user.image?
     = f.file_field :image
     = f.hidden_field :image_cache
-
   /.field
   /  = f.label :remote_image_url
   /  = f.text_field :remote_image_url
+  .field
+    = link_to 're-crop', crop_user_path(@user)
 
   .field
     = t('user.email') 

@@ -38,3 +38,4 @@ gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => 
 gem "compass-960-plugin", :require => "ninesixty"
 
 gem 'carrierwave'
+gem 'mini_magick'
