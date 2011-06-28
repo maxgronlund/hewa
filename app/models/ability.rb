@@ -14,7 +14,7 @@ class Ability
         
 #        can :read, Blog
 #        can :create, Blog
-#        can :manage, Blog, :user_id => user.id
+       can :manage, User, :user_id => user.id
         
        
       end

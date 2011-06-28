@@ -10,28 +10,28 @@ h1
           li message
 
   .field
-    = t("name")
+    = t("user.name")
     br 
     = f.text_field :name
   br
   .field
-    = t("email")
+    = t("user.email")
     br
     = f.text_field :email 
   br
   .field
-    = t("password")
+    = t("user.password")
     br
     = f.password_field :password 
   br
   .field
-    = t("password_confirmation")
+    = t("user.password_confirmation")
     br 
     = f.password_field :password_confirmation
 
   br
   .field
-    = f.label :image
+    = t('user.image')
     br
     = image_tag(@user.image_url) if @user.image?
     br
@@ -40,4 +40,4 @@ h1
 
   br
   .actions
-    = f.submit
+    = f.submit t('system.save')
