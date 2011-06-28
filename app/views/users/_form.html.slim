@@ -36,13 +36,12 @@
   /  = f.label :remote_image_url
   /  = f.text_field :remote_image_url
 
-  - if @user.image
+  - if @user.image.nil?
     .field
       = link_to 're-crop', crop_user_path(@user)
-
-  .field
-    = f.check_box :remove_image
-    = t('system.remove_image') 
+    .field
+      = f.check_box :remove_image
+      = t('system.remove_image')
 
   .field
     = t('user.role')  
