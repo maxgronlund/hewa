@@ -36,24 +36,20 @@
     = f.hidden_field :image_cache
 
 
-  - unless @user.image.nil?
+  - if @user.image.present?
     .field
       = link_to t('image.re_crop'), crop_user_path(@user)
 
-
-  .field
-    = f.check_box :remove_image
-    = t('image.remove_image') 
+    .field
+      = f.check_box :remove_image
+      = t('image.remove_image')
 
   - if current_user && current_user.admin_or_super?
-    - unless @is_first_user
+    - unless @user.is_first_user?
       .field
         = t('user.role')  
         br
         = f.select(:role, User::ROLES)
-
-  
-
 
   .actions
     = f.submit t('system.save')

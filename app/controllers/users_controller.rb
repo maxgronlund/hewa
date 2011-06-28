@@ -1,4 +1,5 @@
 class UsersController < InheritedResources::Base  
+  load_and_authorize_resource
   
   def index
     return_path users_path
@@ -30,13 +31,10 @@ class UsersController < InheritedResources::Base
   end  
   
   def edit
-    @is_first_user = User.first.id == 1
     edit!
   end
   
   def crop
-    @user = current_user #!!! hey admins can create and edit other users
-
     #version_geometry_width, version_geometry_height = 238, 288
     @version_geometry_width, @version_geometry_height = 50, 50
   end

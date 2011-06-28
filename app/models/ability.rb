@@ -20,6 +20,7 @@ class Ability
       end
     # When not logged in
    else
+     can :create, User
 #     can :read, Blog
     
      #can :create, User# <----------- Uncomment this to alow users to signup by them self 

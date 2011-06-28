@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
     role == 'member'
   end
   
+  def is_first_user?
+    User.first.id == 1
+  end
+  
 end
