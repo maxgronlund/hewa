@@ -1,9 +1,13 @@
-h1
-  = t('admin')
+.headline
+  h1
+    = t('admin')
+.left-column-4
+  | user management
+  br
+  = link_to t('users.users'), users_path
+.center-colummn-4
+  | site management
+  br
+  = link_to t('text_contents.text_contents'), text_contents_path
 
-  ul
-    li
-      = link_to t('users.users'), users_path
-    li
-      = link_to t('text_contents.text_contents'), text_contents_path
-
+.righr-colummn-4

@@ -1,4 +1,9 @@
 class UsersController < InheritedResources::Base  
+  
+  def index
+    session[:go_to_after_edit] = users_path
+    index!
+  end
   def new  
     @user = User.new  
   end  
@@ -25,7 +30,7 @@ class UsersController < InheritedResources::Base
   end
   
   def crop
-    @user = current_user
+    @user = current_user #!!! hey admins can create and edit other users
   end
 
   def crop_update
@@ -37,6 +42,17 @@ class UsersController < InheritedResources::Base
     @user.save
     redirect_to user_path
   end
+  
+  def update
+    goto = session[:go_to_after_edit] || user_path(@user)
+    session[:go_to_after_edit] = nil
+    update! {goto}
+   end
+   
+   def show
+     session[:go_to_after_edit] = user_path(@user)
+     show!
+   end
 
 #  def index
 #    @users = User.all
