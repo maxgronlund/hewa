@@ -36,8 +36,9 @@
   /  = f.label :remote_image_url
   /  = f.text_field :remote_image_url
 
-  .field
-    = link_to 're-crop', crop_user_path(@user)
+  - if @user.image
+    .field
+      = link_to 're-crop', crop_user_path(@user)
 
   .field
     = f.check_box :remove_image
