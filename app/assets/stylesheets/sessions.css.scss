@@ -4,4 +4,8 @@
 
 body.sessions {
   // Place scoped styles here
+  .field_with_errors {
+  padding: 2px;
+  background-color: #ddd;
+  display: table; }
 }

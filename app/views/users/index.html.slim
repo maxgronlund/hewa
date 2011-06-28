@@ -2,7 +2,7 @@
 - if can?(:admin, User)
   .headline
     h1
-      | all users
+      = t('user.all_users')
   .grid-12  
     - @users.each do |user|
       div class="grid-12 alpha omega #{cycle('row-flip', 'row-flop')}"
