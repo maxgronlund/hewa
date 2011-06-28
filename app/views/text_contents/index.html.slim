@@ -1,21 +1,27 @@
-h1 Listing text_contents
 
-table
-  tr
-    th Title
-    th Body
-    th
-    th
-    th
 
-  - @text_contents.each do |text_content|
-    tr
-      td= text_content.title
-      td= text_content.body
-      td= link_to 'Show', text_content
-      td= link_to 'Edit', edit_text_content_path(text_content)
-      td= link_to 'Destroy', text_content, :confirm => 'Are you sure?', :method => :delete
 
-br
 
-= link_to 'New Text content', new_text_content_path
+- if can?(:admin, TextContent)
+  .headline
+    h1
+      = t('text_contents.all_texts')
+  .grid-12  
+    - @text_contents.each do |text_content|
+      div class="grid-12 alpha omega #{cycle('row-flip', 'row-flop')}"
+        .grid-4-alpha
+          =text_content.title
+        .grid-4
+          = link_to t('system.show'), text_content
+          | | 
+          = link_to t('system.edit'), edit_text_content_path(text_content)
+          | | 
+          = link_to t('system.delete'), text_content, :confirm => 'Are you sure?', :method => :delete
+        .grid-4-omega
+    = link_to 'New Text content', new_text_content_path
+        
+    
+-else
+  .grid-12
+    h1
+      | sorry no access

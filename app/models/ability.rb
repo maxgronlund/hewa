@@ -6,7 +6,7 @@ class Ability
       if user.super?
         can :manage, :all
       elsif user.admin?
-#        can :manage, Blog
+        can :manage, TextContent
         
         
         

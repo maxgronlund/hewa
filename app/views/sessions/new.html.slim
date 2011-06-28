@@ -1,15 +1,17 @@
-h1 
-  = t('session.log_in')  
+.headline
+  h1 
+    = t('session.log_in')  
   
-= form_tag sessions_path do   
-  .field
-    = t('user.email')
-    br  
-    = text_field_tag :email, params[:email]   
-  
-  .field
-    = t('user.password') 
-    br
-    = password_field_tag :password 
-  .actions
-    = submit_tag t('session.log_in') 
+.grid-12
+  = form_tag sessions_path do   
+    .field
+      = t('user.email')
+      br  
+      = text_field_tag :email, params[:email]   
+    
+    .field
+      = t('user.password') 
+      br
+      = password_field_tag :password 
+    .actions
+      = submit_tag t('session.log_in') 

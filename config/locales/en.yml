@@ -8,9 +8,11 @@ en:
   session:
     log_in: "log in"
     log_out: "log out"
+    sign_up: 'sign up'
     
   system:
     are_you_sure: 'are you sure?'
+    content_management: 'content management'
     delete: 'delete'
     edit: 'edit'
     email: "email"
@@ -18,9 +20,12 @@ en:
     remove_image: 'remove image'
     save: 'save'
     show: 'show'
+    site_management: 'site management'
+    user_management: 'user management'
 
     
   user:
+    all_users: 'all users'
     create_user: 'create user'
     edit_user: 'edit user'
     email: 'email'
@@ -32,6 +37,7 @@ en:
     users: "users"
     
   text_contents:
+    all_texts: 'all texts'
     text_contents: 'text content'
   
   

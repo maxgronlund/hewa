@@ -1,14 +1,15 @@
 .menu
   = link_to t('home'), root_path
   | | 
-  = link_to t('admin'), admin_index_path
-  | | 
-  -if current_user
-    = link_to 'log out', log_out_path
+  -if current_user 
+    - if current_user.admin_or_super?
+      = link_to t('admin'), admin_index_path
+      | |
+    = link_to t('session.log_out'), log_out_path
     | |
     = link_to current_user.name, current_user
 
   -else
-    = link_to 'login', log_in_path 
+    = link_to t('session.log_in'), log_in_path 
     | |  
-    = link_to 'sign up', sign_up_path
+    = link_to t('session.sign_up'), sign_up_path
