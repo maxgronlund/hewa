@@ -5,16 +5,21 @@ en:
   admin: "admin"
   home: "home"
 
-session:
-  log_in: "log in"
-  log_out: "log out"
+  session:
+    log_in: "log in"
+    log_out: "log out"
+    
+  system:
+    edit: 'edit'
+    
+  user:
+    edit_user: 'edit user'
+    email: "email"
+    name: "name"
+    password: "password"
+    password_confirmation: "password confirmation"
+    show_user: 'show user'
+    users: "users"
   
-user:
-  email: "email"
-  name: "name"
-  password: "password"
-  password_confirmation: "password confirmation"
-  users: "users"
-
   
   

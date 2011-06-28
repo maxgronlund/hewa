@@ -1,6 +1,7 @@
-h1 
-  | edit user 
+.headline
+  h1 
+    = t('edit_user') 
 
-= render 'form'
-
-= link_to 'crop', crop_user_path(@user)
+.left-column-3
+  = render 'form'
+  = link_to 'crop', crop_user_path(@user)

@@ -16,8 +16,9 @@ html
     = yield :head 
 
   body class=(controller.controller_name)
-
-      = render "shared/menu"
-      = yield
-
-      .clear
+    #grid-container
+      #min-height
+        = render "shared/menu"
+        = yield
+        
+        .clear

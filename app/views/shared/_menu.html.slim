@@ -1,10 +1,14 @@
-= link_to t('home'), root_path
-| | 
-= link_to t('admin'), admin_index_path
-| | 
--if current_user
-  = link_to 'log out', log_out_path
--else
-  = link_to 'login', log_in_path 
-  | |  
-  = link_to 'sign up', sign_up_path
+.menu
+  = link_to t('home'), root_path
+  | | 
+  = link_to t('admin'), admin_index_path
+  | | 
+  -if current_user
+    = link_to 'log out', log_out_path
+    | |
+    = link_to current_user.name, current_user
+
+  -else
+    = link_to 'login', log_in_path 
+    | |  
+    = link_to 'sign up', sign_up_path

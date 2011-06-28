@@ -6,12 +6,24 @@
  *= require_tree . 
  * require_directory . 
 */
+body{
+	margin-top:0px;
 
+}
 
 /* JCrop preview */
 .preview {
     width:100px;
     height:100px;
     overflow:hidden;
+}
+
+.tepst{
+	background-color:#0f0;
+}
+
+.row-flip
+{
+	background-color:#ddd;
 }
 

@@ -1,11 +1,19 @@
-- if can?(:admin, User)
-  | all users
-  br/
-  
-  - @users.each do |user|
-    =user.email
-    = link_to 'edit user', edit_user_path(user)
-    br/
 
+- if can?(:admin, User)
+  .headline
+    h1
+      | all users
+  .grid-12  
+    - @users.each do |user|
+      div class="row-flip grid-12 alpha omega"
+        .grid-4-alpha
+          =user.email
+        .grid-4
+          = link_to t('system.edit'), edit_user_path(user)
+        .grid-4-omega
+        hr
+    
 -else
-  | sorry no access
+  .grid-12
+    h1
+      | sorry no access

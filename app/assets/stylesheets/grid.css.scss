@@ -1,7 +1,86 @@
 // 960gs sample
 @import "960/grid", "960/text";
 
-$ninesixty-columns: 16;
+$ninesixty-columns: 12;
+$ninesixty-grid-width: 1032px; 	// default: 960px
+$ninesixty-gutter-width: 20px; 	// default: 20px
+
+#grid-container {
+	@include grid-container;
+	margin-top:0px;
+	background-color:#fff;
+	
+	#min-height{
+		min-height:700px;
+	}
+	.menu{
+		@include grid(12);
+		min-height:32px;
+	}
+	.headline{
+		@include grid(12);
+		min-height:32px;
+		margin-bottom:16px;
+	}	
+	.left-column-2{ @include grid(2);}
+	.left-column-3{ @include grid(3);}
+	.center-column-4{ @include grid(4);}
+	.center-column-5{ @include grid(5);}
+	.center-column-6{ @include grid(6);}
+	.center-column-7{ @include grid(7);}
+	.center-column-8{ @include grid(8);}
+	.right-column-2{ @include grid(2); }
+	.right-column-3{ @include grid(3); }
+	.right-column-9{ @include grid(9); }
+	.right-column-10{ @include grid(10); }
+	.grid-12{ @include grid(12); }
+	.grid-1-alpha{  @include grid(1); @include alpha; }
+	.grid-1{ @include grid(1); }
+	.grid-1-omega{ @include grid(1); @include omega; }
+	.grid-2-alpha{  @include grid(2); @include alpha; }
+	.grid-2{ @include grid(2);}
+	.grid-2-omega{ @include grid(2); @include omega;}
+	.grid-3-alpha{ @include grid(3); @include alpha;}
+	.grid-3{ @include grid(3);}
+	.grid-3-omega{ @include grid(3); @include omega;}
+	.grid-4-alpha{ @include grid(4); @include alpha;}
+	.grid-4{ @include grid(4);}
+	.grid-4-omega{ @include grid(4); @include omega;}
+	.alpha{ @include alpha; }
+	.omega{@include omega;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #wrap {
   @include grid-container;
