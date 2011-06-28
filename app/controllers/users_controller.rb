@@ -11,6 +11,7 @@ class UsersController < InheritedResources::Base
   end
 
   def new  
+    @is_super = User.first.id == 1
     @user = User.new  
   end  
   
@@ -26,6 +27,11 @@ class UsersController < InheritedResources::Base
       render "new"  
     end  
   end  
+  
+  def edit
+    @is_super = User.first.id == 1
+    edit!
+  end
   
   def crop
     @user = current_user #!!! hey admins can create and edit other users

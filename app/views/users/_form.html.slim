@@ -32,9 +32,7 @@
     = image_tag(@user.image_url :thumb) if @user.image?
     = f.file_field :image
     = f.hidden_field :image_cache
-  /.field
-  /  = f.label :remote_image_url
-  /  = f.text_field :remote_image_url
+
 
   - if @user.image
     .field
@@ -43,11 +41,12 @@
   .field
     = f.check_box :remove_image
     = t('system.remove_image') 
-
-  .field
-    = t('user.role')  
-    br
-    = f.select(:role, User::ROLES)
+  - if current_user && current_user.admin_or_super?
+    - unless @is_super
+      .field
+        = t('user.role')  
+        br
+        = f.select(:role, User::ROLES)
 
   .actions
     = f.submit 
