@@ -3,6 +3,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
+  include CarrierWave::MiniMagick
   # include CarrierWave::RMagick
   # include CarrierWave::ImageScience
 
@@ -28,22 +29,50 @@ class ImageUploader < CarrierWave::Uploader::Base
   #  # do something
   #end
 
+  process :convert => 'jpg'
+  #process :resize_to_fit => [754, 887]
+
   # Create different versions of your uploaded files:
-  #version :thumb do
-  #  #process :scale => [50, 50]
-  #  process :manualcrop
-  #  process :resize_to_fill => [50, 50]
+  version :thumb do
+    #process :scale => [50, 50]
+    process :manualcrop
+    process :resize_to_fill => [50, 50]
+  end
+  
+  version :small do
+    #process :scale => [238, 280]
+    process :resize_to_fill => [25, 25]
+  end
+  
+  version :medium do
+    #process :scale => [238, 280]
+    process :resize_to_fit => [238, 280]
+  end
+  
+  version :large do
+    #process :scale => [754, 887]
+    process :resize_to_fit => [754, 887]
+  end
+
+  #version :original do
+  #  process :convert => 'jpg'
   #end
-  #
-  #version :medium do
-  #  #process :scale => [238, 280]
-  #  process :resize_to_fit => [238, 280]
-  #end
-  #
-  #version :large do
-  #  #process :scale => [754, 887]
-  #  process :resize_to_fit => [754, 887]
-  #end
+
+  def manualcrop
+    return unless model.cropping?
+    manipulate_crop! do |img| 
+      #img = img.crop(model.crop_x.to_i,model.crop_y.to_i,model.crop_h.to_i,model.crop_w.to_i) 
+      img.crop("#{model.crop_w.to_i}x#{model.crop_h.to_i}+#{model.crop_x.to_i}+#{model.crop_y.to_i}") 
+    end 
+  end
+
+  def manipulate_crop!
+    crop_image = ::MiniMagick::Image.open(current_path)
+    yield(crop_image)
+    crop_image.write(current_path)
+  rescue => e
+    raise CarrierWave::ProcessingError.new("Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: #{e}")
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
