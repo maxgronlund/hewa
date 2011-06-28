@@ -34,9 +34,10 @@
     = f.hidden_field :image_cache
 
 
-  - if @user.image
+  - if @user.image.nil?
     .field
       = link_to 're-crop', crop_user_path(@user)
+
 
   .field
     = f.check_box :remove_image
@@ -47,6 +48,12 @@
         = t('user.role')  
         br
         = f.select(:role, User::ROLES)
+
+    .field
+      = f.check_box :remove_image
+      = t('system.remove_image')
+
+
 
   .actions
     = f.submit 
