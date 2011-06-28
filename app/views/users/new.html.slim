@@ -1,43 +1,7 @@
-h1 
-  | sign up 
+.headline
+  h1 
+    = t('user.create_user')
 
-= form_for @user, :validate => true do |f| 
-  - if @user.errors.any?   
-    .error_messages 
-      h2 Form is invalid  
-      ul  
-        - for message in @user.errors.full_messages  
-          li message
+.grid-12
+  = render 'form'
 
-  .field
-    = t("user.name")
-    br 
-    = f.text_field :name
-  br
-  .field
-    = t("user.email")
-    br
-    = f.text_field :email 
-  br
-  .field
-    = t("user.password")
-    br
-    = f.password_field :password 
-  br
-  .field
-    = t("user.password_confirmation")
-    br 
-    = f.password_field :password_confirmation
-
-  br
-  .field
-    = t('user.image')
-    br
-    = image_tag(@user.image_url) if @user.image?
-    br
-    = f.file_field :image
-    = f.hidden_field :image_cache
-
-  br
-  .actions
-    = f.submit t('system.save')

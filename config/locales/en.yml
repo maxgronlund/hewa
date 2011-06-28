@@ -13,6 +13,9 @@ en:
     are_you_sure: 'are you sure?'
     delete: 'delete'
     edit: 'edit'
+    email: "email"
+    image: 'image'
+    remove_image: 'remove image'
     save: 'save'
     show: 'show'
 
@@ -20,11 +23,11 @@ en:
   user:
     create_user: 'create user'
     edit_user: 'edit user'
-    email: "email"
-    image: 'image'
+    email: 'email'
     name: "name"
     password: "password"
     password_confirmation: "password confirmation"
+    role: 'role'
     show_user: 'show user'
     users: "users"
     
