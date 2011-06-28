@@ -1,5 +1,7 @@
-h1 New text_content
+.headline
+  h1 
+    = t('text_contents.new_text_content')
 
-== render 'form'
+.grid-12
+  = render 'form'
 
-= link_to 'Back', text_contents_path

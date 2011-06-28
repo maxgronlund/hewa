@@ -30,3 +30,31 @@ body{
 	background-color:#ccc;
 }
 
+.sort-list-header
+{
+	background-color:#aaa;
+	color:#000;
+}
+
+.current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.desc{
+	padding-right:14px;
+	background-image:url('arrow_up.png');
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:right top;
+}
+
+.asc{
+	padding-right:14px;
+	background-image:url('arrow_down.png');
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:right top;
+}
+

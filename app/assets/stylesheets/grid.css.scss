@@ -48,8 +48,23 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 	.grid-4-alpha{ @include grid(4); @include alpha;}
 	.grid-4{ @include grid(4);}
 	.grid-4-omega{ @include grid(4); @include omega;}
+	.grid-5-alpha{ @include grid(5); @include alpha;}
+	.grid-5{ @include grid(5);}
+	.grid-5-omega{ @include grid(5); @include omega;}
+	.grid-6-alpha{ @include grid(6); @include alpha;}
+	.grid-6{ @include grid(6);}
+	.grid-6-omega{ @include grid(6); @include omega;}
+	.grid-7-alpha{ @include grid(7); @include alpha;}
+	.grid-7{ @include grid(7);}
+	.grid-7-omega{ @include grid(7); @include omega;}
 	.alpha{ @include alpha; }
 	.omega{@include omega;}
+	.pagination-12{
+		@include grid(12);
+		text-align:center;
+		margin-top:0px;
+		
+	}
 }
 
 

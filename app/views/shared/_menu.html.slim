@@ -1,9 +1,9 @@
 .menu
-  = link_to t('home'), root_path
+  = link_to t('page.home'), root_path
   | | 
   -if current_user 
     - if current_user.admin_or_super?
-      = link_to t('admin'), admin_index_path
+      = link_to t('page.admin'), admin_index_path
       | |
     = link_to t('session.log_out'), log_out_path
     | |

@@ -1,12 +1,16 @@
-p#notice = notice
 
-p
-  b Title:
-  = @text_content.title
-p
-  b Body:
+.headline
+  h1 
+    = @text_content.title
+
+.grid-12
+  p#notice = notice
+.grid-4
   = @text_content.body
+.grid-4
 
-= link_to 'Edit', edit_text_content_path(@text_content)
-'|
-= link_to 'Back', text_contents_path
+.grid-4
+
+.grid-12
+  = link_to t('system.edit'), edit_text_content_path(@text_content)
+

@@ -7,10 +7,12 @@
           li= msg
 
   .field
-    = f.label :title
+    = t('text_contents.title')
+    br
     = f.text_field :title
   .field
-    = f.label :body
+    = t('text_contents.body')
+    br
     = f.text_area :body
   .actions
-    = f.submit 'Save'
+    = f.submit t('system.save')

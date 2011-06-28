@@ -1,27 +1,38 @@
+.headline
+  h1
+    = t('text_contents.all_texts')
+
+.grid-12
+  = form_tag text_contents_path, :method => 'get', :id => "products_search" do
+    = text_field_tag :search, params[:search] 
+    = submit_tag t('text_contents.search'), :title => nil
 
 
 
+	
+	
+div class="sort-list-header grid-12"
+  b
+    .grid-3-alpha
+      = sortable 'title', t('text_contents.title')
+    .grid-7
+      = sortable 'body', t('text_contents.body')
+    .grid-2-omega
+- @text_contents.each do |text_content|
+  div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+    .grid-3-alpha
+      = link_to text_content.title, text_content
+    .grid-7
+      = excerpt(text_content.body, '', :radius => 32)
 
-- if can?(:admin, TextContent)
-  .headline
-    h1
-      = t('text_contents.all_texts')
-  .grid-12  
-    - @text_contents.each do |text_content|
-      div class="grid-12 alpha omega #{cycle('row-flip', 'row-flop')}"
-        .grid-4-alpha
-          =text_content.title
-        .grid-4
-          = link_to t('system.show'), text_content
-          | | 
-          = link_to t('system.edit'), edit_text_content_path(text_content)
-          | | 
-          = link_to t('system.delete'), text_content, :confirm => 'Are you sure?', :method => :delete
-        .grid-4-omega
-    = link_to 'New Text content', new_text_content_path
-        
-    
--else
-  .grid-12
-    h1
-      | sorry no access
+    .grid-2-omega
+	  = link_to t('system.show'), text_content
+      | | 
+      = link_to t('system.edit'), edit_text_content_path(text_content)
+      | | 
+      = link_to t('system.delete'), text_content, :confirm => 'Are you sure?', :method => :delete
+.pagination-12 
+  = paginate @text_contents
+.grid-12 
+  = link_to t('text_contents.new_text_content'), new_text_content_path
+      

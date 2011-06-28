@@ -1,8 +1,10 @@
-h1 Editing text_content
+.headline
+  h1 
+    = t('text_contents.edit_text_content')
 
-== render 'form'
+.grid-12
+  = render 'form'
+  
+  = link_to t('system.show'), @text_content
 
-= link_to 'Show', @text_content
-'|
-= link_to 'Back', text_contents_path
 
