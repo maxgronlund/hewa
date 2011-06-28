@@ -10,7 +10,7 @@ module ImageCrop
   end
 
   def image_geometry
-    img = MiniMagick::Image.open(self.image.path)
+    img = MiniMagick::Image.open(self.image.current_path)
     @geometry = {:width => img[:width], :height => img[:height] }
   end
 
