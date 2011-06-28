@@ -29,7 +29,7 @@
 
   .field
     = t('system.image') 
-    = image_tag(@user.image_url) if @user.image?
+    = image_tag(@user.image_url :thumb) if @user.image?
     = f.file_field :image
     = f.hidden_field :image_cache
   /.field
