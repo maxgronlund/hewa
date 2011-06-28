@@ -8,23 +8,23 @@
  
  
   .field
-    = f.label :name 
+    = t('user.name')
     = f.text_field :name
 
   .field
-    = f.label :email 
+    = t('user.email') 
     = f.text_field :email
 
   .field
-    = f.label :password 
+    = t('user.password') 
     = f.password_field :password 
  
   .field
-    = f.label :password_confirmation  
+    = t('user.password_confirmation')  
     = f.password_field :password_confirmation
 
   .field
-    = f.label :image
+    = t('user.email') 
     = image_tag(@user.image_url) if @user.image?
     = f.file_field :image
     = f.hidden_field :image_cache
@@ -34,11 +34,11 @@
   /  = f.text_field :remote_image_url
 
   .field
-    = f.label :remove_image
+    = t('user.email') 
     = f.check_box :remove_image
 
   .field
-    = f.label :role  
+    = t('user.email')  
     = f.select(:role, User::ROLES)
 
   .actions

@@ -8,9 +8,10 @@ RailsTemplateR31::Application.routes.draw do
   
   
   root :to => "home#index"
+  
+  resources :text_contents
    
-  resources :text_contents,
-    :sessions,
+  resources :sessions,
     :users do
       member do
         get 'crop'

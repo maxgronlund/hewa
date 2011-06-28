@@ -8,6 +8,7 @@
 */
 body{
 	margin-top:0px;
+	background-color:#f00;
 
 }
 
@@ -18,12 +19,14 @@ body{
     overflow:hidden;
 }
 
-.tepst{
-	background-color:#0f0;
-}
 
 .row-flip
 {
 	background-color:#ddd;
+}
+
+.row-flop
+{
+	background-color:#ccc;
 }
 

@@ -8,9 +8,9 @@
 
 body.home {
   // Place scoped styles here
-  	background-color:#ddd;
 
-  //background-color: $color_light_gray;
+
+  background-color: $color_light_gray;
   // compass helpers sample
   #mylogo {
     @include border-radius(4px, 4px);

@@ -5,13 +5,18 @@
       | all users
   .grid-12  
     - @users.each do |user|
-      div class="row-flip grid-12 alpha omega"
+      div class="grid-12 alpha omega #{cycle('row-flip', 'row-flop')}"
         .grid-4-alpha
           =user.email
         .grid-4
+          = link_to t('system.show'), user
+          | | 
           = link_to t('system.edit'), edit_user_path(user)
+          | | 
+          = link_to t('system.delete'), user, :confirm => 'Are you sure?', :method => :delete
         .grid-4-omega
-        hr
+    = link_to t('user.create_user'), new_user_path
+        
     
 -else
   .grid-12

@@ -10,16 +10,26 @@ en:
     log_out: "log out"
     
   system:
+    are_you_sure: 'are you sure?'
+    delete: 'delete'
     edit: 'edit'
+    save: 'save'
+    show: 'show'
+
     
   user:
+    create_user: 'create user'
     edit_user: 'edit user'
     email: "email"
+    image: 'image'
     name: "name"
     password: "password"
     password_confirmation: "password confirmation"
     show_user: 'show user'
     users: "users"
+    
+  text_contents:
+    text_contents: 'text content'
   
   
   
