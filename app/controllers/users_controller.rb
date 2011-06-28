@@ -2,6 +2,7 @@ class UsersController < InheritedResources::Base
   
   def index
     return_path users_path
+    @is_first_user = User.first.id == 1
     index!
   end
 
@@ -11,7 +12,7 @@ class UsersController < InheritedResources::Base
   end
 
   def new  
-    @is_super = User.first.id == 1
+    @is_first_user = User.first.id == 1
     @user = User.new  
   end  
   
@@ -29,7 +30,7 @@ class UsersController < InheritedResources::Base
   end  
   
   def edit
-    @is_super = User.first.id == 1
+    @is_first_user = User.first.id == 1
     edit!
   end
   

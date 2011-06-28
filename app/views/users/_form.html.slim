@@ -42,7 +42,7 @@
     = f.check_box :remove_image
     = t('system.remove_image') 
   - if current_user && current_user.admin_or_super?
-    - unless @is_super
+    - unless @is_first_user
       .field
         = t('user.role')  
         br
