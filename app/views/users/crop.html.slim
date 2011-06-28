@@ -4,9 +4,6 @@
       $('#cropbox').Jcrop({
         onChange: update_crop,
         onSelect: update_crop,
-        //bgColor:    'none',
-        //bgColor:    'transparent',
-        bgOpacity:   .4,
         setSelect: [0, 0, #{@user.image_geometry[:width]}, #{@user.image_geometry[:height]}],
         aspectRatio: #{@version_geometry_width} / #{@version_geometry_height}
       });
@@ -31,6 +28,9 @@
       $("#crop_h").val(Math.round(coords.h * ratio));
     }
 
+/ inserted clear before cropbox image to make cropping work properly
+div class="clear"
+  | &nbsp;
 = image_tag @user.image_url(:large), :id => "cropbox"
 h3 Preview
 .preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px; overflow:hidden"
