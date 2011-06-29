@@ -1,5 +1,5 @@
 class TextContent < ActiveRecord::Base
-  
+  validates_presence_of :title
   
   def self.search(search)
     if search

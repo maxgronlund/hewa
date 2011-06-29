@@ -6,9 +6,19 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 
+
+
+
+
+ 
+
+
 body.home {
   // Place scoped styles here
   background-color: $body_color;
+  
+  
+
   // compass helpers sample
   #mylogo {
     @include border-radius(4px, 4px);

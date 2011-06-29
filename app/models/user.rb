@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create  
   validates_presence_of :name
-  validates_presence_of :email  
+#  validate :email, :presence => true, :uniqueness => true, :email_format => true
   validates_uniqueness_of :email
+  validates_presence_of :email
 
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image
   mount_uploader :image, ImageUploader
@@ -28,12 +29,16 @@ class User < ActiveRecord::Base
     role == 'member'
   end
   
+
   def self.search(search)
     if search
       where('name LIKE ?', "%#{search}%")
     else
       scoped
     end
+  end
+  def is_first_user?
+    User.first.id == 1
   end
   
 end

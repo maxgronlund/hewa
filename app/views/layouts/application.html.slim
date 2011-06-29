@@ -16,8 +16,8 @@ html
 
   body class=(controller.controller_name)
     #grid-container
+      = render "shared/menu"
       #min-height
-        = render "shared/menu"
         = yield
-        
-        .clear
+      = render "shared/footer"  
+      .clear

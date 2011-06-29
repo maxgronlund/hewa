@@ -6,10 +6,14 @@
  *= require_tree . 
  * require_directory . 
 */
+@import "compass/css3";
+
 
 body{
 	margin-top:0px;
+
 }
+
 
 /* JCrop preview */
 .preview {
@@ -60,4 +64,5 @@ body{
 .edit{
 	text-align:right;
 }
+
 

@@ -10,11 +10,11 @@
     });
 
     function update_crop(coords) {
-        var rx = #{@version_geometry_width}/coords.w;
-        var ry = #{@version_geometry_height}/coords.h;
-        var lw = $('#cropbox').width();
-        var lh = $('#cropbox').height();
-        var ratio = #{@user.image_geometry[:width]} / lw ;
+      var rx = #{@version_geometry_width}/coords.w;
+      var ry = #{@version_geometry_height}/coords.h;
+      var lw = $('#cropbox').width();   // = @version_geometry_width
+      var lh = $('#cropbox').height();  // = @version_geometry_height
+      var ratio = #{@user.image_geometry[:width]} / lw;
     
       $('#preview').css({
         width: Math.round(rx * lw) + 'px',
@@ -29,7 +29,7 @@
     }
 
 / inserted clear before cropbox image to make cropping work properly
-div class="clear"
+.clear
   | &nbsp;
 = image_tag @user.image_url(:large), :id => "cropbox"
 h3 Preview
