@@ -1,0 +1,12 @@
+// define fonts from design_parts
+@mixin font-header($size: 18px) {
+  font: $size 'KontrapunktBold', Arial, sans-serif;
+}
+
+@mixin font-plain($size: 12px, $bold: normal) {
+  font: $bold $size Arial, sans-serif;
+}
+
+@mixin link-font {
+  @include font-plain(12px);
+}
