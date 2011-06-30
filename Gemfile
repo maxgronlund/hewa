@@ -17,6 +17,7 @@ gem "cancan"
 gem "slim-rails"
 gem 'client_side_validations'
 gem 'kaminari'
+gem 'redcarpet'
 
 
 
