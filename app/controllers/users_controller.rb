@@ -41,8 +41,8 @@ class UsersController < InheritedResources::Base
 #  end
   
   def crop
-    #version_geometry_width, version_geometry_height = 238, 288
-    @version_geometry_width, @version_geometry_height = 50, 50
+    @crop_version = :small
+    @version_geometry_width, @version_geometry_height = AvatarUploader.version_dimensions[@crop_version]
   end
 
   def crop_update

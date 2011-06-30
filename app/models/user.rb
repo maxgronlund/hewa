@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
 
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, AvatarUploader
   include ImageCrop
   
   ROLES = %w[member admin super]

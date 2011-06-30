@@ -25,7 +25,7 @@
   .field
     = t('image.image') 
     br
-    = image_tag(@user.image_url :thumb) if @user.image?
+    = image_tag(@user.image_url :small) if @user.image?
     br
     = f.file_field :image
     = f.hidden_field :image_cache
