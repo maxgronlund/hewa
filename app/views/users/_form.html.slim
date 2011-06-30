@@ -19,17 +19,20 @@
     = f.password_field :password_confirmation
 
   .field
-    = f.label :thumb
-    = image_tag(@user.image_url :thumb) if @user.image?
-    br
+
+  = f.label :thumb 
+  - if @user.image.present?
+    - @user.image.version_dimensions.keys.each do |version|
+      span
+        | #{version}:
+        = image_tag(@user.image_url version) if @user.image?
+        = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
+        br
+
     = f.file_field :image
     = f.hidden_field :image_cache
 
-
   - if @user.image.present?
-    .field
-      = link_to t('image.re_crop'), crop_user_path(@user)
-
     .field
       = f.check_box :remove_image
       = t('image.remove_image')

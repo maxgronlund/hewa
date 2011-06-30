@@ -1,7 +1,7 @@
 module ImageCrop
   
   def self.included(base)
-    base.class_eval "attr_accessor :crop_x, :crop_y, :crop_h, :crop_w"
+    base.class_eval "attr_accessor :crop_x, :crop_y, :crop_h, :crop_w, :crop_version"
     base.class_eval "after_update :reprocess_image, :if => :cropping?"
   end
 

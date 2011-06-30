@@ -20,18 +20,7 @@ en:
         title: 'title'
         body: 'body'
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
   image:
     image: 'image'
     re_crop: 're crop'
@@ -50,9 +39,6 @@ en:
     sign_up: 'sign up'
     
 
-       
-    
-    
      
   system:
     are_you_sure: 'are you sure?'
@@ -91,4 +77,4 @@ en:
       last: 'last'
       previous: "&lt; prev"  
       next: "next &gt;"  
-      truncate: "&hellip;”
+      truncate: "&hellip;"
