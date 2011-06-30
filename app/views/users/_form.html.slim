@@ -26,10 +26,11 @@
     = t('image.image') 
     br
     - if @user.image.present?
-      - [:xsmall, :small, :medium, :large].each do |version|
+      - @user.image.version_dimensions.keys.each do |version|
         span
-          = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
+          | #{version}:
           = image_tag(@user.image_url version) if @user.image?
+          = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
           br
     = f.file_field :image
     = f.hidden_field :image_cache

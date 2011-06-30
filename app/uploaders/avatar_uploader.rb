@@ -21,7 +21,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process :convert => 'jpg'
-  #process :resize_to_fit => [324, 358]
+  process :resize_to_limit => [648, 716]
 
   # Create different versions of your uploaded files:  
   cattr_accessor :version_dimensions

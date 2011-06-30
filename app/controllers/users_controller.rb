@@ -41,7 +41,7 @@ class UsersController < InheritedResources::Base
 #  end
   
   def crop
-    @crop_version = params[:version].to_sym || :small
+    @crop_version = (params[:version] || :small).to_sym
     @version_geometry_width, @version_geometry_height = AvatarUploader.version_dimensions[@crop_version]
   end
 

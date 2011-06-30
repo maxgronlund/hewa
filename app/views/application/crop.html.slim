@@ -34,8 +34,8 @@
 - current_object = eval("@#{controller.class.name.sub(/Controller/, '').gsub('::', '').singularize.underscore}")
 = image_tag current_object.image_url, :id => "cropbox"
 h3 Preview
-.preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px; overflow:hidden"
-  = image_tag current_object.image_url(:large), :id => "preview"
+.preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px;"
+  = image_tag current_object.image_url, :id => "preview"
 = form_for current_object, :url => { :action => "crop_update" } do |f|
   - for attribute in [:crop_x, :crop_y, :crop_h, :crop_w]
     = f.hidden_field attribute, :id => attribute
