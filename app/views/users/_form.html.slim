@@ -25,16 +25,16 @@
   .field
     = t('image.image') 
     br
-    = image_tag(@user.image_url :small) if @user.image?
-    br
+    - if @user.image.present?
+      - [:xsmall, :small, :medium, :large].each do |version|
+        span
+          = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
+          = image_tag(@user.image_url version) if @user.image?
+          br
     = f.file_field :image
     = f.hidden_field :image_cache
 
-
   - if @user.image.present?
-    .field
-      = link_to t('image.re_crop'), crop_user_path(@user)
-
     .field
       = f.check_box :remove_image
       = t('image.remove_image')

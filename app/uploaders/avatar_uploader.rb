@@ -2,10 +2,7 @@
 
 class AvatarUploader < CarrierWave::Uploader::Base
 
-  # Include RMagick or ImageScience support:
   include CarrierWave::MiniMagick
-  # include CarrierWave::RMagick
-  # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -36,6 +33,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   }
 
   version :xsmall do
+    process :manualcrop
     process :resize_to_fit => self.version_dimensions[:xsmall]
   end
   
@@ -45,18 +43,21 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
   
   version :medium do
+    process :manualcrop
     process :resize_to_fit => self.version_dimensions[:medium]
   end
   
   version :large do
+    process :manualcrop
     process :resize_to_fit => self.version_dimensions[:large]
   end
 
   def manualcrop
     return unless model.cropping?
-    manipulate_crop! do |img|
-      #img = img.crop(model.crop_x.to_i,model.crop_y.to_i,model.crop_h.to_i,model.crop_w.to_i) 
-      img.crop("#{model.crop_w.to_i}x#{model.crop_h.to_i}+#{model.crop_x.to_i}+#{model.crop_y.to_i}")
+    if model.crop_version == File.basename(current_path).match(/^[^_]+/)[0]
+      manipulate_crop! do |img|
+        img.crop("#{model.crop_w.to_i}x#{model.crop_h.to_i}+#{model.crop_x.to_i}+#{model.crop_y.to_i}")
+      end
     end 
   end
 
@@ -73,11 +74,5 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
-
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
 
 end
