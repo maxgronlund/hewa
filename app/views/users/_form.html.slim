@@ -29,8 +29,8 @@
         = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
         br
 
-    = f.file_field :image
-    = f.hidden_field :image_cache
+  = f.file_field :image
+  = f.hidden_field :image_cache
 
   - if @user.image.present?
     .field
