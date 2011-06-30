@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
     end
   end
   def is_first_user?
-    User.first.id == 1
+    id == 1
   end
   
 end
