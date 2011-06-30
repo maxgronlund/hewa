@@ -3,28 +3,23 @@
  
  
   .field
-    = t('user.name')
-    br
+    = f.label :name
     = f.text_field :name
 
   .field
-    = t('user.email') 
-    br
+    = f.label :email
     = f.text_field :email
 
   .field
-    = t('user.password') 
-    br
+    = f.label :password
     = f.password_field :password 
  
   .field
-    = t('user.password_confirmation') 
-    br 
+    = f.label :password_confirmation
     = f.password_field :password_confirmation
 
   .field
-    = t('image.image') 
-    br
+    = f.label :thumb
     = image_tag(@user.image_url :thumb) if @user.image?
     br
     = f.file_field :image
@@ -42,11 +37,11 @@
   - if current_user && current_user.admin_or_super?
     - unless @user.is_first_user?
       .field
-        = t('user.role')  
+        = f.label :role  
         br
         = f.select(:role, User::ROLES)
 
   .actions
     = f.submit t('system.save')
 
-= link_to '< back', :back
+= link_to t('navigation.back'), :back

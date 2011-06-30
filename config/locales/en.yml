@@ -2,6 +2,36 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    models:
+      user: "user"
+      text_content: "text content"
+
+    attributes:
+      user:
+        name: "name"
+        email: "email"
+        password: 'password'
+        password_confirmation: 'password confirmation'
+        thumb: 'avatar'
+        role: 'role'
+      text_content:
+        identity: "identity"
+        title: 'title'
+        body: 'body'
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
   image:
     image: 'image'
     re_crop: 're crop'
@@ -18,6 +48,9 @@ en:
     log_in: "log in"
     log_out: "log out"
     sign_up: 'sign up'
+    
+
+       
     
     
      
@@ -39,23 +72,15 @@ en:
     
   text_contents:
     all_texts: 'all texts'
-    body: 'body'
     edit_text_content: 'edit text content'
-    identity: 'identity'
     new_text_content: 'new text content'
     text_contents: 'text content'
-    title: 'title'
     search: 'search title'
   
   user:
     all_users: 'all users'
     create_user: 'create user'
     edit_user: 'edit user'
-    email: 'email'
-    name: "name"
-    password: "password"
-    password_confirmation: "password confirmation"
-    role: 'role'
     search_user: 'search user'
     show_user: 'show user'
     users: "users"

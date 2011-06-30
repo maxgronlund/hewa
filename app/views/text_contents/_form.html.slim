@@ -10,12 +10,10 @@
       br
       = f.text_field :identity 
   .field
-    = t('text_contents.title')
-    br
+	= f.label :title
     = f.text_field :title
   .field
-    = t('text_contents.body')
-    br
+    = f.label :body
     = f.text_area :body
   .actions
     = f.submit t('system.save')
