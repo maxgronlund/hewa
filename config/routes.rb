@@ -13,14 +13,15 @@ RailsTemplateR31::Application.routes.draw do
   root :to => "home#index"
   
   resources :text_contents
-   
-  resources :sessions,
-    :users do
-      member do
-        get 'crop'
-        put 'crop_update'
-      end
+  
+  resources :sessions
+  
+  resources :users do
+    member do
+      get 'crop'
+      put 'crop_update'
     end
+  end
 
   
 #  get "home/index"
