@@ -31,7 +31,7 @@
 / inserted clear before cropbox image to make cropping work properly
 .clear
   | &nbsp;
-- current_object = eval("@#{controller.class.name.sub(/Controller/, '').gsub('::', '').singularize.underscore}")
+- current_object = eval("@#{controller.controller_name}")
 = image_tag current_object.image_url, :id => "cropbox"
 h3 Preview
 .preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px;"
