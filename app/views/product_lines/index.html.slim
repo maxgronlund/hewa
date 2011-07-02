@@ -1,21 +1,35 @@
-h1 Listing product_lines
+.headline
+  h1
+    = t('product_line.product_lines')
 
-table
-  tr
-    th Title
-    th Body
-    th
-    th
-    th
+.grid-12
+  = form_tag text_contents_path, :method => 'get', :id => "products_search" do
+    = text_field_tag :search, params[:search] 
+    = submit_tag t('text_contents.search'), :title => nil
+    '
+    = link_to t('system.show_all'), product_lines_path
+.divider-12
+div class="sort-list-header grid-12"
+  .grid-3-alpha
+    = sortable 'title', t('text_contents.title')
+  .grid-7
+    = sortable 'body', t('text_contents.body')
+  .grid-2-omega
+- @product_lines.each do |product_line|
+  div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+    .grid-3-alpha
+      = link_to product_line.title, product_line
+    .grid-7
+      = excerpt(product_line.body, '', :radius => 32)
 
-  - @product_lines.each do |product_line|
-    tr
-      td= product_line.title
-      td= product_line.body
-      td= link_to 'Show', product_line
-      td= link_to 'Edit', edit_product_line_path(product_line)
-      td= link_to 'Destroy', product_line, :confirm => 'Are you sure?', :method => :delete
+    .grid-2-omega
+	  = link_to t('system.show'), product_line
+      | | 
+      = link_to t('system.edit'), edit_product_line_path(product_line)
+      | | 
+      = link_to t('system.delete'), product_line, :confirm => 'Are you sure?', :method => :delete
+.pagination-12 
+  = paginate @product_lines
+.grid-12 
+  = link_to t('text_contents.new_text_content'), new_product_line_path
 
-br
-
-= link_to 'New Product line', new_product_line_path

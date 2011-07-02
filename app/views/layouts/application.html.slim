@@ -19,6 +19,8 @@ html
     #grid-container
       = render "shared/menu"
       #min-height
+        .grid-12
+          p#notice = notice
         = yield
       = render "shared/footer"  
       .clear &nbsp;

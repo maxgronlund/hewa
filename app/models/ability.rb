@@ -7,23 +7,22 @@ class Ability
         can :manage, :all
       elsif user.admin?
         can :manage, TextContent
+        can :manage, ProductLine
         
-        
-        
+     
       elsif user.member?#ordinary user
-        
-#        can :read, Blog
-#        can :create, Blog
-       can :manage, User, :user_id => user.id
+        can :read, ProductLine
+        can :manage, User, :user_id => user.id
+       
         
        
       end
     # When not logged in
-   else
+    else
+     can :read, ProductLine
      can :create, User
-#     can :read, Blog
     
-     #can :create, User# <----------- Uncomment this to alow users to signup by them self 
+     #can :create, User
     end
   end
 end

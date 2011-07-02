@@ -1,12 +1,12 @@
-p#notice = notice
+.headline
+  h1 
+    = @product_line.title
 
-p
-  b Title:
-  = @product_line.title
-p
-  b Body:
-  = @product_line.body
+.grid-4
+  = markdown(@product_line.body)
+.grid-4
 
-= link_to 'Edit', edit_product_line_path(@product_line)
-'|
-= link_to 'Back', product_lines_path
+.grid-4
+
+.grid-12
+  = link_to t('system.edit'), edit_product_line_path(@product_line)
