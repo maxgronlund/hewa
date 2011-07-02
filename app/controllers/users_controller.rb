@@ -59,7 +59,7 @@ class UsersController < InheritedResources::Base
   end
   
   def update
-    if params[:user][:image]
+    if params[:user][:image] && params[:user][:remove_image] != '1'
       update! { crop_user_path }
     else
       update! { return_path(user_path) }
