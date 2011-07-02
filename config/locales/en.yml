@@ -62,6 +62,7 @@ en:
     
   product_line:
     product_lines: 'product lines'
+    new_product_line: "new product line"
   text_contents:
     all_texts: 'all texts'
     edit_text_content: 'edit text content'
