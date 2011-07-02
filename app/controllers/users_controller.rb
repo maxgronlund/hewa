@@ -5,7 +5,7 @@ class UsersController < InheritedResources::Base
 
   
   def index
-    return_path users_path # !!! same as line 6?
+    return_path users_path # !!! same as line 10?
 #    @is_first_user = User.first.id == 1
     session[:go_to_after_edit] = users_path
     @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
@@ -16,10 +16,6 @@ class UsersController < InheritedResources::Base
     show!
   end
 
-#  def new  
-#    @user = User.new  
-#    @is_first_user = @user.id == 1  # !!! will it work
-#  end  
   
   def create  
     @user = User.new(params[:user])  
@@ -34,11 +30,6 @@ class UsersController < InheritedResources::Base
     end  
   end  
   
-#  def edit
-#
-#    @is_first_user = @user.id == 1
-#    edit!
-#  end
   
   def crop
     @crop_version = (params[:version] || :small).to_sym
@@ -47,7 +38,8 @@ class UsersController < InheritedResources::Base
   end
 
   def crop_update
-    @user = current_user
+  #  @user = current_user                        #!!! current user? no no no 
+    @user = User.find(params[:id])
     @user.crop_x = params[:user]["crop_x"]
     @user.crop_y = params[:user]["crop_y"]
     @user.crop_h = params[:user]["crop_h"]
