@@ -16,10 +16,6 @@ class UsersController < InheritedResources::Base
     show!
   end
 
-#  def new  
-#    @user = User.new  
-#    @is_first_user = @user.id == 1  # !!! will it work
-#  end  
   
   def create  
     @user = User.new(params[:user])  
@@ -34,11 +30,6 @@ class UsersController < InheritedResources::Base
     end  
   end  
   
-#  def edit
-#
-#    @is_first_user = @user.id == 1
-#    edit!
-#  end
   
   def crop
     @crop_version = (params[:version] || :small).to_sym
