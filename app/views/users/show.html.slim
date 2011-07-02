@@ -4,7 +4,7 @@
 
 .grid-12
 
-  = image_tag(@user.image_url :small) if @user.image?
+  = image_tag(@user.image_url :medium) if @user.image?
   br /
   = t('system.email')
   ':
