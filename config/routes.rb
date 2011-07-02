@@ -18,6 +18,13 @@ RailsTemplateR31::Application.routes.draw do
             :text_contents,
             :sessions
   
+  resources :product_lines do
+    member do
+      get 'crop'
+      put 'crop_update'
+    end
+  end
+  
   resources :users do
     member do
       get 'crop'

@@ -25,10 +25,11 @@
     - @user.image.version_dimensions.keys.each do |version|
       span
         | #{version}:
+        br
         = image_tag(@user.image_url version) if @user.image?
         = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
         br
-
+  br
   = f.file_field :image
   = f.hidden_field :image_cache
 

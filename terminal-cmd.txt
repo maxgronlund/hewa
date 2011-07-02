@@ -1,1 +1,5 @@
 rails g scaffold product_line title:string body:text
+
+rails g uploader product_line_image
+
+rails g migration add_image_to_product_line image:string

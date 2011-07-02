@@ -23,6 +23,27 @@ class ProductLinesController < InheritedResources::Base
       session[:go_to_after_edit] = nil
       update! {goto}
     end
+    
+    
+    def crop
+      @crop_version = (params[:version] || :small).to_sym
+      @product_line.get_crop_version! @crop_version
+      @version_geometry_width, @version_geometry_height = ProductLineImageUploader.version_dimensions[@crop_version]
+    end
+
+    def crop_update
+      @product_line = ProductLine.find()
+      @product_line.crop_x = params[:product_line]["crop_x"]
+      @product_line.crop_y = params[:product_line]["crop_y"]
+      @product_line.crop_h = params[:product_line]["crop_h"]
+      @product_line.crop_w = params[:product_line]["crop_w"]
+      @product_line.crop_version = params[:product_line]["crop_version"]
+      @product_line.save
+
+      redirect_to product_line_path(@product_line)
+    end
+    
+    
 
 private  
     def sort_column  

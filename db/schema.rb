@@ -10,13 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110702102425) do
+ActiveRecord::Schema.define(:version => 20110702213939) do
 
   create_table "product_lines", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.string   "crop_params", :limit => 256
   end
 
   create_table "text_contents", :force => true do |t|
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20110702102425) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.string   "crop_params",     :limit => 256
   end
 
 end

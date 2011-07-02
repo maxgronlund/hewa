@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
 
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image
+  serialize :crop_params, Hash
   mount_uploader :image, AvatarUploader
   include ImageCrop
   

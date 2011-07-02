@@ -42,6 +42,7 @@ class UsersController < InheritedResources::Base
   
   def crop
     @crop_version = (params[:version] || :small).to_sym
+    @user.get_crop_version! @crop_version
     @version_geometry_width, @version_geometry_height = AvatarUploader.version_dimensions[@crop_version]
   end
 
@@ -58,7 +59,7 @@ class UsersController < InheritedResources::Base
   end
   
   def update
-    if params[:user][:image]
+    if params[:user][:image] && params[:user][:remove_image] != '1'
       update! { crop_user_path }
     else
       update! { return_path(user_path) }

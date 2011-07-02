@@ -54,11 +54,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   def manualcrop
     return unless model.cropping?
-    if model.crop_version == File.basename(current_path).match(/^[^_]+/)[0]
-      manipulate_crop! do |img|
-        img.crop("#{model.crop_w.to_i}x#{model.crop_h.to_i}+#{model.crop_x.to_i}+#{model.crop_y.to_i}")
-      end
-    end 
+    return if model.crop_params[version_name.to_sym].blank?
+    model.get_crop_version!(version_name)
+
+    manipulate_crop! do |img|
+      img.crop("#{model.crop_w.to_i}x#{model.crop_h.to_i}+#{model.crop_x.to_i}+#{model.crop_y.to_i}")
+    end
   end
 
   def manipulate_crop!
