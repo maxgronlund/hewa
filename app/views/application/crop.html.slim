@@ -1,10 +1,11 @@
+- current_object = eval("@#{controller.controller_name.singularize}")
 - content_for :head do
   javascript:
     $(function() {
       $('#cropbox').Jcrop({
         onChange: update_crop,
         onSelect: update_crop,
-        setSelect: [0, 0, #{@user.image_geometry[:width]}, #{@user.image_geometry[:height]}],
+        setSelect: [#{current_object.crop_x || 0}, #{current_object.crop_y || 0}, #{current_object.crop_w || current_object.image_geometry[:width]}, #{current_object.crop_h || current_object.image_geometry[:height]}],
         aspectRatio: #{@version_geometry_width} / #{@version_geometry_height}
       });
     });
@@ -14,7 +15,7 @@
       var ry = #{@version_geometry_height}/coords.h;
       var lw = $('#cropbox').width();   // = @version_geometry_width
       var lh = $('#cropbox').height();  // = @version_geometry_height
-      var ratio = #{@user.image_geometry[:width]} / lw;
+      var ratio = #{current_object.image_geometry[:width]} / lw;
     
       $('#preview').css({
         width: Math.round(rx * lw) + 'px',
@@ -31,7 +32,6 @@
 / inserted clear before cropbox image to make cropping work properly
 .clear
   | &nbsp;
-- current_object = eval("@#{controller.controller_name}")
 = image_tag current_object.image_url, :id => "cropbox"
 h3 Preview
 .preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px;"
