@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  b Title:
+  = @product_line.title
+p
+  b Body:
+  = @product_line.body
+
+= link_to 'Edit', edit_product_line_path(@product_line)
+'|
+= link_to 'Back', product_lines_path

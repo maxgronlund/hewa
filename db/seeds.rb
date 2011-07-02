@@ -7,5 +7,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-TextContent.create(:identity => "welcome" , :title => 'Velkommen', :body => 'Lorem ipsum dolor sit amet')
-User.create(:email => "admin@nowhere" , :name => 'admin', :password => 'admin1234', :role => 'super')
+TextContent.create(:identity => "welcome" , :title => 'Velkommen til Hewa', :body => 'Lorem ipsum dolor sit amet')
+User.create(:email => "max@synthmax.dk" , :name => 'Max Grønlund', :password => 'rosalina', :role => 'super')

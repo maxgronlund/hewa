@@ -1,0 +1,21 @@
+h1 Listing product_lines
+
+table
+  tr
+    th Title
+    th Body
+    th
+    th
+    th
+
+  - @product_lines.each do |product_line|
+    tr
+      td= product_line.title
+      td= product_line.body
+      td= link_to 'Show', product_line
+      td= link_to 'Edit', edit_product_line_path(product_line)
+      td= link_to 'Destroy', product_line, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Product line', new_product_line_path

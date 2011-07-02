@@ -4,10 +4,15 @@
 en:
   activerecord:
     models:
+      product_line: "product line"
       user: "user"
       text_content: "text content"
 
+
     attributes:
+      product_line:
+        title: 'product line name'
+        body: "product line description"
       user:
         name: "name"
         email: "email"
@@ -55,7 +60,8 @@ en:
     site_management: 'site management'
     user_management: 'user management'
     
-    
+  product_line:
+    product_lines: 'product lines'
   text_contents:
     all_texts: 'all texts'
     edit_text_content: 'edit text content'

@@ -18,7 +18,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: template31_development
+  database: hewa_development
   pool: 5
   username: root
   password:
@@ -31,7 +31,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: template31_test
+  database: hewa_test
   pool: 5
   username: root
   password:
@@ -41,7 +41,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: template31_production
+  database: hewa_production
   pool: 5
   username: root
   password: 

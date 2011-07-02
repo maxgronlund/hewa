@@ -1,0 +1,16 @@
+= form_for @product_line, :validate => true do |f|
+  -if @product_line.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@product_line.errors.count, "error")} prohibited this product_line from being saved:"
+      ul
+        - @product_line.errors.full_messages.each do |msg|
+          li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :body
+    = f.text_area :body
+  .actions
+    = f.submit 'Save'
