@@ -41,6 +41,9 @@ gem "compass-960-plugin", :require => "ninesixty"
 gem 'carrierwave'
 gem 'mini_magick'
 
+# JavaScript runtime is required for Tails 3.1; this should work on Ubuntu
+gem 'therubyracer', '>= 0.8.2'
 
-gem 'therubyracer'
+
+
 
