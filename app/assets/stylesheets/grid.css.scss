@@ -5,10 +5,10 @@ $ninesixty-columns: 12;
 $ninesixty-grid-width: 1032px; 	// default: 960px
 $ninesixty-gutter-width: 20px; 	// default: 20px
 
-#grid-container {
+.grid-container {
 	@include grid-container;
 	margin-top:0px;
-	background-color:#fff;
+//	background-color:#fff;
 	
 	#min-height{	min-height:700px;	}
 	.menu{	@include grid(12);	min-height:32px;}
@@ -63,6 +63,8 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 		min-height:16px;
 	}
 }
+
+.background_grid {background-image:url('background_grid.png');}
 
 
 
