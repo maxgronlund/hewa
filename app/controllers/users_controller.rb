@@ -47,7 +47,7 @@ class UsersController < InheritedResources::Base
     @user.crop_version = params[:user]["crop_version"]
     @user.save
 
-    redirect_to return_path(user_path)
+    redirect_to return_path(edit_user_path(@user))
   end
   
   def update

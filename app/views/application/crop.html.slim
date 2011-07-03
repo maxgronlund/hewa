@@ -31,13 +31,16 @@
 
 / inserted clear before cropbox image to make cropping work properly
 .clear
+
+
   | &nbsp;
-= image_tag current_object.image_url, :id => "cropbox"
-h3 Preview
-.preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px;"
-  = image_tag current_object.image_url, :id => "preview"
-= form_for current_object, :url => { :action => "crop_update" } do |f|
-  - for attribute in [:crop_x, :crop_y, :crop_h, :crop_w]
-    = f.hidden_field attribute, :id => attribute
-  = f.hidden_field :crop_version, :value => @crop_version
-  p= f.submit "Crop"
+.grid-12
+  = image_tag current_object.image_url, :id => "cropbox"
+  h3 Preview
+  .preview style="width:#{@version_geometry_width}px; height:#{@version_geometry_height}px;"
+    = image_tag current_object.image_url, :id => "preview"
+  = form_for current_object, :url => { :action => "crop_update" } do |f|
+    - for attribute in [:crop_x, :crop_y, :crop_h, :crop_w]
+      = f.hidden_field attribute, :id => attribute
+    = f.hidden_field :crop_version, :value => @crop_version
+    p= f.submit "Crop"

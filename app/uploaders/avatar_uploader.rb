@@ -29,7 +29,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     :xsmall => [32, 36],
     :small => [66, 72],
     :medium => [152, 170],
-    :large => [324, 358],
+    :large => [238, 266],
+    :xlarge => [324, 358],
   }
 
   version :xsmall do
@@ -50,6 +51,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   version :large do
     process :manualcrop
     process :resize_to_fit => self.version_dimensions[:large]
+  end
+  
+  version :xlarge do
+    process :manualcrop
+    process :resize_to_fit => self.version_dimensions[:xlarge]
   end
 
   def manualcrop

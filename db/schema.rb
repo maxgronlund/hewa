@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20110702213939) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.string   "crop_params",     :limit => 256
+    t.string   "crop_params",     :limit => 1024
   end
 
 end
