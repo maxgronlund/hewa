@@ -18,6 +18,7 @@ html
   body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]}")
     .grid-container class="background_grid"
       = render "shared/menu"
+      = render "shared/banner"
       #min-height
         .grid-12
           p#notice = notice

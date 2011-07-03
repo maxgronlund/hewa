@@ -1,9 +1,7 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-  
-
-
+  resources :products
 
   get "admin/index"
   get "log_in" => "sessions#new", :as => "log_in"
@@ -19,6 +17,7 @@ RailsTemplateR31::Application.routes.draw do
             :sessions
   
   resources :product_lines do
+    resources :products
     member do
       get 'crop'
       put 'crop_update'
@@ -32,6 +31,12 @@ RailsTemplateR31::Application.routes.draw do
     end
   end
 
+  resources :products do
+    member do
+      get 'crop'
+      put 'crop_update'
+    end
+  end
   
 #  get "home/index"
   root :to => "home#index"

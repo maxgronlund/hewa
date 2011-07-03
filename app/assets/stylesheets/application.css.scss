@@ -16,7 +16,10 @@
 
 body{
 	margin-top:0px;
+}
 
+p, a{
+	margin:0px;
 }
 
 label{
@@ -73,6 +76,18 @@ label{
 .edit{
 	text-align:right;
 }
+
+
+img{
+	@include border-radius(10px, 10px);
+	border-style:solid;
+	border-width:1px;
+	border-color:#999;
+	left:-2px;
+	position:relative;
+}
+
+
 
 // some basic styles using fonts and color schee
 $color-base: $color_grey_eminence;

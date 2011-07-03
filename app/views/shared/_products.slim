@@ -1,0 +1,18 @@
+div class="grid-6 alpha omega"
+  - products.each do |product|
+
+    .grid-1-alpha
+      = link_to image_tag(product.image_url :small), product_line_product_path(product.product_line, product) if product.image?
+    .grid-5-omega
+      b = product.title
+      - if can?(:manage, Product)
+        br
+        .edit
+          = link_to 'Edit', edit_product_line_product_path(product.product_line,product)
+          | | 
+          = link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+    div class="grid-6 alpha omega"
+      hr
+
+div class="grid-6 alpha omega"
+  = link_to 'new product', new_product_line_product_path(@product_line)

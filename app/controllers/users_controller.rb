@@ -23,7 +23,7 @@ class UsersController < InheritedResources::Base
       if params[:user][:image]
         redirect_to crop_user_path, :notice => "Signed up!"
       else
-        redirect_to root_path, :notice => "Signed up!"
+        redirect_to user_path(@user), :notice => "Signed up!"
       end
     else  
       render "new"  

@@ -1,20 +1,30 @@
 .headline
-  h1 
-    = t('page.home')
-
-.left-column-3
-  | left column
-
-.center-column-4
   - if @welcome
-    h3.c20
+    h1 
       = @welcome.title
-    p
-      = markdown(@welcome.body)
-      br
-      =link_to t('system.edit'), edit_text_content_path(@welcome)
+    p = markdown(@welcome.body)
+    - if can? :manage, TextContent
+      p =link_to t('system.edit'), edit_text_content_path(@welcome)
+.left-column-9
+  - @product_lines.each_with_index do |product_line, index|
+    - if (index % 3) == 0 
+      .grid-3-alpha
+        = link_to product_line.title, product_line
+        br
+        = link_to image_tag(product_line.image_url :medium), product_line if product_line.image?
+    - elsif (index % 3) == 1
+      .grid-3
+        = link_to product_line.title, product_line
+        br
+        = link_to image_tag(product_line.image_url :medium), product_line if product_line.image?
 
-.center-column-2
+	- elsif (index % 3) == 2
+	  .grid-3-omega
+	    = link_to product_line.title, product_line
+	    br
+	    = link_to image_tag(product_line.image_url :medium), product_line if product_line.image?
+	    .divider-9
+    
   
 
 .right-column-3

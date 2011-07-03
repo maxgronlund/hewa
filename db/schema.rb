@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110702213939) do
+ActiveRecord::Schema.define(:version => 20110703120240) do
 
   create_table "product_lines", :force => true do |t|
     t.string   "title"
@@ -18,8 +18,20 @@ ActiveRecord::Schema.define(:version => 20110702213939) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.string   "crop_params", :limit => 256
+    t.string   "crop_params", :limit => 1024
   end
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "image"
+    t.string   "crop_params",     :limit => 1024
+    t.integer  "product_line_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["product_line_id"], :name => "index_products_on_product_line_id"
 
   create_table "text_contents", :force => true do |t|
     t.string   "title"

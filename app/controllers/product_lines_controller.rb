@@ -3,6 +3,7 @@ class ProductLinesController < InheritedResources::Base
     helper_method :sort_column, :sort_direction
 
     def show
+      @product_lines = ProductLine.all
       session[:go_to_after_edit] = product_line_path(@product_line)
       show!
     end
@@ -19,9 +20,15 @@ class ProductLinesController < InheritedResources::Base
     end
 
     def update
-      goto = session[:go_to_after_edit] || product_lines_path
-      session[:go_to_after_edit] = nil
-      update! {goto}
+      if params[:product_line][:image] && params[:product_line][:remove_image] != '1'
+        update! { crop_product_line_path }
+      else
+        update! { product_line_path(@product_line) }
+      end
+      
+#      goto = session[:go_to_after_edit] || product_lines_path
+#      session[:go_to_after_edit] = nil
+#      update! {goto}
     end
     
     
@@ -32,7 +39,7 @@ class ProductLinesController < InheritedResources::Base
     end
 
     def crop_update
-      @product_line = ProductLine.find()
+      @product_line = ProductLine.find(params[:id])
       @product_line.crop_x = params[:product_line]["crop_x"]
       @product_line.crop_y = params[:product_line]["crop_y"]
       @product_line.crop_h = params[:product_line]["crop_h"]

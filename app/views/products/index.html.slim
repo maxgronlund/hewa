@@ -1,0 +1,21 @@
+h1 Listing products
+
+
+
+- @products.each do |product|
+   
+  = product.title
+  br
+  = product.body
+  br
+  = image_tag(product.image_url :large) if product.image?
+  br
+  
+  = link_to 'Show', product
+  | | 
+  = link_to 'Edit', edit_product_line_product_path(product.product_line, product)
+  | | 
+  = link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+  hr
+
+

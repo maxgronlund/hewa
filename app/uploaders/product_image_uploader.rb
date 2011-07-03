@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProductLineImageUploader < CarrierWave::Uploader::Base
+class ProductImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
     
@@ -30,8 +30,8 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
    cattr_accessor :version_dimensions
    self.version_dimensions = {
      :small => [66, 46],
-     :medium => [238, 169],
-     :large => [410, 290]
+     :medium => [152, 152],
+     :large => [324, 324]
    }
 
 

@@ -2,11 +2,18 @@
   h1 
     = @product_line.title
 
+.grid-5
+  = image_tag(@product_line.image_url :large) if @product_line.image?
+  = render "shared/products" , :products => @product_line.products  
 .grid-4
   = markdown(@product_line.body)
-.grid-4
+  .edit
+    = link_to t('system.edit'), edit_product_line_path(@product_line)
 
-.grid-4
+.grid-3
+  = render "shared/product_lines", :product_lines => @product_lines
 
-.grid-12
-  = link_to t('system.edit'), edit_product_line_path(@product_line)
+
+
+
+

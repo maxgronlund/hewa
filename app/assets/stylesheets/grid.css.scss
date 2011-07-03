@@ -4,6 +4,7 @@
 $ninesixty-columns: 12;
 $ninesixty-grid-width: 1032px; 	// default: 960px
 $ninesixty-gutter-width: 20px; 	// default: 20px
+@import "compass/css3/border-radius";
 
 .grid-container {
 	@include grid-container;
@@ -11,12 +12,13 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 //	background-color:#fff;
 	
 	#min-height{	min-height:700px;	}
-	.menu{	@include grid(12);	min-height:32px;}
+	.menu{	@include grid(12);	min-height:24px;}
 	.footer{ @include grid(12);	min-height:32px; text-align:center;}
 	.headline{	@include grid(12);	min-height:32px;margin-bottom:16px;}	
 	.left-column-2{ @include grid(2);min-height:1px;}
 	.left-column-3{ @include grid(3);min-height:1px;}
 	.left-column-4{ @include grid(4);min-height:1px;}
+	.left-column-9{ @include grid(9);min-height:1px;}
 	.center-column-2{ @include grid(2);min-height:1px;}
 	.center-column-3{ @include grid(3);min-height:1px;}
 	.center-column-4{ @include grid(4);min-height:1px;}
@@ -62,6 +64,32 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 		@include grid(12);
 		min-height:16px;
 	}
+	.divider-9{
+		@include grid(12); @include alpha; @include omega;
+		min-height:16px;
+	}
+	.line{
+		background-color:black;
+		height:1px;
+	}
+	.banner{
+		@include grid(12);
+		width:1032px;
+		height:150px;
+		background-color:#AACCCA;
+		left:-10px;
+		position:relative;
+		.content{
+			margin:10px;
+			img{
+				@include border-radius(0px, 0px);
+				border-style:solid;
+				border-width:0px;
+				border-color:#999;
+			}
+		}
+		
+	}
 }
 
 .background_grid {background-image:url('background_grid.png');}
@@ -73,47 +101,3 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#wrap {
-  @include grid-container;
-  #header {
-    @include grid(16);
-  }
-  #middle {
-    @include grid(16);
-    #left-nav {
-      @include grid(5);
-      @include alpha;
-    }
-    #main-content {
-      @include grid-prefix(1);
-      @include grid(10);
-      @include omega;
-    }
-  }
-}

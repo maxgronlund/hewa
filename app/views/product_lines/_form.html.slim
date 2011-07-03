@@ -8,6 +8,29 @@
   .field
     = f.label :body
     = f.text_area :body
+
+
+
+  = f.label :thumb 
+  - if @product_line.image.present?
+    - @product_line.image.version_dimensions.keys.each do |version|
+      span
+        | #{version}:
+        br
+        = image_tag(@product_line.image_url version) if @product_line.image?
+        = link_to t('image.re_crop'), crop_product_line_path(@product_line, :version => version)
+        br
+  br
+  = f.file_field :image
+  = f.hidden_field :image_cache
+
+  - if @product_line.image.present?
+    .field
+      = f.check_box :remove_image
+      = t('image.remove_image')
+
+
+
   .actions
     = f.submit 'Save'
 

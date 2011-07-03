@@ -1,0 +1,10 @@
+div class="grid-3 alpha omega"
+  - product_lines.each do |product_line|
+
+    .grid-1-alpha
+      = link_to image_tag(product_line.image_url :small), product_line_path(product_line) if product_line.image?
+    .grid-2-omega
+      b = product_line.title
+     
+    div class="grid-3 alpha omega"
+      hr

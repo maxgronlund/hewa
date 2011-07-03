@@ -15,6 +15,7 @@ $color_red_algae: #B64D62;
 
 // set link color
 $link-color: $color_red_algae;
+$link-over-color: $color_north_sea;
 
 // set default colors for color mixin
 $template-color-base: $color_grey_eminence;
@@ -24,4 +25,6 @@ $template-background-color-base: white;
   color: mix($color, white, $color-mix);
 /*  background-color: mix($background-color, white, $background-color-mix);*/
 }
+
+
 

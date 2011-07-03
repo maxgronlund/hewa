@@ -19,6 +19,7 @@ body.home {
     @include border-radius(4px, 4px);
     @include opacity(0.5);
   }
+
 }
 
 
@@ -26,11 +27,5 @@ body.home {
 // sample style definitions
 //
 
-// set link color
-a, a:hover, a:active, a:visited, a:link {
-  color: $link-color;
-  padding: 2px;
-  text-decoration: none;
-}
 
 
