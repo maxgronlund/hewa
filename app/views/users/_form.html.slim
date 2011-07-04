@@ -39,11 +39,11 @@
       = t('image.remove_image')
 
   - if current_user && current_user.admin_or_super?
-    - unless @user.is_first_user?
-      .field
-        = f.label :role  
-        br
-        = f.select(:role, User::ROLES)
+
+    .field
+      = f.label :role  
+      br
+      = f.select(:role, User::ROLES)
 
   .actions
     = f.submit t('system.save')
