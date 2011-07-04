@@ -1,7 +1,7 @@
 = form_for @text_content, :validate => true do |f|
   = render 'shared/error_messages', :taget => @text_content
 
-  -if current_user.admin_or_super?
+  -if current_user.super?
     .field
       = t('text_contents.identity')
       i 

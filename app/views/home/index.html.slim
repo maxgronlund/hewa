@@ -1,10 +1,5 @@
 .headline
-  - if @welcome
-    h1 
-      = @welcome.title
-    p = markdown(@welcome.body)
-    - if can? :manage, TextContent
-      p =link_to t('system.edit'), edit_text_content_path(@welcome)
+    
 .left-column-9
   - @product_lines.each_with_index do |product_line, index|
     - if (index % 3) == 0 
@@ -29,3 +24,4 @@
 
 .right-column-3
   | rigth column
+

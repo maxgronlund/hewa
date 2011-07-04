@@ -19,4 +19,8 @@ class TextContent < ActiveRecord::Base
     with_identity('welcome')
   end
   
+  def self.footer_text
+    with_identity('footer_text')
+  end
+  
 end

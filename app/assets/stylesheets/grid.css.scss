@@ -5,15 +5,18 @@ $ninesixty-columns: 12;
 $ninesixty-grid-width: 1032px; 	// default: 960px
 $ninesixty-gutter-width: 20px; 	// default: 20px
 @import "compass/css3/border-radius";
+@import "partials/color";
+@import "partials/font";
 
 .grid-container {
 	@include grid-container;
+	@include template-color;
 	margin-top:0px;
 //	background-color:#fff;
 	
 	#min-height{	min-height:700px;	}
 	.menu{	@include grid(12);	min-height:24px;}
-	.footer{ @include grid(12);	min-height:32px; text-align:center;}
+	.footer{ @include grid(12);	min-height:24px; text-align:center; margin-top:12px;}
 	.headline{	@include grid(12);	min-height:32px;margin-bottom:16px;}	
 	.left-column-2{ @include grid(2);min-height:1px;}
 	.left-column-3{ @include grid(3);min-height:1px;}
@@ -79,14 +82,12 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 		background-color:#AACCCA;
 		left:-10px;
 		position:relative;
-		.content{
-			margin:10px;
-			img{
-				@include border-radius(0px, 0px);
-				border-style:solid;
-				border-width:0px;
-				border-color:#999;
-			}
+
+		img{
+			@include border-radius(0px, 0px);
+			border-style:solid;
+			border-width:0px;
+			border-color:#999;
 		}
 		
 	}

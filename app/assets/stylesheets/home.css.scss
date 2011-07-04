@@ -19,6 +19,9 @@ body.home {
     @include border-radius(4px, 4px);
     @include opacity(0.5);
   }
+  img:hover{
+	@include opacity(0.75);
+  }
 
 }
 

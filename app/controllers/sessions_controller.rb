@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
+  before_filter :get_site_info
   def new 
-  
+    
   end  
   
   def create  

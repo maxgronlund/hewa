@@ -1,7 +1,9 @@
 class ProductLinesController < InheritedResources::Base
     load_and_authorize_resource
+    before_filter :get_site_info
     helper_method :sort_column, :sort_direction
-
+    
+    
     def show
       @product_lines = ProductLine.all
       session[:go_to_after_edit] = product_line_path(@product_line)
