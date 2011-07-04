@@ -30,6 +30,9 @@ gem 'capistrano'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# JavaScript runtime is required for Rails 3.1; this should work on Ubuntu
+gem 'therubyracer', '>= 0.8.2'
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
