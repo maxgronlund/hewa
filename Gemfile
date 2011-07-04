@@ -25,8 +25,7 @@ gem 'therubyracer', '>= 0.8.2'
 # Use unicorn as the web server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-gem 'capistrano'
+
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
@@ -41,6 +40,10 @@ gem "compass-960-plugin", :require => "ninesixty"
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+
+# Deploy with Capistrano
+gem 'capistrano'
 
 
 
