@@ -3,8 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "compass/css3/border-radius";
 
+
+
 body.products {
   // Place scoped styles here
+
   img{
 	@include border-radius(10px, 10px);
 	border-style:solid;

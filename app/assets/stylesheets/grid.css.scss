@@ -93,7 +93,11 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 	}
 }
 
-.background_grid {background-image:url('background_grid.png');}
+.background_grid {
+	background-image:url('Xbackground_grid.png');
+	background-color:#fff;
+	
+}
 
 
 

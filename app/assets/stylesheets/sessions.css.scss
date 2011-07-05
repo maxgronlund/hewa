@@ -4,5 +4,6 @@
 @import "partials/color";
 body.sessions {
   // Place scoped styles here
-	background-color:#ddd;
+
+	background-color: $body_color;
 }
