@@ -16,7 +16,7 @@ html
     = yield :head 
 
   body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]}")
-    .grid-container class="background_grid"
+    .grid-container class=("background_grid" if Rails.env == 'development')
       = render "shared/menu"
       #min-height
         = yield
