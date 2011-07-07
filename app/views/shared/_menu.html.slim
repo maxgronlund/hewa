@@ -1,15 +1,11 @@
 .menu
-  = link_to t('page.home'), root_path
-  | | 
-  -if current_user 
-    - if current_user.admin_or_super?
-      = link_to t('page.admin'), admin_index_path
-      | |
-    = link_to t('session.log_out'), log_out_path
-    | |
-    = link_to current_user.name, current_user
-
-  -else
-    = link_to t('session.log_in'), log_in_path 
-    | |  
-    = link_to t('session.sign_up'), sign_up_path
+  - if user_signed_in?
+    = link_to current_user.email, current_user
+    |  |
+    = link_to t('navigation.sign_out'), destroy_user_session_path
+    -if current_user.admin_or_super?
+      | | 
+      = link_to 'admin', admin_index_path
+  - else
+    -#= link_to 'opret konto', new_user_registration_path # uncomment this if users can sign-up themself
+    = link_to t('navigation.sign_in'), user_session_path

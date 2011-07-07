@@ -19,6 +19,11 @@ html
     .grid-container class=("background_grid" if Rails.env == 'development')
       = render "shared/menu"
       #min-height
+        .notice
+          = notice
+        .alert
+          = alert
+		
         = yield
       = render "shared/footer"  
       .clear &nbsp;

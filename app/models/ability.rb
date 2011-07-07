@@ -11,9 +11,6 @@ class Ability
         
         
       elsif user.member?#ordinary user
-        
-#        can :read, Blog
-#        can :create, Blog
        can :manage, User, :user_id => user.id
         
        
@@ -21,6 +18,7 @@ class Ability
     # When not logged in
    else
      can :create, User
+
 #     can :read, Blog
     
      #can :create, User# <----------- Uncomment this to alow users to signup by them self 
