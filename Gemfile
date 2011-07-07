@@ -40,6 +40,8 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+gem 'rspec-rails', :group => [:development, :test] # rails generators needs rspec in :development
+
 
 gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
 gem "compass-960-plugin", :require => "ninesixty"
