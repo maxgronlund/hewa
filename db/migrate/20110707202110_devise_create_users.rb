@@ -16,7 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :role
       t.integer :sign_in_count
       t.string :image
-      t.string :crop_params, :string, :limit => 1024
+      t.string :crop_params, :limit => 1024
       t.timestamps
     end
 
