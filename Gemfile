@@ -18,6 +18,8 @@ gem "slim-rails"
 gem 'client_side_validations'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'devise', '1.1.5'
+gem 'tiny_mce', '0.1.4'
 
 
 
