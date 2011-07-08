@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
   
   def member?
-    role == 'member'
+    role == 'member' || role.nil? # Until role is set to :member by default
   end
   
 

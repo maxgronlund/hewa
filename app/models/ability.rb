@@ -10,18 +10,16 @@ class Ability
         
         
         
-      elsif user.member?#ordinary user
-       can :manage, User, :user_id => user.id
+      elsif user.member?
+        # Ordinary user
+        can :manage, User, :id => user.id # <--- Allow user to manage self
         
-       
       end
     # When not logged in
-   else
-     can :create, User
-
-#     can :read, Blog
-    
-     #can :create, User# <----------- Uncomment this to alow users to signup by them self 
+    else
+#      can :read, Blog
+      
+      can :create, User# <----------- Uncomment this to alow users to signup by them self 
     end
   end
 end
