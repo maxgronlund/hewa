@@ -2,10 +2,10 @@
   h1 
     = t('page.home')
 
-.left-column-3
+.grid-3
   | left column
 
-.center-column-4
+.grid-4
   - if @welcome
     h3.c20
       = @welcome.title
@@ -14,8 +14,8 @@
       br
       =link_to t('system.edit'), edit_text_content_path(@welcome)
 
-.center-column-2
+.grid-2
   
 
-.right-column-3
+.grid-3
   | rigth column
