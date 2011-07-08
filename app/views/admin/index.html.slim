@@ -1,14 +1,14 @@
 .headline
   h1
     = t('page.admin')
-.left-column-4
+.grid-4
   = t('system.user_management')
   br
   = link_to t('user.users'), users_path
-.center-column-4
+.grid-4
   = t('system.site_management')
   br
   = link_to t('text_contents.text_contents'), text_contents_path
 
-.right-column-4
+.grid-4
   = t('system.content_management')

@@ -51,6 +51,9 @@ class UsersController < InheritedResources::Base
   end
   
   def update
+#    params[:user].delete(:password) if params[:user][:password].blank?
+#    params[:user].delete(:password_confirmation) if params[:user][:password_confirmation].blank?
+    
     if params[:user][:image] && params[:user][:remove_image] != '1'
       update! { crop_user_path }
     else

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
@@ -8,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :name, :role
 
-  validates_presence_of :password, :on => :create  
+#  validates_presence_of :password, :on => :create  
 #  validates_presence_of :name
 #  validate :email, :presence => true, :uniqueness => true, :email_format => true
   validates_uniqueness_of :email

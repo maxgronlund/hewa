@@ -1,17 +1,9 @@
-= form_for @text_content, :validate => true do |f|
+= simple_form_for @text_content, :validate => true do |f|
   = render 'shared/error_messages', :taget => @text_content
 
   -if current_user.admin_or_super?
-    .field
-      = t('text_contents.identity')
-      i 
-        ' 
-        = t('system.do_not_edit')
-      br
-      = f.text_field :identity 
-  .field
-	= f.label :title
-    = f.text_field :title
+    = f.input :identity 
+  = f.input :title
   .field
     = f.label :body
     = f.text_area :body, :class => "mceEditor"

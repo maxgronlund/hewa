@@ -3,7 +3,7 @@
     = @user.name
 
 
-.left-column-3
+.grid-3
 
   = image_tag(@user.image_url :large) if @user.image?
   br /
@@ -15,8 +15,8 @@
     br/
     = link_to t('system.edit'), edit_user_path(@user)
 
-.center-column-6
+.grid-6
 
 
-.right-column-3
+.grid-3
   | rigth column

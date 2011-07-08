@@ -10,19 +10,19 @@
     = link_to t('system.show_all'), text_contents_path
 .divider-12
 div class="sort-list-header grid-12"
-  .grid-3-alpha
+  .grid-3.alpha
     = sortable 'title', t('text_contents.title')
   .grid-7
     = sortable 'body', t('text_contents.body')
-  .grid-2-omega
+  .grid-2.omega
 - @text_contents.each do |text_content|
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
-    .grid-3-alpha
+    .grid-3.alpha
       = link_to text_content.title, text_content
     .grid-7
       = excerpt(text_content.body, '', :radius => 32)
 
-    .grid-2-omega
+    .grid-2.omega
 	  = link_to t('system.show'), text_content
       | | 
       = link_to t('system.edit'), edit_text_content_path(text_content)

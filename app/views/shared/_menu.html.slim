@@ -1,4 +1,7 @@
 .menu
+  = link_to t('page.home'), root_path
+  | | 
+
   - if user_signed_in?
     = link_to current_user.email, current_user
     |  |
