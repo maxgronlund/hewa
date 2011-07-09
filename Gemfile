@@ -41,6 +41,13 @@ group :test do
   gem 'turn', :require => false
 end
 
+gem 'rspec-rails', :group => [:development, :test] # rails generators needs rspec in :development
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
+
+
 gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
 gem "compass-960-plugin", :require => "ninesixty"
 
