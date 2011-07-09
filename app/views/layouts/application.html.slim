@@ -18,12 +18,9 @@ html
   body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]} body-back")
     .grid-container class=("background_grid" if Rails.env == 'development')
       = render "shared/menu"
+      = render "shared/banner"
       #min-height
-        .notice
-          = notice
-        .alert
-          = alert
-		
+        = render 'shared/messages'
         = yield
       = render "shared/footer"  
-      .clear &nbsp;
+    .clear &nbsp;

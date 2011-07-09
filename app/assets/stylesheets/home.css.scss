@@ -6,13 +6,16 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 @import "partials/font";
-
+@import "partials/base";
+//@import "compass/css3/background-size";
 
 body.home {
   // Place scoped styles here
-  background-color: $body_color;
+//  background-color: $body_color;
   
-  
+//  size: $default-background-size(100%, auto);
+
+  @include basic-body;
 
   // compass helpers sample
   #mylogo {

@@ -8,7 +8,7 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 .grid-container {
 	@include grid-container;
 	margin-top:0px;
-	#min-height{	min-height:700px;	}
+	#min-height{min-height:700px;}
 	.menu{	@include grid(12);	min-height:32px;}
 	.footer{ @include grid(12);	min-height:32px; text-align:center;}
 	.headline{	@include grid(12);	min-height:32px;margin-bottom:16px;}	

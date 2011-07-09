@@ -25,3 +25,8 @@ $template-background-color-base: white;
 /*  background-color: mix($background-color, white, $background-color-mix);*/
 }
 
+@mixin back-color($color: $color_north_sea){
+	
+	background-color:$color;
+}
+

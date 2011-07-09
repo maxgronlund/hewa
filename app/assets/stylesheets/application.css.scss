@@ -13,15 +13,13 @@
 @import "partials/font";
 
 
-
 body{
-
+  margin:0px;
 }
 
 label{
 	display:block;
 }
-
 
 /* JCrop preview */
 .preview {
@@ -72,6 +70,12 @@ label{
 .edit{
 	text-align:right;
 }
+
+.notice, .alert{
+	color:#f00;
+}
+
+.banner { @include back-color; }
 
 // some basic styles using fonts and color schee
 $color-base: $color_grey_eminence;
