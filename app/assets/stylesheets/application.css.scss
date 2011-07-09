@@ -6,6 +6,7 @@
  *= require_tree . 
  * require_directory . 
 */
+
 @import "compass/css3";
 @import "compass/css3/border-radius";
 @import "compass/css3/opacity";
@@ -71,11 +72,12 @@ label{
 	text-align:right;
 }
 
+
 .notice, .alert{
 	color:#f00;
 }
 
-.banner { @include back-color; }
+
 
 // some basic styles using fonts and color schee
 $color-base: $color_grey_eminence;

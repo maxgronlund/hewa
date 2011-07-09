@@ -1,16 +1,18 @@
 // 960gs sample
 @import "960/grid", "960/text";
+@import "partials/color";
 
 $ninesixty-columns: 12;
 $ninesixty-grid-width: 1032px; 	// default: 960px
 $ninesixty-gutter-width: 20px; 	// default: 20px
 
 .grid-container {
+	min-height:700px;
 	@include grid-container;
 	margin-top:0px;
 	#min-height{min-height:700px;}
 	.menu{	@include grid(12);	min-height:32px;}
-	.footer{ @include grid(12);	min-height:32px; text-align:center;}
+	.banner { @include back-color($color_grey_eminence, 50);@include grid(12); min-height:150px;}
 	.headline{	@include grid(12);	min-height:32px;margin-bottom:16px;}	
 	.grid-1{ @include grid(1);min-height:1px; }
 	.grid-2{ @include grid(2);min-height:1px;}
@@ -36,11 +38,16 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 		@include grid(12);
 		min-height:16px;
 	}
+	
 }
 
 .background_grid {background-image:url('background_grid.png');}
 
+.footer{ @include grid-container;	min-height:32px; text-align:center; }
 
+.clear-both{
+	clear:both;
+}
 
 
 

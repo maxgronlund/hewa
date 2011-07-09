@@ -19,8 +19,9 @@ html
     .grid-container class=("background_grid" if Rails.env == 'development')
       = render "shared/menu"
       = render "shared/banner"
-      #min-height
-        = render 'shared/messages'
-        = yield
+      = render 'shared/messages'
+      = yield
+      br class="clear-both"
+    .footer
       = render "shared/footer"  
     .clear &nbsp;
