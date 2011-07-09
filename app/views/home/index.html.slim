@@ -9,10 +9,10 @@
   - if @welcome
     h3.c20
       = @welcome.title
-    p
-      = markdown(@welcome.body)
-      br
-      =link_to t('system.edit'), edit_text_content_path(@welcome)
+    
+    = markdown(@welcome.body)
+    br
+    = link_to t('system.edit'), edit_text_content_path(@welcome)
 
 .grid-2
   
