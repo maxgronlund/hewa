@@ -6,7 +6,7 @@
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
-
+  = f.input :role , :collection => User::ROLES 
 
 
 
@@ -28,10 +28,8 @@
       = f.check_box :remove_image
       = t('image.remove_image')
 
-  - if user_signed_in? && current_user.admin_or_super?
+  - if current_user && current_user.admin_or_super?
     = f.input :role , :collection => User::ROLES unless @user.is_first_user?
-
-
 
   br
   .actions

@@ -14,7 +14,7 @@ class UsersController < InheritedResources::Base
     return_path user_path  # !!! perhaps a system vide helper ?
     show!
   end
-
+  
   
   def create
     @user = User.new(params[:user])  
