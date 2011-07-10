@@ -6,7 +6,7 @@
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
-  = f.input :role , :collection => User::ROLES 
+
 
 
 
@@ -29,7 +29,7 @@
       = t('image.remove_image')
 
   - if current_user && current_user.admin_or_super?
-    = f.input :role , :collection => User::ROLES unless @user.is_first_user?
+    = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
 
   br
   .actions
