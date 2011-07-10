@@ -17,22 +17,22 @@ class UsersController < InheritedResources::Base
   end
 
   
-  def create
-    @user = User.new(params[:user])  
-    if @user.save  
-      if params[:user][:image]
-        redirect_to crop_user_path, :notice => "Signed up!"
-      else
-        redirect_to root_path, :notice => "Signed up!"
-      end
-    else  
-      render "new"  
-    end  
-  end  
+#  def create
+#    @user = User.new(params[:user])  
+#    if @user.save  
+#      if params[:user][:image]
+#        redirect_to crop_user_path, :notice => "Signed up!"
+#      else
+#        redirect_to edit_user_path(@user), :notice => "Signed up!"
+#      end
+#    else  
+#      render "new"  
+#    end  
+#  end  
   
   
   def crop
-    @crop_version = (params[:version] || :small).to_sym
+    @crop_version = (params[:version] || :large).to_sym
     @user.get_crop_version! @crop_version
     @version_geometry_width, @version_geometry_height = AvatarUploader.version_dimensions[@crop_version]
   end
