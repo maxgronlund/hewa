@@ -1,6 +1,5 @@
 class UsersController < InheritedResources::Base  
   load_and_authorize_resource
-  before_filter :get_site_info
   helper_method :sort_column, :sort_direction
 
   

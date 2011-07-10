@@ -1,9 +1,9 @@
 class ProductsController < InheritedResources::Base
-  
-  belongs_to :product_line , :optional => true
-  before_filter :get_site_info
-  
   load_and_authorize_resource
+  belongs_to :product_line , :optional => true
+#  before_filter :get_site_info
+  
+
   helper_method :sort_column, :sort_direction
   
   def show

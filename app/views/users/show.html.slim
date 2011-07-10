@@ -11,6 +11,8 @@
   ':
   br
   = @user.email
+  br
+  = @user.role
   - if can?(:manage, @user)
     br/
     = link_to t('system.edit'), edit_user_path(@user)

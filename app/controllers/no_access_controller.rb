@@ -1,5 +1,5 @@
 class NoAccessController < ApplicationController
-  before_filter :get_site_info
+
   def index
   end
 

@@ -2,7 +2,7 @@ class TextContentsController < InheritedResources::Base
   load_and_authorize_resource
   uses_tiny_mce :only => [:new, :create, :edit, :update]
   helper_method :sort_column, :sort_direction
-  before_filter :get_site_info
+#  before_filter :get_site_info
   
   def show
     session[:go_to_after_edit] = text_content_path(@text_content)

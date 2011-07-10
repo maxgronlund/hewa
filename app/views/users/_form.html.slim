@@ -28,8 +28,11 @@
       = f.check_box :remove_image
       = t('image.remove_image')
 
-  - if current_user && current_user.admin_or_super?
+  - if user_signed_in? && current_user.admin_or_super?
     = f.input :role , :collection => User::ROLES unless @user.is_first_user?
+
+
+
   br
   .actions
     = f.submit t('system.save')
