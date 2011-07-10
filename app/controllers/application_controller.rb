@@ -21,9 +21,5 @@ private
       user_path(resource)
     end
   end
-  
-
-private  
-
 
 end
