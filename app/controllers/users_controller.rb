@@ -16,6 +16,7 @@ class UsersController < InheritedResources::Base
   end
   
   
+  
   def create
     @user = User.new(params[:user])  
     if @user.save  
@@ -28,10 +29,11 @@ class UsersController < InheritedResources::Base
       render "new"  
     end  
   end  
+
   
   
   def crop
-    @crop_version = (params[:version] || :small).to_sym
+    @crop_version = (params[:version] || :large).to_sym
     @user.get_crop_version! @crop_version
     @version_geometry_width, @version_geometry_height = AvatarUploader.version_dimensions[@crop_version]
   end
