@@ -7,22 +7,21 @@ html
       script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'
     = stylesheet_link_tag    "application"
     = javascript_include_tag 'application'
-
     = csrf_meta_tag
+	= include_tiny_mce_if_needed
 
     javascript:
       var session_key      = '#{cookies[Rails.application.config.session_options[:key]]}';
       var session_key_name = '#{Rails.application.config.session_options[:key]}';
     = yield :head 
 
-  body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]}")
-    .grid-container class="background_grid"
+  body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]} body-back")
+    .grid-container class=("background_grid" if Rails.env == 'development')
       = render "shared/menu"
       = render "shared/banner", :welcome => @welcome
-      #min-height
-        .grid-12
-          p#notice = notice
-        = yield
+      = render 'shared/messages'
+      = yield
+      br class="clear-both"
+    .footer
       = render "shared/footer" , :footer_text => @footer_text if @footer_text
- 
-      .clear &nbsp;
+    .clear &nbsp;

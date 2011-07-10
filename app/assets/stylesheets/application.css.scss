@@ -6,6 +6,7 @@
  *= require_tree . 
  * require_directory . 
 */
+
 @import "compass/css3";
 @import "compass/css3/border-radius";
 @import "compass/css3/opacity";
@@ -13,8 +14,8 @@
 @import "partials/font";
 
 
-
 body{
+
 	margin-top:0px;
 	  
 }
@@ -26,7 +27,6 @@ p, a{
 label{
 	display:block;
 }
-
 
 /* JCrop preview */
 .preview {
@@ -79,6 +79,7 @@ label{
 }
 
 
+
 img{
 	@include border-radius(10px, 10px);
 	border-style:solid;
@@ -86,6 +87,11 @@ img{
 	border-color:#999;
 	left:-2px;
 	position:relative;
+}
+
+.notice, .alert{
+	color:#f00;
+
 }
 
 

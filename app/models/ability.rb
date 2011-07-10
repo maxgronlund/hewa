@@ -9,8 +9,7 @@ class Ability
         can :manage, TextContent
         can :manage, Product
         can :manage, ProductLine
-        
-     
+   
       elsif user.member?#ordinary user
         can :read, Product
         can :read, ProductLine
@@ -22,8 +21,6 @@ class Ability
      can :read, Product
      can :read, ProductLine
      can :create, User
-    
-     #can :create, User
     end
   end
 end

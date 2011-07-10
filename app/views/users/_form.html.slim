@@ -1,26 +1,15 @@
-= form_for @user, :validate => true do |f| 
+= simple_form_for @user, :validate => true do |f| 
   = render 'shared/error_messages', :taget => @user
  
  
-  .field
-    = f.label :name
-    = f.text_field :name
+  = f.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
 
-  .field
-    = f.label :email
-    = f.text_field :email
 
-  .field
-    = f.label :password
-    = f.password_field :password 
- 
-  .field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
 
-  .field
 
-  = f.label :thumb 
   - if @user.image.present?
     - @user.image.version_dimensions.keys.each do |version|
       span
@@ -30,21 +19,18 @@
         = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
         br
   br
-  = f.file_field :image
+  = f.input :image
   = f.hidden_field :image_cache
 
   - if @user.image.present?
+    br
     .field
       = f.check_box :remove_image
       = t('image.remove_image')
 
   - if current_user && current_user.admin_or_super?
-    - unless @user.is_first_user?
-      .field
-        = f.label :role  
-        br
-        = f.select(:role, User::ROLES)
-
+    = f.input :role , :collection => User::ROLES unless @user.is_first_user?
+  br
   .actions
     = f.submit t('system.save')
 

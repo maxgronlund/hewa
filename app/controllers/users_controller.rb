@@ -17,7 +17,7 @@ class UsersController < InheritedResources::Base
   end
 
   
-  def create  
+  def create
     @user = User.new(params[:user])  
     if @user.save  
       if params[:user][:image]
@@ -51,6 +51,8 @@ class UsersController < InheritedResources::Base
   end
   
   def update
+    remove_password_fields_if_blank! params[:user]
+    
     if params[:user][:image] && params[:user][:remove_image] != '1'
       update! { crop_user_path }
     else
@@ -60,6 +62,13 @@ class UsersController < InheritedResources::Base
    
   
 private
+
+  def remove_password_fields_if_blank!(user_params)
+    if user_params[:password].blank? and user_params[:password_confirmation].blank?
+      user_params.delete :password
+      user_params.delete :password_confirmation
+    end
+  end
 
   def return_path=(path)
     session[:go_to_after_edit] = path

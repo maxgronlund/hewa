@@ -1,63 +1,34 @@
 // 960gs sample
 @import "960/grid", "960/text";
+@import "partials/color";
 
 $ninesixty-columns: 12;
 $ninesixty-grid-width: 1032px; 	// default: 960px
 $ninesixty-gutter-width: 20px; 	// default: 20px
-@import "compass/css3/border-radius";
-@import "partials/color";
-@import "partials/font";
 
 .grid-container {
+	min-height:700px;
 	@include grid-container;
-	@include template-color;
 	margin-top:0px;
-//	background-color:#fff;
-	
-	#min-height{	min-height:700px;	}
-	.menu{	@include grid(12);	min-height:24px;}
-	.footer{ @include grid(12);	min-height:24px; text-align:center; margin-top:12px;}
+	#min-height{min-height:700px;}
+	.menu{	@include grid(12);	min-height:32px;}
+	.banner { @include back-color($color_grey_eminence, 50);@include grid(12); min-height:150px;}
 	.headline{	@include grid(12);	min-height:32px;margin-bottom:16px;}	
-	.left-column-2{ @include grid(2);min-height:1px;}
-	.left-column-3{ @include grid(3);min-height:1px;}
-	.left-column-4{ @include grid(4);min-height:1px;}
-	.left-column-9{ @include grid(9);min-height:1px;}
-	.center-column-2{ @include grid(2);min-height:1px;}
-	.center-column-3{ @include grid(3);min-height:1px;}
-	.center-column-4{ @include grid(4);min-height:1px;}
-	.center-column-5{ @include grid(5);min-height:1px;}
-	.center-column-6{ @include grid(6);min-height:1px;}
-	.center-column-7{ @include grid(7);min-height:1px;}
-	.center-column-8{ @include grid(8);min-height:1px;}
-	.right-column-2{ @include grid(2);min-height:1px; }
-	.right-column-3{ @include grid(3);min-height:1px; }
-	.right-column-4{ @include grid(4);min-height:1px; }
-	.right-column-9{ @include grid(9); min-height:1px;}
-	.right-column-10{ @include grid(10);min-height:1px; }
-	.grid-12{ @include grid(12);min-height:1px; }
-	.grid-1-alpha{  @include grid(1); @include alpha;min-height:1px; }
 	.grid-1{ @include grid(1);min-height:1px; }
-	.grid-1-omega{ @include grid(1); @include omega;min-height:1px; }
-	.grid-2-alpha{  @include grid(2); @include alpha;min-height:1px; }
 	.grid-2{ @include grid(2);min-height:1px;}
-	.grid-2-omega{ @include grid(2); @include omega;min-height:1px;}
-	.grid-3-alpha{ @include grid(3); @include alpha;min-height:1px;}
 	.grid-3{ @include grid(3);min-height:1px;}
-	.grid-3-omega{ @include grid(3); @include omega;min-height:1px;}
-	.grid-4-alpha{ @include grid(4); @include alpha;min-height:1px;}
 	.grid-4{ @include grid(4);min-height:1px;}
-	.grid-4-omega{ @include grid(4); @include omega;min-height:1px;}
-	.grid-5-alpha{ @include grid(5); @include alpha;}
-	.grid-5{ @include grid(5);min-height:1px;min-height:1px;}
-	.grid-5-omega{ @include grid(5); @include omega;min-height:1px;}
-	.grid-6-alpha{ @include grid(6); @include alpha;min-height:1px;}
+	.grid-5{ @include grid(5);min-height:1px;}
 	.grid-6{ @include grid(6);min-height:1px;}
-	.grid-6-omega{ @include grid(6); @include omega;min-height:1px;}
-	.grid-7-alpha{ @include grid(7); @include alpha;min-height:1px;}
 	.grid-7{ @include grid(7);min-height:1px;}
-	.grid-7-omega{ @include grid(7); @include omega;min-height:1px;}
+	.grid-8{ @include grid(8);min-height:1px; }
+	.grid-9{ @include grid(9);min-height:1px; }
+	.grid-10{ @include grid(10);min-height:1px; }
+	.grid-11{ @include grid(11);min-height:1px; }
+	.grid-12{ @include grid(12);min-height:1px; }
 	.alpha{ @include alpha; }
 	.omega{@include omega;}
+	
 	.pagination-12{
 		@include grid(12);
 		text-align:center;
@@ -67,42 +38,16 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 		@include grid(12);
 		min-height:16px;
 	}
-	.divider-9{
-		@include grid(12); @include alpha; @include omega;
-		min-height:16px;
-	}
-	.line{
-		background-color:black;
-		height:1px;
-	}
-	.banner{
-		@include grid(12);
-		width:1032px;
-		height:150px;
-		background-color:#AACCCA;
-		left:-10px;
-		position:relative;
-
-		img{
-			@include border-radius(0px, 0px);
-			border-style:solid;
-			border-width:0px;
-			border-color:#999;
-		}
-		
-	}
-}
-
-.background_grid {
-	background-image:url('Xbackground_grid.png');
-	background-color:#fff;
 	
 }
 
+.background_grid {background-image:url('background_grid.png');}
 
+.footer{ @include grid-container;	min-height:32px; text-align:center; }
 
-
-
+.clear-both{
+	clear:both;
+}
 
 
 

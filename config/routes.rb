@@ -4,11 +4,11 @@ RailsTemplateR31::Application.routes.draw do
   resources :products
 
   get "admin/index"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "log_out" => "sessions#destroy", :as => "log_out" 
+#  get "log_in" => "sessions#new", :as => "log_in"
+#  get "log_out" => "sessions#destroy", :as => "log_out" 
   get "no_access/index"
-  get "sign_up" => "users#new", :as => "sign_up"  
-  
+#  get "sign_up" => "users#new", :as => "sign_up"  
+  devise_for :users
   
   root :to => "home#index"
   
@@ -16,6 +16,7 @@ RailsTemplateR31::Application.routes.draw do
             :text_contents,
             :sessions
   
+
   resources :product_lines do
     resources :products
     member do
@@ -23,6 +24,7 @@ RailsTemplateR31::Application.routes.draw do
       put 'crop_update'
     end
   end
+
   
   resources :users do
     member do

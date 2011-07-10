@@ -3,3 +3,14 @@
 all the most common gemfiles is installed and configred
 
 example on how they are used is implemented
+
+
+Q: how to integrate :validate with user edit so it'n not necessary to retype password when updating
+Q: first time all images should be cropped to fit defined sizes, 
+maybe an example on how to pass 
+
+1: crop to same image ratio as (something defined)
+2: crop next after crop
+
+
+note: cropping belongs on individual page since it's saved immediately   

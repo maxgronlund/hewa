@@ -18,6 +18,9 @@ gem "slim-rails"
 gem 'client_side_validations'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'devise'
+gem 'tiny_mce'
+gem 'simple_form'
 
 # JavaScript runtime is required for Tails 3.1; this should work on Ubuntu
 gem 'therubyracer', '>= 0.8.2'
@@ -30,10 +33,20 @@ gem 'therubyracer', '>= 0.8.2'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# JavaScript runtime is required for Rails 3.1; this should work on Ubuntu
+gem 'therubyracer', '>= 0.8.2'
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem 'rspec-rails', :group => [:development, :test] # rails generators needs rspec in :development
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
+
 
 gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
 gem "compass-960-plugin", :require => "ninesixty"
