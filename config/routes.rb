@@ -1,26 +1,19 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-  
 
-  get "admin/index"
   get "no_access/index"
+  get "admin/index"
+ 
   devise_for :users
   
-  
-  resources :text_contents
-  
-  
-  resources :users do
-    member do
-      get 'crop'
-      put 'crop_update'
-    end
+  devise_scope :user do 
+    match "/users/sign_out" => "devise/sessions#destroy" 
   end
 
-  
-#  get "home/index"
   root :to => "home#index"
+  
+  resources :text_contents
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
