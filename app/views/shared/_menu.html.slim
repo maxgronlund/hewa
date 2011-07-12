@@ -1,6 +1,6 @@
 .menu
   = link_to t('page.home'), root_path
-  | | 
+  |  | 
 
   - if user_signed_in?
     = link_to current_user.email, current_user
@@ -12,4 +12,6 @@
   - else
     = link_to t('navigation.sign_in'), user_session_path
     -# uncomment this if users can sign-up themself
-    = link_to t('navigation.sign_up'), new_user_registration_path
+    |  | 
+    -# link_to t('navigation.sign_up'), new_user_registration_path
+    = link_to t('navigation.sign_up'), new_user_path
