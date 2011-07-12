@@ -1,0 +1,73 @@
+<div id="menu">
+    <ul class="menu">
+        <li><a href="home.html" class="parent"><span>Home</span></a>
+            <div><ul>
+                <li><a href="#" class="parent"><span>Sub Item 1</span></a>
+                    <div><ul>
+                        <li><a href="#" class="parent"><span>Sub Item 1.1</span></a>
+                            <div><ul>
+                                <li><a href="#"><span>Sub Item 1.1.1</span></a></li>
+                            </ul></div>
+                        </li>
+                        <li><a href="#"><span>Sub Item 1.2</span></a></li>
+                    </ul></div>
+                </li>
+                <li><a href="#"><span>Sub Item 2</span></a></li>
+            </ul></div>
+        </li>
+		<li><a href="#" class="parent"><span>Home</span></a>
+            <div><ul>
+                <li><a href="#" class="parent"><span>Sub Item 1</span></a>
+                    <div><ul>
+                        <li><a href="#" class="parent"><span>Sub Item 1.1</span></a>
+                            <div><ul>
+                                <li><a href="#"><span>Sub Item 1.1.1</span></a></li>
+                            </ul></div>
+                        </li>
+                        <li><a href="#"><span>Sub Item 1.2</span></a></li>
+                    </ul></div>
+                </li>
+                <li><a href="#"><span>Sub Item 2</span></a></li>
+            </ul></div>
+        </li>
+        <li class="last"><a href="index.html"><span>Contacts</span></a></li>
+    </ul>
+</div>
+
+
+
+#menu
+
+
+  ul class="menu"
+    - if can_edit?
+      li  class=("current"  if @menu == 'admin' ) 
+        = link_to(admin_index_path, :class => 'parrent')  do
+          span admin
+        div
+          ul
+            li
+              = link_to(users_path)  do
+                span = t('user.users')
+            li
+              = link_to(text_contents_path)  do
+                span = t('text_contents.text_contents')
+
+      
+    
+    li  class=("current"  if @menu == 'home' )
+      = link_to(root_path, :class => 'parrent')  do
+        span Home
+      div
+        ul
+          li
+            = link_to(root_path, :class => 'parrent')  do
+              span  = @menu
+            div
+              ul
+                li
+                  = link_to(root_path, :class => 'parrent')  do
+                    span sub item 1.1
+
+
+

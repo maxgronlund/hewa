@@ -9,12 +9,13 @@
       p =link_to t('system.edit'), edit_text_content_path(welcome)
 
   .grid-5.omega
-    - if user_signed_in?
-    = link_to current_user.email, current_user
-    |  |
-    = link_to t('navigation.sign_out'), destroy_user_session_path
-
-
-    - else
-      -#= link_to 'opret konto', new_user_registration_path # uncomment this if users can sign-up themself
-      = link_to t('navigation.sign_in'), user_session_path
+    .edit
+      - if user_signed_in?
+      = link_to current_user.email, current_user
+      |  |
+      = link_to t('navigation.sign_out'), destroy_user_session_path
+      
+      
+      - else
+        -#= link_to 'opret konto', new_user_registration_path # uncomment this if users can sign-up themself
+        = link_to t('navigation.sign_in'), user_session_path

@@ -10,6 +10,7 @@ class TextContentsController < InheritedResources::Base
   end
   
   def index
+    @menu = 'admin'
     session[:go_to_after_edit] = text_contents_path
     @text_contents = TextContent.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
   end
