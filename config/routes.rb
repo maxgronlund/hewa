@@ -3,16 +3,19 @@ RailsTemplateR31::Application.routes.draw do
 
   resources :products
 
-  get "admin/index"
+
+
   get "no_access/index"
  
   devise_for :users
+
   
   root :to => "home#index"
   
   resources :product_lines,
             :text_contents
   
+
 
   resources :product_lines do
     resources :products
@@ -23,6 +26,7 @@ RailsTemplateR31::Application.routes.draw do
   end
 
   
+
   resources :users do
     member do
       get 'crop'
