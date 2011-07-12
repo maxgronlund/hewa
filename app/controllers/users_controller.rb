@@ -8,6 +8,7 @@ class UsersController < InheritedResources::Base
 #    @is_first_user = User.first.id == 1
 #    session[:go_to_after_edit] = users_path
     @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
+    @menu='admin'
   end
 
   def show

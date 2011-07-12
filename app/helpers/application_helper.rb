@@ -12,8 +12,9 @@ module ApplicationHelper
     Redcarpet.new(text, *options).to_html.html_safe
   end
   
+  
   def can_edit?
-    current_user? && current_user.admin_or_super?
+    user_signed_in? && current_user.admin_or_super?
   end
   
 

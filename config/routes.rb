@@ -1,18 +1,20 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-  resources :products
-
-
 
   get "no_access/index"
+  get "admin/index"
  
   devise_for :users
-
   
+  devise_scope :user do 
+    match "/users/sign_out" => "devise/sessions#destroy" 
+  end
+
   root :to => "home#index"
   
-  resources :product_lines,
+  resources :products,
+            :product_lines,
             :text_contents
   
 
@@ -25,16 +27,14 @@ RailsTemplateR31::Application.routes.draw do
     end
   end
 
-  
-
-  resources :users do
+  resources :products do
     member do
       get 'crop'
       put 'crop_update'
     end
   end
 
-  resources :products do
+  resources :users do
     member do
       get 'crop'
       put 'crop_update'

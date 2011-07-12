@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def get_site_info
     @welcome        = TextContent.welcome
     @footer_text    = TextContent.footer_text
+    @menu = 'home'
   end
   
   rescue_from CanCan::AccessDenied do |exception|
