@@ -6,9 +6,8 @@
     = link_to current_user.email, current_user
     |  |
     = link_to t('navigation.sign_out'), destroy_user_session_path
-    -if current_user.admin_or_super?
-      | | 
-      = link_to 'admin', admin_index_path
+
+
   - else
     -#= link_to 'opret konto', new_user_registration_path # uncomment this if users can sign-up themself
     = link_to t('navigation.sign_in'), user_session_path

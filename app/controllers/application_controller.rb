@@ -1,10 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery 
-  @menu_selected = 'da da' 
   
-  helper_method :current_menu
-  
-  
+   before_filter :get_menu
 
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -18,13 +15,9 @@ class ApplicationController < ActionController::Base
       user_path(resource)
     end
   end
-  
-  def current_menu=(menu_item)
-    @menu_selected = menu_item
-  end
-  
-  def current_menu
-    @menu_selected
+
+ def get_menu
+    @menu = 'home'
   end
   
 

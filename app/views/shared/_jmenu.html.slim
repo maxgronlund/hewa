@@ -1,33 +1,26 @@
-#menu
+.menu
 
-
-  ul class="menu"
-    - if can_edit?
-      li 
-        = link_to(root_path, :class => 'parrent')  do
-          span admin
-        div
-          ul
-            li
-              = link_to(users_path)  do
-                span = t('user.users')
-            li
-              = link_to(text_contents_path)  do
-                span = t('text_contents.text_contents')
-
+  #menu
+  
+  
+    ul class="menu"
+      - if can_edit?
+        li  class=("current"  if @menu == 'admin' ) 
+          = link_to('#', :class => 'parrent')  do
+            span admin
+          div
+            ul
+              li
+                = link_to(users_path)  do
+                  span = t('user.users')
+              li
+                = link_to(text_contents_path)  do
+                  span = t('text_contents.text_contents')
+  
+        
       
-
-    li  class="current" 
-      = link_to(root_path, :class => 'parrent')  do
-        span Home
-      div
-        ul
-          li
-            = link_to(root_path, :class => 'parrent')  do
-              span  = controller.current_menu
-            div
-              ul
-                li
-                  = link_to(root_path, :class => 'parrent')  do
-                    span sub item 1.1
-
+      li  class=("current"  if @menu == 'home' )
+        = link_to(root_path, :class => 'parrent')  do
+          span Home
+        
+    

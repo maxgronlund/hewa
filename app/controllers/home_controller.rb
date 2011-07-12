@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   
   def index
-    current_menu = 'byge mand bob'
+    @menu = 'home'
     session[:go_to_after_edit] = root_path
     @welcome = TextContent.welcome
   end
