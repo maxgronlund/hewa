@@ -10,7 +10,17 @@ RailsTemplateR31::Application.routes.draw do
   devise_scope :user do 
     match "/users/sign_out" => "devise/sessions#destroy" 
   end
-
+  
+  root :to => "home#index"
+ 
+  resources :users do
+    member do
+      get 'crop'
+      put 'crop_update'
+    end
+  end
+  
+#  get "home/index"
   root :to => "home#index"
   
   resources :text_contents

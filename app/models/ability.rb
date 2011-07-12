@@ -7,19 +7,17 @@ class Ability
         can :manage, :all
       elsif user.admin?
         can :manage, TextContent
-        
-        
-        
-      elsif user.member?
-        # Ordinary user
-        can :manage, User, :id => user.id # <--- Allow user to manage self
-        
+
+   
+      elsif user.member?#ordinary user
+
+        can :manage, User, :user_id => user.id
+       
       end
     # When not logged in
     else
-#      can :read, Blog
-      
-      can :create, User# <----------- Uncomment this to alow users to signup by them self 
+
+     can :create, User
     end
   end
 end
