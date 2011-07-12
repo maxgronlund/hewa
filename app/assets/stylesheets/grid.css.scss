@@ -26,6 +26,32 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 	.grid-10{ @include grid(10);min-height:1px; }
 	.grid-11{ @include grid(11);min-height:1px; }
 	.grid-12{ @include grid(12);min-height:1px; }
+	.prefix-1{ @include grid-prefix(1) }
+	.prefix-2{ @include grid-prefix(2) }
+	.prefix-3{ @include grid-prefix(3) }
+	.prefix-4{ @include grid-prefix(4) }
+	.prefix-5{ @include grid-prefix(5) }
+	.prefix-6{ @include grid-prefix(6) }
+	.prefix-7{ @include grid-prefix(7) }
+	.prefix-8{ @include grid-prefix(8) }
+	.prefix-9{ @include grid-prefix(9) }
+	.prefix-10{ @include grid-prefix(10) }
+	.prefix-11{ @include grid-prefix(11) }
+	.prefix-12{ @include grid-prefix(12) }
+	.suffix-1{ @include grid-suffix(1) }
+	.suffix-2{ @include grid-suffix(2) }
+	.suffix-3{ @include grid-suffix(3) }
+	.suffix-4{ @include grid-suffix(4) }
+	.suffix-5{ @include grid-suffix(5) }
+	.suffix-6{ @include grid-suffix(6) }
+	.suffix-7{ @include grid-suffix(7) }
+	.suffix-8{ @include grid-suffix(8) }
+	.suffix-9{ @include grid-suffix(9) }
+	.suffix-10{ @include grid-suffix(10) }
+	.suffix-11{ @include grid-suffix(11) }
+	.suffix-12{ @include grid-suffix(12) }
+	
+	
 	.alpha{ @include alpha; }
 	.omega{@include omega;}
 	

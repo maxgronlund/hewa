@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
- def get_menu
+  def get_menu
     @menu = 'home'
   end
   
