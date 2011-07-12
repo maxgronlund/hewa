@@ -1,7 +1,6 @@
 .headline
   h1
     = t('text_contents.all_texts')
-
 .grid-12
   = form_tag text_contents_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 

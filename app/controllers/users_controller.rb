@@ -6,7 +6,7 @@ class UsersController < InheritedResources::Base
   def index
     return_path users_path # !!! same as line 10?
 #    @is_first_user = User.first.id == 1
-    session[:go_to_after_edit] = users_path
+#    session[:go_to_after_edit] = users_path
     @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
   end
 

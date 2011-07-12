@@ -1,38 +1,43 @@
 = simple_form_for @user, :validate => true do |f| 
   = render 'shared/error_messages', :taget => @user
- 
- 
-  = f.input :name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
 
 
 
-
-  - if @user.image.present?
-    - @user.image.version_dimensions.keys.each do |version|
-      span
-        | #{version}:
+  .grid-4
+    - if @user.admin_or_super?
+      - if @user.image.present?
+          = image_tag(@user.image_url :large)
+          br
+          = link_to t('image.re_crop'), crop_user_path(@user, :version => 'large')
+          br
+          
+      br
+      = f.input :image
+      = f.hidden_field :image_cache
+      
+      - if @user.image.present?
         br
-        = image_tag(@user.image_url version) if @user.image?
-        = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
-        br
-  br
-  = f.input :image
-  = f.hidden_field :image_cache
+        .field
+          = f.check_box :remove_image
+          = t('image.remove_image') 
+  .grid-4
+    = f.input :name
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    - if current_user && current_user.admin_or_super?
+      = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
 
-  - if @user.image.present?
-    br
-    .field
-      = f.check_box :remove_image
-      = t('image.remove_image')
+	
+	.actions
+	  = f.submit t('system.save')
+  .grid-4
+    b = t('user.delivery_dates')
+    = f.input :monday
+    = f.input :tuesday
+    = f.input :wednesday
+    = f.input :thursday
+    = f.input :friday
 
-  - if current_user && current_user.admin_or_super?
-    = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
-
-  br
-  .actions
-    = f.submit t('system.save')
-
-= link_to t('navigation.back'), :back
+  .grid-12
+    = link_to t('navigation.back'), :back

@@ -3,23 +3,41 @@
     = @user.name
 
 
-.grid-3
-
-  = image_tag(@user.image_url :large) if @user.image?
-  = link_to t('image.re_crop'), crop_user_path(@user, :version => :large) if @user.image?
-  br /
-  = t('system.email')
-  ':
-  br
+.grid-4
+  - if @user.image?
+    = image_tag(@user.image_url :large)
+    = link_to t('image.re_crop'), crop_user_path(@user, :version => :large)
+    br /
+  = t('simple_form.labels.user.email')
   = @user.email
-  br
-  = @user.role
+  - if current_user.admin_or_super?
+    br
+    = t('simple_form.labels.user.role')
+    = @user.role
   - if can?(:manage, @user)
     br/
     = link_to t('system.edit'), edit_user_path(@user)
 
-.grid-6
+.grid-4
+  b = t('user.delivery_dates')
+  br
+  -if @user.monday?
+    = t('simple_form.labels.user.monday')
+    br
+  -if @user.tuesday?
+    = t('simple_form.labels.user.tuesday')
+    br
+  -if @user.wednesday?
+    = t('simple_form.labels.user.wednesday')
+    br
+  -if @user.thursday?
+    = t('simple_form.labels.user.thursday')
+    br
+  -if @user.friday?
+    = t('simple_form.labels.user.friday')
+    br
 
 
-.grid-3
+
+.grid-4
   | rigth column

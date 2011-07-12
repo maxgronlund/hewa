@@ -20,12 +20,35 @@ en:
         password_confirmation: 'password confirmation'
         thumb: 'avatar'
         role: 'role'
+        image: 'image'
       text_content:
         identity: "identity"
         title: 'title'
         body: 'body'
         
-
+  simple_form:
+    labels:
+      user:
+        name: 'user name: '
+        email: 'email: '
+        image: 'image: '
+        password: 'password: '
+        password_confirmation: 'password confirmation: '
+        role: 'role: '
+        monday: 'monday'
+        tuesday: 'tuesday'
+        wednesday: 'wednesday'
+        thursday: 'thursday'
+        friday: 'friday'
+    hints:
+      user:
+        name: 'user name to sign in.'
+        password: 'minimum 6 characters, please.'
+    placeholders:
+      user:
+        name: 'Your username'
+        password: '****'
+        
   image:
     image: 'image'
     re_crop: 're crop'
@@ -73,6 +96,7 @@ en:
   user:
     all_users: 'all users'
     create_user: 'create user'
+    delivery_dates: 'delivery dates'
     edit_user: 'edit user'
     search_user: 'search user'
     show_user: 'show user'
