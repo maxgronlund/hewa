@@ -10,5 +10,6 @@
       | | 
       = link_to 'admin', admin_index_path
   - else
-    -#= link_to 'opret konto', new_user_registration_path # uncomment this if users can sign-up themself
     = link_to t('navigation.sign_in'), user_session_path
+    -# uncomment this if users can sign-up themself
+    = link_to t('navigation.sign_up'), new_user_registration_path
