@@ -17,18 +17,18 @@ class UsersController < InheritedResources::Base
   end
 
   
-#  def create
-#    @user = User.new(params[:user])  
-#    if @user.save  
-#      if params[:user][:image]
-#        redirect_to crop_user_path, :notice => "Signed up!"
-#      else
-#        redirect_to edit_user_path(@user), :notice => "Signed up!"
-#      end
-#    else  
-#      render "new"  
-#    end  
-#  end  
+  def create
+    @user = User.new(params[:user])  
+    if @user.save  
+      if params[:user][:image]
+        redirect_to crop_user_path, :notice => "Signed up!"
+      else
+        redirect_to user_path(@user), :notice => "Signed up!"
+      end
+    else  
+      render "new"  
+    end  
+  end  
   
   
   def crop

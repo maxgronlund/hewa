@@ -10,7 +10,6 @@ RailsTemplateR31::Application.routes.draw do
 #  get "sign_up" => "users#new", :as => "sign_up"  
   devise_for :users
   
-  root :to => "home#index"
   
   resources :text_contents
   

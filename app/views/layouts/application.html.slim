@@ -17,7 +17,7 @@ html
 
   body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]} body-back")
     .grid-container class=("background_grid" if Rails.env == 'development')
-      = render "shared/menu"
+      = render "shared/jmenu"
       = render "shared/banner"
       = render 'shared/messages'
       = yield
