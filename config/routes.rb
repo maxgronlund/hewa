@@ -1,7 +1,6 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-  resources :products
 
 
 
@@ -9,11 +8,17 @@ RailsTemplateR31::Application.routes.draw do
   get "admin/index"
  
   devise_for :users
+  
+  devise_scope :user do 
+    match "/users/sign_out" => "devise/sessions#destroy" 
+  end
 
   
   root :to => "home#index"
   
-  resources :product_lines,
+  resources :helps,
+            :products,  
+            :product_lines,
             :text_contents
   
 

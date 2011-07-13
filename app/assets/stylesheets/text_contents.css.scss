@@ -10,16 +10,19 @@ body.text_contents {
   background-color: $body_color;
 }
 
+
 // set link color
-a, a:hover, a:active, a:visited, a:link {
+a,  a:active, a:visited, a:link {
   color: $link-color;
   padding: 2px;
   text-decoration: none;
   background-color:transparent;
+
 }
 
 a:hover{
 	color:$link-over-color;
+
 }
 
 h1{
@@ -45,3 +48,4 @@ hr{
 body{
 	background-color:$body_color;
 }
+

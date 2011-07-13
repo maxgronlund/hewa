@@ -15,10 +15,11 @@
 
 
 body{
-
 	margin-top:0px;
-	  
+	background-color:$body_color;
 }
+
+
 
 p, a{
 	margin:0px;
@@ -87,12 +88,16 @@ img{
 	border-color:#999;
 	left:-2px;
 	position:relative;
+
+
 }
+
 
 .notice, .alert{
 	color:#f00;
 
 }
+
 
 
 
@@ -110,6 +115,27 @@ $background-color-base: $color_red_algae;
 .c10 { @include template-color($color-base, 100, $background-color-base, 10); @include font-plain; }
 .c05 { @include template-color($color-base, 100, $background-color-base, 5); @include font-plain; }
 
+
+#error {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  ul li {
+    font-size: 12px;
+    list-style: square; } 
+}
 
 
 

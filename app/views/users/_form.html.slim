@@ -4,23 +4,22 @@
 
 
   .grid-4
+	
+    - if @user.image.present?
+        = image_tag(@user.image_url :large)
+        br
+        = link_to t('image.re_crop'), crop_user_path(@user, :version => 'large')
+        br
     - if @user.admin_or_super?
-      - if @user.image.present?
-          = image_tag(@user.image_url :large)
-          br
-          = link_to t('image.re_crop'), crop_user_path(@user, :version => 'large')
-          br
-          
-      br
       = f.input :image
       = f.hidden_field :image_cache
-      
-      - if @user.image.present?
-        br
-        .field
-          = f.check_box :remove_image
-          = t('image.remove_image') 
-  .grid-4
+
+    - if @user.image.present?
+      br
+      .field
+        = f.check_box :remove_image
+        = t('image.remove_image')
+
     = f.input :name
     = f.input :email
     = f.input :password
@@ -29,7 +28,7 @@
       = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
 
 	
-	.actions
+	.actions.edit
 	  = f.submit t('system.save')
   .grid-4
     b = t('user.delivery_dates')
@@ -39,5 +38,8 @@
     = f.input :thursday
     = f.input :friday
 
+
+  .grid-4
+    
   .grid-12
     = link_to t('navigation.back'), :back

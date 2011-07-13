@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     @welcome        = TextContent.welcome
     @footer_text    = TextContent.footer_text
     @menu = 'home'
+    @product_lines  = ProductLine.order('title asc')
   end
   
   rescue_from CanCan::AccessDenied do |exception|
@@ -15,6 +16,7 @@ class ApplicationController < ActionController::Base
   end  
  
 private 
+
   def after_sign_in_path_for(resource)
     if current_user.admin_or_super?
       admin_index_path

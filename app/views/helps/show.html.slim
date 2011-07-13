@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  b Title:
+  = @help.title
+p
+  b Body:
+  = @help.body
+p
+  b Video url:
+  = @help.video_url
+
+= link_to 'Edit', edit_help_path(@help)
+'|
+= link_to 'Back', helps_path

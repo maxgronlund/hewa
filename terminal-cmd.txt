@@ -6,3 +6,11 @@ rails g migration add_image_to_product_line image:string
 
 rails g scaffold product title:string body:text image:string product_line:belongs_to
 rails g uploader product_image
+
+
+rails g scaffold help title:string body:text video_url:string
+
+
+1.9.2-p180
+
+rvm  install ruby-1.9.2-p180

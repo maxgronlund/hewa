@@ -2,10 +2,11 @@ class ProductLinesController < InheritedResources::Base
     load_and_authorize_resource
 #    before_filter :get_site_info
     helper_method :sort_column, :sort_direction
+    before_filter :set_menu
     
     
     def show
-      @product_lines = ProductLine.all
+     # @product_lines = ProductLine.order('title asc')
       session[:go_to_after_edit] = product_line_path(@product_line)
       show!
     end
@@ -61,5 +62,9 @@ private
 
     def sort_direction  
       %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"  
+    end
+    
+    def set_menu
+      @menu = 'product_lines'
     end
 end
