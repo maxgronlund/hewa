@@ -7,10 +7,6 @@ RailsTemplateR31::Application.routes.draw do
  
   devise_for :users
   
-  devise_scope :user do 
-    match "/users/sign_out" => "devise/sessions#destroy" 
-  end
-  
   root :to => "home#index"
  
   resources :users do
