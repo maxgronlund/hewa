@@ -7,8 +7,6 @@ RailsTemplateR31::Application.routes.draw do
  
   devise_for :users
   
-  root :to => "home#index"
- 
   resources :users do
     member do
       get 'crop'
