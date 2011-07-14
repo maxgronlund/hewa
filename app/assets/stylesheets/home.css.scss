@@ -10,25 +10,4 @@
 
 
 body.home {
-
-  // Place scoped styles here
-
-
-  // compass helpers sample
-  #mylogo {
-    @include border-radius(4px, 4px);
-    @include opacity(0.5);
-  }
-  img:hover{
-	@include opacity(0.75);
-  }
-
 }
-
-
-//
-// sample style definitions
-//
-
-
-

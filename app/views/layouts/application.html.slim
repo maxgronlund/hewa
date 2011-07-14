@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Hewa Health Care ApS
+    title Rails 3.1 Template
 
     /[if lt IE 9]
       script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'
@@ -18,10 +18,11 @@ html
   body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]} body-back")
     .grid-container class=("background_grid" if Rails.env == 'development')
       = render "shared/jmenu"
-      = render "shared/banner", :welcome => @welcome
+      -# = render "shared/banner"
       = render 'shared/messages'
       = yield
-      br class="clear-both"
-    .footer
-      = render "shared/footer" , :footer_text => @footer_text if @footer_text
-    .clear &nbsp;
+      div class="clearfix"
+    footer
+      -#= render "shared/footer"
+    div class="clearfix"
+

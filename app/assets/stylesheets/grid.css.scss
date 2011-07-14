@@ -1,5 +1,5 @@
 // 960gs sample
-@import "960/grid", "960/text";
+@import "960/grid";//, "960/text";
 @import "partials/color";
 
 $ninesixty-columns: 12;
@@ -69,11 +69,4 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 
 .background_grid {background-image:url('background_grid.png');}
 
-.footer{ @include grid-container;	min-height:32px; text-align:center; }
-
-.clear-both{
-	clear:both;
-}
-
-
-
+footer { @include grid-container; min-height:32px; text-align:center; }

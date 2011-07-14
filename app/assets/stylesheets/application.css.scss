@@ -2,9 +2,13 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require kontrapunkt
+ *= require normalize
+ *= require clearfix
+ *= require grid
  *= require_self
- *= require_tree . 
- * require_directory . 
+ * require_tree . 
+ *= require_directory . 
 */
 
 @import "compass/css3";
@@ -12,36 +16,24 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 @import "partials/font";
-@import "partials/fancy-buttons";
-
 
 
 body{
-	margin-top:0px;
-	background-color:$body_color;
+  margin:0px;
+
+  // set link color
+  a, a:hover, a:active, a:visited, a:link {
+    //@include link-font;
+    color: $link-color;
+    padding: 2px;
+    text-decoration: none;
+  }
+  
+  label{
+    display:block;
+  }
 }
 
-
-p, a{
-	@include font-plain;
-}
-
-// set link color
-a,  a:active, a:visited, a:link {
-  color: $link-color;
-  text-decoration: none;
-  background-color:transparent;
-
-}
-
-a:hover{
-	color:$link-over-color;
-}
-
-label{
-	display:block;
-
-}
 
 /* JCrop preview */
 .preview {
@@ -49,6 +41,7 @@ label{
     height:100px;
     overflow:hidden;
 }
+
 
 .row-flip
 {
@@ -88,17 +81,8 @@ label{
 	background-position:right top;
 }
 
-.edit{ text-align:right; }
-
-
-
-img{
-	@include border-radius(10px, 10px);
-	border-style:solid;
-	border-width:1px;
-	border-color:#999;
-	left:-2px;
-	position:relative;
+.edit{
+	text-align:right;
 }
 
 
@@ -106,15 +90,10 @@ img{
 	color:#f00;
 }
 
-a.fancy {
-	@include fancy-button($template-color-base, 14px 0.5em);
-}
 
-
-
-
-
-// some basic styles using fonts and color schee
+.headline { @include template-color; @include font-header; }
+/*
+// some basic styles using fonts and color scheme
 $color-base: $color_grey_eminence;
 $background-color-base: $color_red_algae;
 .headline { @include template-color; @include font-header; }
@@ -127,28 +106,4 @@ $background-color-base: $color_red_algae;
 .c20 { @include template-color($color-base, 100, $background-color-base, 20); @include font-plain; }
 .c10 { @include template-color($color-base, 100, $background-color-base, 10); @include font-plain; }
 .c05 { @include template-color($color-base, 100, $background-color-base, 5); @include font-plain; }
-
-
-#error {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-/*    font-size: 12px; */
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff; }
-  ul li {
-/*    font-size: 12px; */
-    list-style: square; } 
-}
-
-
-
+*/
