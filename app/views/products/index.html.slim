@@ -1,21 +1,47 @@
-h1 Listing products
 
 
+
+
+
+.headline
+  h1
+    = t('activerecord.models.products')
+
+.grid-12
+  = form_tag text_contents_path, :method => 'get', :id => "products_search" do
+    = text_field_tag :search, params[:search] 
+    = submit_tag t('text_contents.search'), :title => nil
+    '
+    = link_to t('system.show_all'), products_path
+.divider-12
+div class="sort-list-header grid-12"
+  .grid-2.alpha
+    = sortable 'item_nr', t('activerecord.attributes.product.item_nr')
+  .grid-2
+    = sortable 'title', t('text_contents.title')
+  .grid-6
+    = sortable 'body', t('text_contents.body')
+
+  .grid-2.omega
 
 - @products.each do |product|
-   
-  = product.title
-  br
-  = product.body
-  br
-  = image_tag(product.image_url :large) if product.image?
-  br
-  
-  = link_to 'Show', product
-  | | 
-  = link_to 'Edit', edit_product_line_product_path(product.product_line, product)
-  | | 
-  = link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
-  hr
+  div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+    .grid-2.alpha
+      = link_to product.item_nr, product
+    .grid-2
+      = link_to product.title, product
+    .grid-6
+      = excerpt(product.body, '', :radius => 16)
+
+    .grid-2.omega
+	  = link_to t('system.show'), product
+      | | 
+      = link_to t('system.edit'), edit_product_path(product)
+      | | 
+      = link_to t('system.delete'), product, :confirm => 'Are you sure?', :method => :delete
+.pagination-12 
+  = paginate @products
+.grid-12 
+  = link_to t('product.new_product'), new_product_path
 
 

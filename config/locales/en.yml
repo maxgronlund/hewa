@@ -4,16 +4,19 @@
 en:
   activerecord:
     models:
-      product_line: "product line"
+      product_line: "product lines"
       user: "user"
       text_content: "text content"
       help: 'help'
+      products: 'products'
 
 
     attributes:
       product_line:
         title: 'product line name'
         body: "product line description"
+      product:
+        item_nr: 'item nr'
       user:
         name: "name"
         email: "email"

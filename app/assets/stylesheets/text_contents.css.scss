@@ -11,19 +11,7 @@ body.text_contents {
 }
 
 
-// set link color
-a,  a:active, a:visited, a:link {
-  color: $link-color;
-  padding: 2px;
-  text-decoration: none;
-  background-color:transparent;
 
-}
-
-a:hover{
-	color:$link-over-color;
-
-}
 
 h1{
 	margin-top:12px;

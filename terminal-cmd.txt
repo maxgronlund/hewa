@@ -11,6 +11,11 @@ rails g uploader product_image
 rails g scaffold help title:string body:text video_url:string
 
 
-1.9.2-p180
+
 
 rvm  install ruby-1.9.2-p180
+
+
+rails g migration add_item_nr_to_product item_nr:string
+
+rails g migration add_price_to_product price:decimal min_units:integer

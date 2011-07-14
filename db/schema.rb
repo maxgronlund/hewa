@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713075622) do
+ActiveRecord::Schema.define(:version => 20110713164619) do
 
   create_table "helps", :force => true do |t|
     t.string   "title"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(:version => 20110713075622) do
     t.integer  "product_line_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "item_nr"
+    t.decimal  "price",                           :precision => 8, :scale => 2
+    t.integer  "min_units"
   end
 
   add_index "products", ["product_line_id"], :name => "index_products_on_product_line_id"

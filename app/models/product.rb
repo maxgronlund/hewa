@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :product_line
   
   validates_presence_of :title, :body
-  attr_accessible :image, :image_cache, :remote_image_url, :remove_image, :title, :body
+  attr_accessible :image, :image_cache, :item_nr, :remote_image_url, :remove_image, :title, :body
   serialize :crop_params, Hash
   mount_uploader :image, ProductImageUploader
   include ImageCrop

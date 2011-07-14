@@ -12,6 +12,8 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 @import "partials/font";
+@import "partials/fancy-buttons";
+
 
 
 body{
@@ -20,9 +22,20 @@ body{
 }
 
 
-
 p, a{
-	margin:0px;
+	@include font-plain;
+}
+
+// set link color
+a,  a:active, a:visited, a:link {
+  color: $link-color;
+  text-decoration: none;
+  background-color:transparent;
+
+}
+
+a:hover{
+	color:$link-over-color;
 }
 
 label{
@@ -35,7 +48,6 @@ label{
     height:100px;
     overflow:hidden;
 }
-
 
 .row-flip
 {
@@ -75,9 +87,7 @@ label{
 	background-position:right top;
 }
 
-.edit{
-	text-align:right;
-}
+.edit{ text-align:right; }
 
 
 
@@ -88,15 +98,17 @@ img{
 	border-color:#999;
 	left:-2px;
 	position:relative;
-
-
 }
 
 
 .notice, .alert{
 	color:#f00;
-
 }
+
+a.fancy {
+	@include fancy-button($template-color-base, 14px 0.5em);
+}
+
 
 
 

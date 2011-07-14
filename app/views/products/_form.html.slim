@@ -7,11 +7,22 @@
           li= msg
 
   .field
+    = f.label :item_nr
+    = f.text_field :item_nr
+  .field
     = f.label :title
     = f.text_field :title
   .field
     = f.label :body
     = f.text_area :body
+
+  .field
+    = f.label :price
+    = f.text_field :price
+
+  .field
+    = f.label :min_units
+    = f.text_field :min_units
 
   = f.label :thumb 
   - if @product.image.present?
@@ -27,7 +38,7 @@
     = f.file_field :image
     = f.hidden_field :image_cache
 
-    - if @product_line.image.present?
+    - if @product.image.present?
       .field
         = f.check_box :remove_image
         = t('image.remove_image')

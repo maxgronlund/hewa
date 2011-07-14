@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery  
 #  helper_method :current_user
   before_filter :get_site_info
+
 
   
   def get_site_info

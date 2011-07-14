@@ -20,6 +20,9 @@
                 = link_to(product_lines_path)  do
                   span = t('product_line.product_lines')  
               li
+                = link_to(products_path)  do
+                  span = t('activerecord.models.products')
+              li
                 = link_to(helps_path)  do
                   span = t('activerecord.models.help')
         
@@ -29,7 +32,7 @@
           span Home
 
       li  class=("current"  if @menu == 'product_lines' )
-        = link_to(root_path, :class => 'parrent')  do
+        = link_to(products_path, :class => 'parrent')  do
           span =t('products.products')
         div
           ul
