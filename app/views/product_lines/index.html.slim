@@ -30,6 +30,7 @@ div class="sort-list-header grid-12"
       = link_to t('system.delete'), product_line, :confirm => 'Are you sure?', :method => :delete
 .pagination-12 
   = paginate @product_lines
-.grid-12 
-  = link_to t('product_line.new_product_line'), new_product_line_path
+.divider-12
+.grid-12.edit
+  = link_to t('product_line.new_product_line'), new_product_line_path, class: 'fancy'
 
