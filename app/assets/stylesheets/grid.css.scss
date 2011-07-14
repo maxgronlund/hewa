@@ -1,5 +1,5 @@
 // 960gs sample
-@import "960/grid", "960/text";
+@import "960/grid";//, "960/text";
 @import "partials/color";
 
 $ninesixty-columns: 12;
@@ -69,58 +69,4 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 
 .background_grid {background-image:url('background_grid.png');}
 
-.footer{ @include grid-container;	min-height:32px; text-align:center; }
-
-.clear-both{
-	clear:both;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#wrap {
-  @include grid-container;
-  #header {
-    @include grid(16);
-  }
-  #middle {
-    @include grid(16);
-    #left-nav {
-      @include grid(5);
-      @include alpha;
-    }
-    #main-content {
-      @include grid-prefix(1);
-      @include grid(10);
-      @include omega;
-    }
-  }
-}
+footer { @include grid-container; min-height:32px; text-align:center; }

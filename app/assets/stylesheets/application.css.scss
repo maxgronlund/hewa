@@ -2,9 +2,13 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require normalize
+ *= require clearfix
+ *= require grid
+ *= require kontrapunkt
  *= require_self
- *= require_tree . 
- * require_directory . 
+ * require_tree . 
+ *= require_directory . 
 */
 
 @import "compass/css3";
@@ -16,11 +20,20 @@
 
 body{
   margin:0px;
+
+  // set link color
+  a, a:hover, a:active, a:visited, a:link {
+    //@include link-font;
+    color: $link-color;
+    padding: 2px;
+    text-decoration: none;
+  }
+  
+  label{
+    display:block;
+  }
 }
 
-label{
-	display:block;
-}
 
 /* JCrop preview */
 .preview {
@@ -78,8 +91,9 @@ label{
 }
 
 
-
-// some basic styles using fonts and color schee
+.headline { @include template-color; @include font-header; }
+/*
+// some basic styles using fonts and color scheme
 $color-base: $color_grey_eminence;
 $background-color-base: $color_red_algae;
 .headline { @include template-color; @include font-header; }
@@ -92,7 +106,4 @@ $background-color-base: $color_red_algae;
 .c20 { @include template-color($color-base, 100, $background-color-base, 20); @include font-plain; }
 .c10 { @include template-color($color-base, 100, $background-color-base, 10); @include font-plain; }
 .c05 { @include template-color($color-base, 100, $background-color-base, 5); @include font-plain; }
-
-
-
-
+*/
