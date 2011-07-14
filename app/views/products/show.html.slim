@@ -4,12 +4,13 @@
 
 .grid-4
   = image_tag(@product.image_url :large) if @product.image?
-  = link_to t('system.back'), product_line_path(@product.product_line)
+  br
+  .edit
+    = link_to 'Edit', edit_product_line_product_path(@product.product_line,@product), class: 'fancy'
   
 .grid-5
   = markdown(@product.body.html_safe)
-  .edit
-    = link_to 'Edit', edit_product_line_product_path(@product.product_line,@product), class: 'fancy'
+
 
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines

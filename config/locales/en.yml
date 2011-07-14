@@ -90,7 +90,9 @@ en:
     
   products:
     products: 'products'
-    
+    new_product: 'new product'
+    edit_product: 'edit product'
+      
   product_line:
     product_lines: 'product lines'
     new_product_line: "new product line"

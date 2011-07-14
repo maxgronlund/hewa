@@ -6,6 +6,18 @@ class ProductsController < InheritedResources::Base
 
   helper_method :sort_column, :sort_direction
   
+  def new
+    @product_lines = ProductLine.order('title DESC')
+    @select_product_lines = @product_lines.map { |product_line| [product_line.title, product_line.id] }
+    new!
+  end
+  
+  def edit
+    @product_lines = ProductLine.order('title DESC')
+    @select_product_lines = @product_lines.map { |product_line| [product_line.title, product_line.id] }
+    edit!
+  end
+  
   def show
     session[:go_to_after_edit] = product_line_product_path(@product.product_line,@product)
     show!
