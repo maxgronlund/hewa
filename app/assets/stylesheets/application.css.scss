@@ -16,12 +16,11 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 @import "partials/font";
-
+@import "partials/fancy-buttons";
 
 body{
   margin:0px;
   @include font-plain;
- 
 }
 
 // set link color
@@ -30,11 +29,16 @@ a, a:hover, a:active, a:visited, a:link {
   color: $link-color;
   padding: 2px;
   text-decoration: none;
+  &.fancy {
+		@include fancy-button($template-color-base, 14px 0.5em);
+	}
 }
 
 label{
   display:block;
 }
+
+
 /* JCrop preview */
 .preview {
     width:100px;
@@ -53,45 +57,45 @@ label{
 	background-color:#ccc;
 }
 
-.sort-list-header
-{
+.sort-list-header {
 	background-color:#aaa;
 	color:#000;
+	.asc {
+		padding-right:14px;
+		background-image:url('arrow_down.png');
+		background-repeat:no-repeat;
+		background-color:transparent;
+		background-position:right top;
+	}
+	.desc {
+		padding-right:14px;
+		background-image:url('arrow_up.png');
+		background-repeat:no-repeat;
+		background-color:transparent;
+		background-position:right top;
+	}
 }
 
+/* FIXME where is this used? */
 .current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-.desc{
-	padding-right:14px;
-	background-image:url('arrow_up.png');
-	background-repeat:no-repeat;
-	background-color:transparent;
-	background-position:right top;
-}
-
-.asc{
-	padding-right:14px;
-	background-image:url('arrow_down.png');
-	background-repeat:no-repeat;
-	background-color:transparent;
-	background-position:right top;
-}
-
+/* FIXME where is this used? */
 .edit{
 	text-align:right;
 }
 
-
+/* FIXME should these be in a context? and different colors? */
 .notice, .alert{
 	color:#f00;
 }
 
-
+/* FIXME this really wasn't supposed to be used on its own */
 .headline { @include template-color; @include font-header; }
+
 /*
 // some basic styles using fonts and color scheme
 $color-base: $color_grey_eminence;
