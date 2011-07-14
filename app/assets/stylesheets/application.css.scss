@@ -21,20 +21,20 @@
 body{
   margin:0px;
 
-  // set link color
-  a, a:hover, a:active, a:visited, a:link {
-    //@include link-font;
-    color: $link-color;
-    padding: 2px;
-    text-decoration: none;
-  }
   
-  label{
-    display:block;
-  }
 }
 
+// set link color
+a, a:hover, a:active, a:visited, a:link {
+  //@include link-font;
+  color: $link-color;
+  padding: 2px;
+  text-decoration: none;
+}
 
+label{
+  display:block;
+}
 /* JCrop preview */
 .preview {
     width:100px;
