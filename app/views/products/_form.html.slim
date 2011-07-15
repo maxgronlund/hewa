@@ -13,16 +13,17 @@
     = f.label :title
     = f.text_field :title
   .field
-    = f.label :body
-    = f.text_area :body
-
-  .field
     = f.label :price
     = f.text_field :price
 
   .field
     = f.label :min_units
     = f.text_field :min_units
+  .field
+    = f.label :body
+    = f.text_area :body
+
+
 
   = f.label :thumb 
   - if @product.image.present?

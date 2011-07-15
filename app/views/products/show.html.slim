@@ -9,6 +9,7 @@
     = link_to 'Edit', edit_product_line_product_path(@product.product_line,@product), class: 'fancy'
   
 .grid-5
+  = number_to_currency(@product.price)
   = markdown(@product.body.html_safe)
 
 
