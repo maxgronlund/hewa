@@ -1,24 +1,27 @@
 = form_for @product_line, :validate => true do |f|
   = render 'shared/error_messages', :taget => @product_line
+  .grid-5.alpha
 
-  p
+
     .field
       = f.label :title
       = f.text_field :title
     .field
       = f.label :body
-      = f.text_area :body
+      = f.text_area :body, :cols=>"63"
+    br
+    .actions
+      = f.submit 'Save', :class  => 'fancy'
     
-    
-    
-    = f.label :thumb 
+  .grid-7.omega   
     - if @product_line.image.present?
       - @product_line.image.version_dimensions.keys.each do |version|
         span
           | #{version}:
+          = link_to t('image.re_crop'), crop_product_line_path(@product_line, :version => version)
           br
           = image_tag(@product_line.image_url version) if @product_line.image?
-          = link_to t('image.re_crop'), crop_product_line_path(@product_line, :version => version)
+
           br
     br
     = f.file_field :image
@@ -31,7 +34,6 @@
     
     
     
-    .actions
-      = f.submit 'Save'
+
 
 

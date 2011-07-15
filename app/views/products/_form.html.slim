@@ -1,47 +1,49 @@
 = form_for [@product_line, @product], :validate => true do |f|
   = render 'shared/error_messages', :taget => @product
-
-  .field
+  .grid-5.alpha
+    .field
+      = f.label :product_line_id
+      = f.select :product_line_id, @select_product_lines
     
-    = f.label :product_line_id
-    = f.select :product_line_id, @select_product_lines
+    .field
+      = f.label :item_nr
+      = f.text_field :item_nr
+    .field
+      = f.label :title
+      = f.text_field :title
+    .field
+      = f.label :price
+      = f.text_field :price
+    
+    .field
+      = f.label :min_units
+      = f.text_field :min_units
+    .field
+      = f.label :body
+      = f.text_area :body, :cols=>"63"
 
-  .field
-    = f.label :item_nr
-    = f.text_field :item_nr
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :price
-    = f.text_field :price
-
-  .field
-    = f.label :min_units
-    = f.text_field :min_units
-  .field
-    = f.label :body
-    = f.text_area :body
-
-
-
-  = f.label :thumb 
-  - if @product.image.present?
-    - @product.image.version_dimensions.keys.each do |version|
-      span
-        | #{version}:
-        br
-        = image_tag(@product.image_url version) if @product.image?
-        = link_to t('image.re_crop'), crop_product_path(@product, :version => version)
-        br
-
-  .field
-    = f.file_field :image
-    = f.hidden_field :image_cache
+	br
+	.actions
+	  = f.submit t('system.save')
+  
+  .grid-7.omega
 
     - if @product.image.present?
-      .field
-        = f.check_box :remove_image
-        = t('image.remove_image')
-  .actions
-    = f.submit 'Save'
+      - @product.image.version_dimensions.keys.each do |version|
+        span
+          | #{version}:
+          = link_to t('image.re_crop'), crop_product_path(@product, :version => version)
+          br
+          = image_tag(@product.image_url version) if @product.image?
+         
+          br
+    
+    .field
+      = f.file_field :image
+      = f.hidden_field :image_cache
+    
+      - if @product.image.present?
+        .field
+          = f.check_box :remove_image
+          = t('image.remove_image')
+

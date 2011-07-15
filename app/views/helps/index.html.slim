@@ -8,7 +8,7 @@
 .grid-12
   = form_tag helps_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 
-    = submit_tag t('helps.search'), :title => nil
+    = submit_tag t('help.search'), :title => nil
     '
     = link_to t('system.show_all'), helps_path
 .divider-12
@@ -33,7 +33,8 @@ div class="sort-list-header grid-12"
       = link_to t('system.delete'), help, :confirm => 'Are you sure?', :method => :delete
 .pagination-12 
   = paginate @helps
-.grid-12 
-  = link_to 'New Help', new_help_path
+.grid-12.edit
+  br
+  = link_to 'New Help', new_help_path, :class => 'fancy'
       
 

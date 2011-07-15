@@ -3,10 +3,10 @@
   
     = link_to image_tag('logo.jpg') , root_path
   .grid-4
-    h1 = welcome.title
+    h1 = @welcome.title
     p = markdown(@welcome.body)
     - if can? :manage, TextContent
-      p =link_to t('system.edit'), edit_text_content_path(welcome)
+      p =link_to t('system.edit'), edit_text_content_path(@welcome), :class => 'fancy'
 
 
   .grid-5.omega

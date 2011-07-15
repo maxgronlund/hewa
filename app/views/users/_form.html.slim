@@ -4,21 +4,21 @@
 
 
   .grid-4
-	
-    - if @user.image.present?
-        = image_tag(@user.image_url :large)
+    .grid-3.alpha.suffix-1.omega
+      - if @user.image.present?
+          = image_tag(@user.image_url :large)
+          br
+          .edit
+            = link_to t('image.re_crop'), crop_user_path(@user, :version => 'large')
+          br
+      - if @user.admin_or_super?
+        = f.input :image
+        = f.hidden_field :image_cache
+      
         br
-        = link_to t('image.re_crop'), crop_user_path(@user, :version => 'large')
-        br
-    - if @user.admin_or_super?
-      = f.input :image
-      = f.hidden_field :image_cache
-
-    - if @user.image.present?
-      br
-      .field
-        = f.check_box :remove_image
-        = t('image.remove_image')
+        .field
+          = f.check_box :remove_image
+          = t('image.remove_image')
 
     = f.input :name
     = f.input :email

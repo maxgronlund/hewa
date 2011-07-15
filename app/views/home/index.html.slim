@@ -1,4 +1,6 @@
 .headline
+  h1 
+    = t('product_line.product_lines')
     
 .grid-9
   - @product_lines.each_with_index do |product_line, index|
@@ -24,5 +26,5 @@
   
 
 .grid-3
-  | rigth column
+  = render "shared/product_lines", :product_lines => @product_lines
 

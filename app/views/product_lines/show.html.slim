@@ -4,11 +4,12 @@
 .grid-9
   .grid-5.alpha
     = image_tag(@product_line.image_url :large) if @product_line.image? 
-  .grid-4.omega
-    = markdown(@product_line.body)
     - if current_user && current_user.admin_or_super?
       .edit
         = link_to '  edit  ', edit_product_line_path(@product_line), class: 'fancy'
+  .grid-4.omega
+    = markdown(@product_line.body)
+
   .grid-9.alpha.omega
       = render "shared/products" , :products => @product_line.products 
 .grid-3

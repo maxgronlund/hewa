@@ -1,8 +1,12 @@
-h1 Editing product_line
+.headline
+  h1 
+    = t('system.edit')
+    = @product_line.title
 
-== render 'form'
-
-= link_to 'Show', @product_line
-'|
-= link_to 'Back', product_lines_path
+.grid-12
+  = render 'form'
+  
+  = link_to 'Show', @product_line
+  '|
+  = link_to 'Back', product_lines_path
 
