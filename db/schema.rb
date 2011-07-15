@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713164619) do
+ActiveRecord::Schema.define(:version => 20110715090513) do
 
   create_table "helps", :force => true do |t|
     t.string   "title"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20110713164619) do
     t.boolean  "wednesday",                              :default => true
     t.boolean  "thursday",                               :default => true
     t.boolean  "friday",                                 :default => true
+    t.boolean  "grid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

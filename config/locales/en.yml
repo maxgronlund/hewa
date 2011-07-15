@@ -25,6 +25,8 @@ en:
         thumb: 'avatar'
         role: 'role'
         image: 'image'
+        grid: ' grid'
+
       text_content:
         identity: "identity"
         title: 'title'
@@ -44,6 +46,7 @@ en:
         wednesday: 'wednesday'
         thursday: 'thursday'
         friday: 'friday'
+        grid: 'grid'
     hints:
       user:
         name: 'user name to sign in.'
@@ -56,7 +59,7 @@ en:
   image:
     image: 'image'
     re_crop: 're crop'
-    remove_image: remove image
+    remove_image: ' remove image'
     
   navigation:
     back: '< back'

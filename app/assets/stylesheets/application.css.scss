@@ -16,7 +16,9 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 @import "partials/font";
+@import "partials/dimentions";
 @import "partials/fancy-buttons";
+
 
 body{
   margin:0px;
@@ -35,9 +37,6 @@ a, a:hover, a:active, a:visited, a:link {
 	}
 }
 
-label{
-  display:block;
-}
 
 
 /* JCrop preview */
@@ -94,8 +93,21 @@ label{
 	color:#f00;
 }
 
-/* FIXME this really wasn't supposed to be used on its own */
+
+.field{
+	@include input_top_margin;
+}
+
+.label{
+	@include input_top_margin;
+}
+
+
 .headline { @include template-color; @include font-header; }
+
+.input{
+	display:inline;
+}
 
 /*
 // some basic styles using fonts and color scheme

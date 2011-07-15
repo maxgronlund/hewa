@@ -95,7 +95,7 @@ a:visited {
  */
 
 a:focus {
-    /*outline: thin dotted;*/
+/*    outline: thin dotted;*/
 	outline: 0;
 }
 

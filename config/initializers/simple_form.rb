@@ -4,5 +4,5 @@ SimpleForm.setup do |config|
   # Other options removed...  
   
   # Default size for text inputs.  
-  config.default_input_size = 32  
+  config.default_input_size = 20 
 end

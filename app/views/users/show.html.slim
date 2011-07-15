@@ -6,6 +6,7 @@
 .grid-4
   - if @user.image?
     = image_tag(@user.image_url :large)
+    br
     = link_to t('image.re_crop'), crop_user_path(@user, :version => :large)
     br /
   = t('simple_form.labels.user.email')
