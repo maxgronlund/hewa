@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
 
   # Avatar image
-  attr_accessible :image, :image_cache, :remote_image_url, :remove_image
+  attr_accessible :email, :grid, :password, :password_confirmation, :remember_me,
   serialize :crop_params, Hash
   mount_uploader :image, AvatarUploader
   include ImageCrop
