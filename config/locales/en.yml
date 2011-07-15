@@ -15,6 +15,7 @@ en:
         password_confirmation: 'password confirmation'
         thumb: 'avatar'
         role: 'role'
+        grid: ' grid'
       text_content:
         identity: "identity"
         title: 'title'
@@ -24,7 +25,7 @@ en:
   image:
     image: 'image'
     re_crop: 're crop'
-    remove_image: remove image
+    remove_image: ' remove image'
     
   navigation:
     back: '< back'

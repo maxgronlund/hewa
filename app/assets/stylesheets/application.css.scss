@@ -16,6 +16,7 @@
 @import "compass/css3/opacity";
 @import "partials/color";
 @import "partials/font";
+@import "partials/dimentions";
 
 
 body{
@@ -32,9 +33,7 @@ a, a:hover, a:active, a:visited, a:link {
   text-decoration: none;
 }
 
-label{
-  display:block;
-}
+
 /* JCrop preview */
 .preview {
     width:100px;
@@ -88,6 +87,14 @@ label{
 
 .notice, .alert{
 	color:#f00;
+}
+
+.field{
+	@include input_top_margin;
+}
+
+.label{
+	@include input_top_margin;
 }
 
 

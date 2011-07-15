@@ -12,11 +12,13 @@
 
   - if @user.image.present?
     - @user.image.version_dimensions.keys.each do |version|
-      span
+      .label
         | #{version}:
+        = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
         br
         = image_tag(@user.image_url version) if @user.image?
-        = link_to t('image.re_crop'), crop_user_path(@user, :version => version)
+
+        
         br
   br
   = f.input :image
@@ -27,6 +29,12 @@
     .field
       = f.check_box :remove_image
       = t('image.remove_image')
+    .field
+      - if current_user && current_user.super?
+           = f.check_box :grid
+           = t('activerecord.attributes.user.grid')
+
+
 
   - if current_user && current_user.admin_or_super?
     = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
