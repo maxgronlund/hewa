@@ -29,7 +29,6 @@ body{
 a, a:hover, a:active, a:visited, a:link {
   //@include link-font;
   color: $link-color;
-  padding: 2px;
   text-decoration: none;
   &.fancy {
 		@include fancy-button($template-color-base, 14px 0.5em);
@@ -60,14 +59,14 @@ a, a:hover, a:active, a:visited, a:link {
 	background-color:#aaa;
 	color:#000;
 	.asc {
-		padding-right:14px;
+		padding-right:20px;
 		background-image:url('arrow_down.png');
 		background-repeat:no-repeat;
 		background-color:transparent;
 		background-position:right top;
 	}
 	.desc {
-		padding-right:14px;
+		padding-right:20px;
 		background-image:url('arrow_up.png');
 		background-repeat:no-repeat;
 		background-color:transparent;

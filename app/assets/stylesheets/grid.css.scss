@@ -58,12 +58,15 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 	.pagination-12{
 		@include grid(12);
 		text-align:center;
-		margin-top:0px;	
+		margin-top:0px;
+		min-height:16px;	
 	}
 	.divider-12{
 		@include grid(12);
 		min-height:16px;
 	}
+	
+	.left-indent{margin-left:4px;}
 	
 }
 

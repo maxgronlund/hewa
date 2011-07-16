@@ -5,11 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :grid,:password, :password_confirmation, :remember_me
 
 
   # Avatar image
-  attr_accessible :email, :grid, :password, :password_confirmation, :remember_me,
   serialize :crop_params, Hash
   mount_uploader :image, AvatarUploader
   include ImageCrop
@@ -36,7 +35,6 @@ class User < ActiveRecord::Base
   def member?
     role == 'member' || role.nil? # Until role is set to :member by default
   end
-
 
   def self.search(search)
     if search
