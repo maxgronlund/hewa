@@ -1,5 +1,8 @@
-h1 New product_line
+.headline
+  h1 
+    = t('product_line.new_product_line')
 
-== render 'form'
+.grid-12
+  = render 'form'
 
-= link_to 'Back', product_lines_path
+

@@ -10,7 +10,7 @@
 
 
   .grid-5.omega
-    -#= link_to 'card', cart_path(2)
+    -#= link_to 'card', cart_path(@card)
     
     .edit
       - if user_signed_in?

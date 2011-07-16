@@ -5,8 +5,8 @@
 .sort-list-header.grid-12
   .grid-3.alpha
     | product
-  
-= form_tag( @card, :method => :put)  do |f|
+    -#!!! << make this work
+= form_tag( @card, :method => :put)  do |f|								
   - @cart.line_items.each do |item| 
   
     div class="grid-12 #{cycle('row-flip', 'row-flop')}"
@@ -15,7 +15,8 @@
       .grid-1
         = number_to_currency(item.product.price)
       .grid-1 
-        = text_field_tag('cart_items[][quantity]', item.quantity, :size => 2)
+        -#!!! << make this work
+        = text_field_tag('cart_items[][quantity]', item.quantity, :size => 2)			
         -#= item.quantity
       .grid-2 
         = number_to_currency(item.total_price)

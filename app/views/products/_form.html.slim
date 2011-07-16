@@ -1,26 +1,18 @@
-= form_for [@product_line, @product], :validate => true do |f|
+= simple_form_for [@product_line, @product], :validate => true do |f|
   = render 'shared/error_messages', :taget => @product
   .grid-5.alpha
     .field
       = f.label :product_line_id
       = f.select :product_line_id, @select_product_lines
     
-    .field
-      = f.label :item_nr
-      = f.text_field :item_nr
-    .field
-      = f.label :title
-      = f.text_field :title
-    .field
-      = f.label :price
-      = f.text_field :price
-    
-    .field
-      = f.label :min_units
-      = f.text_field :min_units
+    = f.input :item_nr
+    = f.label :title
+    = f.input :title
+    = f.input :price
+    = f.input :min_units
     .field
       = f.label :body
-      = f.text_area :body, :cols=>"63"
+      = f.text_area :body
 
 	br
 	.actions

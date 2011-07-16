@@ -1,14 +1,8 @@
-= form_for @product_line, :validate => true do |f|
+= simple_form_for @product_line, :validate => true do |f|
   = render 'shared/error_messages', :taget => @product_line
   .grid-5.alpha
-
-
-    .field
-      = f.label :title
-      = f.text_field :title
-    .field
-      = f.label :body
-      = f.text_area :body, :cols=>"63"
+    = f.input :title
+    = f.input :body
     br
     .actions
       = f.submit 'Save', :class  => 'fancy'

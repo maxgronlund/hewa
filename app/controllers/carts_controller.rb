@@ -31,10 +31,7 @@ class CartsController < InheritedResources::Base
   end
   
   def update
-    
     update!
-
-
   end
   
   

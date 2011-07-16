@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
     @footer_text    = TextContent.footer_text
     @menu = 'home'
     @product_lines  = ProductLine.order('title asc')
-
   end
   
   rescue_from CanCan::AccessDenied do |exception|

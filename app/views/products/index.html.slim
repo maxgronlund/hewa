@@ -31,7 +31,10 @@ div class="sort-list-header grid-12"
       = link_to product.item_nr, product
     .grid-2
       = link_to product.title, product
-    .grid-5
+    .grid-1
+      = text_field_tag(:quantity, product.quantity, :size => 2)							
+      -#!!! << make this work
+    .grid-4
       = excerpt(product.body, '', :radius => 16)
     .grid-1
       = number_to_currency(product.price)

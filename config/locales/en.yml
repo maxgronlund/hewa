@@ -18,6 +18,9 @@ en:
         body: "product line description"
       product:
         item_nr: 'item nr'
+        title: 'title'
+        price: 'price'
+        min_units: 'minimum units'
       user:
         name: "name"
         email: "email"
