@@ -6,26 +6,26 @@
 
   .grid-4
     .grid-3.alpha.suffix-1.omega
-      - if @user.image.present?
-	    = image_tag(@user.image_url :large)
-	    br
-        = link_to t('image.re_crop'), crop_user_path(@user, :version => :large)
-
-      br
-      .field
-        = f.input :image
-        = f.hidden_field :image_cache
-    
-      - if @user.image.present?
+      - if current_user && current_user.admin_or_super?
+        - if @user.image.present?
+	      = image_tag(@user.image_url :large)
+	      br
+          = link_to t('image.re_crop'), crop_user_path(@user, :version => :large)
+        
         br
         .field
+          = f.input :image
+          = f.hidden_field :image_cache
+        
+        - if @user.image.present?
+          br
+        
           = f.check_box :remove_image
           = t('image.remove_image')
 
-    - if current_user && current_user.super?
-      
-      = f.check_box :grid
-      = t('activerecord.attributes.user.grid')
+    - if @user.super?
+      = f.input :grid
+
     
 
     = f.input :name
@@ -35,21 +35,28 @@
     - if current_user && current_user.admin_or_super?
       = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
 
-
-	
-	.actions.edit
-	  = f.submit t('system.save')
+    .grid-3.alpha.omega.suffix-1.edit.top-margin
+      = f.submit t('system.save')
   .grid-4
     b = t('user.delivery_dates')
+    br
     = f.input :monday
+    br
     = f.input :tuesday
+    br
     = f.input :wednesday
+    br
     = f.input :thursday
+    br
     = f.input :friday
+	
 
 
 
   .grid-4
+
+
+
     
   .grid-12
-    = link_to t('navigation.back'), :back
+    -#= link_to t('navigation.back'), :back

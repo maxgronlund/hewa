@@ -1,0 +1,41 @@
+class CartsController < InheritedResources::Base
+  
+  # GET /carts/1
+  # GET /carts/1.xml
+  def show
+    begin
+      @cart = Cart.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Attempt to access invalid cart #{params[:id]}"
+      redirect_to products_path, :notice => 'Invalid cart'
+    else
+      session[:go_to_after_edit] = @cart
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml { render :xml => @cart }
+      end
+    end
+  end
+  
+  
+  
+  
+  def destroy
+    @cart = current_cart
+    @cart.destroy
+    session[:cart_id] = nil
+    respond_to do |format|
+      format.html { redirect_to(products_path, :notice => 'Your cart is currently empty') }
+      format.xml { head :ok }
+    end
+  end
+  
+  def update
+    
+    update!
+
+
+  end
+  
+  
+end

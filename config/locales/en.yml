@@ -9,6 +9,7 @@ en:
       text_content: "text content"
       help: 'help'
       products: 'products'
+      addresses: 'addresses'
 
 
     attributes:
@@ -78,7 +79,8 @@ en:
     sign_up: 'sign up'
     
     
-
+  addresse:
+    edit: 'edit address'
      
   system:
     are_you_sure: 'are you sure?'

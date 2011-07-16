@@ -15,12 +15,13 @@
     br
     = t('simple_form.labels.user.role')
     = @user.role
-  - if can?(:manage, @user)
-    br/
-    = link_to t('system.edit'), edit_user_path(@user)
+  .grid-3.alpha.omega.suffix-1.edit
+    - if can?(:manage, @user)
+      br/
+      = link_to t('system.edit'), edit_user_path(@user), class: 'fancy'
 
 .grid-4
-  b = t('user.delivery_dates')
+  h3 = t('user.delivery_dates')
   br
   -if @user.monday?
     = t('simple_form.labels.user.monday')
@@ -41,4 +42,22 @@
 
 
 .grid-4
-  | rigth column
+
+  -if @user.addresses.length == 0
+    = link_to 'new address', new_user_address_path(@user)
+  -else
+    h3 Address
+    = @user.addresses.first.send_to
+    br
+    = @user.addresses.first.street
+    br
+    = @user.addresses.first.zip_code
+    | - 
+    = @user.addresses.first.city
+    br
+    = @user.addresses.first.user_country
+    br
+    = link_to t('addresse.edit'), edit_user_address_path(@user, @user.addresses.first), class: 'fancy'
+    -#= link_to 'Destroy', @user.addresses.first, :confirm => 'Are you sure?', :method => :delete, class: 'fancy'
+
+

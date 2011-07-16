@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :addresses
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,# :registerable,
@@ -19,7 +20,6 @@ class User < ActiveRecord::Base
 
 
   # Avatar image
-  attr_accessible :image, :image_cache, :remote_image_url, :remove_image
   serialize :crop_params, Hash
   mount_uploader :image, AvatarUploader
   include ImageCrop

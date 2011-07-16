@@ -3,13 +3,13 @@
     = t('product_line.product_lines')
 
 .grid-12
-  = form_tag text_contents_path, :method => 'get', :id => "products_search" do
+  = form_tag product_lines_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 
     = submit_tag t('text_contents.search'), :title => nil
     '
     = link_to t('system.show_all'), product_lines_path
 .divider-12
-div class="sort-list-header grid-12"
+.sort-list-header.grid-12
   .grid-3.alpha
     = sortable 'title', t('text_contents.title')
   .grid-7

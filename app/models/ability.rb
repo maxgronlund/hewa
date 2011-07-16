@@ -6,12 +6,14 @@ class Ability
       if user.super?
         can :manage, :all
       elsif user.admin?
+        can :manage, Address
         can :manage, User
         can :manage, TextContent
         can :manage, Product
         can :manage, ProductLine
    
       elsif user.member?#ordinary user
+        can :manage, Address, :user_id => user.id
         can :read, Product
         can :read, ProductLine
         can :manage, User, :user_id => user.id

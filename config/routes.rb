@@ -1,8 +1,9 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+  resources :line_items
 
-
+  resources :carts
 
   get "no_access/index"
   get "admin/index"
@@ -12,7 +13,8 @@ RailsTemplateR31::Application.routes.draw do
 
   root :to => "home#index"
   
-  resources :helps,
+  resources :addresses,
+            :helps,
             :products,  
             :product_lines,
             :text_contents
@@ -26,6 +28,7 @@ RailsTemplateR31::Application.routes.draw do
   end
 
   resources :users do
+    resources :addresses
     member do
       get 'crop'
       put 'crop_update'

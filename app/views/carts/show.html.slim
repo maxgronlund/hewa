@@ -1,0 +1,31 @@
+.headline
+  h1
+    = 'cart'
+
+.sort-list-header.grid-12
+  .grid-3.alpha
+    | product
+  
+= form_tag( @card, :method => :put)  do |f|
+  - @cart.line_items.each do |item| 
+  
+    div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+      .grid-3.alpha
+        = item.product.title
+      .grid-1
+        = number_to_currency(item.product.price)
+      .grid-1 
+        = text_field_tag('cart_items[][quantity]', item.quantity, :size => 2)
+        -#= item.quantity
+      .grid-2 
+        = number_to_currency(item.total_price)
+      .grid-1.suffix-4.omega 
+        = link_to 'delete', item, :method => :delete, :confirm => 'Are you sure?', class: 'fancy'
+      br
+  = submit_tag "update"
+hr
+
+= number_to_currency(@cart.total_price)
+
+
+= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?', class: 'fancy'

@@ -19,3 +19,12 @@ rvm  install ruby-1.9.2-p180
 rails g migration add_item_nr_to_product item_nr:string
 
 rails g migration add_price_to_product price:decimal min_units:integer
+
+rails g address scaffold 
+
+rails g scaffold address send_to:string street:string zip_code:string city:string user_country:string user:belongs_to
+
+
+
+rails generate scaffold line_item product_id:integer cart_id:integer 
+rails generate migration add_quantity_to_line_item quantity:integer

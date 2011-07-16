@@ -109,6 +109,8 @@ a, a:hover, a:active, a:visited, a:link {
 	display:inline;
 }
 
+.top-margin{@include input_top_margin;}
+
 /*
 // some basic styles using fonts and color scheme
 $color-base: $color_grey_eminence;

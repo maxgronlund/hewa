@@ -10,6 +10,8 @@
 
 
   .grid-5.omega
+    -#= link_to 'card', cart_path(2)
+    
     .edit
       - if user_signed_in?
         = link_to current_user.email, current_user
