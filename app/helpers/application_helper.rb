@@ -16,6 +16,5 @@ module ApplicationHelper
   def can_edit?
     user_signed_in? && current_user.admin_or_super?
   end
-  
 
 end

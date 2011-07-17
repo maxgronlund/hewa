@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
+
   attr_accessible :email, :grid, :password, :password_confirmation, :remember_me,
                   :name, :role, :monday,:tuesday, :wednesday, :thursday, :friday
                   
@@ -15,9 +16,6 @@ class User < ActiveRecord::Base
             :uniqueness => true,   
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
             
-
-
-
 
   # Avatar image
   serialize :crop_params, Hash
@@ -45,7 +43,6 @@ class User < ActiveRecord::Base
   def member?
     role == 'member' || role.nil? # Until role is set to :member by default
   end
-
 
   def self.search(search)
     if search

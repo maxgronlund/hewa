@@ -1,7 +1,7 @@
 $color_white: #fff;
 $color_light_gray: #eee;
 
-$body_color: #fff;
+$body_color: #d8d8d8;
 
 
 // define colors from design_parts
@@ -15,20 +15,25 @@ $color_red_algae: #B64D62;
 
 // set link color
 $link-color: $color_red_algae;
-$link-over-color: $color_north_sea;
 
 // set default colors for color mixin
 $template-color-base: $color_grey_eminence;
 $template-background-color-base: white;
+
 
 @mixin template-color($color: $template-color-base, $color-mix: 100, $background-color: $template-background-color-base, $background-color-mix: 100) {
   color: mix($color, white, $color-mix);
 /*  background-color: mix($background-color, white, $background-color-mix);*/
 }
 
-@mixin back-color($color: $color_north_sea, $color-mix: 100){
-	
+@mixin body-color($color: $color_light_gray, $color-mix: 100){
 	background-color:mix($color, white, $color-mix);
 }
 
+@mixin content-color($color: $color_white, $color-mix: 100){
+	background-color:mix($color, white, $color-mix);
+}
 
+@mixin banner-color($color: $color_north_sea, $color-mix: 100){
+	background-color:mix($color, white, $color-mix);
+}
