@@ -25,8 +25,15 @@ $template-background-color-base: white;
 /*  background-color: mix($background-color, white, $background-color-mix);*/
 }
 
-@mixin back-color($color: $color_north_sea, $color-mix: 100){
-	
+@mixin body-color($color: $color_light_gray, $color-mix: 100){
+	background-color:mix($color, white, $color-mix);
+}
+
+@mixin content-color($color: $color_white, $color-mix: 100){
+	background-color:mix($color, white, $color-mix);
+}
+
+@mixin banner-color($color: $color_north_sea, $color-mix: 100){
 	background-color:mix($color, white, $color-mix);
 }
 

@@ -1,7 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery 
   
-  before_filter :get_menu
+  before_filter :get_site_info
+
+  #!!! do i have to featch all this all the time?
+  def get_site_info
+    @menu = 'home'
+    @show_grid = grid_is_on?
+  end
 
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -16,8 +22,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def get_menu
-    @menu = 'home'
+  
+  def grid_is_on?
+    Rails.env == 'development' && (user_signed_in? && current_user.grid?)
   end
   
 
