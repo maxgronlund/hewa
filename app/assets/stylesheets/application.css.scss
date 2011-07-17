@@ -105,11 +105,16 @@ a, a:hover, a:active, a:visited, a:link {
 
 .headline { @include template-color; @include font-header; }
 
+
 .input{
 	display:inline;
 }
 
 .top-margin{@include input_top_margin;}
+
+.body-color{ @include body-color;}
+.content-color{ @include content-color;}
+
 
 /*
 // some basic styles using fonts and color scheme

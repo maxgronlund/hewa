@@ -5,7 +5,7 @@ $body_color: #d8d8d8;
 
 
 // define colors from design_parts
-$color_north_sea: #1A4C61;
+$lagune: #c8e3d8;
 $color_grey_eminence: #4C5C65;
 $color_sea_form: #AACCCA;
 $color_chert: #AFBCBA;
@@ -34,6 +34,6 @@ $template-background-color-base: white;
 	background-color:mix($color, white, $color-mix);
 }
 
-@mixin banner-color($color: $color_north_sea, $color-mix: 100){
+@mixin banner-color($color: $lagune, $color-mix: 100){
 	background-color:mix($color, white, $color-mix);
 }
