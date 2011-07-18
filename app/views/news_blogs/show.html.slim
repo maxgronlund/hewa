@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  b Title:
+  = @news_blog.title
+p
+  b Body:
+  = @news_blog.body
+
+= link_to 'Edit', edit_news_blog_path(@news_blog)
+'|
+= link_to 'Back', news_blogs_path

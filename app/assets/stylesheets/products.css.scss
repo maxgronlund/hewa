@@ -8,12 +8,5 @@
 body.products {
   // Place scoped styles here
 
-  img{
-	@include border-radius(10px, 10px);
-	border-style:solid;
-	border-width:1px;
-	border-color:#999;
-	left:-2px;
-	position:relative;
-  }
+
 }

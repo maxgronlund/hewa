@@ -1,10 +1,6 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-  resources :line_items
-
-  resources :carts
-
   get "no_access/index"
   get "admin/index"
  
@@ -14,7 +10,10 @@ RailsTemplateR31::Application.routes.draw do
   root :to => "home#index"
   
   resources :addresses,
+            :carts,
             :helps,
+            :line_items,
+            :news_blogs,
             :products,  
             :product_lines,
             :text_contents

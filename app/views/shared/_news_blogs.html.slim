@@ -1,0 +1,9 @@
+.grid-3.alpha.omega
+  - news_blogs.each do |news_blog|
+    .news-blog
+      .content
+        h4 = news_blog.title
+        i = markdown(news_blog.body)
+        - if can_edit?
+          .edit
+            = link_to 'edit', edit_news_blog_path(news_blog)

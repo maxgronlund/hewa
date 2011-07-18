@@ -1,6 +1,5 @@
-.headline
-  h1 
-    = @product.title
+.divider-12
+  
 
 .grid-4
   = image_tag(@product.image_url :large) if @product.image?
@@ -9,6 +8,7 @@
     = link_to 'Edit', edit_product_line_product_path(@product.product_line,@product), class: 'fancy'
   
 .grid-5
+  h1 = @product.title
   = number_to_currency(@product.price)
   = markdown(@product.body.html_safe)
 

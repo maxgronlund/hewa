@@ -23,6 +23,7 @@
 body{
   margin:0px;
   @include font-plain;
+  color: $font-color;
 
 }
 
@@ -47,18 +48,11 @@ a, a:hover, a:active, a:visited, a:link {
 }
 
 
-.row-flip
-{
-	background-color:#ddd;
-}
-
-.row-flop
-{
-	background-color:#ccc;
-}
+.row-flip{@include std-color-color($stone, 80);}
+.row-flop{	@include std-color-color($sand, 100);}
 
 .sort-list-header {
-	background-color:#aaa;
+	@include std-color-color($aloe_vera, 100);
 	color:#000;
 	.asc {
 		padding-right:14px;
@@ -74,6 +68,10 @@ a, a:hover, a:active, a:visited, a:link {
 		background-color:transparent;
 		background-position:right top;
 	}
+	a, a:hover, a:visited{
+		@include  font-bold(14px);
+		color:#000;
+	}
 }
 
 /* FIXME where is this used? */
@@ -88,33 +86,46 @@ a, a:hover, a:active, a:visited, a:link {
 	text-align:right;
 }
 
-/* FIXME should these be in a context? and different colors? */
-.notice, .alert{
-	color:#f00;
-}
-
-
-.field{
-	@include input_top_margin;
-}
-
-.label{
-	@include input_top_margin;
-}
-
-
-.headline { @include template-color; @include font-header; }
-
-
-.input{
-	display:inline;
-}
-
+.logo-box{ margin:18px;}
+.alert{	color:#e00;}
+.notice{color:#0a0;}
+.field{@include input_top_margin;}
+.label{	@include input_top_margin;}
+.headline { @include template-color; }
+.input{ display:inline; }
 .top-margin{@include input_top_margin;}
-
 .body-color{ @include body-color;}
 .content-color{ @include content-color;}
 
+h1{
+	@include font-header(48px);
+	margin:8px 0px 8px 0px;
+}
+
+
+
+p{ @include font-plain(14px); color:#484848; }
+b, strong{@include  font-bold(14px); color:#555;}
+i{@include font-plain(14px); color:#484848;  }
+
+.news-blog{
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	margin-bottom:12px;
+	.content{
+		margin:8px;
+	}
+	h4{
+		@include font-header(20px);
+		margin:8px 0px 8px 0px;
+	}
+}
+.news-blog:hover{
+	background-color:#dadada;
+}
 
 /*
 // some basic styles using fonts and color scheme

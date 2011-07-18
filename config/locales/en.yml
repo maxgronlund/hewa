@@ -10,6 +10,7 @@ en:
       help: 'help'
       products: 'products'
       addresses: 'addresses'
+      news_blogs: 'news'
 
 
     attributes:

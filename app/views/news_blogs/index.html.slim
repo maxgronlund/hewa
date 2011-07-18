@@ -1,0 +1,21 @@
+h1 Listing news_blogs
+
+table
+  tr
+    th Title
+    th Body
+    th
+    th
+    th
+
+  - @news_blogs.each do |news_blog|
+    tr
+      td= news_blog.title
+      td= news_blog.body
+      td= link_to 'Show', news_blog
+      td= link_to 'Edit', edit_news_blog_path(news_blog)
+      td= link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New News blog', new_news_blog_path

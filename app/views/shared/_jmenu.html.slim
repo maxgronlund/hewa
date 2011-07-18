@@ -25,6 +25,10 @@
               li
                 = link_to(helps_path)  do
                   span = t('activerecord.models.help')
+              li
+                = link_to(news_blogs_path)  do
+                  span = t('activerecord.models.news_blogs')
+
         
       
       li  class=("current"  if @menu == 'home' )

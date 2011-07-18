@@ -28,3 +28,5 @@ rails g scaffold address send_to:string street:string zip_code:string city:strin
 
 rails generate scaffold line_item product_id:integer cart_id:integer 
 rails generate migration add_quantity_to_line_item quantity:integer
+
+rails generate scaffold news_blog title:string body:text

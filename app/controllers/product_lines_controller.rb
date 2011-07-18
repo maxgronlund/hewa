@@ -35,7 +35,7 @@ class ProductLinesController < InheritedResources::Base
     
     
     def crop
-      @crop_version = (params[:version] || :small).to_sym
+      @crop_version = (params[:version] || :medium).to_sym
       @product_line.get_crop_version! @crop_version
       @version_geometry_width, @version_geometry_height = ProductLineImageUploader.version_dimensions[@crop_version]
     end

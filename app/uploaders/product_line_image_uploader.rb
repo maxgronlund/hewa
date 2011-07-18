@@ -30,7 +30,7 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
    cattr_accessor :version_dimensions
    self.version_dimensions = {
      :small => [66, 66],
-     :medium => [238, 238],
+     :medium => [242,242],
      :large => [410, 410]
    }
 

@@ -1,0 +1,2 @@
+module NewsBlogsHelper
+end
