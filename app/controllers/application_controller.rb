@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   #!!! do i have to featch all this all the time?
   def get_site_info
     @menu = 'home'
-    @show_grid = grid_is_on?
   end
 
 
@@ -21,11 +20,5 @@ class ApplicationController < ActionController::Base
       user_path(resource)
     end
   end
-
-  
-  def grid_is_on?
-    Rails.env == 'development' && (user_signed_in? && current_user.grid?)
-  end
-  
 
 end
