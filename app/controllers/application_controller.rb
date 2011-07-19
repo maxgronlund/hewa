@@ -8,8 +8,9 @@ class ApplicationController < ActionController::Base
     @welcome        = TextContent.welcome
     @footer_text    = TextContent.footer_text
     @menu = 'home'
+
     @product_lines  = ProductLine.order('title asc')
-    @show_grid = grid_is_on?
+
   end
 
 
@@ -25,11 +26,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
-  def grid_is_on?
-    Rails.env == 'development' && (user_signed_in? && current_user.grid?)
-  end
-  
   def current_cart
     Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound
