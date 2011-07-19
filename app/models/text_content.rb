@@ -1,5 +1,5 @@
 class TextContent < ActiveRecord::Base
-  validates :identity, :presence => true#, :uniqueness => true
+  validates :identity, :presence => true, :uniqueness => true
   validates_presence_of :title
   
   def self.search(search)

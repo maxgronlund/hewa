@@ -48,6 +48,7 @@ gem 'rspec-rails', :group => [:development, :test] # rails generators needs rspe
 group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'remarkable_activerecord', '~> 4.0.0.alpha4'
 end
 
 
