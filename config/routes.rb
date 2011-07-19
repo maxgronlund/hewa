@@ -1,6 +1,8 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+  resources :screen_casts
+
   get "no_access/index"
   get "admin/index"
  
@@ -16,6 +18,7 @@ RailsTemplateR31::Application.routes.draw do
             :news_blogs,
             :products,  
             :product_lines,
+            :screen_casts,
             :text_contents
 
   resources :product_lines do

@@ -11,6 +11,7 @@ en:
       products: 'products'
       addresses: 'addresses'
       news_blogs: 'news'
+      screen_casts: 'screen casts'
 
 
     attributes:
@@ -31,7 +32,8 @@ en:
         role: 'role'
         image: 'image'
         grid: ' grid'
-
+      screen_casts:
+        screen_casts: 'screen casts'
       text_content:
         identity: "identity"
         title: 'title'

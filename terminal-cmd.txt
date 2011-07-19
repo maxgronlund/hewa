@@ -30,3 +30,7 @@ rails generate scaffold line_item product_id:integer cart_id:integer
 rails generate migration add_quantity_to_line_item quantity:integer
 
 rails generate scaffold news_blog title:string body:text
+
+rails g scaffold screen_cast title:string body:text url:string
+
+rails g migration add_show_on_about_page_to_user show_on_about_page:boolean

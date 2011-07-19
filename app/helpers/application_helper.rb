@@ -16,6 +16,10 @@ module ApplicationHelper
   def can_edit?
     user_signed_in? && current_user.admin_or_super?
   end
+  
+  def super_user?
+    user_signed_in? && current_user.super?
+  end
 
   def grid_is_on?
     Rails.env == 'development' && (user_signed_in? && current_user.grid?)

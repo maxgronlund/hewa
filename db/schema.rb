@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110717110324) do
+ActiveRecord::Schema.define(:version => 20110719103607) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(:version => 20110717110324) do
 
   add_index "products", ["product_line_id"], :name => "index_products_on_product_line_id"
 
+  create_table "screen_casts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "text_contents", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -109,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20110717110324) do
     t.boolean  "thursday",                               :default => true
     t.boolean  "friday",                                 :default => true
     t.boolean  "grid"
+    t.boolean  "show_on_about_page"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

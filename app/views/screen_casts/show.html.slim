@@ -1,0 +1,16 @@
+.headline
+  h1 
+    = @screen_cast.title
+
+
+.grid-8
+  =raw @screen_cast.url.html_safe
+
+.grid-4
+    = @screen_cast.body
+
+.grid-12
+
+  = link_to 'Edit', edit_screen_cast_path(@screen_cast)
+  '|
+  = link_to 'Back', screen_casts_path

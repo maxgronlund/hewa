@@ -25,6 +25,9 @@
 
     - if @user.super?
       = f.input :grid
+      br
+    - if can_edit?
+      = f.input :show_on_about_page
 
     
 
