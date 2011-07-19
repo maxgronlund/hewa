@@ -11,6 +11,7 @@ class Ability
         can :manage, TextContent
         can :manage, Product
         can :manage, ProductLine
+        can :read, ScreenCast
    
       elsif user.member?#ordinary user
         can :manage, Address, :user_id => user.id

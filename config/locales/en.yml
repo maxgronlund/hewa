@@ -102,6 +102,9 @@ en:
     show_all: 'show all'
     site_management: 'site management'
     user_management: 'user management'
+
+  screen_cast:
+    edit: 'edit screencast'
     
   products:
     products: 'products'

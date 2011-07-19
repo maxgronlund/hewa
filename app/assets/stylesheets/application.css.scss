@@ -102,6 +102,12 @@ h1{
 	margin:8px 0px 8px 0px;
 }
 
+h3{
+	@include font-bold(32px);
+	margin:8px 0px 8px 0px;
+	color: $orange-color;
+}
+
 
 
 p{ @include font-plain(14px); color:#484848; }

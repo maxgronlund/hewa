@@ -1,24 +1,21 @@
-.headline
-  h1
-    = t('activerecord.models.screen_casts')
-
 .grid-12
 
-
-
-
   - @screen_casts.each do |screen_cast|
-    
-    h3 = screen_cast.title.capitalize
-    = screen_cast.body
+    .grid-2.alpha
+      = link_to image_tag('screen_cast.png'), screen_cast
+      -if super_user?
+        = link_to t('system.edit'), edit_screen_cast_path(screen_cast)
+        = link_to t('system.delete'), screen_cast, :confirm => 'Are you sure?', :method => :delete
+    .grid-6
+      h3 = screen_cast.title.capitalize
+      = screen_cast.body
+      br
+      = link_to 'Show', screen_cast, class: 'fancy'
 
-    = link_to 'Show', screen_cast
-    -if super_user?
-      = link_to 'Edit', edit_screen_cast_path(screen_cast)
-      = link_to 'Destroy', screen_cast, :confirm => 'Are you sure?', :method => :delete
-    hr
-    
-    
-  -if super_user?
+      hr
+    .grid-4.omega
+
+-if super_user?
+  .grid-12.edit
     = link_to 'New Screen cast', new_screen_cast_path, class: 'fancy'
   

@@ -1,19 +1,14 @@
-= form_for @screen_cast do |f|
-  -if @screen_cast.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@screen_cast.errors.count, "error")} prohibited this screen_cast from being saved:"
-      ul
-        - @screen_cast.errors.full_messages.each do |msg|
-          li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
+.grid-12
+  = simple_form_for @screen_cast do |f|
+    = render 'shared/error_messages', :taget => @screen_cast
+  
+    = f.input :title
+    .field
     = f.label :body
-    = f.text_area :body
-  .field
-    = f.label :url
+    = f.text_area :body, :cols =>60
+	= f.label :url
     = f.text_field :url
-  .actions
-    = f.submit 'Save'
+
+    .actions
+      = f.submit 'Save'
+  

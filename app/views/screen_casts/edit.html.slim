@@ -1,8 +1,11 @@
-h1 Editing screen_cast
+.headline
+  h1 
+    = t('screen_cast.edit')
 
-== render 'form'
+= render 'form'
 
-= link_to 'Show', @screen_cast
-'|
-= link_to 'Back', screen_casts_path
+.grid-12
+  = link_to 'Show', @screen_cast
+  '|
+  = link_to 'Back', screen_casts_path
 
