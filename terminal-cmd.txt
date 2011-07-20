@@ -34,3 +34,5 @@ rails generate scaffold news_blog title:string body:text
 rails g scaffold screen_cast title:string body:text url:string
 
 rails g migration add_show_on_about_page_to_user show_on_about_page:boolean
+
+rails g controller about index

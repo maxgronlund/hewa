@@ -1,10 +1,13 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+
+
   resources :screen_casts
 
   get "no_access/index"
   get "admin/index"
+  get "about/index"
  
   devise_for :users
   

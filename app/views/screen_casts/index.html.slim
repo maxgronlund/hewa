@@ -6,14 +6,15 @@
       -if super_user?
         = link_to t('system.edit'), edit_screen_cast_path(screen_cast)
         = link_to t('system.delete'), screen_cast, :confirm => 'Are you sure?', :method => :delete
-    .grid-6
+    .grid-6.suffix-4.omega
       h3 = screen_cast.title.capitalize
       = screen_cast.body
       br
       = link_to 'Show', screen_cast, class: 'fancy'
 
+
+    .grid-12.alpha.omega
       hr
-    .grid-4.omega
 
 -if super_user?
   .grid-12.edit

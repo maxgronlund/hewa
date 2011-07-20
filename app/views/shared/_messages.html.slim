@@ -1,5 +1,9 @@
-.grid-12
-  .notice
-    = notice
-  .alert
-    = alert
+.grid-4
+  - if notice
+    .notice
+      .message
+        = notice
+  - if alert
+    .alert
+      .message
+        = alert
