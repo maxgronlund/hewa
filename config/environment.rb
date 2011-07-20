@@ -1,6 +1,9 @@
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 
+# Temporary fix for Rails-I18n Redish JSON decode error
+require File.expand_path('../../lib/rails-1499-monkey-patch.rb', __FILE__)
+
 # Initialize the rails application
 RailsTemplateR31::Application.initialize!
 

@@ -1,0 +1,42 @@
+Denne video er et eksemple på et screencast
+
+Et screencast er en lille vide på et par minutters varighed, 
+Screencast er lavet til dem der skal administrere siden, altså ikke kunderne og besøgende 
+det vil sige at kunderne og de besøgende ikke kan se dem.
+
+Screencast er en simpel og effiktiv måde at vis hvordan man administrator gør noget på siden, 
+
+ 
+
+
+Ok lad os starte
+
+Som et et eksemple på et screencast vil jeg
+vi jeg give et overblik over forsiden
+
+øverst er der en menu, bemærk menu punkterne. 'home' about og products
+Dette er ikke den endelige menu, bla hae du måske bemærket at den er på engelsk
+bare rolig det skal nok blive dansk, så det er ikke noget som vi behøver at bekymre lige nu, 
+
+
+
+Neden under er hewa's logo. som går igen på alle sider, det virker også som et 'gå tilbabe til forsiden' link
+f.eks hvis jeg er på en anden side kan jeg komme tilbage ved at klikke på det, det der sker er det samme som hvis jeg vælger 'home i menuen
+
+øverst til højre er et link 'log in'
+
+Så er der et antal store billeder som representere de vigtigste produkt linier, hvis man klikker på et af dem kommer man til den viste produkt linie.
+
+så er der en række nyheder ude i en kolone til højre
+
+og til slut kan man se hewas kontakt oplysninger nederst på siden, de går også igen på alle sider,
+
+ok lad det være nok for denne omgang, dette screencast var ment som et eksempel, og har ikke nogen praktisk funktion og vil senere blive slettet.
+
+
+
+
+
+
+
+Birgitte Stampe Olsen <birgitte@hewa.dk>
