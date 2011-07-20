@@ -208,6 +208,7 @@ DEPENDENCIES
   cancan
   capistrano
   carrierwave
+  chunky_png
   client_side_validations
   coffee-script
   compass!
