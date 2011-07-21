@@ -46,9 +46,15 @@ end
 
 gem 'rspec-rails', :group => [:development, :test] # rails generators needs rspec in :development
 group :test do
+  #gem 'autotest'
+  #gem 'autotest-fsevent'
+  #gem 'autotest-growl'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'remarkable_activerecord', '~> 4.0.0.alpha4'
+  #gem 'ruby-fsevent'
+  #gem 'watchr'
+  #gem 'spork'
 end
 
 
@@ -58,3 +64,7 @@ gem "compass-960-plugin", :require => "ninesixty"
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :development do
+  gem "rails-erd"
+end
