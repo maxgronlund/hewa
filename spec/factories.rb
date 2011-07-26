@@ -6,14 +6,14 @@ Factory.define :user do |u|
   u.password 'secret'
 end
 
-Factory.define :admin_user do |u|
+Factory.define :admin, :class => User do |u|
   u.name 'Test Admin User'
   u.email 'admin@test.com'
   u.password 'secret'
   u.role 'admin'
 end
 
-Factory.define :super_user do |u|
+Factory.define :super, :class => User do |u|
   u.name 'Test Super User'
   u.email 'super@test.com'
   u.password 'secret'

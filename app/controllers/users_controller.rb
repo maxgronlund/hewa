@@ -1,4 +1,5 @@
 class UsersController < InheritedResources::Base  
+  has_scope :page, :default => 1
   load_and_authorize_resource
 
   helper_method :sort_column, :sort_direction

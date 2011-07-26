@@ -1,8 +1,6 @@
 = simple_form_for @text_content, :validate => true do |f|
   = render 'shared/error_messages', :taget => @text_content
-
-  -if current_user.admin_or_super?
-    = f.input :identity 
+  = f.input :identity
   = f.input :title
   .field
     = f.label :body
