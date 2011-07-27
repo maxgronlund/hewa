@@ -4,7 +4,7 @@
   h1 = @product_line.title
   .grid-9.alpha.omega
     .grid-5.alpha
-      = image_tag(@product_line.image_url :large) if @product_line.image? 
+      = image_tag(@product_line.image_url :large)
       - if current_user && current_user.admin_or_super?
         .edit
           = link_to '  edit  ', edit_product_line_path(@product_line)
