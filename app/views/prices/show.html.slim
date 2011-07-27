@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  b Product:
+  = @price.product
+p
+  b Language:
+  = @price.language_id
+p
+  b Price:
+  = @price.price
+p
+  b Quantity:
+  = @price.quantity
+p
+  b Start date:
+  = @price.start_date
+p
+  b End date:
+  = @price.end_date
+
+= link_to 'Edit', edit_price_path(@price)
+'|
+= link_to 'Back', prices_path

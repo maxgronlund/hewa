@@ -1,0 +1,29 @@
+h1 Listing prices
+
+table
+  tr
+    th Product
+    th Language
+    th Price
+    th Quantity
+    th Start date
+    th End date
+    th
+    th
+    th
+
+  - @prices.each do |price|
+    tr
+      td= price.product
+      td= price.language_id
+      td= price.price
+      td= price.quantity
+      td= price.start_date
+      td= price.end_date
+      td= link_to 'Show', price
+      td= link_to 'Edit', edit_price_path(price)
+      td= link_to 'Destroy', price, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Price', new_price_path

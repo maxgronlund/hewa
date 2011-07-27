@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110719103607) do
+ActiveRecord::Schema.define(:version => 20110727131442) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -52,6 +52,19 @@ ActiveRecord::Schema.define(:version => 20110719103607) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "prices", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "language_id",                               :default => 1
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.integer  "quantity",                                  :default => 1
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "prices", ["product_id"], :name => "index_prices_on_product_id"
 
   create_table "product_lines", :force => true do |t|
     t.string   "title"

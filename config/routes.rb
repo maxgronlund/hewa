@@ -3,6 +3,8 @@ RailsTemplateR31::Application.routes.draw do
 
 
 
+  resources :prices
+
   resources :screen_casts
 
   get "no_access/index"

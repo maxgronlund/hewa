@@ -36,3 +36,5 @@ rails g scaffold screen_cast title:string body:text url:string
 rails g migration add_show_on_about_page_to_user show_on_about_page:boolean
 
 rails g controller about index
+
+rails g scaffold price product:belongs_to language_id:integer price:decimal quantity:integer start_date:date end_date:time
