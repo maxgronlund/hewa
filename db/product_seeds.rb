@@ -2827,10 +2827,12 @@ END
 data.split("\n").each do |line|
   item_no, description, category, info_path, invisible, cms_menu_id, price_list_sort = line.split("\t")
   description = 'n/a' if description.blank?
+  body = 'n/a'
 
-  product_line = ProductLine.find_or_create_by_title category
+  product_line = ProductLine.find_by_c5_desc category
+  product_line ||= ProductLine.create! :c5_desc => category, :title => 'n/a', :body => 'n/a'
 
-  Product.create! :item_nr => item_no, :title => description, :product_line => product_line, :active => (invisible == '0')
+  Product.create! :item_nr => item_no, :title => description, :body => 'n/a', :product_line => product_line, :active => (invisible == '0')
 
   puts "[product] Warn: NULL description for item_no #{item_no}" if description == 'NULL'
   puts "[product] Warn: blank ('n/a') description for item_no #{item_no}" if description == 'n/a'
