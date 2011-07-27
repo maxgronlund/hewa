@@ -17,6 +17,10 @@ module ApplicationHelper
     user_signed_in? && current_user.admin_or_super?
   end
   
+  def show_cv?
+    user_signed_in? && current_user.show_on_about_page?
+  end
+  
   def super_user?
     user_signed_in? && current_user.super?
   end
@@ -24,5 +28,8 @@ module ApplicationHelper
   def grid_is_on?
     Rails.env == 'development' && (user_signed_in? && current_user.grid?)
   end
+  
+
+  
 
 end

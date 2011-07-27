@@ -1,7 +1,7 @@
 class UsersController < InheritedResources::Base  
   load_and_authorize_resource
   helper_method :sort_column, :sort_direction
-
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
   
   def index
     return_path users_path # !!! same as line 10?

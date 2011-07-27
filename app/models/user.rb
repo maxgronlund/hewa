@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
 
   attr_accessible :email, :grid, :password, :password_confirmation, :remember_me,:show_on_about_page,
-                  :name, :role, :monday,:tuesday, :wednesday, :thursday, :friday
+                  :name, :role, :monday,:tuesday, :wednesday, :thursday, :friday,:cv
                   
                   
   validate :email,   

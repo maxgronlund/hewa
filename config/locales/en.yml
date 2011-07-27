@@ -54,6 +54,8 @@ en:
         thursday: 'thursday'
         friday: 'friday'
         grid: 'grid'
+      product_line:
+        promote_on_front_page: 'show on frontpage'
     hints:
       user:
         name: 'user name to sign in.'
