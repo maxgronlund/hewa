@@ -94,8 +94,8 @@ a, a:hover, a:active, a:visited, a:link {
 .headline { @include template-color; }
 .input{ display:inline; }
 .top-margin{@include input_top_margin;}
-.body-color{ @include body-color;}
-.content-color{ @include content-color;}
+.body-color{ @include body-color($color_white);}
+.content-color{ @include content-color($color_white);}
 
 h1{
 	@include font-header(48px);
