@@ -108,5 +108,54 @@ h3{
 	color: $orange-color;
 }
 
+p{ @include font-plain(14px); color:#484848; }
+b, strong{@include  font-bold(14px); color:#555;}
+i{@include font-plain(14px); color:#484848;  }
+
+.news-blog{
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	margin-bottom:12px;
+	.content{
+		margin:8px;
+	}
+	h4{
+		@include font-header(20px);
+		margin:8px 0px 8px 0px;
+	}
+}
+.news-blog:hover{
+	background-color:#dadada;
+}
+
+.notice{
+	color:#0a0;
+	background-color:#efe;
+	@include border-radius(5px, 5px);
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+    min-height:32px;
+	.message{
+	  margin:8px;
+	}
+	
+}
+.alert{	
+	color:#e00;
+	background-color:#fee;
+	@include border-radius(5px, 5px);
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+    min-height:32px;
+	.message{
+	  margin:8px;
+	}
+}
+
 
 
