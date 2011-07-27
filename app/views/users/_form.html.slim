@@ -59,6 +59,16 @@
       br
       b HOW DO I HIDE WHEN SHOW ON ABOUT-PAGE IS UNCHECKED
 
+    .field
+      = f.check_box :remove_image
+      = t('image.remove_image')
+  .field
+    - if current_user && current_user.super?
+         = f.check_box :grid
+         = t('activerecord.attributes.user.grid')
+  
+
+
 
 
     

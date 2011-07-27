@@ -33,29 +33,16 @@ class AvatarUploader < CarrierWave::Uploader::Base
     :xlarge => [324, 358],
   }
 
-  version :xsmall do
-    process :manualcrop
-    process :resize_to_fit => self.version_dimensions[:xsmall]
-  end
-  
-  version :small do
-    process :manualcrop
-    process :resize_to_fit => self.version_dimensions[:small]
-  end
-  
-  version :medium do
-    process :manualcrop
-    process :resize_to_fit => self.version_dimensions[:medium]
-  end
-  
-  version :large do
-    process :manualcrop
-    process :resize_to_fit => self.version_dimensions[:large]
-  end
-  
-  version :xlarge do
-    process :manualcrop
-    process :resize_to_fit => self.version_dimensions[:xlarge]
+  RESIZE_GRAVITY = 'NorthWest'
+
+  # define versions from dimensions above
+  self.version_dimensions.keys.each do |a_version|
+    eval <<-EOT
+      version :#{a_version} do
+        process :manualcrop
+        process :resize_to_fill => self.version_dimensions[:#{a_version}] << RESIZE_GRAVITY
+      end
+EOT
   end
 
   def manualcrop

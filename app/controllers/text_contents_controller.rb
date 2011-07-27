@@ -1,4 +1,5 @@
 class TextContentsController < InheritedResources::Base
+  has_scope :page, :default => 1
   load_and_authorize_resource
   uses_tiny_mce :only => [:new, :create, :edit, :update]
   helper_method :sort_column, :sort_direction
@@ -16,15 +17,13 @@ class TextContentsController < InheritedResources::Base
   end
   
   def create
-    goto = session[:go_to_after_edit] || text_contents_path
-    session[:go_to_after_edit] = nil
+    goto = session.delete(:go_to_after_edit) || collection_path
     create! {goto}
   end
   
   def update
-    goto = session[:go_to_after_edit] || text_contents_path
-    session[:go_to_after_edit] = nil
-    update! {goto}
+    goto = session.delete(:go_to_after_edit) || collection_path
+    create! {goto}
   end
   
 private  

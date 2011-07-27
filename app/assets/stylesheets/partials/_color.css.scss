@@ -1,3 +1,4 @@
+
 $color_white: #fff;
 $color_light_gray: #eee;
 
@@ -15,12 +16,14 @@ $color_sand_dune: #DEE0D5;
 $color_calcium: #E9EAE6;
 $color_red_algae: #B64D62;
 
+
 // set link color
 $link-color: $color_red_algae;
 
 // set default colors for color mixin
 $template-color-base: $stone;
 $template-background-color-base: white;
+
 
 
 @mixin template-color($color: $template-color-base, $color-mix: 100, $background-color: $template-background-color-base, $background-color-mix: 100) {
@@ -40,6 +43,18 @@ $template-background-color-base: white;
 	background-color:mix($color, white, $color-mix);
 }
 
+
 @mixin std-color-color($color: $stone, $color-mix: 100){
 	background-color:mix($color, white, $color-mix);
 }
+
+@mixin back-color($color: $color_north_sea, $color-mix: 100){
+	background-color:mix($color, white, $color-mix);
+}
+
+
+// set default colors for color mixin
+//$template-color-base: $color_grey_eminence;
+
+
+
