@@ -65,18 +65,14 @@ gem "compass-960-plugin", :require => "ninesixty"
 gem 'carrierwave'
 gem 'mini_magick'
 
-<<<<<<< HEAD
+
 
 # Deploy with Capistrano
 gem 'capistrano'
 
 
 
-
-
-
-=======
 group :development do
   gem "rails-erd"
 end
->>>>>>> 0ff994979ec2bb1e3637f01f27bd0271cb61f1ad
+
