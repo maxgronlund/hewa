@@ -52,5 +52,8 @@
             - @product_lines.each do |product_line|
               li
                 = link_to(product_line) do
-                  span  = product_line.title
+                  span  = excerpt(product_line.title, '', :radius => 100)
       
+
+
+
