@@ -3,7 +3,7 @@
     = @user.name
 
 
-.grid-4
+.grid-3
   - if @user.image?
     = image_tag(@user.image_url :large)
     br
@@ -20,44 +20,52 @@
       br/
       = link_to t('system.edit'), edit_user_path(@user), class: 'fancy'
 
-.grid-4
-  h3 = t('user.delivery_dates')
-  br
-  -if @user.monday?
-    = t('simple_form.labels.user.monday')
-    br
-  -if @user.tuesday?
-    = t('simple_form.labels.user.tuesday')
-    br
-  -if @user.wednesday?
-    = t('simple_form.labels.user.wednesday')
-    br
-  -if @user.thursday?
-    = t('simple_form.labels.user.thursday')
-    br
-  -if @user.friday?
-    = t('simple_form.labels.user.friday')
-    br
+.grid-8
 
+  .grid-4.alpha
+      - if show_cv?
+        =raw @user.cv
+  
+  
+  
+  .grid-3.omega.prefix-1
+  
+    -if @user.addresses.length == 0
+      = link_to 'new address', new_user_address_path(@user)
+    -else
+      h4 Address
+      = @user.addresses.first.send_to
+      br
+      = @user.addresses.first.street
+      br
+      = @user.addresses.first.zip_code
+      | - 
+      = @user.addresses.first.city
+      br
+      = @user.addresses.first.user_country
+      br
+      = link_to t('addresse.edit'), edit_user_address_path(@user, @user.addresses.first), class: 'fancy'
+      -#= link_to 'Destroy', @user.addresses.first, :confirm => 'Are you sure?', :method => :delete, class: 'fancy'
+      hr
+      h4 = t('user.delivery_dates')
+      br
+      -if @user.monday?
+        = t('simple_form.labels.user.monday')
+        br
+      -if @user.tuesday?
+        = t('simple_form.labels.user.tuesday')
+        br
+      -if @user.wednesday?
+        = t('simple_form.labels.user.wednesday')
+        br
+      -if @user.thursday?
+        = t('simple_form.labels.user.thursday')
+        br
+      -if @user.friday?
+        = t('simple_form.labels.user.friday')
+        br
+  
+.grid-1
 
-
-.grid-4
-
-  -if @user.addresses.length == 0
-    = link_to 'new address', new_user_address_path(@user)
-  -else
-    h3 Address
-    = @user.addresses.first.send_to
-    br
-    = @user.addresses.first.street
-    br
-    = @user.addresses.first.zip_code
-    | - 
-    = @user.addresses.first.city
-    br
-    = @user.addresses.first.user_country
-    br
-    = link_to t('addresse.edit'), edit_user_address_path(@user, @user.addresses.first), class: 'fancy'
-    -#= link_to 'Destroy', @user.addresses.first, :confirm => 'Are you sure?', :method => :delete, class: 'fancy'
 
 

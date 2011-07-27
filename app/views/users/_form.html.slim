@@ -40,7 +40,7 @@
 
     .grid-3.alpha.omega.suffix-1.edit.top-margin
       = f.submit t('system.save')
-  .grid-4
+  .grid-8
     b = t('user.delivery_dates')
     br
     = f.input :monday
@@ -52,11 +52,12 @@
     = f.input :thursday
     br
     = f.input :friday
-	
 
-
-
-  .grid-4
+    - if can_edit?
+      = f.label :cv
+      = f.text_area :cv, :class => "mceEditor"
+      br
+      b HOW DO I HIDE WHEN SHOW ON ABOUT-PAGE IS UNCHECKED
 
 
 

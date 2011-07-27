@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110727135542) do
+ActiveRecord::Schema.define(:version => 20110727144818) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -72,7 +72,8 @@ ActiveRecord::Schema.define(:version => 20110727135542) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.string   "crop_params", :limit => 1024
+    t.string   "crop_params",           :limit => 1024
+    t.boolean  "promote_on_front_page",                 :default => true
   end
 
   create_table "products", :force => true do |t|
@@ -132,6 +133,7 @@ ActiveRecord::Schema.define(:version => 20110727135542) do
     t.boolean  "friday",                                 :default => true
     t.boolean  "grid"
     t.boolean  "show_on_about_page",                     :default => false
+    t.text     "cv"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
