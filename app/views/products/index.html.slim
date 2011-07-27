@@ -24,12 +24,12 @@ div class="sort-list-header grid-12"
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
     .grid-1.alpha
       = link_to product.item_nr, product
-    .grid-2
+    .grid-4
       = link_to product.title, product
     .grid-1
-      = text_field_tag(:quantity, product.quantity, :size => 2)							
+      = text_field_tag(:quantity, product.quantity, :size => 2)
       -#!!! << make this work
-    .grid-4
+    .grid-2
       = excerpt(product.body, '', :radius => 16)
     .grid-1
       = number_to_currency(product.price)
