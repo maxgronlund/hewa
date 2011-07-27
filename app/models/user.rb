@@ -52,8 +52,12 @@ class User < ActiveRecord::Base
       scoped
     end
   end
+  
   def is_first_user?
     id == 1
   end
+  
+  scope :show_on_about_page, where("show_on_about_page != ?", false) 
+
 
 end

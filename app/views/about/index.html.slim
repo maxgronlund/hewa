@@ -1,2 +1,15 @@
-h1 About#index
-p Find me in app/views/about/index.html.slim
+
+
+- if @about_text
+  = @about_text.body 
+
+
+- @users.each do |user|
+  .grid-4
+    .grid-4.alpha.omega
+      h2 =user.name
+    .grid-4.alpha.omega
+      - if user.image?
+        = image_tag(user.image_url :large)
+    .grid-3.alpha
+      

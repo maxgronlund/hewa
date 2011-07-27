@@ -23,4 +23,8 @@ class TextContent < ActiveRecord::Base
     with_identity('footer_text')
   end
   
+  def self.about_text
+    with_identity('about_text')
+  end
+  
 end

@@ -38,3 +38,5 @@ rails g migration add_show_on_about_page_to_user show_on_about_page:boolean
 rails g controller about index
 
 rails g scaffold price product:belongs_to language_id:integer price:decimal quantity:integer start_date:date end_date:time
+
+rails g migration add_active_to_products active:boolean

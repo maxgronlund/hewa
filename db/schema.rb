@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110727131442) do
+ActiveRecord::Schema.define(:version => 20110727135542) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20110727131442) do
     t.decimal  "price",                           :precision => 8, :scale => 2
     t.integer  "min_units"
     t.integer  "quantity",                                                      :default => 1
+    t.boolean  "active"
   end
 
   add_index "products", ["product_line_id"], :name => "index_products_on_product_line_id"
@@ -108,8 +109,8 @@ ActiveRecord::Schema.define(:version => 20110727131442) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                  :default => "",   :null => false
-    t.string   "encrypted_password",     :limit => 128,  :default => "",   :null => false
+    t.string   "email",                                  :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128,  :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -130,7 +131,7 @@ ActiveRecord::Schema.define(:version => 20110727131442) do
     t.boolean  "thursday",                               :default => true
     t.boolean  "friday",                                 :default => true
     t.boolean  "grid"
-    t.boolean  "show_on_about_page"
+    t.boolean  "show_on_about_page",                     :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
