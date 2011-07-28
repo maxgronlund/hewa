@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   # validate :name, :presence => true
   
-  ROLES = %w[member admin super]
+  ROLES = %w[customer member admin super]
   
   def admin_or_super?
     admin? || super?
@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
   
+  def customer?
+    role == 'customer' || role.nil? # Until role is set to :customer by default
+  end
+
   def member?
     role == 'member' || role.nil? # Until role is set to :member by default
   end
