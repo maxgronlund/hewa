@@ -12,7 +12,7 @@
 User.create(:email => "max@synthmax.dk" , :name => 'Max Grønlund', :password => 'rosalina', :role => 'super')
 
 #require File.expand_path('../product_line_seeds', __FILE__)
-#require File.expand_path('../product_seeds', __FILE__)
+require File.expand_path('../product_seeds', __FILE__)
 #require File.expand_path('../product_title_seeds', __FILE__)
 #require File.expand_path('../price_seeds', __FILE__)
-require File.expand_path('../customer_seeds', __FILE__)
+#require File.expand_path('../customer_seeds', __FILE__)
