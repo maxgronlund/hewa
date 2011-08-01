@@ -1,0 +1,7 @@
+-if can_edit?
+  .edit
+    = link_to t('system.edit'), edit_product_line_path(product_line)
+.medium-image-box
+  = link_to image_tag(product_line.image_url :medium), product_line
+  .overlay-text
+    h4 = link_to product_line.title, product_line

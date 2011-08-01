@@ -5,3 +5,6 @@ recrop all on first upload
 
 fallback folder ?
 
+
+
+cap invoke COMMAND='tail -200 /var/www/hewa-sandbox/shared/log/production.log'

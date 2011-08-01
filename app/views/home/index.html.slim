@@ -4,24 +4,15 @@
   - @promoted_product_lines.each_with_index do |product_line, index|
     - if (index % 3) == 0 
       .grid-3.alpha
-        .medium-image-box
-          = link_to image_tag(product_line.image_url :medium), product_line
-          .overlay-text
-            h4 = link_to product_line.title, product_line
+        = render 'product_line', :product_line => product_line
     - elsif (index % 3) == 1
       .grid-3
-        .medium-image-box
-          = link_to image_tag(product_line.image_url :medium), product_line
-          .overlay-text
-            h4 = link_to product_line.title, product_line
-
-
+        = render 'product_line', :product_line => product_line
 	- elsif (index % 3) == 2
 	  .grid-3.omega
-        .medium-image-box
-	      = link_to image_tag(product_line.image_url :medium), product_line
-          .overlay-text
-            h4 = link_to product_line.title, product_line
+	    = render 'product_line', :product_line => product_line
+	
+        
 
 	  .grid-9.alpha.omega
 
