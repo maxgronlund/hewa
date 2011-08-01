@@ -44,3 +44,7 @@ rails g migration add_active_to_products active:boolean
 rails g migration add_cv_to_users cv:text
 
 rails g migration add_promote_on_front_page_to_product_lines promote_on_front_page:boolean
+
+
+rails g migration add_show_in_menu_to_product_lines show_in_menu:boolean
+

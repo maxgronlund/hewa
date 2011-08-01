@@ -3,6 +3,8 @@ RailsTemplateR31::Application.routes.draw do
 
 
 
+  get "help/index"
+
   resources :prices
 
   resources :screen_casts

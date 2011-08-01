@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
     @welcome        = TextContent.welcome
     @footer_text    = TextContent.footer_text
     @menu = 'home'
-    @product_lines  = ProductLine.order('title asc')
+#    @product_lines  = ProductLine.order('title asc')
+    @product_lines = ProductLine.show_in_menu.order('title asc')
+
 
   end
 
