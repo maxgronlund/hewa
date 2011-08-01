@@ -12,15 +12,20 @@
 .sort-list-header.grid-12
   .grid-3.alpha
     = sortable 'title', t('text_contents.title')
-  .grid-7
+  .grid-3
     = sortable 'body', t('text_contents.body')
+  .grid-4
+    = sortable 'promote_on_front_page', t('product_line.show_on_front_page')
   .grid-2.omega
 - @product_lines.each do |product_line|
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
     .grid-3.alpha
       = link_to product_line.title, product_line
-    .grid-7
+    .grid-3
       = excerpt(product_line.body, '', :radius => 32)
+    .grid-4
+      - if product_line.promote_on_front_page
+        = t('system.yes')
 
     .grid-2.omega
 	  = link_to t('system.show'), product_line

@@ -117,6 +117,7 @@ en:
     product_lines: 'product lines'
     new_product_line: "new product line"
     other: 'other product lines'
+    show_on_front_page: 'Show on front page'
   text_contents:
     all_texts: 'all texts'
     edit_text_content: 'edit text content'
