@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
   validates_presence_of :title, :item_nr
-  attr_accessible :image, :image_cache, :item_nr, :min_units, :price, :remote_image_url, :remove_image, :title, :body
+  attr_accessible :image, :image_cache, :item_nr, :min_units, :price, :remote_image_url, :remove_image, :title, :body, :product_line
   
   serialize :crop_params, Hash
   mount_uploader :image, ProductImageUploader
