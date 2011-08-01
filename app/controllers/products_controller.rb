@@ -19,7 +19,7 @@ class ProductsController < InheritedResources::Base
   end
   
   def show
-    session[:go_to_after_edit] = product_line_product_path(@product.product_line,@product)
+    #session[:go_to_after_edit] = product_line_product_path(@product.product_line,@product)
     show!
   end
   
@@ -41,7 +41,7 @@ class ProductsController < InheritedResources::Base
     if params[:product][:image] && params[:product][:remove_image] != '1'
       update! { goto }
     else
-      update! { product_line_product_path(@product.product_line,@product) }
+      update! { product_path(@product) } 
     end
     
   

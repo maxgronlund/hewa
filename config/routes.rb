@@ -7,7 +7,8 @@ RailsTemplateR31::Application.routes.draw do
 
   resources :prices
 
-  resources :screen_casts
+  resources :screen_casts,
+            :products
 
   get "no_access/index"
   get "admin/index"

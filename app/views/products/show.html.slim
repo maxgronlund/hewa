@@ -5,12 +5,12 @@
   = image_tag(@product.image_url :large) if @product.image?
   br
   .edit
-    = link_to 'Edit', edit_product_line_product_path(@product.product_line,@product), class: 'fancy'
+    = link_to 'Edit', edit_product_path(@product), class: 'fancy'
   
 .grid-5
   h1 = @product.title
   = number_to_currency(@product.price)
-  = markdown(@product.body.html_safe)
+  = markdown(@product.body.html_safe) if @product.body
 
 
 .grid-3

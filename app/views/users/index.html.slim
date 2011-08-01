@@ -33,6 +33,9 @@ div class="sort-list-header grid-12"
         - unless user.is_first_user?
           | | 
           = link_to t('system.delete'), user, :confirm => 'Are you sure?', :method => :delete
-  = link_to t('user.create_user'), new_user_path
+.pagination-12 
+  = paginate @users
+.grid-12.edit 
+  = link_to t('user.create_user'), new_user_path, class: 'fancy'
       
   

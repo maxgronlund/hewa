@@ -26,8 +26,7 @@
     - if @user.super?
       = f.input :grid
       br
-    - if can_edit?
-      = f.input :show_on_about_page
+
 
     
 
@@ -54,6 +53,8 @@
     = f.input :friday
 
     - if can_edit?
+      br
+      = f.input :show_on_about_page
       = f.label :cv
       = f.text_area :cv, :class => "mceEditor"
 
