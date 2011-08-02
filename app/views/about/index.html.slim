@@ -1,8 +1,8 @@
-.grid-12
-  - if @about_text
-    h1 = @about_text.title
+
 .grid-12
   .grid-4.alpha
+    - if @about_text
+	    h1 = @about_text.title
     - if @about_text
       =raw @about_text.body
      
