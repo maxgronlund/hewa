@@ -112,12 +112,20 @@ en:
     products: 'products'
     new_product: 'new product'
     edit_product: 'edit product'
-      
+
+  news_blog:
+    news_blogs: 'news blogs'
+    title: 'Hewa Nyt'
+    introduction: 'Et par gange årligt udkommer Hewa Nyt med nyheder og tilbud fra Hewa Health Care.'
+    latest: 'Læs seneste nummer:'
+    archive: 'Arkiv:'
+
   product_line:
     product_lines: 'product lines'
     new_product_line: "new product line"
     other: 'other product lines'
     show_on_front_page: 'Show on front page'
+
   text_contents:
     all_texts: 'all texts'
     edit_text_content: 'edit text content'

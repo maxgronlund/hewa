@@ -1,21 +1,33 @@
-h1 Listing news_blogs
+.headline
+  h1= t('news_blog.title')
 
-table
-  tr
-    th Title
-    th Body
-    th
-    th
-    th
+.grid-12
+  .grid-6.alpha
+    section= t('news_blog.introduction')
 
-  - @news_blogs.each do |news_blog|
-    tr
-      td= news_blog.title
-      td= news_blog.body
-      td= link_to 'Show', news_blog
-      td= link_to 'Edit', edit_news_blog_path(news_blog)
-      td= link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
+    section.latest
+      p= t('news_blog.latest')
+      - if @news_blogs.any?
+        - news_blog = latest_news_blog = @news_blogs.shift
+        = link_to news_blog.title, news_blog.newsletter.url
+        - if can? :manage, NewsBlog
+          = link_to 'Edit', edit_news_blog_path(news_blog)
+          ' | 
+          = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
 
-br
+    section.archive
+      p= t('news_blog.archive')
+      - @news_blogs.each do |news_blog|
+        = link_to news_blog.title, news_blog.newsletter.url
+        - if can? :manage, NewsBlog
+          = link_to 'Show', news_blog
+          ' | 
+          = link_to 'Edit', edit_news_blog_path(news_blog)
+          ' | 
+          = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New News blog', new_news_blog_path
+    - if can? :manage, NewsBlog
+      = link_to 'New News blog', new_news_blog_path
+
+  .grid-6.omega
+    = link_to image_tag('...'), latest_news_blog.newsletter.url if latest_news_blog
