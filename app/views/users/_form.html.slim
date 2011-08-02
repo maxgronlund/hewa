@@ -6,7 +6,7 @@
 
   .grid-4
     .grid-3.alpha.suffix-1.omega
-      - if current_user && current_user.admin_or_super?
+      - if can_edit?
         - if @user.image.present?
 	      = image_tag(@user.image_url :large)
 	      br
@@ -30,7 +30,8 @@
 
     
 
-    = f.input :name
+    = f.input :show_on_about_page
+    = f.input :name, :size => 2
     = f.input :email
     = f.input :password
     = f.input :password_confirmation
@@ -53,8 +54,6 @@
     = f.input :friday
 
     - if can_edit?
-      br
-      = f.input :show_on_about_page
       = f.label :cv
       = f.text_area :cv, :class => "mceEditor"
 
