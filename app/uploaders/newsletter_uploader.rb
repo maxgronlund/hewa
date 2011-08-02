@@ -2,7 +2,7 @@
 
 class NewsletterUploader < CarrierWave::Uploader::Base
 
-  #include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -19,12 +19,9 @@ class NewsletterUploader < CarrierWave::Uploader::Base
     "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
-  # Process files as they are uploaded:
-  #process :convert => 'jpg'
-  #process :resize_to_limit => [648, 716]
-
   #version :cover do
   #  process :convert => 'jpg'
+  #  #process :create_cover_img
   #end
 
   # Add a white list of extensions which are allowed to be uploaded.

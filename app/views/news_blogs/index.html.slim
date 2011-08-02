@@ -12,22 +12,23 @@
         = link_to news_blog.title, news_blog.newsletter.url
         - if can? :manage, NewsBlog
           = link_to 'Edit', edit_news_blog_path(news_blog)
-          ' | 
+          '  | 
           = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
 
     section.archive
       p= t('news_blog.archive')
-      - @news_blogs.each do |news_blog|
-        = link_to news_blog.title, news_blog.newsletter.url
-        - if can? :manage, NewsBlog
-          = link_to 'Show', news_blog
-          ' | 
-          = link_to 'Edit', edit_news_blog_path(news_blog)
-          ' | 
-          = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
+      ul
+        - @news_blogs.each do |news_blog|
+          li
+            = link_to news_blog.title, news_blog.newsletter.url
+            - if can? :manage, NewsBlog
+              ' - 
+              = link_to 'Edit', edit_news_blog_path(news_blog)
+              '  | 
+              = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
 
     - if can? :manage, NewsBlog
       = link_to 'New News blog', new_news_blog_path
 
   .grid-6.omega
-    = link_to image_tag('...'), latest_news_blog.newsletter.url if latest_news_blog
+    = link_to image_tag(latest_news_blog.newsletter.url.sub('.pdf', '.jpg')), latest_news_blog.newsletter.url if latest_news_blog

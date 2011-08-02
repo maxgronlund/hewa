@@ -1,4 +1,4 @@
-= form_for @news_blog do |f|
+= form_for @news_blog, :html => {:class => 'upload'} do |f|
   -if @news_blog.errors.any?
     #error_explanation
       h2 = "#{pluralize(@news_blog.errors.count, "error")} prohibited this news_blog from being saved:"
@@ -16,5 +16,5 @@
     = f.label :newsletter
     = f.file_field :newsletter
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', :disable_with => 'Uploading...'
     = image_tag "loader.gif", alt: "", width: "32", height: "32", style: "display: none;", class: 'spinner'
