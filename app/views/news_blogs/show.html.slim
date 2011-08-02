@@ -6,6 +6,8 @@ p
 p
   b Body:
   = @news_blog.body
+p
+  = link_to t('system.download'), @news_blog.newsletter.url
 
 = link_to 'Edit', edit_news_blog_path(@news_blog)
 '|

@@ -12,5 +12,9 @@
   .field
     = f.label :body
     = f.text_area :body
+  .field
+    = f.label :newsletter
+    = f.file_field :newsletter
   .actions
     = f.submit 'Save'
+    = image_tag "loader.gif", alt: "", width: "32", height: "32", style: "display: none;", class: 'spinner'

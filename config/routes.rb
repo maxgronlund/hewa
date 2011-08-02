@@ -23,11 +23,12 @@ RailsTemplateR31::Application.routes.draw do
             :carts,
             :helps,
             :line_items,
-            :news_blogs,
             :products,  
             :product_lines,
             :screen_casts,
             :text_contents
+
+  resources :news_blogs, :except => :show
 
   resources :product_lines do
     resources :products
