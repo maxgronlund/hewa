@@ -1,20 +1,25 @@
 
+    
 .grid-12
   .grid-4.alpha
-    - if @about_text
-	    h1 = @about_text.title
+    h1 = @about_text.title
     - if @about_text
       =raw @about_text.body
+      - if can?(:edit, @about_text) 
+        .edit
+          = link_to t('system.edit'), edit_text_content_path(@about_text), class: 'fancy'
      
   .grid-7.prefix-1.omega
     - @users.each do |user|
       .grid-3.alpha
         - if user.image?
-          = image_tag(user.image_url :large)
+          .avatar-image-box
+            = image_tag(user.image_url :large)
         
       .grid-4.omega
         h2 =user.name
         =raw user.cv
+      .grid-7.alpha.omega
   
 
       

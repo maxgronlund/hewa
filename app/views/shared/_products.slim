@@ -5,7 +5,8 @@
     .grid-1
       = number_to_currency(product.price)
     .grid-2
-      = button_to 'Add to Cart', line_items_path(:product_id => product)
+      - if user_signed_in?
+        = button_to 'Add to Cart', line_items_path(:product_id => product)
     .grid-2.omega
       - if can?(:manage, Product)
         .edit

@@ -123,7 +123,7 @@ en:
   product_line:
     product_lines: 'product lines'
     new_product_line: "new product line"
-    other: 'other product lines'
+    other: 'Other products'
     show_on_front_page: 'Show on front page'
 
   text_contents:

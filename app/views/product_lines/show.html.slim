@@ -1,17 +1,17 @@
-.divider-12
+
   
 .grid-9
-  h1 = @product_line.title
   .grid-9.alpha.omega
     .grid-5.alpha
-      = image_tag(@product_line.image_url :large)
-      - if current_user && current_user.admin_or_super?
+      .product-line-image-box
+        = image_tag(@product_line.image_url :large)
+      - if can_edit?
         .edit
           = link_to t('system.edit'), edit_product_line_path(@product_line)
           | | 
           = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete
     .grid-4.omega
-      
+      h1 = @product_line.title
       = markdown(@product_line.body)
 
   .grid-9.alpha.omega

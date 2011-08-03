@@ -39,7 +39,9 @@ a, a:hover, a:active, a:visited, a:link {
 }
 
 
-
+hr{
+	margin:0px;
+}
 
 /* JCrop preview */
 .preview {
@@ -49,8 +51,11 @@ a, a:hover, a:active, a:visited, a:link {
 }
 
 
-.row-flip{@include std-color-color($stone, 80);}
-.row-flop{	@include std-color-color($sand, 100);}
+.row-flip{@include std-color-color($lagune, 50);}
+.row-flop{	@include std-color-color($aloe_vera, 40);}
+
+.row-flip2{@include std-color-color($stone, 80);}
+.row-flop2{	@include std-color-color($sand, 100);}
 
 .sort-list-header {
 	@include std-color-color($aloe_vera, 100);
@@ -99,7 +104,12 @@ a, a:hover, a:active, a:visited, a:link {
 .content-color{ @include content-color($color_white);}
 
 h1{
-	@include font-header(48px);
+	@include font-header(36px);
+	margin:8px 0px 8px 0px;
+}
+
+h4{
+	@include font-header(21px);
 	margin:8px 0px 8px 0px;
 }
 
@@ -158,5 +168,37 @@ i{@include font-plain(14px); color:#484848;  }
 	}
 }
 
+.avatar-image-box{
+	margin-bottom:20px;
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	width:232px;
+	height:266px;
+	display:block;
+	overflow:hidden;
+	img{ 
+		left:-4px;
+		position:relative;
+	}
+}
 
+.product-line-image-box{
+	margin-bottom:20px;
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	width:406px;
+	height:406px;
+	display:block;
+	overflow:hidden;
+	img{ 
+		left:-4px;
+		position:relative;
+	}
+}
 

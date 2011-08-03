@@ -1,12 +1,18 @@
 .grid-3.alpha.omega
-  h3 = t('product_line.other')
-.grid-3.alpha.omega
-  - product_lines.each do |product_line|
+  h4 = t('product_line.other')
 
-    .grid-1.alpha
-      = link_to image_tag(product_line.image_url :small), product_line_path(product_line) if product_line.image?
-    .grid-2.omega
-      = link_to product_line.title, product_line
-     
-    .grid-3.alpha.omega
-      hr
+    
+
+
+
+- product_lines.each do |product_line|
+  .grid-3.alpha.omega
+    = link_to product_line.title, product_line
+
+-#= link_to image_tag(product_line.image_url :small), product_line_path(product_line) if product_line.image?
+
+
+
+
+
+

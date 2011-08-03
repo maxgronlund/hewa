@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110801181148) do
+ActiveRecord::Schema.define(:version => 20110802081854) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20110801181148) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "newsletter"
   end
 
   create_table "prices", :force => true do |t|
