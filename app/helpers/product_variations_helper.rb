@@ -1,0 +1,2 @@
+module ProductVariationsHelper
+end

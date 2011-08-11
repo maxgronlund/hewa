@@ -3,6 +3,8 @@ RailsTemplateR31::Application.routes.draw do
 
 
 
+  resources :product_variations
+
   get "help/index"
 
   resources :prices

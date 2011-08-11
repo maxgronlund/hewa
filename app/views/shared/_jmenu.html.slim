@@ -23,6 +23,9 @@
                 = link_to(products_path)  do
                   span = t('activerecord.models.products')
               li
+                = link_to(product_variations_path)  do
+                  span = t('activerecord.models.product_variations')
+              li
                 = link_to(help_index_path)  do
                   span = t('activerecord.models.help')
               li

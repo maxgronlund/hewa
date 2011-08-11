@@ -1,0 +1,27 @@
+h1 Listing product_variations
+
+table
+  tr
+    th Title suffix
+    th Item nr
+    th In stock
+    th On sale
+    th Product
+    th
+    th
+    th
+
+  - @product_variations.each do |product_variation|
+    tr
+      td= product_variation.title_suffix
+      td= product_variation.item_nr
+      td= product_variation.in_stock
+      td= product_variation.on_sale
+      td= product_variation.product
+      td= link_to 'Show', product_variation
+      td= link_to 'Edit', edit_product_variation_path(product_variation)
+      td= link_to 'Destroy', product_variation, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Product variation', new_product_variation_path

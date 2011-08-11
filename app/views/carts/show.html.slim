@@ -19,7 +19,7 @@
         = text_field_tag('cart_items[][quantity]', item.quantity, :size => 2)			
         -#= item.quantity
       .grid-2 
-        = number_to_currency(item.total_price)
+        -#= number_to_currency(item.total_price)
       .grid-1.suffix-4.omega 
         = link_to 'delete', item, :method => :delete, :confirm => 'Are you sure?', class: 'fancy'
       br

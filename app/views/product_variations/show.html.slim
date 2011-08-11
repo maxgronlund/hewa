@@ -1,0 +1,23 @@
+p#notice = notice
+
+p
+  b Title suffix:
+  = @product_variation.title_suffix
+p
+  b Item nr:
+  = @product_variation.item_nr
+p
+  b In stock:
+  = @product_variation.in_stock
+p
+  b On sale:
+  = @product_variation.on_sale
+p
+  b Product:
+  = @product_variation.product.title
+
+= link_to 'Edit', edit_product_variation_path(@product_variation)
+'|
+= link_to 'Back', product_variations_path
+
+

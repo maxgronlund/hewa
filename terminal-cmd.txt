@@ -48,3 +48,6 @@ rails g migration add_promote_on_front_page_to_product_lines promote_on_front_pa
 
 rails g migration add_show_in_menu_to_product_lines show_in_menu:boolean
 
+rails g scaffold product_variation title_suffix:string item_nr:string in_stock:integer on_sale:boolean product:belongs_to
+
+rails g migration copy_products_to_product_variations
