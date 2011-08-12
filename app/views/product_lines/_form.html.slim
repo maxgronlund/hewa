@@ -18,10 +18,8 @@
     - if @product_line.image.present?
       - @product_line.image.version_dimensions.keys.each do |version|
         span
-          | #{version}:
           = link_to t('image.re_crop'), crop_product_line_path(@product_line, :version => version)
           br
-          = version[version.to_s]
           = image_tag(@product_line.image_url version) if @product_line.image?
 
 

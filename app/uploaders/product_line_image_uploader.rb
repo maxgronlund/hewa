@@ -50,6 +50,11 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
      process :manualcrop
      process :resize_to_fit => self.version_dimensions[:large]
    end
+   
+   version :drill do
+     process :manualcrop
+     process :resize_to_fit => self.version_dimensions[:drill]
+   end
   
    def manualcrop
      return unless model.cropping?

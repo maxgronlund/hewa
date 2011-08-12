@@ -1,21 +1,26 @@
-
-  
 .grid-9
-  .grid-9.alpha.omega
-    .grid-5.alpha
-      .product-line-image-box
-        = image_tag(@product_line.image_url :large)
-      - if can_edit?
-        .edit
-          = link_to t('system.edit'), edit_product_line_path(@product_line)
-          | | 
-          = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete
-    .grid-4.omega
-      h1 = @product_line.title
-      = markdown(@product_line.body)
+  - if @product_line.image_size == 'normal'
+    .grid-9.alpha.omega
+      .grid-5.alpha
+        .product-line-image-box
+          = image_tag(@product_line.image_url :large)
+      .grid-4.omega
+        h1 = @product_line.title
+        = markdown(@product_line.body)
+    
 
-  .grid-9.alpha.omega
-      = render "shared/products" , :products => @product_line.products 
+  - else
+    .grid-9.alpha.omega
+      h1 = @product_line.title
+      = markdown(@product_line.body) 
+    .grid-9.alpha.omega
+      = image_tag(@product_line.image_url :drill)
+
+  - if can_edit?
+    .grid-9.alpha.omega
+      = link_to t('system.edit'), edit_product_line_path(@product_line), class: 'fancy'
+      = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy'
+
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines
 
