@@ -1,4 +1,4 @@
-= form_for @product_variation do |f|
+= simple_form_for @product_variation do |f|
   -if @product_variation.errors.any?
     #error_explanation
       h2 = "#{pluralize(@product_variation.errors.count, "error")} prohibited this product_variation from being saved:"
@@ -6,23 +6,18 @@
         - @product_variation.errors.full_messages.each do |msg|
           li= msg
 
-  .field
-    = f.label :title_suffix
-    = f.text_field :title_suffix
-  .field
-    = f.label :item_nr
-    = f.text_field :item_nr
-  .field
-    = f.label :in_stock
-    = f.number_field :in_stock
-  .field
-    = f.label :on_sale
-    = f.check_box :on_sale
-  .field
-    = f.label :product
-    = f.text_field :product
 
-  .field
-    = f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', :title => t('products.choose_catalogs') }, :Collection => Product.product_selectable
+  = f.input :title_suffix
+  
+  = f.input :item_nr
+  
+  = f.input :in_stock
+  
+  = f.input :on_sale
+
+  = f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', :title => 'product' }
+  -#= f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', 'product' }
+
+
   .actions
     = f.submit 'Save'
