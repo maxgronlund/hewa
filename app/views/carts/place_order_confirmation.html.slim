@@ -1,0 +1,17 @@
+.headline
+  h1 Order placed
+
+.grid-12
+  'Thank you - We have received your order.
+  p You will receive an email in a few minutes with details on this order.
+
+  'Order details:
+  hr/
+  'id: 
+  = @cart.id
+  p (TODO info om line_items, priser m.v.)
+  p (TODO info omkring valgte leverings- samt faktureringsadresser)
+  hr/
+
+
+  p= link_to 'Back to shop', root_path, :class => 'fancy'
