@@ -1,0 +1,59 @@
+.headline
+  h1
+    = 'Checkout'
+
+= simple_form_for @cart, :as => :cart, :url => checkout_cart_path(@cart, :action => :checkout) do |f|
+  = hidden_field_tag :rurl, request.url
+  .grid-10.prefix-1.suffix-1
+    - addresses = current_user.addresses.map { |address| ["#{address.street}, #{address.zip_code} #{address.city}", address.id] }
+
+    .grid-4
+      h2 Faktureringsadresse
+      = f.association :invoice_address, :collection => addresses, :include_blank => true, :label => false, :class => 'form-submit'
+      = f.button :submit, 'Vælg'
+      - if @cart.invoice_address_id
+        br/
+        'Att: 
+        = @cart.invoice_address.send_to
+        br/
+        = @cart.invoice_address.street
+        br/
+        = @cart.invoice_address.zip_code
+        ' 
+        = @cart.invoice_address.city
+        br/
+        = @cart.invoice_address.user_country
+        br/
+        = link_to 'edit', edit_user_address_path(current_user, @cart.invoice_address_id, :rurl => request.url)
+      p= link_to 'Add address', new_user_address_path(current_user, :rurl => request.url+'?new_invoice_address=1')
+
+    .grid-2
+      '
+
+    .grid-4
+      h2 Leveringsadresse
+      = f.association :delivery_address, :collection => addresses, :include_blank => true, :label => false, :class => 'form_submit'
+      = f.button :submit, 'Vælg'
+      - if @cart.delivery_address_id
+        br/
+        'Att: 
+        = @cart.invoice_address.send_to
+        br/
+        = @cart.invoice_address.street
+        br/
+        = @cart.invoice_address.zip_code
+        ' 
+        = @cart.invoice_address.city
+        br/
+        = @cart.invoice_address.user_country
+        br/
+        = link_to 'edit', edit_user_address_path(current_user, @cart.delivery_address_id, :rurl => request.url)
+      p= link_to 'Add address', new_user_address_path(current_user, :rurl => request.url+'?new_delivery_address=1')
+
+  .grid-12
+    h2 Valgte leveringsdage
+    - delivery_days = %w(monday tuesday wednesday thursday friday).each_with_index.map { |day, idx| I18n.t('date.day_names')[idx+1] if current_user.send(day) }.compact
+    = delivery_days.to_sentence
+
+  .grid-4.prefix-6.suffix-2
+    = f.button :submit, 'Place Order', :class => 'fancy'

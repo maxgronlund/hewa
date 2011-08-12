@@ -22,7 +22,7 @@ RailsTemplateR31::Application.routes.draw do
   root :to => "home#index"
 
   resources :carts do
-    member { get 'checkout' }
+    member { get 'checkout', 'place_order_confirmation'; put 'checkout' }
   end
   
   resources :addresses,

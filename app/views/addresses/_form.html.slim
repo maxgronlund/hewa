@@ -1,7 +1,7 @@
 = simple_form_for [@user, @address], :validate => true do |f|
   = render 'shared/error_messages', :taget => @address
 
-
+  = hidden_field_tag :rurl, request[:rurl]
   = f.input :send_to
   = f.input :street
   = f.input :zip_code

@@ -1,12 +1,17 @@
 class AddressesController < InheritedResources::Base
     belongs_to :user , :optional => true
     
+    def new
+      @address = Address.new :user_country => 'Denmark'
+      new!
+    end
+    
     def create
-      create! { @address.user}
+      create! { params[:rurl] || @address.user}
     end
     
     def update
-      update! { @address.user}
+      update! { params[:rurl] || @address.user}
     end
     
     def destroy
