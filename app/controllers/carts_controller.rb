@@ -20,7 +20,7 @@ class CartsController < InheritedResources::Base
   end
   
   def checkout
-    @cart = Cart.find(params[:id])
+    @cart = Cart.order_open.find(params[:id])
 
     # ensure user cannot confirm other users' carts
     redirect_to no_access_index_path and return if (@cart.user_id.present? && @cart.user_id != current_user.id)
@@ -34,12 +34,17 @@ class CartsController < InheritedResources::Base
       redirect_to checkout_cart_path(@cart)
     elsif is_place_order?
       @cart.place_order!
+
+      # !!! TODO put email sending onto a background task queue
+      OrderNotification.order_placed(@cart).deliver
+      OrderNotification.order_placed_confirmation(@cart).deliver
+
       redirect_to place_order_confirmation_cart_path(@order)
     end
   end
   
   def place_order_confirmation
-    @cart = curent_user.carts.find(params[:id])
+    @cart = current_user.carts.order_placed.find(params[:id])
   end
   
   def update

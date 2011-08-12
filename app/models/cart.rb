@@ -9,7 +9,6 @@ class Cart < ActiveRecord::Base
   accepts_nested_attributes_for :line_items, :allow_destroy => true
   attr_accessible :line_items_attributes
   
-  
   def add_product(product_id)
     current_item = line_items.find_by_product_id(product_id)
     
@@ -32,12 +31,19 @@ class Cart < ActiveRecord::Base
   end
 
 
-  # Order workflow:
-  # Customer creates/edits order (add items to cart, change quantities)
+  # Cart/Order workflow:
+  # Customer creates/edits order (adds items to cart, changes quantities)
+  #   => order open
   # Customer place order (select delivery and invoice addresses)
+  #   => order placed
   #   => email sent to Customer and Hewa
   # Hewa confirms order
+  #   => order confirmed
   #   => email sent to Customer
+  scope :order_open, where(:state => nil)
+  scope :order_placed, where(:state => 'placed')
+  scope :order_confirmed, where(:state => 'confirmed')
+  
   def place_order!
     update_attribute :state, 'placed'
   end
