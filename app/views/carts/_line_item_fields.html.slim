@@ -1,0 +1,11 @@
+div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+  .grid-3.alpha
+    = f.object.product_variation.display_name
+  .grid-1
+    = number_to_currency(f.object.price)
+  .grid-1 
+    = f.input :quantity, :label => false, :size => 4
+  .grid-2 
+    -#= number_to_currency(item.total_price)
+  .grid-1.suffix-4.omega 
+    = f.link_to_remove "Remove", class: 'fancy'

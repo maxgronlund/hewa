@@ -1,6 +1,9 @@
 class Cart < ActiveRecord::Base
-  has_many :line_items, :dependent => :destroy
   belongs_to :user
+
+  has_many :line_items, :dependent => :destroy
+  accepts_nested_attributes_for :line_items, :allow_destroy => true
+  attr_accessible :line_items_attributes
   
   
   def add_product(product_id)

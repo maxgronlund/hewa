@@ -21,6 +21,11 @@ class CartsController < InheritedResources::Base
   
   def checkout
     @cart = Cart.find(params[:id])
+    @cart.user = current_user
+  end
+  
+  def update
+    update! { is_checkout?? checkout_cart_path(@cart) : cart_path(@cart) }
   end
   
   def destroy
@@ -32,10 +37,12 @@ class CartsController < InheritedResources::Base
       format.xml { head :ok }
     end
   end
-  
-  def update
-    update!
+
+
+protected
+
+  def is_checkout?
+    params[:commit] == 'Checkout Now'
   end
-  
-  
+
 end
