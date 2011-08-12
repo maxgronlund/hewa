@@ -6,6 +6,7 @@
 // define fonts from design_parts
 @mixin font-header($size: 18px) {
   font: $size 'ColaborateThinRegular', Arial, sans-serif;
+  color:#888;
 }
 
 @mixin font-plain($size: 14px, $bold: normal) {
