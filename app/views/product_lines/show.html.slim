@@ -7,22 +7,28 @@
       .grid-4.omega
         h1 = @product_line.title
         = markdown(@product_line.body)
-    
-
   - else
     .grid-9.alpha.omega
       h1 = @product_line.title
       = markdown(@product_line.body) 
     .grid-9.alpha.omega
       = image_tag(@product_line.image_url :drill)
-
   - if can_edit?
     .grid-9.alpha.omega
       = link_to t('system.edit'), edit_product_line_path(@product_line), class: 'fancy'
       = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy'
-
+  .grid-9.alpha.omega
+      = render "shared/products" , :products => @product_line.products
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines
+
+
+
+
+
+
+
+
 
 
 
