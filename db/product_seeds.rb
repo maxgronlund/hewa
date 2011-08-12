@@ -2832,11 +2832,13 @@ data.split("\n").each do |line|
   product_line = ProductLine.find_by_c5_desc category
   product_line ||= ProductLine.create! :c5_desc => category, :title => 'n/a', :body => 'n/a'
 
-  product = Product.find_by_item_nr(item_no)
-  if product
-    product.update_attribute :product_line, product_line # product_line was not accessible on first import
+  product_variation = ProductVariation.find_by_item_nr(item_no)
+  if product_variation
+    product_variation.product.update_attribute :product_line, product_line # product_line was not accessible on first import
   else
-    Product.create! :item_nr => item_no, :title => description, :body => 'n/a', :product_line => product_line, :active => (invisible == '0')
+    product = Product.find_by_title(description)
+    product = Product.create! :title => description, :body => 'n/a', :product_line => product_line, :active => (invisible == '0') unless product
+    ProductVariation.create! :item_nr => item_no, :title_suffix => description, :product => product
     puts "[product] Warn: NULL description for item_no #{item_no}" if description == 'NULL'
     puts "[product] Warn: blank ('n/a') description for item_no #{item_no}" if description == 'n/a'
   end

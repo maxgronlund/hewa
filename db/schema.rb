@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811133235) do
+ActiveRecord::Schema.define(:version => 20110812102535) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
 
   create_table "helps", :force => true do |t|
     t.string   "title"
@@ -39,11 +42,11 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
   end
 
   create_table "line_items", :force => true do |t|
-    t.integer  "product_id"
+    t.integer  "product_variation_id"
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity",   :default => 1
+    t.integer  "quantity",             :default => 1
   end
 
   create_table "news_blogs", :force => true do |t|
@@ -55,17 +58,17 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
   end
 
   create_table "prices", :force => true do |t|
-    t.integer  "product_id"
-    t.integer  "language_id",                               :default => 1
-    t.decimal  "price",       :precision => 8, :scale => 2
-    t.integer  "quantity",                                  :default => 1
+    t.integer  "product_variation_id"
+    t.integer  "language_id",                                        :default => 1
+    t.decimal  "price",                :precision => 8, :scale => 2
+    t.integer  "quantity",                                           :default => 1
     t.date     "start_date"
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "prices", ["product_id"], :name => "index_prices_on_product_id"
+  add_index "prices", ["product_variation_id"], :name => "index_prices_on_product_id"
 
   create_table "product_lines", :force => true do |t|
     t.string   "title"
@@ -74,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
     t.datetime "updated_at"
     t.string   "image"
     t.string   "crop_params",           :limit => 1024
-    t.boolean  "promote_on_front_page",                 :default => true
     t.string   "c5_desc"
+    t.boolean  "promote_on_front_page",                 :default => true
     t.boolean  "show_in_menu",                          :default => true
   end
 
@@ -100,9 +103,6 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "item_nr"
-    t.decimal  "price",                           :precision => 8, :scale => 2
-    t.integer  "min_units"
-    t.integer  "quantity",                                                      :default => 1
     t.boolean  "active"
   end
 
@@ -125,8 +125,8 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                  :default => "",    :null => false
-    t.string   "encrypted_password",     :limit => 128,  :default => "",    :null => false
+    t.string   "email",                                  :default => "",   :null => false
+    t.string   "encrypted_password",     :limit => 128,  :default => "",   :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(:version => 20110811133235) do
     t.boolean  "thursday",                               :default => true
     t.boolean  "friday",                                 :default => true
     t.boolean  "grid"
-    t.boolean  "show_on_about_page",                     :default => false
+    t.boolean  "show_on_about_page"
     t.text     "cv"
   end
 

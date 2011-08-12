@@ -9894,11 +9894,11 @@ data.split("\n").each do |line|
   id0, currency_id, item_no, price, quantity, start_date, end_date, updated_at = line.split("\t")
 
   if price != '0.00' && start_date == 'NULL'
-    product = Product.find_by_item_nr(item_no)
+    product = ProductVariation.find_by_item_nr(item_no)
     if product
-      Price.create! :product => product, :language_id => currency_id, :price => price, :quantity => quantity
+      Price.create! :product_variation => product, :language_id => currency_id, :price => price, :quantity => quantity
     else
-      puts "[price] Warn: no product with item_no #{item_no}"
+      puts "[price] Warn: no product variation with item_no #{item_no}"
     end
   end
 end

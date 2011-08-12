@@ -15,7 +15,7 @@
   
   = f.input :on_sale
 
-  = f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', :title => 'product' }
+  = f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', :title => 'product' }, :collection => @product_variation.product.product_line.products
   -#= f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', 'product' }
 
 

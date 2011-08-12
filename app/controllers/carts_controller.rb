@@ -1,4 +1,6 @@
 class CartsController < InheritedResources::Base
+
+  before_filter :authenticate_user!, :only => [:checkout]
   
   # GET /carts/1
   # GET /carts/1.xml
@@ -17,8 +19,9 @@ class CartsController < InheritedResources::Base
     end
   end
   
-  
-  
+  def checkout
+    @cart = Cart.find(params[:id])
+  end
   
   def destroy
     @cart = current_cart
