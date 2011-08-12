@@ -31,7 +31,8 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
    self.version_dimensions = {
      :small => [48, 48],
      :medium => [242,242],
-     :large => [410, 410]
+     :large => [410, 410],
+     :drill => [728,200],
    }
 
 

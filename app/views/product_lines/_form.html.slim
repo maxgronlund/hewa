@@ -6,8 +6,12 @@
     br
     = f.input :promote_on_front_page
     = f.input :show_in_menu
+    .grid-5.alpha.omega.top-margin-8
+      'product type
+      br
+      = f.select :image_size ,  ProductLine::PRODUCT_TYPE
     br
-    .actions
+    .actions.grid-5.alpha.omega.top-margin-8
       = f.submit 'Save', :class  => 'fancy'
     
   .grid-7.omega   
@@ -17,7 +21,11 @@
           | #{version}:
           = link_to t('image.re_crop'), crop_product_line_path(@product_line, :version => version)
           br
+          = version[version.to_s]
           = image_tag(@product_line.image_url version) if @product_line.image?
+
+
+
 
           br
     br

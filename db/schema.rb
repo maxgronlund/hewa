@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110812102535) do
+ActiveRecord::Schema.define(:version => 20110812132559) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -77,9 +77,10 @@ ActiveRecord::Schema.define(:version => 20110812102535) do
     t.datetime "updated_at"
     t.string   "image"
     t.string   "crop_params",           :limit => 1024
-    t.string   "c5_desc"
     t.boolean  "promote_on_front_page",                 :default => true
+    t.string   "c5_desc"
     t.boolean  "show_in_menu",                          :default => true
+    t.string   "image_size"
   end
 
   create_table "product_variations", :force => true do |t|
@@ -125,8 +126,8 @@ ActiveRecord::Schema.define(:version => 20110812102535) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                  :default => "",   :null => false
-    t.string   "encrypted_password",     :limit => 128,  :default => "",   :null => false
+    t.string   "email",                                  :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128,  :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -147,7 +148,7 @@ ActiveRecord::Schema.define(:version => 20110812102535) do
     t.boolean  "thursday",                               :default => true
     t.boolean  "friday",                                 :default => true
     t.boolean  "grid"
-    t.boolean  "show_on_about_page"
+    t.boolean  "show_on_about_page",                     :default => false
     t.text     "cv"
   end
 

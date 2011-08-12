@@ -2,11 +2,13 @@ class ProductLine < ActiveRecord::Base
   has_many :products
 
   validates_presence_of :title, :body
-  attr_accessible :image, :image_cache, :remote_image_url, :remove_image, :title, :body, :c5_desc, :promote_on_front_page, :show_in_menu
+  attr_accessible :image, :image_cache, :remote_image_url, :remove_image, :title, :body, :c5_desc, :promote_on_front_page, :show_in_menu, :image_size
 
   serialize :crop_params, Hash
   mount_uploader :image, ProductLineImageUploader
   include ImageCrop
+  
+  PRODUCT_TYPE = %w[normal drill]
   
   
   def self.search(search)
