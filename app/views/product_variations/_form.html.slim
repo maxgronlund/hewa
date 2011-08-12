@@ -21,5 +21,8 @@
   .field
     = f.label :product
     = f.text_field :product
+
+  .field
+    = f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', :title => t('products.choose_catalogs') }, :Collection => Product.product_selectable
   .actions
     = f.submit 'Save'

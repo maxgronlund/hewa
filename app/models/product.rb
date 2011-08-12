@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   belongs_to :product_line
   has_many :line_items
+  has_many :product_variations
+  
   before_destroy :ensure_not_referenced_by_any_line_item
   validates_presence_of :title, :item_nr
   attr_accessible :image, :image_cache, :item_nr, :min_units, :price, :remote_image_url, :remove_image, :title, :body, :product_line

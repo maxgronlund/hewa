@@ -11,10 +11,15 @@
 //= require_directory .
 //- require tiny_mce/tiny_mce
 //= require rails.validations
+//= require chosen.jquery.min
 
 $(function() {
 	$('form.upload').bind('submit', function() {
 		$('form.upload .spinner').show();
 		return true;
 	});
+});
+
+$(document).ready(function() {
+	$('.chzn-select').chosen();
 });
