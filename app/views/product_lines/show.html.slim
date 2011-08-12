@@ -12,7 +12,7 @@
       h1 = @product_line.title
       = markdown(@product_line.body) 
     .grid-9.alpha.omega
-      = image_tag(@product_line.image_url :drill)
+      = image_tag(@product_line.image_url)
   - if can_edit?
     .grid-9.alpha.omega
       = link_to t('system.edit'), edit_product_line_path(@product_line), class: 'fancy'
