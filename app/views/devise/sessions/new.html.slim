@@ -2,6 +2,7 @@
   h1 = t('session.sign_in') 
 
 div class='grid-12'
+  p Der er kun adgang til Hewa Health Care's ebutik for eksisterende kunder, der er oprettede som brugere af ebutikken.
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .inputs
       = f.input :email, :required => false, :autofocus => true
@@ -10,3 +11,12 @@ div class='grid-12'
     .actions
       = f.button :submit, "Sign in"
   = render :partial => "devise/shared/links"
+
+  p
+    Eksisterende kunder, der ikke har adgang til ebutikken, kan få adgang 
+    = link_to 'her', '#'
+    '.
+  p
+    'Ved spørgsmål eller problemer med ebutikken kontakt: 
+    = link_to 'hewa@hewa.dk'
+    '.

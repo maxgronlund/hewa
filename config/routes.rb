@@ -20,9 +20,12 @@ RailsTemplateR31::Application.routes.draw do
   
 
   root :to => "home#index"
+
+  resources :carts do
+    member { get 'checkout' }
+  end
   
   resources :addresses,
-            :carts,
             :helps,
             :line_items,
             :products,  

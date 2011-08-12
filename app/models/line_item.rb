@@ -1,11 +1,14 @@
 class LineItem < ActiveRecord::Base
-  belongs_to :product
+  belongs_to :product_variation
   belongs_to :cart
   
-  
-  def total_price
-    product.price * quantity
+
+  def price
+    product_variation.current_price.price
   end
   
+  def total_price
+    price * quantity
+  end
   
 end

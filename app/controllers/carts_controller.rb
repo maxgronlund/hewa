@@ -1,4 +1,6 @@
 class CartsController < InheritedResources::Base
+
+  before_filter :authenticate_user!, :only => [:checkout]
   
   # GET /carts/1
   # GET /carts/1.xml
@@ -17,8 +19,14 @@ class CartsController < InheritedResources::Base
     end
   end
   
+  def checkout
+    @cart = Cart.find(params[:id])
+    @cart.user = current_user
+  end
   
-  
+  def update
+    update! { is_checkout?? checkout_cart_path(@cart) : cart_path(@cart) }
+  end
   
   def destroy
     @cart = current_cart
@@ -29,10 +37,12 @@ class CartsController < InheritedResources::Base
       format.xml { head :ok }
     end
   end
-  
-  def update
-    update!
+
+
+protected
+
+  def is_checkout?
+    params[:commit] == 'Checkout Now'
   end
-  
-  
+
 end

@@ -3541,11 +3541,11 @@ data.split("\n").each do |line|
   description = 'n/a' if description.blank?
 
   if language_id == '1'
-    product = Product.find_by_item_nr(item_no)
+    product = ProductVariation.find_by_item_nr(item_no)
     if product
-      if description != product.title 
-        puts "[product title] Warn: changed from '#{product.title}' to '#{description}' for item_no #{item_no}" if product.title != 'NULL' && product.title != '???'
-        product.update_attribute :title, description
+      if description != product.title_suffix
+        puts "[product title] Warn: changed from '#{product.title_suffix}' to '#{description}' for item_no #{item_no}" if product.title_suffix != 'NULL' && product.title_suffix != '???'
+        product.update_attribute :title_suffix, description
       end
     else
       puts "[product title] Warn: no product with item_no #{item_no}"

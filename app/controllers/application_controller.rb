@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery 
   
   before_filter :get_site_info
+  before_filter :set_locale
 
   #!!! do i have to featch all this all the time?
   def get_site_info
@@ -33,6 +34,12 @@ class ApplicationController < ActionController::Base
     cart = Cart.create
     session[:cart_id] = cart.id
     cart
+  end
+
+
+protected
+  def set_locale
+    I18n.locale = :da
   end
 
 end
