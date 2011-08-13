@@ -3,6 +3,7 @@
     .grid-4.alpha
        = link_to product.title, product_line_product_path(product.product_line, product)
     .grid-1
+      -# removed belongs to product variation
       -# !!! TODO cannot add product to cart; must be a product variation !!!
       -#= number_to_currency(product.price)
     .grid-2
@@ -18,4 +19,5 @@
 
 
 .grid-9.alpha.omega
+  -# !!! figure what to happen here, controller has to create a product variation to
   = link_to 'new product', new_product_line_product_path(@product_line), :class =>"button"

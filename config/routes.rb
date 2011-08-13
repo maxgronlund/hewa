@@ -52,6 +52,7 @@ RailsTemplateR31::Application.routes.draw do
   end
 
   resources :products do
+    resources :product_variations
     member do
       get 'crop'
       put 'crop_update'

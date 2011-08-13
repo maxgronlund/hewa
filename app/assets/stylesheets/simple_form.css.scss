@@ -1,27 +1,36 @@
 @import "partials/dimentions";
-
+@import "compass/css3/border-radius";
 
 .simple_form{
-	
+	color:#333;
+	@include input_top_margin;
 	label{
-		@include input_top_margin;
+		
 		display:block;
 	}
 
 	.hint{
 		font-style:italic;
-			display:block;
+		display:block;
 	}
 
 	.boolean{
 		@include input_top_margin;
 		display:inline;
 	}
+
+	.field_with_errors
+	{
+	margin-top:8px;
+	}
+	.error{
+		margin-left:4px;
+	}
 	
 }
 
 
-.simple_form div.input {  
-  margin-bottom: 250px;  
-}
+
+
+
 

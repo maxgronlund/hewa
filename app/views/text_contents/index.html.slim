@@ -26,9 +26,9 @@ div class="sort-list-header grid-12"
       = excerpt(text_content.body, '', :radius => 32)
     .grid-2.omega
       = link_to t('system.show'), text_content
-      | | 
+      '&nbsp|&nbsp; 
       = link_to t('system.edit'), edit_text_content_path(text_content)
-      | | 
+      '&nbsp|&nbsp; 
       = link_to t('system.delete'), text_content, :confirm => 'Are you sure?', :method => :delete
 .pagination-12 
   = paginate @text_contents

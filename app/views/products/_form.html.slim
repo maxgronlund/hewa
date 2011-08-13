@@ -1,21 +1,22 @@
 = simple_form_for [@product_line, @product], :validate => true do |f|
   = render 'shared/error_messages', :taget => @product
   .grid-5.alpha
+    = f.input :title
     .field
       = f.label :product_line_id
       = f.select :product_line_id, @select_product_lines
-    
+    br
     = f.input :item_nr
-    = f.input :title
-    = f.input :price
-    = f.input :min_units
+
+    -#= f.input :price
+    -#= f.input :min_units
     .field
       = f.label :body
       = f.text_area :body
 
 	br
 	.actions
-	  = f.submit t('system.save')
+	  = f.submit 'Save', :class =>'fansy'
   
   .grid-7.omega
 
@@ -30,7 +31,7 @@
           br
     
     .field
-      = f.file_field :image
+      = f.input :image
       = f.hidden_field :image_cache
     
       - if @product.image.present?

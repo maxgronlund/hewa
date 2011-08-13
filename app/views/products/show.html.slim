@@ -1,17 +1,36 @@
 .divider-12
   
+.grid-9
+  .grid-4.alpha
+    = image_tag(@product.image_url :large) if @product.image?
+    br
+    .edit
+      = link_to 'Edit', edit_product_path(@product), class: 'fancy'
+    
+  .grid-5.omega
+    .grid-5.alpha.omega
+      h1 = @product.title
+      -#= number_to_currency(@product.price)
+      = markdown(@product.body.html_safe) if @product.body
+    .grid-5.alpha.omega
+      
+      
+  .grid-9.alpha.omega
+    - @product.product_variations.each do |variation|
+        div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
+          .grid-4.alpha
+            b
+              = @product.title
+              '&nbsp;
+              = variation.title_suffix
+          .grid-2
+            'dkr. 25.00,-
+          .grid-3.omega.edit
+            = link_to 'køb', root_path, class: 'fancy'
 
-.grid-4
-  = image_tag(@product.image_url :large) if @product.image?
-  br
-  .edit
-    = link_to 'Edit', edit_product_path(@product), class: 'fancy'
-  
-.grid-5
-  h1 = @product.title
-  = number_to_currency(@product.price)
-  = markdown(@product.body.html_safe) if @product.body
-
+            - if can_edit?
+              '&nbsp &nbsp;
+              = link_to 'Rediger', edit_product_product_variation_path(@product, variation), class: 'fancy'
 
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines

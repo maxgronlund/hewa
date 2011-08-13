@@ -4,36 +4,36 @@
       - if can_edit?
         li  class=("current"  if @menu == 'admin' ) 
           = link_to('#', :class => 'parrent')  do
-            span admin
+            span Administration
           div
             ul
               li
                 = link_to(users_path)  do
-                  span = t('user.users')
+                  span Brugere
               li
                 = link_to(text_contents_path)  do
-                  span = t('text_contents.text_contents')
+                  span Tekster
               li
                 = link_to(news_blogs_path)  do
-                  span = t('news_blog.news_blogs')
+                  span Nyheder
               li
                 = link_to(product_lines_path)  do
-                  span = t('product_line.product_lines')  
+                  span Produkt linier  
               li
                 = link_to(products_path)  do
-                  span = t('activerecord.models.products')
+                  span Produkter
               li
                 = link_to(product_variations_path)  do
-                  span = t('activerecord.models.product_variations')
+                  span Produkt varianter
               li
                 = link_to(help_index_path)  do
-                  span = t('activerecord.models.help')
+                  span Hjælp
               li
                 = link_to(news_blogs_path)  do
-                  span = t('activerecord.models.news_blogs')
+                  span Nyheder
               li
                 = link_to(screen_casts_path)  do
-                  span = t('activerecord.models.screen_casts')
+                  span Screencasts
 
 
 
@@ -41,19 +41,19 @@
       
       li  class=("current"  if @menu == 'home' )
         = link_to(root_path, :class => 'parrent')  do
-          span Home
+          span Hjem
 
       li  class=("current"  if @menu == 'news_blogs' )
         = link_to(news_blogs_path, :class => 'parrent')  do
-          span News
+          span Nyheder
 
       li  class=("current"  if @menu == 'home' )
         = link_to(about_index_path, :class => 'about')  do
-          span About
+          span Om Hewa
 
       li  class=("current"  if @menu == 'product_lines' )
         = link_to(products_path, :class => 'parrent')  do
-          span =t('products.products')
+          span Produkter
         div
           ul
             - @product_lines.each do |product_line|

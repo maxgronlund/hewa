@@ -1,0 +1,152 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    models:
+      product_line: "product lines"
+      user: "user"
+      text_content: "text content"
+      help: 'help'
+      products: 'products'
+      addresses: 'addresses'
+      news_blogs: 'news'
+      screen_casts: 'screen casts'
+      product_variations: 'product variations'
+
+
+    attributes:
+      product_line:
+        title: 'product line name'
+        body: "product line description"
+      product:
+        item_nr: 'item nr'
+        title: 'title'
+        price: 'price'
+        min_units: 'minimum units'
+      user:
+        name: "name"
+        email: "email"
+        password: 'password'
+        password_confirmation: 'password confirmation'
+        thumb: 'avatar'
+        role: 'role'
+        image: 'image'
+        grid: ' grid'
+      screen_casts:
+        screen_casts: 'screen casts'
+      text_content:
+        identity: "identity"
+        title: 'title'
+        body: 'body'
+        
+  simple_form:
+    labels:
+      user:
+        name: 'user name: '
+        email: 'email: '
+        image: 'image: '
+        password: 'password: '
+        password_confirmation: 'password confirmation: '
+        role: 'role: '
+        monday: 'monday'
+        tuesday: 'tuesday'
+        wednesday: 'wednesday'
+        thursday: 'thursday'
+        friday: 'friday'
+        grid: 'grid'
+      product_line:
+        promote_on_front_page: 'show on frontpage'
+    hints:
+      user:
+        name: 'user name to sign in.'
+        password: 'minimum 6 characters, please.'
+    placeholders:
+      user:
+        name: 'Your username'
+        password: '****'
+        
+  image:
+    image: 'image'
+    re_crop: 're crop'
+    remove_image: ' remove image'
+    
+  navigation:
+    back: '< back'
+    
+    
+  help:
+    search: 'search'
+    
+  page:
+    admin: "admin"
+    home: "home"
+
+  session:
+    log_in: "log in"
+    log_out: "log out"
+    sign_up: 'sign up'
+    
+    
+  addresse:
+    edit: 'edit address'
+     
+  system:
+    are_you_sure: 'are you sure?'
+    content_management: 'content management'
+    delete: 'delete'
+    do_not_edit: 'do not edit'
+    edit: 'edit '
+    email: "email"
+    remove_image: 'remove image'
+    save: 'save'
+    search: 'search'
+    show: 'show'
+    show_all: 'show all'
+    site_management: 'site management'
+    user_management: 'user management'
+
+  screen_cast:
+    edit: 'edit screencast'
+    
+  products:
+    products: 'products'
+    new_product: 'new product'
+    edit_product: 'edit product'
+
+  news_blog:
+    news_blogs: 'news blogs'
+    title: 'Hewa Nyt'
+    introduction: 'Et par gange årligt udkommer Hewa Nyt med nyheder og tilbud fra Hewa Health Care.'
+    latest: 'Læs seneste nummer:'
+    archive: 'Arkiv:'
+
+  product_line:
+    product_lines: 'product lines'
+    new_product_line: "new product line"
+    other: 'Other products'
+    show_on_front_page: 'Show on front page'
+
+  text_contents:
+    all_texts: 'all texts'
+    edit_text_content: 'edit text content'
+    new_text_content: 'new text content'
+    text_contents: 'text content'
+    search: 'search title'
+  
+  user:
+    all_users: 'all users'
+    create_user: 'create user'
+    delivery_dates: 'delivery dates'
+    edit_user: 'edit user'
+    search_user: 'search user'
+    show_user: 'show user'
+    users: "users"
+    
+  views:  
+    pagination:  
+      first: 'first'
+      last: 'last'
+      previous: "&lt; prev"  
+      next: "next &gt;"  
+      truncate: "&hellip;"
