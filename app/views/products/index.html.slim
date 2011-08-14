@@ -27,12 +27,12 @@ div class="sort-list-header grid-12"
     .grid-4
       = link_to product.title, product
     .grid-1
-      = text_field_tag(:quantity, product.quantity, :size => 2)
+      -#= text_field_tag(:quantity, product.quantity, :size => 2)
       -#!!! << make this work
     .grid-2
       = excerpt(product.body, '', :radius => 16)
     .grid-1
-      = number_to_currency(product.price)
+      -#= number_to_currency(product.price)
     .grid-1
       = button_to 'Add to Cart', line_items_path(:product_id => product)
 

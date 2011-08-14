@@ -29,9 +29,23 @@ class ProductsController < InheritedResources::Base
   end
   
   def create
-    goto = session[:go_to_after_edit] || products_path
-    session[:go_to_after_edit] = nil
-    create! {goto}
+    #@post = Post.find(params[:post_id])
+    #@comment = @post.comments.create(params[:comment])
+        
+        
+    @product_line = ProductLine.find(params[:product_line_id])
+    @product =  @product_line.products.create(params[:product])
+    
+    if params[:product][:image]
+      redirect_to crop_product_path, :notice => "Product oprettet!"
+    else
+      redirect_to product_line_product_path(@product_line, @product), :notice => "Product oprettet up!"
+    end
+    
+    
+    #goto = session[:go_to_after_edit] || products_path
+    #session[:go_to_after_edit] = nil
+    #create! {new_product_product_variation_path(@product)}
   end
   
   def update
@@ -43,8 +57,11 @@ class ProductsController < InheritedResources::Base
     else
       update! { product_path(@product) } 
     end
-    
+  end
   
+  def destroy
+    go_to = @product.product_line
+    destroy! {go_to}
   end
   
   

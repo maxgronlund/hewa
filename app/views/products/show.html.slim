@@ -31,6 +31,8 @@
             - if can_edit?
               '&nbsp &nbsp;
               = link_to 'Rediger', edit_product_product_variation_path(@product, variation), class: 'fancy'
+  .grid-9.alpha.omega
+    = link_to 'Opret produkt variation', new_product_product_variation_path(@product)
 
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines

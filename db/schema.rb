@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110812132559) do
+ActiveRecord::Schema.define(:version => 20110812151202) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(:version => 20110812132559) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "delivery_address_id"
+    t.integer  "invoice_address_id"
+    t.string   "state"
   end
 
   add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
