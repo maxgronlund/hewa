@@ -4,7 +4,7 @@ class ProductVariation < ActiveRecord::Base
 
 
   def current_price
-    prices.last || NaN
+    @current_price ||= prices.with_language_id(1).last || NaN
   end
 
   def display_name

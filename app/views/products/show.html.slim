@@ -24,7 +24,8 @@
               '&nbsp;
               = variation.title_suffix
           .grid-2
-            'dkr. 25.00,-
+            = number_to_currency variation.current_price.price
+            = " (#{variation.current_price.quantity})" if variation.current_price.quantity > 1
           .grid-3.omega.edit
             = link_to 'køb', root_path, class: 'fancy'
 
