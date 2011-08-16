@@ -17,7 +17,8 @@ RailsTemplateR31::Application.routes.draw do
   root :to => "home#index"
 
   resources :carts do
-    member { get 'checkout', 'place_order_confirmation'; put 'checkout' }
+    member { get 'checkout', 'order_confirmation'; put 'checkout' }
+    collection { get 'checkout', 'place_order' }
   end
   
   resources :addresses,

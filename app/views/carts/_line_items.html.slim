@@ -1,0 +1,35 @@
+.grid-10.alpha.omega.headline
+  h4= t('cart.line_items')
+.grid-10.alpha.omega
+  .grid-5.alpha
+    strong= ProductVariation.human_attribute_name :title
+  .grid-1
+    strong= LineItem.human_attribute_name :quantity
+  .grid-2
+    strong= ProductVariation.human_attribute_name :price
+  .grid-2.omega
+    strong= LineItem.human_attribute_name :price_total
+
+ul.simple
+  - cart.line_items.each do |line_item|
+    li
+      .grid-10.alpha.omega
+        .grid-1.alpha
+          = image_tag line_item.product_variation.product.image_url(:small)
+        .grid-4
+          = line_item.product_variation.product.title
+          br/
+          em= line_item.product_variation.title_suffix
+        .grid-1
+          = line_item.quantity
+        .grid-2
+          '  á 
+          = number_to_currency(line_item.price)
+        .grid-2.omega
+          = number_to_currency(line_item.quantity * line_item.price)
+.grid-10.alpha.omega
+  .grid-8.alpha
+    strong= t('cart.total_amount')
+  .grid-2.omega
+    strong= number_to_currency(@cart.total_price)
+  

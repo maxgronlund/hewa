@@ -24,28 +24,37 @@ class ApplicationController < ActionController::Base
     if current_user.admin_or_super?
       admin_index_path
     else
-      user_path(resource)
+      resource.profile_incomplete?? user_path(resource) : root_path
     end
   end
 
 
-  # !!! TODO move to CartHelper
   def has_cart?
-    session[:cart_id].present? && Cart.exists?(session[:cart_id])
+    #session[:cart_id].present? && Cart.exists?(session[:cart_id])
+    user_signed_in? && current_user.carts.order_open.any? # user sign in is required anyway
   end
 
   def current_cart
-    Cart.find(session[:cart_id])
-  rescue ActiveRecord::RecordNotFound
-    cart = Cart.create # customer is always logged in so instead we could use: current_user.carts.create
-    session[:cart_id] = cart.id
-    cart
+    return user_current_cart
+  #  Cart.find(session[:cart_id])
+  #rescue ActiveRecord::RecordNotFound
+  #  cart = current_user.carts.create # customer is always logged in so instead we could use: current_user.carts.create
+  #  session[:cart_id] = cart.id
+  #  cart
   end
+  helper_method :has_cart?, :current_cart
 
   def remove_current_cart
     session.delete(:cart_id)
   end
 
+  def user_current_cart
+    if user_signed_in? && current_user.carts.order_open.any?
+      current_user.carts.order_open.last
+    else
+      current_user.carts.create
+    end
+  end
 
 protected
   def set_locale

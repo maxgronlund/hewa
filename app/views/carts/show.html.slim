@@ -3,18 +3,24 @@
     = t('cart.heading')
 
 .sort-list-header.grid-12
-  .grid-3.alpha
+  .grid-5.alpha
     = ProductVariation.human_attribute_name :title
-= simple_nested_form_for @cart do |f|
-  = f.fields_for :line_items
-  .prefix-8.grid-4
-    = f.button :submit, t('cart.update'), :class => 'fancy'
-  .grid-7
-    p
+  .grid-3
+    = ProductVariation.human_attribute_name :quantity
+  .grid-2
+    = ProductVariation.human_attribute_name :price
+- if @cart.empty?
+  = t('cart.empty')
+- else
+  = simple_nested_form_for @cart do |f|
+    = f.fields_for :line_items
+    .prefix-5.grid-3
+      = f.button :submit, t('cart.update'), :class => 'fancy'
+    .grid-4
       = t('cart.total_amount')
       = number_to_currency(@cart.total_price)
-  .grid-5
-      = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
+    .prefix-8.grid-4
+        = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
 
 .grid-12
   = button_to t('cart.empty_cart'), @cart, :method => :delete, :confirm => t('system.confirm_delete'), class: 'fancy'

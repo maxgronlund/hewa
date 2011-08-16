@@ -5,10 +5,10 @@
 = simple_form_for @cart, :as => :cart, :url => checkout_cart_path(@cart, :action => :checkout) do |f|
   = hidden_field_tag :rurl, request.url
   .grid-10.prefix-1.suffix-1
-    - addresses = current_user.addresses.map { |address| ["#{address.street}, #{address.zip_code} #{address.city}", address.id] }
+    - addresses = current_user.addresses.map { |address| [excerpt("#{address.street}, #{address.zip_code} #{address.city}", '', :radius => 32), address.id] }
 
     .grid-4
-      h2= t('cart.checkout.invoice_address')
+      h2= Cart.human_attribute_name(:invoice_address)
       = f.association :invoice_address, :collection => addresses, :include_blank => true, :label => false, :class => 'form-submit'
       = f.button :submit, t('cart.checkout.select_address')
       - if @cart.invoice_address_id
@@ -31,7 +31,7 @@
       '
 
     .grid-4
-      h2= t('cart.checkout.delivery_address')
+      h2= Cart.human_attribute_name(:delivery_address)
       = f.association :delivery_address, :collection => addresses, :include_blank => true, :label => false, :class => 'form_submit'
       = f.button :submit, t('cart.checkout.select_address')
       - if @cart.delivery_address_id
@@ -50,11 +50,18 @@
         = link_to t('system.edit'), edit_user_address_path(current_user, @cart.delivery_address_id, :rurl => request.url)
       p= link_to t('cart.checkout.add_address'), new_user_address_path(current_user, :rurl => request.url+'?new_delivery_address=1')
 
-  .grid-12
+  .grid-10.prefix-1.suffix-1
     h2= t('cart.checkout.delivery_days') << ': '
     - delivery_days = %w(monday tuesday wednesday thursday friday).each_with_index.map { |day, idx| I18n.t('date.day_names')[idx+1] if current_user.send(day) }.compact
     = delivery_days.to_sentence
-    /= link_to t('system.edit'), edit_user(current_user)
+    ' 
+    = link_to t('system.edit'), edit_user_path(current_user, :rurl => request.url)
 
   .grid-4.prefix-6.suffix-2
-    = f.button :submit, t('cart.checkout.place_order'), :class => 'fancy'
+    p= f.button :submit, t('cart.checkout.place_order'), :class => 'fancy', :disabled => current_user.addresses.none?
+    - if current_user.addresses.none?
+      em= t('cart.address_required')
+
+.grid-10.prefix-1.suffix-1
+  hr/
+  = render :partial => 'line_items', :locals => { :cart => @cart}

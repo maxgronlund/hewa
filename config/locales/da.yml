@@ -29,8 +29,18 @@ da:
         image: 'Billede'
       product_variation:
         item_nr: 'item nr'
+        price: 'Pris'
+        quantity: 'Antal'
         title: 'Produktnavn'
         title_suffix: 'suffix'
+      cart:
+        order_no: 'Ordrenummer'
+        order_state: 'Ordre status'
+        delivery_address: 'Leveringsadresse'
+        invoice_address: 'Faktureringsadresse'
+      line_item:
+        quantity: 'Antal'
+        price_total: 'I alt'
       price:
         price: 'pris'
         quantity: 'antal'
@@ -39,10 +49,18 @@ da:
         email: "email"
         password: 'password'
         password_confirmation: 'password bekræftelse'
+        remember_me: 'Husk mig' #"Remember me"
         thumb: 'avatar'
         role: 'rolle'
         image: 'billede'
         grid: ' grid'
+        addresses: 'Adresseoplysninger'
+      address:
+        send_to: 'Att:'
+        street: 'Adresse'
+        zip_code: 'Postnr'
+        city: 'By'
+        user_country: 'Land'
       screen_casts:
         screen_casts: 'screen casts'
       text_content:
@@ -73,6 +91,7 @@ da:
         password: 'minimum 6 tegn.'
     placeholders:
       user:
+        email: 'Din emailadresse'
         name: 'Dit brugernavn'
         password: '****'
         
@@ -93,14 +112,18 @@ da:
     home: "home"
 
   session:
-    log_in: "log in"
-    log_out: "log out"
+    log_in: "log på"
+    log_out: "log af"
+    sign_in: "Log på"
+    sign_out: "Log af"
     sign_up: 'sign up'
-    
-    
-  addresse:
-    edit: 'redigér adresse'
-     
+    forgot_password: 'Glemt dit password?' #"Forgot your password?"
+    info: "Der er kun adgang til Hewa Health Care's ebutik for eksisterende kunder, der er oprettede som brugere af ebutikken."
+    access_pre: "Eksisterende kunder, der ikke har adgang til ebutikken, kan få adgang "
+    access_url: '#'
+    contact_us: 'Ved spørgsmål eller problemer med ebutikken kontakt: '
+    contact_email: 'hewa@hewa.dk'
+
   system:
     are_you_sure: 'er du sikker?'
     confirm_delete: 'er du sikker?'
@@ -149,10 +172,12 @@ da:
     empty_cart: 'Tøm indkøbskurv'
     remove_item: 'Fjern'
     total_amount: 'Varer total: '
+    empty: 'Du har ikke nogen varer i indkøbskurven.' #'Your Hewa shopping basket is currently empty.'
+    line_items: 'Stykliste'
+    address_required: 'Fakturerings- og leveringsadresse mangler.  Følg linket ovenfor for at tilføje en adresse.'
+    invoice_address_same: 'Samme som leveringsadresse'
     checkout:
       heading: 'Vælg leveringsadresse'
-      delivery_address: 'Leveringsadresse'
-      invoice_address: 'Faktureringsadresse'
       add_address: 'Tilføj adresse'
       select_address: 'Vælg'
       delivery_days: 'Valgte leveringsdage'
@@ -162,8 +187,11 @@ da:
       info: 'Tak - vi har modtaget din ordre og vil behandle den hurtigst muligt.'  #'Thank you - We have received your order.'
       email: 'Du vil modtage en email om få minutter med oplysninger om din ordre'  #'You will receive an email in a few minutes with details on this order.'
       details: 'Ordrebeskrivelse'
-      order_no: 'Ordrenummer'
       back: 'Tilbage til butikken' #'Back to shop'
+    mini:
+      heading: 'Din indkøbskurv' #'Shopping Basket'
+      view_cart: 'Vis indkøbskurv' #'View full basket'
+      empty: 'Din indkøbskurv er tom.' #'Your basket is empty.'
 
   text_contents:
     all_texts: 'all texts'
@@ -175,12 +203,29 @@ da:
   user:
     all_users: 'all users'
     create_user: 'create user'
-    delivery_dates: 'delivery dates'
+    delivery_dates: 'leveringsdage'
     edit_user: 'edit user'
     search_user: 'søg bruger'
     show_user: 'show user'
     users: "users"
+    no_addresses: 'Vi har ikke din adresse'
+    address_info: 'Dine adresseoplysninger bruges til levering af dine bestillinger hos os.'
+    new_address: 'Indtast ny adresse'
+  address:
+    edit: 'redigér adresse'
+    new_address: 'Tilføj adresse'
+    edit_address: 'Redigér adresse'
     
+
+  mailer:
+    greeting: 'Kære %{user_name}'
+    order_placed:
+      subject: "User #{user_email} has placed an order"
+    order_notification:
+      subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
+      order_recieved: 'Vi har modtaget følgende ordre:'
+      footer: 'Tak for din ordre - Med venlig hilsen Hewa'
+
   views:  
     pagination:  
       first: 'first'
@@ -188,3 +233,4 @@ da:
       previous: "&lt; prev"  
       next: "next &gt;"  
       truncate: "&hellip;"
+

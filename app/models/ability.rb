@@ -17,12 +17,13 @@ class Ability
    
       elsif user.member? #ordinary user
         can :manage, Address, :user_id => user.id
-        can :manage, User, :user_id => user.id
+        can :manage, User, :id => user.id
         can :read, TextContent
         can :read, NewsBlog
         can :read, ProductLine
         can :read, Product
 
+        can :add_to_cart, ProductVariation
         can :create, Cart
         can :manage, Cart, :user_id => user.id
         

@@ -4,7 +4,7 @@
       = link_to product.title, product_line_product_path(product.product_line, product)
       - if can?(:manage, Product)
         = ' [-]' if product.product_variations.none?
-        = ' [product.product_variations.count]' if product.product_variations.many?
+        = " [#{product.product_variations.count}]" if product.product_variations.many?
 
     .grid-1
       -# removed belongs to product variation

@@ -30,7 +30,8 @@
 
     
 
-    = f.input :show_on_about_page
+    - if @user.admin_or_super?
+      = f.input :show_on_about_page
     = f.input :name, :size => 2
     = f.input :email
     = f.input :password

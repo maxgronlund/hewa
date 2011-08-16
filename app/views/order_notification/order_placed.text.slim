@@ -1,3 +1,12 @@
-OrderNotification#order_placed
-
-= @greeting + ", find me in app/views/order_notification/order_placed.text.slim"
+= @greeting
+= "\n"
+= t('mailer.order_received')
+= "\n"
+= "Ordrenummer: #{@cart.order_no}\n\n"
+= "\n"
+= "\n"
+= "\n"
+= render 'order_details'
+= "\n"
+= "\n"
+= render 'address_details'

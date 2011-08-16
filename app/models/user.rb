@@ -61,5 +61,8 @@ class User < ActiveRecord::Base
   
   scope :show_on_about_page, where("show_on_about_page != ?", false) 
 
+  def profile_incomplete?
+    addresses.none?
+  end
 
 end

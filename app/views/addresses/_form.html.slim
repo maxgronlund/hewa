@@ -1,6 +1,7 @@
 = simple_form_for [@user, @address], :validate => true do |f|
   = render 'shared/error_messages', :taget => @address
 
+  h2= @user.name
   = hidden_field_tag :rurl, request[:rurl]
   = f.input :send_to
   = f.input :street
@@ -11,4 +12,4 @@
     = f.text_field :user_country
 
   .actions
-    = f.submit 'Save'
+    = f.submit t('system.save')
