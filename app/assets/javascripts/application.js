@@ -13,9 +13,9 @@
 //= require rails.validations
 
 
-$(document).ready(function() {
-  $('form.upload').bind('submit', function() {
-    $('form.upload .spinner').show();
-    return true;
-  });
+$(function() {
+	$('form.upload').bind('submit', function() {
+		$('form.upload .spinner').show();
+		return true;
+	});
 });
