@@ -19,7 +19,7 @@ div class="sort-list-header grid-12"
 - @video_casts.each do |video_cast|
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
     .grid-2.alpha
-      = link_to video_cast.title, text_content
+      = link_to video_cast.title, video_cast
     .grid-8
       = excerpt(video_cast.body, '', :radius => 32)
     .grid-2.omega

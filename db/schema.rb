@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(:version => 20110816104250) do
     t.text     "body"
     t.string   "mp4"
     t.string   "m4v"
-    t.string   "webm"
-    t.string   "ogv"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

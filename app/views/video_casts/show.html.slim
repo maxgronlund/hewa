@@ -1,24 +1,21 @@
-p#notice = notice
+.headline
+  h1 
+    = @video_cast.title
 
-p
-  b Title:
-  = @video_cast.title
-p
-  b Body:
-  = @video_cast.body
-p
-  b Mp4:
-  = @video_cast.mp4
-p
-  b M4v:
-  = @video_cast.m4v
-p
-  b Webm:
-  = @video_cast.webm
-p
-  b Ogv:
-  = @video_cast.ogv
 
-= link_to 'Edit', edit_video_cast_path(@video_cast)
-'|
-= link_to 'Back', video_casts_path
+.grid-12
+  p#notice = notice
+
+.grid-12
+  = render 'video'
+
+.grid-4
+  = markdown(@video_cast.body)
+  -#= @browser
+.grid-4
+
+.grid-4
+
+.grid-12
+  = link_to t('system.edit'), edit_video_cast_path(@video_cast)
+

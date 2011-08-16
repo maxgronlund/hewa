@@ -5,8 +5,7 @@ class CreateVideoCasts < ActiveRecord::Migration
       t.text :body
       t.string :mp4
       t.string :m4v
-      t.string :webm
-      t.string :ogv
+
 
       t.timestamps
     end

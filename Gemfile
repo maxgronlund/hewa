@@ -24,6 +24,7 @@ gem 'devise'
 gem 'tiny_mce'
 gem 'simple_form'
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
+gem "browser"
 
 
 
