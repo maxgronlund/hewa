@@ -1,4 +1,5 @@
 class ProductLine < ActiveRecord::Base
+  default_scope order('title')
   has_many :products
 
   validates_presence_of :title, :body

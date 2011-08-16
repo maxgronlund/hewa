@@ -36,6 +36,9 @@ a, a:hover, a:active, a:visited, a:link {
   &.fancy {
 		@include fancy-button($template-color-base, 14px 0.5em);
 	}
+  &.fancy-admin {
+		@include fancy-button($color_red_algae, 14px 0.5em);
+	}
 }
 
 

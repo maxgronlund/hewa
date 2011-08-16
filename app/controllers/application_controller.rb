@@ -28,10 +28,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  # !!! TODO move to CartHelper
+  def has_cart?
+    session[:cart_id].present? && Cart.exists?(session[:cart_id])
+  end
+
   def current_cart
     Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound
-    cart = Cart.create
+    cart = Cart.create # customer is always logged in so instead we could use: current_user.carts.create
     session[:cart_id] = cart.id
     cart
   end

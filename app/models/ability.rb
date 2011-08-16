@@ -20,17 +20,19 @@ class Ability
         can :read, ProductLine
         can :manage, User, :user_id => user.id
         can :read, TextContent
+
+        can :create, Cart
+        can :manage, Cart, :user_id => user.id
         
 
       end
     else
       # When not logged in
-      can :create, User # <----------- Uncomment this to alow users to signup by them self
+      #can :create, User # <----------- Uncomment this to alow users to signup by them self
       can :read, TextContent
       can :read, NewsBlog
       can :read, Product
       can :read, ProductLine
-      can :create, User
 
     end
   end

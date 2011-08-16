@@ -8,13 +8,12 @@ class ProductsController < InheritedResources::Base
   
   def new
     @product_lines = ProductLine.order('title DESC')
-    @select_product_lines = @product_lines.map { |product_line| [product_line.title, product_line.id] }
+    @product.product_variations.build.prices.build :language_id => 1
     new!
   end
   
   def edit
     @product_lines = ProductLine.order('title DESC')
-    @select_product_lines = @product_lines.map { |product_line| [product_line.title, product_line.id] }
     edit!
   end
   

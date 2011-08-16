@@ -1,16 +1,11 @@
 RailsTemplateR31::Application.routes.draw do
 
 
-
-
   resources :product_variations
 
   get "help/index"
 
   resources :prices
-
-  resources :screen_casts,
-            :products
 
   get "no_access/index"
   get "admin/index"
@@ -27,7 +22,6 @@ RailsTemplateR31::Application.routes.draw do
   
   resources :addresses,
             :helps,
-            :line_items,
             :products,  
             :product_lines,
             :screen_casts,
@@ -52,7 +46,9 @@ RailsTemplateR31::Application.routes.draw do
   end
 
   resources :products do
-    resources :product_variations
+    resources :product_variations do
+      member { get 'add_to_cart' }
+    end
     member do
       get 'crop'
       put 'crop_update'
