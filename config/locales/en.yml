@@ -39,8 +39,6 @@ en:
     log_out: "log out"
     sign_up: 'sign up'
     
-
-     
   system:
     are_you_sure: 'are you sure?'
     content_management: 'content management'
@@ -56,21 +54,18 @@ en:
     site_management: 'site management'
     user_management: 'user management'
     
-    
-  text_contents:
-    all_texts: 'all texts'
-    edit_text_content: 'edit text content'
-    new_text_content: 'new text content'
-    text_contents: 'text content'
-    search: 'search title'
+  text_content:
+    index: 'texts'
+    show: 'text'
+    edit: 'edit text'
+    new: 'new text'
   
   user:
-    all_users: 'all users'
-    create_user: 'create user'
-    edit_user: 'edit user'
-    search_user: 'search user'
-    show_user: 'show user'
-    users: "users"
+    index: 'users'
+    show: 'show user'
+    new: 'create user'
+    edit: 'edit user'
+
     
   views:  
     pagination:  
