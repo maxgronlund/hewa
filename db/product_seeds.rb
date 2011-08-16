@@ -2844,6 +2844,6 @@ data.split("\n").each do |line|
       puts "[product] Warn: NULL description for item_no #{item_no}"
       product_variation.update_attribute :on_sale, false
     end
-    puts "[product] Warn: blank ('n/a') description for item_no #{item_no}"
+    puts "[product] Warn: blank ('n/a') description for item_no #{item_no}" if description == 'n/a'
   end
 end
