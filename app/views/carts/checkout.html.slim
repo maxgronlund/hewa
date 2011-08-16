@@ -50,11 +50,15 @@
         = link_to t('system.edit'), edit_user_address_path(current_user, @cart.delivery_address_id, :rurl => request.url)
       p= link_to t('cart.checkout.add_address'), new_user_address_path(current_user, :rurl => request.url+'?new_delivery_address=1')
 
-  .grid-12
+  .grid-10.prefix-1.suffix-1
     h2= t('cart.checkout.delivery_days') << ': '
     - delivery_days = %w(monday tuesday wednesday thursday friday).each_with_index.map { |day, idx| I18n.t('date.day_names')[idx+1] if current_user.send(day) }.compact
     = delivery_days.to_sentence
     /= link_to t('system.edit'), edit_user(current_user)
 
   .grid-4.prefix-6.suffix-2
-    = f.button :submit, t('cart.checkout.place_order'), :class => 'fancy'
+    p= f.button :submit, t('cart.checkout.place_order'), :class => 'fancy'
+
+.grid-10.prefix-1.suffix-1
+  hr/
+  = render :partial => 'line_items', :locals => { :cart => @cart}

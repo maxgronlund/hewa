@@ -205,7 +205,14 @@ i{@include font-plain(14px); color:#484848;  }
 	}
 }
 
+ul.simple {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style: none;
+	}
+}
+
 .top-margin-8{
 	margin-top:8px;
 }
-

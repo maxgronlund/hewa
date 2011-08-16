@@ -9,18 +9,9 @@
   = t('cart.confirmation.details') << ': '
   hr/
   p
-    = t('cart.confirmation.order_no') << ': '
+    = t('cart.order_no') << ': '
     = @cart.id
-  ul
-    - @cart.line_items.each do |line_item|
-      li
-        = line_item.product_variation.display_name
-        '  - 
-        = line_item.quantity
-        '  á 
-        = number_to_currency(line_item.price)
-        '  = 
-        = number_to_currency(line_item.quantity * line_item.price)
+  = render :partial => 'line_items', :locals => { :cart => @cart}
   p
     = t('cart.total_amount')
     = number_to_currency(@cart.total_price)

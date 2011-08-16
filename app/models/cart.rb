@@ -24,6 +24,10 @@ class Cart < ActiveRecord::Base
     line_items.to_a.sum { |item| item.total_price }
   end
 
+  def empty?
+    line_items.none?
+  end
+
   def ensure_user(user)
     self.user ||= user
     self.delivery_address ||= user.addresses.last

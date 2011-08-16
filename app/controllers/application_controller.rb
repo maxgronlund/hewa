@@ -41,6 +41,7 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end
+  helper_method :has_cart?, :current_cart
 
   def remove_current_cart
     session.delete(:cart_id)

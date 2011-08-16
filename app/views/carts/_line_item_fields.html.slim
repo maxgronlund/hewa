@@ -1,11 +1,13 @@
 div class="grid-12 #{cycle('row-flip', 'row-flop')}"
-  .grid-3.alpha
-    = f.object.product_variation.display_name
-  .grid-1
-    = number_to_currency(f.object.price)
-  .grid-1 
+  .grid-1.alpha
+    = image_tag f.object.product_variation.product.image_url(:small)
+  .grid-4
+    = f.object.product_variation.product.title
+    br/
+    em=f.object.product_variation.title_suffix
+  .grid-3
     = f.input :quantity, :label => false, :size => 4
-  .grid-2 
-    -#= number_to_currency(item.total_price)
-  .grid-1.suffix-4.omega 
+  .grid-2
+    = number_to_currency(f.object.price)
+  .grid-1.suffix-1.omega 
     = f.link_to_remove t('cart.remove_item'), class: 'fancy'

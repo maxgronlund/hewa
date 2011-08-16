@@ -1,0 +1,53 @@
+# Additional translations at http://github.com/plataformatec/devise/wiki/I18n
+
+da:
+  errors:
+    messages:
+      not_found: "ikke fundet"
+      already_confirmed: "er allerede bekræftet"
+      not_locked: "var ikke låst"
+      expired: "has expired, please request a new one"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+
+  devise:
+    failure:
+      already_authenticated: 'You are already signed in.'
+      unauthenticated: 'Du skal logge ind for at kunne fortsætte'
+      unconfirmed: 'Du skal bekræfte din konto for at kunne fortsætte.'
+      locked: 'Din konto er låst.'
+      invalid: 'Email eller kodeord er ikke gyldig.'
+      invalid_token: 'Ugyldig token til autorisering.'
+      timeout: 'Din session er udløbet. Log ind igen for at kunne fortsætte.'
+      inactive: 'Din konto er ikke bekræftet.'
+    sessions:
+      signed_in: 'Du er nu logget ind.'
+      signed_out: 'Du er nu logget ud.'
+    passwords:
+      send_instructions: 'Du vil om et øjeblik modtage en email vedrørende nulstilling af kodeord.'
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      updated: 'Dit kodeord er ændret og du er nu logget ind.'
+    confirmations:
+      send_instructions: 'Om få minutter vil du modtage en email med instruktioner om aktivering af din konto.'
+      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Din konto er aktiveret og du er nu logget ind.'
+    registrations:
+      signed_up: 'Din registrering er godkedt.'
+      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      updated: 'Din profil er opdateret'
+      destroyed: 'Farvel. Din konto er nu lukket.'
+    unlocks:
+      send_instructions: 'Om få minutter vil du modtage en email med instruktioner om genåbning af din konto.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+      unlocked: 'Din konto er genåbnet og du er nu logget ind.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Bekræftelsesinstruktioner'
+      reset_password_instructions:
+        subject: 'Nulstilling af kodeord'
+      unlock_instructions:
+        subject: 'Genåbning af konto'

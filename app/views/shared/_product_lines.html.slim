@@ -1,18 +1,8 @@
+- if has_cart?
+  = render 'shared/cart_mini'
+
 .grid-3.alpha.omega
   h4 = t('product_line.other')
-
-    
-
-
-
-- product_lines.each do |product_line|
-  .grid-3.alpha.omega
-    = link_to product_line.title, product_line
-
--#= link_to image_tag(product_line.image_url :small), product_line_path(product_line) if product_line.image?
-
-
-
-
-
-
+  ul.simple
+    - product_lines.each do |product_line|
+      li= link_to product_line.title, product_line
