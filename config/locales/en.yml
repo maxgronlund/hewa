@@ -73,6 +73,7 @@ en:
     show: 'video cast'
     edit: 'edit video cast'
     new: 'new video cast'
+
     
   views:  
     pagination:  
