@@ -8,7 +8,7 @@
     - addresses = current_user.addresses.map { |address| [excerpt("#{address.street}, #{address.zip_code} #{address.city}", '', :radius => 32), address.id] }
 
     .grid-4
-      h2= t('cart.checkout.invoice_address')
+      h2= Cart.human_attribute_name(:invoice_address)
       = f.association :invoice_address, :collection => addresses, :include_blank => true, :label => false, :class => 'form-submit'
       = f.button :submit, t('cart.checkout.select_address')
       - if @cart.invoice_address_id
@@ -31,7 +31,7 @@
       '
 
     .grid-4
-      h2= t('cart.checkout.delivery_address')
+      h2= Cart.human_attribute_name(:delivery_address)
       = f.association :delivery_address, :collection => addresses, :include_blank => true, :label => false, :class => 'form_submit'
       = f.button :submit, t('cart.checkout.select_address')
       - if @cart.delivery_address_id

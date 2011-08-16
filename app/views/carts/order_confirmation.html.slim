@@ -10,11 +10,50 @@
   h2= t('cart.confirmation.details') << ': '
   p
     = Cart.human_attribute_name(:order_no) << ': '
-    = @cart.id
-  p
+    = @cart.order_no
+    br/
     = Cart.human_attribute_name(:order_state) << ': '
     = @cart.state
+
+.grid-12
+  .grid-4.alpha
+    h4= Cart.human_attribute_name(:delivery_address)
+    'Att: 
+    = @cart.delivery_address.send_to
+    br/
+    = @cart.delivery_address.street
+    br/
+    = @cart.delivery_address.zip_code
+    ' 
+    = @cart.delivery_address.city
+    br/
+    = @cart.delivery_address.user_country
+    br/
+
+  .grid-4
+    h4= Cart.human_attribute_name(:invoice_address)
+    - if @cart.invoice_address != @cart.delivery_address
+      'Att: 
+      = @cart.invoice_address.send_to
+      br/
+      = @cart.invoice_address.street
+      br/
+      = @cart.invoice_address.zip_code
+      ' 
+      = @cart.invoice_address.city
+      br/
+      = @cart.invoice_address.user_country
+    - else
+      = t('cart.invoice_address_same')
+    br/
+
+  .grid-4.omega
+    '
+
+
+.grid-12
   = render :partial => 'line_items', :locals => { :cart => @cart}
 
 .grid-12
+  hr/
   p= link_to t('cart.confirmation.back'), root_path, :class => 'fancy'

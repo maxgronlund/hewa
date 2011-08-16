@@ -1,0 +1,30 @@
+= Cart.human_attribute_name(:delivery_address)
+= "\n"
+'Att: 
+= @cart.delivery_address.send_to
+= "\n"
+= @cart.delivery_address.street
+= "\n"
+= @cart.delivery_address.zip_code
+' 
+= @cart.delivery_address.city
+= "\n"
+= @cart.delivery_address.user_country
+= "\n"
+= "\n"
+= "\n"
+= Cart.human_attribute_name(:invoice_address)
+- if @cart.invoice_address != @cart.delivery_address
+  'Att: 
+  = @cart.invoice_address.send_to
+  = "\n"
+  = @cart.invoice_address.street
+  = "\n"
+  = @cart.invoice_address.zip_code
+  ' 
+  = @cart.invoice_address.city
+  = "\n"
+  = @cart.invoice_address.user_country
+- else
+  = t('cart.invoice_address_same')
+= "\n"

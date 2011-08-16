@@ -1,3 +1,15 @@
-OrderNotification#order_placed_confirmation
-
-= @greeting + ", find me in app/views/order_notification/order_placed_confirmation.text.slim"
+= "#{t('mailer.greeting', :user_name => @user.name || @user.email)}"
+= "\n"
+= "\n"
+= t('mailer.order_received')
+= "\n"
+= "\n"
+= render 'order_details'
+= "\n"
+= "\n"
+= render 'address_details'
+= "\n"
+= "\n"
+= "\n"
+= t('mailer.footer')
+= "\n"

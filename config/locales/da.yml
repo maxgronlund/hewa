@@ -36,6 +36,8 @@ da:
       cart:
         order_no: 'Ordrenummer'
         order_state: 'Ordre status'
+        delivery_address: 'Leveringsadresse'
+        invoice_address: 'Faktureringsadresse'
       line_item:
         quantity: 'Antal'
         price_total: 'I alt'
@@ -173,10 +175,9 @@ da:
     empty: 'Du har ikke nogen varer i indkøbskurven.' #'Your Hewa shopping basket is currently empty.'
     line_items: 'Stykliste'
     address_required: 'Fakturerings- og leveringsadresse mangler.  Følg linket ovenfor for at tilføje en adresse.'
+    invoice_address_same: 'Samme som leveringsadresse'
     checkout:
       heading: 'Vælg leveringsadresse'
-      delivery_address: 'Leveringsadresse'
-      invoice_address: 'Faktureringsadresse'
       add_address: 'Tilføj adresse'
       select_address: 'Vælg'
       delivery_days: 'Valgte leveringsdage'
@@ -215,6 +216,16 @@ da:
     new_address: 'Tilføj adresse'
     edit_address: 'Redigér adresse'
     
+
+  mailer:
+    greeting: 'Kære %{user_name}'
+    order_placed:
+      subject: "User #{user_email} has placed an order"
+    order_notification:
+      subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
+      order_recieved: 'Vi har modtaget følgende ordre:'
+      footer: 'Tak for din ordre - Med venlig hilsen Hewa'
+
   views:  
     pagination:  
       first: 'first'
@@ -222,3 +233,4 @@ da:
       previous: "&lt; prev"  
       next: "next &gt;"  
       truncate: "&hellip;"
+

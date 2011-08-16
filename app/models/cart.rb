@@ -34,6 +34,10 @@ class Cart < ActiveRecord::Base
     self.invoice_address ||= user.addresses.last
   end
 
+  def order_no
+    id
+  end
+
 
   # Cart/Order workflow:
   # Customer creates/edits order (adds items to cart, changes quantities)
