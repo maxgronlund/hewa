@@ -87,10 +87,12 @@ en:
     log_out: "log out"
     sign_up: 'sign up'
     
+
     
   addresse:
     edit: 'edit address'
      
+
   system:
     are_you_sure: 'are you sure?'
     content_management: 'content management'
@@ -109,6 +111,7 @@ en:
   screen_cast:
     edit: 'edit screencast'
     
+
   products:
     products: 'products'
     new_product: 'new product'
@@ -127,12 +130,6 @@ en:
     other: 'Other products'
     show_on_front_page: 'Show on front page'
 
-  text_contents:
-    all_texts: 'all texts'
-    edit_text_content: 'edit text content'
-    new_text_content: 'new text content'
-    text_contents: 'text content'
-    search: 'search title'
   
   user:
     all_users: 'all users'
@@ -142,6 +139,19 @@ en:
     search_user: 'search user'
     show_user: 'show user'
     users: "users"
+
+  text_content:
+    index: 'texts'
+    show: 'text'
+    edit: 'edit text'
+    new: 'new text'
+  
+  user:
+    index: 'users'
+    show: 'show user'
+    new: 'create user'
+    edit: 'edit user'
+
     
   views:  
     pagination:  

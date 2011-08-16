@@ -3,8 +3,8 @@
     ul class="menu"
       - if can_edit?
         li  class=("current"  if @menu == 'admin' ) 
-          = link_to('#', :class => 'parrent')  do
-            span Administration
+          = link_to( admin_index_path, :class => 'parrent')  do
+            span admin
           div
             ul
               li
@@ -35,6 +35,11 @@
                 = link_to(screen_casts_path)  do
                   span Screencasts
 
+                  span = t('user.index')
+              li
+                = link_to(text_contents_path)  do
+                  span = t('text_content.index')
+              li
 
 
         
@@ -61,6 +66,8 @@
                 = link_to(product_line) do
                   span  = excerpt(product_line.title, '', :radius => 100)
       
+
+
 
 
 
