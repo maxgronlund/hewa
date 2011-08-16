@@ -1,8 +1,5 @@
-h1 Editing address
+.headline
+  h1= t('address.edit_address')
 
-== render 'form'
-
-= link_to 'Show', @address
-'|
-= link_to 'Back', addresses_path
-
+.grid-12
+  = render 'form'

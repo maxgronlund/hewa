@@ -2,21 +2,20 @@ class AddressesController < InheritedResources::Base
     belongs_to :user , :optional => true
     
     def new
-      @address = Address.new :user_country => 'Denmark'
+      @address = Address.new :user_country => 'Danmark'
       new!
     end
     
     def create
-      create! { params[:rurl] || @address.user}
+      create! { params[:rurl].present?? params[:rurl] : @address.user}
     end
     
     def update
-      update! { params[:rurl] || @address.user}
+      update! { params[:rurl].present?? params[:rurl] : @address.user}
     end
     
     def destroy
-      go_to = session[:go_to_after_edit]
-      session[:go_to_after_edit] = nil
-      destroy! { go_to}
+      @user = @address.user
+      destroy! { @user }
     end
 end

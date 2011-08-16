@@ -15,8 +15,9 @@
     br
     = t('simple_form.labels.user.role')
     = @user.role
-  .grid-3.alpha.omega.suffix-1.edit
-    - if can?(:manage, @user)
+
+  - if can?(:manage, @user)
+    .grid-3.alpha.omega.suffix-1.edit
       br/
       = link_to t('system.edit'), edit_user_path(@user), class: 'fancy'
 
@@ -30,42 +31,43 @@
   
   .grid-3.omega.prefix-1
   
-    -if @user.addresses.length == 0
-      = link_to 'new address', new_user_address_path(@user)
-    -else
-      h4 Address
-      = @user.addresses.first.send_to
+    h4= User.human_attribute_name(:addresses)
+    - if @user.addresses.length == 0
+      h5= t('user.no_addresses')
+      = t('user.address_info')
+      p= link_to t('user.new_address'), new_user_address_path(@user)
+    - else
+      - address = @user.addresses.last
+      = address.send_to
       br
-      = @user.addresses.first.street
+      = address.street
       br
-      = @user.addresses.first.zip_code
-      | - 
-      = @user.addresses.first.city
+      = address.zip_code
+      ' 
+      = address.city
       br
-      = @user.addresses.first.user_country
-      br
-      = link_to t('addresse.edit'), edit_user_address_path(@user, @user.addresses.first), class: 'fancy'
+      = address.user_country
+      p= link_to t('address.edit'), edit_user_address_path(@user, address), class: 'fancy'
       -#= link_to 'Destroy', @user.addresses.first, :confirm => 'Are you sure?', :method => :delete, class: 'fancy'
-      hr
-      h4 = t('user.delivery_dates')
+
+    hr
+    h4 = t('user.delivery_dates')
+    br
+    -if @user.monday?
+      = t('simple_form.labels.user.monday')
       br
-      -if @user.monday?
-        = t('simple_form.labels.user.monday')
-        br
-      -if @user.tuesday?
-        = t('simple_form.labels.user.tuesday')
-        br
-      -if @user.wednesday?
-        = t('simple_form.labels.user.wednesday')
-        br
-      -if @user.thursday?
-        = t('simple_form.labels.user.thursday')
-        br
-      -if @user.friday?
-        = t('simple_form.labels.user.friday')
-        br
-  
+    -if @user.tuesday?
+      = t('simple_form.labels.user.tuesday')
+      br
+    -if @user.wednesday?
+      = t('simple_form.labels.user.wednesday')
+      br
+    -if @user.thursday?
+      = t('simple_form.labels.user.thursday')
+      br
+    -if @user.friday?
+      = t('simple_form.labels.user.friday')
+      br
+
 .grid-1
-
-
-
+  '

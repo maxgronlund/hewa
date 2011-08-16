@@ -43,10 +43,18 @@ da:
         email: "email"
         password: 'password'
         password_confirmation: 'password bekræftelse'
+        remember_me: 'Husk mig' #"Remember me"
         thumb: 'avatar'
         role: 'rolle'
         image: 'billede'
         grid: ' grid'
+        addresses: 'Adresseoplysninger'
+      address:
+        send_to: 'Att:'
+        street: 'Adresse'
+        zip_code: 'Postnr'
+        city: 'By'
+        user_country: 'Land'
       screen_casts:
         screen_casts: 'screen casts'
       text_content:
@@ -98,14 +106,18 @@ da:
     home: "home"
 
   session:
-    log_in: "log in"
-    log_out: "log out"
+    log_in: "log på"
+    log_out: "log af"
+    sign_in: "Log på"
+    sign_out: "Log af"
     sign_up: 'sign up'
-    
-    
-  addresse:
-    edit: 'redigér adresse'
-     
+    forgot_password: 'Glemt dit password?' #"Forgot your password?"
+    info: "Der er kun adgang til Hewa Health Care's ebutik for eksisterende kunder, der er oprettede som brugere af ebutikken."
+    access_pre: "Eksisterende kunder, der ikke har adgang til ebutikken, kan få adgang "
+    access_url: '#'
+    contact_us: 'Ved spørgsmål eller problemer med ebutikken kontakt: '
+    contact_email: 'hewa@hewa.dk'
+
   system:
     are_you_sure: 'er du sikker?'
     confirm_delete: 'er du sikker?'
@@ -185,11 +197,18 @@ da:
   user:
     all_users: 'all users'
     create_user: 'create user'
-    delivery_dates: 'delivery dates'
+    delivery_dates: 'leveringsdage'
     edit_user: 'edit user'
     search_user: 'søg bruger'
     show_user: 'show user'
     users: "users"
+    no_addresses: 'Vi har ikke din adresse'
+    address_info: 'Dine adresseoplysninger bruges til levering af dine bestillinger hos os.'
+    new_address: 'Indtast ny adresse'
+  address:
+    edit: 'redigér adresse'
+    new_address: 'Tilføj adresse'
+    edit_address: 'Redigér adresse'
     
   views:  
     pagination:  
