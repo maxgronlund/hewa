@@ -1,11 +1,11 @@
 .headline
   h1
-    = t('text_contents.all_texts')
+    = t('text_content.index')
 
 .grid-12
   = form_tag text_contents_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 
-    = submit_tag t('text_contents.search'), :title => nil
+    = submit_tag t('system.search'), :title => nil
     '
     = link_to t('system.show_all'), text_contents_path
 .divider-12
