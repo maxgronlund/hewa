@@ -1,6 +1,7 @@
 class ProductVariationsController < InheritedResources::Base
   load_and_authorize_resource
   
+  helper :carts
   belongs_to :product , :optional => true
   
   def update

@@ -2,13 +2,13 @@
   h4= t('cart.line_items')
 .grid-10.alpha.omega
   .grid-5.alpha
-    = ProductVariation.human_attribute_name :title
+    strong= ProductVariation.human_attribute_name :title
   .grid-1
-    = LineItem.human_attribute_name :quantity
+    strong= LineItem.human_attribute_name :quantity
   .grid-2
-    = ProductVariation.human_attribute_name :price
+    strong= ProductVariation.human_attribute_name :price
   .grid-2.omega
-    = ProductVariation.human_attribute_name :price_total
+    strong= LineItem.human_attribute_name :price_total
 
 ul.simple
   - cart.line_items.each do |line_item|

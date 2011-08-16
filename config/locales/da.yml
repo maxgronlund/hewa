@@ -29,12 +29,16 @@ da:
         image: 'Billede'
       product_variation:
         item_nr: 'item nr'
-        price: 'pris'
-        quantity: 'antal'
+        price: 'Pris'
+        quantity: 'Antal'
         title: 'Produktnavn'
         title_suffix: 'suffix'
       cart:
         order_no: 'Ordrenummer'
+        order_state: 'Ordre status'
+      line_item:
+        quantity: 'Antal'
+        price_total: 'I alt'
       price:
         price: 'pris'
         quantity: 'antal'
@@ -168,6 +172,7 @@ da:
     total_amount: 'Varer total: '
     empty: 'Du har ikke nogen varer i indkøbskurven.' #'Your Hewa shopping basket is currently empty.'
     line_items: 'Stykliste'
+    address_required: 'Fakturerings- og leveringsadresse mangler.  Følg linket ovenfor for at tilføje en adresse.'
     checkout:
       heading: 'Vælg leveringsadresse'
       delivery_address: 'Leveringsadresse'
