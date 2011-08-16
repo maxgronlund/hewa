@@ -2,6 +2,8 @@ RailsTemplateR31::Application.routes.draw do
 
 
 
+  resources :video_casts
+
   get "no_access/index"
   get "admin/index"
  

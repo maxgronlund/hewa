@@ -90,7 +90,7 @@ $ git remote add template git://github.com/maxgronlund/rails-template-31.git
 			POINT THE DNS SERVER TO HETZNER
 #####################################################
 1: Open the DNS editor
-2: Set up the host records 
+2: Set up the host records         
 
 A (Host)
 Host Record	|	Points to 		|	TTL

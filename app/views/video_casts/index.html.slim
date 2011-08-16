@@ -1,0 +1,29 @@
+h1 Listing video_casts
+
+table
+  tr
+    th Title
+    th Body
+    th Mp4
+    th M4v
+    th Webm
+    th Ogv
+    th
+    th
+    th
+
+  - @video_casts.each do |video_cast|
+    tr
+      td= video_cast.title
+      td= video_cast.body
+      td= video_cast.mp4
+      td= video_cast.m4v
+      td= video_cast.webm
+      td= video_cast.ogv
+      td= link_to 'Show', video_cast
+      td= link_to 'Edit', edit_video_cast_path(video_cast)
+      td= link_to 'Destroy', video_cast, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Video cast', new_video_cast_path
