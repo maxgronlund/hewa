@@ -7,7 +7,7 @@ class ProductVariation < ActiveRecord::Base
 
   #validates :title_suffix, :presence => true
   validates :item_nr, :presence => true
-  validates :in_stock, :numericality => true
+#  validates :in_stock, :numericality => true
 
   def current_price
     @current_price ||= prices.with_language_id(1).last || NaN
