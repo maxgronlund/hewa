@@ -5,7 +5,6 @@
 .grid-12
   = render 'form'
   
-  = link_to 'Show', @product_line
-  '|
-  = link_to 'Back', product_lines_path
-
+  = link_to t('system.show'), @product_line
+  ' |
+  = link_to t('navigation.back'), product_lines_path

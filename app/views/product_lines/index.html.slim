@@ -5,17 +5,19 @@
 .grid-12
   = form_tag product_lines_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 
-    = submit_tag t('text_contents.search'), :title => nil
+    = submit_tag t('product_line.search'), :title => nil
     '
     = link_to t('system.show_all'), product_lines_path
 .divider-12
 .sort-list-header.grid-12
   .grid-3.alpha
-    = sortable 'title', t('text_contents.title')
+    = sortable 'title', ProductLine.human_attribute_name(:title)
   .grid-3
-    = sortable 'body', t('text_contents.body')
-  .grid-4
-    = sortable 'promote_on_front_page', t('product_line.show_on_front_page')
+    = sortable 'body', ProductLine.human_attribute_name(:body)
+  .grid-2
+    = sortable 'promote_on_front_page', ProductLine.human_attribute_name(:show_on_front_page)
+  .grid-2
+    = sortable 'show_in_menu', ProductLine.human_attribute_name(:show_in_menu)
   .grid-2.omega
 - @product_lines.each do |product_line|
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
@@ -23,19 +25,23 @@
       = link_to product_line.title, product_line
     .grid-3
       = excerpt(product_line.body, '', :radius => 32)
-    .grid-4
+    .grid-2
       - if product_line.promote_on_front_page
+        = t('system.yes')
+    .grid-2
+      - if product_line.show_in_menu?
         = t('system.yes')
 
     .grid-2.omega
-	  = link_to t('system.show'), product_line
+      = link_to t('system.show'), product_line
       | | 
       = link_to t('system.edit'), edit_product_line_path(product_line)
       | | 
       = link_to t('system.delete'), product_line, :confirm => 'Are you sure?', :method => :delete
 .pagination-12 
   = paginate @product_lines
+
 .divider-12
 .grid-12.edit
-  = link_to t('product_line.new_product_line'), new_product_line_path, class: 'fancy'
+  = link_to t('product_line.new_product_line'), new_product_line_path, class: 'fancy-admin'
 

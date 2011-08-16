@@ -1,7 +1,11 @@
 - products.each do |product|
   div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
     .grid-4.alpha
-       = link_to product.title, product_line_product_path(product.product_line, product)
+      = link_to product.title, product_line_product_path(product.product_line, product)
+      - if can?(:manage, Product)
+        = ' [-]' if product.product_variations.none?
+        = ' [product.product_variations.count]' if product.product_variations.many?
+
     .grid-1
       -# removed belongs to product variation
       -# !!! TODO cannot add product to cart; must be a product variation !!!
@@ -20,4 +24,4 @@
 
 .grid-9.alpha.omega
   -# !!! figure what to happen here, controller has to create a product variation to
-  = link_to 'new product', new_product_line_product_path(@product_line), :class =>"button"
+  = link_to 'new product', new_product_line_product_path(@product_line), :class =>"fancy-admin"

@@ -1,17 +1,31 @@
 .headline
-  h1 Order placed
+  h1= t('cart.confirmation.heading')
 
 .grid-12
-  'Thank you - We have received your order.
-  p You will receive an email in a few minutes with details on this order.
+  = t('cart.confirmation.info')
+  p= t('cart.confirmation.email')
 
-  'Order details:
+.grid-12
+  = t('cart.confirmation.details') << ': '
   hr/
-  'id: 
-  = @cart.id
-  p (TODO info om line_items, priser m.v.)
-  p (TODO info omkring valgte leverings- samt faktureringsadresser)
+  p
+    = t('cart.confirmation.order_no') << ': '
+    = @cart.id
+  ul
+    - @cart.line_items.each do |line_item|
+      li
+        = line_item.product_variation.display_name
+        '  - 
+        = line_item.quantity
+        '  á 
+        = number_to_currency(line_item.price)
+        '  = 
+        = number_to_currency(line_item.quantity * line_item.price)
+  p
+    = t('cart.total_amount')
+    = number_to_currency(@cart.total_price)
   hr/
 
 
-  p= link_to 'Back to shop', root_path, :class => 'fancy'
+.grid-12
+  p= link_to t('cart.confirmation.back'), root_path, :class => 'fancy'

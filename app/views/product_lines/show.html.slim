@@ -15,8 +15,9 @@
       = image_tag(@product_line.image_url)
   - if can_edit?
     .grid-9.alpha.omega
-      = link_to t('system.edit'), edit_product_line_path(@product_line), class: 'fancy'
-      = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy'
+      p
+        = link_to t('system.edit'), edit_product_line_path(@product_line), class: 'fancy-admin'
+        = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy-admin'
   .grid-9.alpha.omega
       = render "shared/products" , :products => @product_line.products
 .grid-3

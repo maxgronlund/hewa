@@ -1,82 +1,92 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+da:
   activerecord:
     models:
-      product_line: "product lines"
-      user: "user"
-      text_content: "text content"
-      help: 'help'
-      products: 'products'
-      addresses: 'addresses'
-      news_blogs: 'news'
+      product_line: "produkt linier"
+      user: "Kunde"
+      text_content: "text indhold"
+      help: 'hjælp'
+      products: 'produkter'
+      addresses: 'adresser'
+      news_blogs: 'nyheder'
       screen_casts: 'screen casts'
-      product_variations: 'product variations'
+      product_variations: 'produkt variationer'
 
 
     attributes:
       product_line:
-        title: 'product line name'
-        body: "product line description"
+        title: 'produkt linie navn'
+        body: "produkt linie beskrivelse"
+        product_type: 'produkt type'
+        show_on_front_page: 'vis på forside'
+        show_in_menu: 'vis i menu'
       product:
+        title: 'Titel'
+        body: 'Brødtekst'
+        product_line: 'Produkt linie'
+        image: 'Billede'
+      product_variation:
         item_nr: 'item nr'
-        title: 'title'
-        price: 'price'
-        min_units: 'minimum units'
+        title: 'Produktnavn'
+        title_suffix: 'suffix'
+      price:
+        price: 'pris'
+        quantity: 'antal'
       user:
-        name: "name"
+        name: "navn"
         email: "email"
         password: 'password'
-        password_confirmation: 'password confirmation'
+        password_confirmation: 'password bekræftelse'
         thumb: 'avatar'
-        role: 'role'
-        image: 'image'
+        role: 'rolle'
+        image: 'billede'
         grid: ' grid'
       screen_casts:
         screen_casts: 'screen casts'
       text_content:
         identity: "identity"
-        title: 'title'
-        body: 'body'
+        title: 'titel'
+        body: 'brødtekst'
         
   simple_form:
     labels:
       user:
-        name: 'user name: '
+        name: 'Bruger navn: '
         email: 'email: '
-        image: 'image: '
+        image: 'Billede: '
         password: 'password: '
-        password_confirmation: 'password confirmation: '
-        role: 'role: '
-        monday: 'monday'
-        tuesday: 'tuesday'
-        wednesday: 'wednesday'
-        thursday: 'thursday'
-        friday: 'friday'
+        password_confirmation: 'password bekræftelse: '
+        role: 'rolle: '
+        monday: 'mandag'
+        tuesday: 'tirsdag'
+        wednesday: 'onsdag'
+        thursday: 'torsdag'
+        friday: 'fredag'
         grid: 'grid'
-      product_line:
-        promote_on_front_page: 'show on frontpage'
+      #product_line:
+      #  promote_on_front_page: 'show on frontpage'
     hints:
       user:
-        name: 'user name to sign in.'
-        password: 'minimum 6 characters, please.'
+        name: 'bruger navn to log in.'
+        password: 'minimum 6 tegn.'
     placeholders:
       user:
-        name: 'Your username'
+        name: 'Dit brugernavn'
         password: '****'
         
   image:
-    image: 'image'
+    image: 'billede'
     re_crop: 're crop'
-    remove_image: ' remove image'
+    remove_image: ' slet billede'
     
   navigation:
-    back: '< back'
+    back: '< tilbage'
     
     
   help:
-    search: 'search'
+    search: 'søg'
     
   page:
     admin: "admin"
@@ -89,57 +99,85 @@ en:
     
     
   addresse:
-    edit: 'edit address'
+    edit: 'redigér adresse'
      
   system:
-    are_you_sure: 'are you sure?'
+    are_you_sure: 'er du sikker?'
+    confirm_delete: 'er du sikker?'
     content_management: 'content management'
-    delete: 'delete'
+    delete: 'slet'
     do_not_edit: 'do not edit'
-    edit: 'edit '
+    edit: 'redigér '
     email: "email"
-    remove_image: 'remove image'
-    save: 'save'
-    search: 'search'
-    show: 'show'
-    show_all: 'show all'
+    remove_image: 'slet billede'
+    save: 'gem'
+    search: 'søg'
+    show: 'vis'
+    show_all: 'vis alle'
     site_management: 'site management'
     user_management: 'user management'
 
-  screen_cast:
-    edit: 'edit screencast'
-    
-  products:
-    products: 'products'
-    new_product: 'new product'
-    edit_product: 'edit product'
-
   news_blog:
-    news_blogs: 'news blogs'
     title: 'Hewa Nyt'
     introduction: 'Et par gange årligt udkommer Hewa Nyt med nyheder og tilbud fra Hewa Health Care.'
     latest: 'Læs seneste nummer:'
     archive: 'Arkiv:'
 
+  screen_cast:
+    edit: 'edit screencast'
+    
+  products:
+    products: 'produkter'
+    new_product: 'nyt produkt'
+    edit_product: 'redigér produkt'
+    search: 'søg produktnavn'
+
   product_line:
-    product_lines: 'product lines'
-    new_product_line: "new product line"
-    other: 'Other products'
-    show_on_front_page: 'Show on front page'
+    product_lines: 'produkt linier'
+    new_product_line: "ny produkt linie"
+    other: 'Andre produkter'
+    search: 'søg navn'
+
+  product_variation:
+    buy: 'Køb'
+    new_product_variation: 'Opret produkt variation'
+
+  cart:
+    heading: 'Din indkøbskurv'
+    update: 'Opdatér antal'
+    checkout_now: 'Bestil nu'
+    empty_cart: 'Tøm indkøbskurv'
+    remove_item: 'Fjern'
+    total_amount: 'Varer total: '
+    checkout:
+      heading: 'Vælg leveringsadresse'
+      delivery_address: 'Leveringsadresse'
+      invoice_address: 'Faktureringsadresse'
+      add_address: 'Tilføj adresse'
+      select_address: 'Vælg'
+      delivery_days: 'Valgte leveringsdage'
+      place_order: 'Bekræft ordre'
+    confirmation:
+      heading: 'Ordre indlagt' #'Order placed'
+      info: 'Tak - vi har modtaget din ordre og vil behandle den hurtigst muligt.'  #'Thank you - We have received your order.'
+      email: 'Du vil modtage en email om få minutter med oplysninger om din ordre'  #'You will receive an email in a few minutes with details on this order.'
+      details: 'Ordrebeskrivelse'
+      order_no: 'Ordrenummer'
+      back: 'Tilbage til butikken' #'Back to shop'
 
   text_contents:
     all_texts: 'all texts'
     edit_text_content: 'edit text content'
     new_text_content: 'new text content'
     text_contents: 'text content'
-    search: 'search title'
+    search: 'søg titel'
   
   user:
     all_users: 'all users'
     create_user: 'create user'
     delivery_dates: 'delivery dates'
     edit_user: 'edit user'
-    search_user: 'search user'
+    search_user: 'søg bruger'
     show_user: 'show user'
     users: "users"
     

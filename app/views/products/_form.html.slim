@@ -3,23 +3,33 @@
   .grid-5.alpha
     = f.input :title
     .field
-      = f.label :product_line_id
-      = f.select :product_line_id, @select_product_lines
-    br
-    = f.input :item_nr
+      = f.association :product_line
 
-    -#= f.input :price
-    -#= f.input :min_units
     .field
       = f.label :body
       = f.text_area :body
 
-	br
-	.actions
-	  = f.submit 'Save', :class =>'fansy'
+    - if @product.new_record?
+      -# 
+      = f.simple_fields_for @product.product_variations[0] do |v|
+        .fields
+          = v.input :title_suffix
+          = v.input :item_nr
+          - price = v.object.prices[0]
+          = v.simple_fields_for price do |p|
+              = p.hidden_field :language_id
+              = p.input :price
+          = v.input :in_stock
+          br/
+          = v.input :on_sale
+
+    br
+    .actions
+      = f.submit t('system.save'), :class =>'fancy'
+      ' 
+      = link_to t('navigation.back'), products_path
   
   .grid-7.omega
-
     - if @product.image.present?
       - @product.image.version_dimensions.keys.each do |version|
         span
@@ -27,7 +37,6 @@
           = link_to t('image.re_crop'), crop_product_path(@product, :version => version)
           br
           = image_tag(@product.image_url version) if @product.image?
-         
           br
     
     .field
@@ -38,4 +47,3 @@
         .field
           = f.check_box :remove_image
           = t('image.remove_image')
-

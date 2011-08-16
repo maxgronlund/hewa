@@ -8,4 +8,4 @@ div class="grid-12 #{cycle('row-flip', 'row-flop')}"
   .grid-2 
     -#= number_to_currency(item.total_price)
   .grid-1.suffix-4.omega 
-    = f.link_to_remove "Remove", class: 'fancy'
+    = f.link_to_remove t('cart.remove_item'), class: 'fancy'

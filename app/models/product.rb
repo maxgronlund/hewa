@@ -1,9 +1,7 @@
 class Product < ActiveRecord::Base
   belongs_to :product_line
-  has_many :line_items
-  has_many :product_variations
+  has_many :product_variations, :dependent => :destroy
   
-  before_destroy :ensure_not_referenced_by_any_line_item
   validates_presence_of :title
   validates_presence_of :body
   attr_accessible :title, :body, :product_line_id, :product_variation
@@ -27,16 +25,6 @@ class Product < ActiveRecord::Base
    after_create :create_product_variation
    
 private
-  # ensure that there are no line items referencing this product
-  def ensure_not_referenced_by_any_line_item
-    if line_items.count.zero?
-      return true
-    else
-      errors.add(:base, 'Line Items present')
-      return false
-    end
-  end
-
   def create_product_variation
     self.product_variations.create @product_variation_attributes if @product_variation_attributes.present?
   end

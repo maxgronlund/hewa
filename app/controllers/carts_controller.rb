@@ -23,7 +23,7 @@ class CartsController < InheritedResources::Base
   end
   
   def place_order_confirmation
-    @cart = current_user.carts.order_placed.find(params[:id])
+    remove_current_cart
   end
   
   def update
@@ -34,11 +34,11 @@ class CartsController < InheritedResources::Base
 protected
 
   def is_checkout?
-    params[:commit] == 'Checkout Now'
+    params[:commit] == I18n.t('cart.checkout_now')
   end
 
   def is_place_order?
-    params[:commit] == 'Place Order'
+    params[:commit] == I18n.t('cart.checkout.place_order')
   end
 
   def load_current_cart

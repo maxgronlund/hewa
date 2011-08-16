@@ -1,5 +1,8 @@
 class ProductVariation < ActiveRecord::Base
   belongs_to :product
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
+
   has_many :prices, :dependent => :destroy
 
   #validates :title_suffix, :presence => true
@@ -23,6 +26,16 @@ class ProductVariation < ActiveRecord::Base
 private
   def create_price
     self.prices.create @price_attributes if @price_attributes.present?
+  end
+
+  # ensure that there are no line items referencing this product
+  def ensure_not_referenced_by_any_line_item
+    if line_items.count.zero?
+      return true
+    else
+      errors.add(:base, 'Line Items present')
+      return false
+    end
   end
 
 end

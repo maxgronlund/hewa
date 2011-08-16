@@ -42,6 +42,10 @@ class ApplicationController < ActionController::Base
     cart
   end
 
+  def remove_current_cart
+    session.delete(:cart_id)
+  end
+
 
 protected
   def set_locale

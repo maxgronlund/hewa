@@ -10,43 +10,31 @@
     = link_to t('system.show_all'), products_path
 .divider-12
 div class="sort-list-header grid-12"
-  .grid-1.alpha
-    = sortable 'item_nr', t('activerecord.attributes.product.item_nr')
-  .grid-2
-    = sortable 'title', t('text_contents.title')
+  .grid-4.alpha
+    = sortable 'title', Product.human_attribute_name(:title)
   .grid-5
-    = sortable 'body', t('text_contents.body')
+    = sortable 'body', Product.human_attribute_name(:body)
   .grid-1
-    = sortable 'price'
+    /
   .grid-2.omega
+    /
 
 - @products.each do |product|
   div class="grid-12 #{cycle('row-flip', 'row-flop')}"
-    .grid-1.alpha
-      = link_to product.item_nr, product
-    .grid-4
+    .grid-4.alpha
       = link_to product.title, product
-    .grid-1
-      -#= text_field_tag(:quantity, product.quantity, :size => 2)
-      -#!!! << make this work
-    .grid-2
+    .grid-5
       = excerpt(product.body, '', :radius => 16)
     .grid-1
-      -#= number_to_currency(product.price)
-    .grid-1
-      = button_to 'Add to Cart', line_items_path(:product_id => product)
+      /= button_to 'Køb', line_items_path(:product_id => product)
 
     .grid-2.omega.edit
-      = link_to t('system.edit'), edit_product_path(product)
-      | | 
-      = link_to t('system.delete'), product, :confirm => 'Are you sure?', :method => :delete
+      - if can? :edit, Product
+        = link_to t('system.edit'), edit_product_path(product)
+        | | 
+        = link_to t('system.delete'), product, :confirm => 'Are you sure?', :method => :delete
 .pagination-12 
   = paginate @products
 .divider-12
 .grid-12.edit
-  = link_to t('product.new_product'), new_product_path, class: 'fancy'
-
-
-
-
-
+  = link_to t('products.new_product'), new_product_path, class: 'fancy'
