@@ -9,7 +9,7 @@ class Cart < ActiveRecord::Base
   accepts_nested_attributes_for :line_items, :allow_destroy => true
   attr_accessible :line_items_attributes
   
-  def add_product_variation(product_variation, quantity = 1)
+  def add_product_variation(product_variation, quantity)
     current_item = line_items.find_by_product_variation_id(product_variation.id)
     
     if current_item

@@ -5,22 +5,29 @@
 .sort-list-header.grid-12
   .grid-5.alpha
     = ProductVariation.human_attribute_name :title
-  .grid-3
+  .grid-1
     = ProductVariation.human_attribute_name :quantity
   .grid-2
     = ProductVariation.human_attribute_name :price
+  .grid-2
+    = LineItem.human_attribute_name :price_total
 - if @cart.empty?
-  = t('cart.empty')
+  .grid-12
+    = t('cart.empty')
+    p= link_to t('cart.back'), root_path
 - else
   = simple_nested_form_for @cart do |f|
     = f.fields_for :line_items
-    .prefix-5.grid-3
+    .prefix-5.grid-2
       = f.button :submit, t('cart.update'), :class => 'fancy'
-    .grid-4
+    .grid-5
       = t('cart.total_amount')
       = number_to_currency(@cart.total_price)
     .prefix-8.grid-4
         = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
 
-.grid-12
-  = button_to t('cart.empty_cart'), @cart, :method => :delete, :confirm => t('system.confirm_delete'), class: 'fancy'
+  .grid-12
+    em= t('cart.disclaimer')
+
+  .grid-12
+    = button_to t('cart.empty_cart'), @cart, :method => :delete, :confirm => t('system.confirm_delete'), class: 'fancy'

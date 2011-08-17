@@ -1,4 +1,4 @@
-= Cart.human_attribute_name(:delivery_address)
+= Cart.human_attribute_name(:delivery_address) << ': '
 = "\n"
 'Att: 
 = @cart.delivery_address.send_to
@@ -13,7 +13,8 @@
 = "\n"
 = "\n"
 = "\n"
-= Cart.human_attribute_name(:invoice_address)
+= Cart.human_attribute_name(:invoice_address) << ': '
+= "\n"
 - if @cart.invoice_address != @cart.delivery_address
   'Att: 
   = @cart.invoice_address.send_to

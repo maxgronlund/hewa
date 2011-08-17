@@ -2,14 +2,17 @@ div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
   .grid-4.alpha
     b
       = product_variation.display_name
-  .grid-2
+  .grid-4.omega
     - if current_user.present?
-      = number_to_currency product_variation.current_price.price
-      = " (#{product_variation.current_price.quantity})" if product_variation.current_price.quantity > 1
-  .grid-3.omega.edit
-    - if current_user.present?
-      = link_to t('product_variation.buy'), add_to_cart_product_product_variation_path(product_variation.product, product_variation), class: 'fancy'
+      - product_variation.prices.for_current_locale.each do |price|
+        .grid-2.alpha
+          = number_to_currency price.price
+          = " (#{price.quantity} stk)" if price.quantity > 1
+          br/
+        .grid-2.omega.edit
+          = link_to t('product_variation.buy'), add_to_cart_product_product_variation_path(product_variation.product, product_variation, :quantity => price.quantity), class: 'fancy'
 
+  .grid-1.omega
     - if can_edit?
       '&nbsp &nbsp;
       = link_to t('system.edit'), edit_product_product_variation_path(product_variation.product, product_variation), class: 'fancy-admin'

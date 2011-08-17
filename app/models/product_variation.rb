@@ -4,14 +4,14 @@ class ProductVariation < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
   has_many :prices, :dependent => :destroy
+  accepts_nested_attributes_for :prices, :allow_destroy => true
+  attr_accessible :prices_attributes
 
   #validates :title_suffix, :presence => true
   validates :item_nr, :presence => true
 #  validates :in_stock, :numericality => true
 
-  def current_price
-    @current_price ||= prices.with_language_id(1).last || NaN
-  end
+  attr_accessible :product_id, :title_suffix, :item_nr, :in_stock, :on_sale
 
   def display_name
     "#{product.title}#{' - '+title_suffix if title_suffix.present?}"

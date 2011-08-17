@@ -29,7 +29,7 @@ da:
         image: 'Billede'
       product_variation:
         item_nr: 'item nr'
-        price: 'Pris'
+        price: 'Pris/stk'
         quantity: 'Antal'
         title: 'Produktnavn'
         title_suffix: 'suffix'
@@ -42,8 +42,9 @@ da:
         quantity: 'Antal'
         price_total: 'I alt'
       price:
-        price: 'pris'
-        quantity: 'antal'
+        language_id: 'Land'
+        price: 'Pris'
+        quantity: 'Antal'
       user:
         name: "navn"
         email: "email"
@@ -125,8 +126,8 @@ da:
     contact_email: 'hewa@hewa.dk'
 
   system:
-    are_you_sure: 'er du sikker?'
-    confirm_delete: 'er du sikker?'
+    are_you_sure: 'Er du sikker?'
+    confirm_delete: 'Er du sikker?'
     content_management: 'content management'
     delete: 'slet'
     do_not_edit: 'do not edit'
@@ -164,6 +165,11 @@ da:
   product_variation:
     buy: 'Køb'
     new_product_variation: 'Opret produkt variation'
+    new_title: 'Ny produkt variant'
+    added_to_cart: '%{product} tilføjet til indkøbskurv' #'Line item was successfully created.'
+
+  price:
+    new_price: 'Tilføj pris'
 
   cart:
     heading: 'Din indkøbskurv'
@@ -190,8 +196,10 @@ da:
       back: 'Tilbage til butikken' #'Back to shop'
     mini:
       heading: 'Din indkøbskurv' #'Shopping Basket'
-      view_cart: 'Vis indkøbskurv' #'View full basket'
+      view_cart: 'Vis hele indkøbskurven' #'View full basket'
       empty: 'Din indkøbskurv er tom.' #'Your basket is empty.'
+    back: 'Tilbage til butikken' #'Back to shop'
+    disclaimer: 'Der tages forbehold for trykfejl, udsolgte varer m.v.'
 
   text_contents:
     all_texts: 'all texts'
@@ -221,9 +229,10 @@ da:
     greeting: 'Kære %{user_name}'
     order_placed:
       subject: "User #{user_email} has placed an order"
+      info: 'Vi har modtaget følgende ordre:'
     order_notification:
       subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
-      order_recieved: 'Vi har modtaget følgende ordre:'
+      info: 'Vi har modtaget din ordre med nedenstående indhold'
       footer: 'Tak for din ordre - Med venlig hilsen Hewa'
       
   text_content:

@@ -5,7 +5,10 @@
   - else
     ul.simple
       - current_cart.line_items.each do |line_item|
-        li= link_to line_item.product_variation.display_name, line_item.product_variation
+        li
+          = line_item.quantity
+          '&nbsp;x
+          = link_to line_item.product_variation.display_name, product_line_product_path(line_item.product_variation.product.product_line, line_item.product_variation.product)
     = simple_form_for current_cart do |f|
       = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
-    p= link_to t('cart.mini.view_cart'), current_cart
+    p= link_to t('cart.mini.view_cart'), current_carts_path

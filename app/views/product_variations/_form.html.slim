@@ -1,4 +1,4 @@
-= simple_form_for @product_variation do |f|
+= simple_nested_form_for @product_variation do |f|
   -if @product_variation.errors.any?
     #error_explanation
       h2 = "#{pluralize(@product_variation.errors.count, "error")} prohibited this product_variation from being saved:"
@@ -19,8 +19,9 @@
   'base product
   = f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', :title => 'product' },:collection => @product_variation.product.product_line.products
 
-  -#= f.association :product, :label => false, :input_html => { :class => 'chzn-select', :style => 'width: 238px;', 'product' }
-
+  = render 'prices_header'
+  = f.fields_for :prices
+  p= f.link_to_add t('price.new_price'), :prices, :class => 'fancy-admin'
 
   .actions
     = f.submit 'Save'
