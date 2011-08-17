@@ -164,6 +164,7 @@ da:
   product_variation:
     buy: 'Køb'
     new_product_variation: 'Opret produkt variation'
+    added_to_cart: '%{product} tilføjet til indkøbskurv' #'Line item was successfully created.'
 
   cart:
     heading: 'Din indkøbskurv'
@@ -190,7 +191,7 @@ da:
       back: 'Tilbage til butikken' #'Back to shop'
     mini:
       heading: 'Din indkøbskurv' #'Shopping Basket'
-      view_cart: 'Vis indkøbskurv' #'View full basket'
+      view_cart: 'Vis hele indkøbskurven' #'View full basket'
       empty: 'Din indkøbskurv er tom.' #'Your basket is empty.'
 
   text_contents:

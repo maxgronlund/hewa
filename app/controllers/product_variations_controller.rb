@@ -14,10 +14,14 @@ class ProductVariationsController < InheritedResources::Base
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
+        #format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
+        format.html do
+          flash[:notice] = I18n.t('product_variation.added_to_cart', :product => product_variation.title_suffix)
+          redirect_to product_line_product_path(product_variation.product.product_line, product_variation.product)
+        end
         format.xml { render :xml => @line_item, :status => :created, :location => @line_item }
       else
-        format.html { render product_variation.product }
+        format.html { redirect_to product_line_product_path(product_variation.product.product_line, product_variation.product) }
         format.xml { render :xml => @line_item.errors,:status => :unprocessable_entity }
       end
     end

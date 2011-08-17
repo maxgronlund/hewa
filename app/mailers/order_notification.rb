@@ -11,7 +11,7 @@ class OrderNotification < ActionMailer::Base
     @user = cart.user
     @greeting = "User #{cart.user.name} <#{cart.user.email}> has placed an order"
 
-    mail to: "larshoeg@gmail.com", :subject => t('email.order_placed.subject', user_email: cart.user.email)
+    mail to: "max@synthmax.dk", :subject => t('email.order_placed.subject', user_email: cart.user.email)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

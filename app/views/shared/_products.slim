@@ -1,15 +1,12 @@
 - products.each do |product|
   div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
+    .grid-1.alpha
+      = image_tag product.image_url(:small)
     .grid-4.alpha
       = link_to product.title, product_line_product_path(product.product_line, product)
       - if can?(:manage, Product)
         = ' [-]' if product.product_variations.none?
         = " [#{product.product_variations.count}]" if product.product_variations.many?
-
-    .grid-1
-      -# removed belongs to product variation
-      -# !!! TODO cannot add product to cart; must be a product variation !!!
-      -#= number_to_currency(product.price)
     .grid-2
       - if user_signed_in?
         -#= button_to 'Add to Cart', line_items_path(:product_id => product)
