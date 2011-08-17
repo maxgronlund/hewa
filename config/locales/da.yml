@@ -198,6 +198,8 @@ da:
       heading: 'Din indkøbskurv' #'Shopping Basket'
       view_cart: 'Vis hele indkøbskurven' #'View full basket'
       empty: 'Din indkøbskurv er tom.' #'Your basket is empty.'
+    back: 'Tilbage til butikken' #'Back to shop'
+    disclaimer: 'Der tages forbehold for trykfejl, udsolgte varer m.v.'
 
   text_contents:
     all_texts: 'all texts'
@@ -227,10 +229,10 @@ da:
     greeting: 'Kære %{user_name}'
     order_placed:
       subject: "User #{user_email} has placed an order"
-      info: 'Vi har modtaget din ordre med nedenstående indhold'
+      info: 'Vi har modtaget følgende ordre:'
     order_notification:
       subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
-      order_recieved: 'Vi har modtaget følgende ordre:'
+      info: 'Vi har modtaget din ordre med nedenstående indhold'
       footer: 'Tak for din ordre - Med venlig hilsen Hewa'
 
   views:  

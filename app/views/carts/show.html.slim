@@ -12,7 +12,9 @@
   .grid-2
     = LineItem.human_attribute_name :price_total
 - if @cart.empty?
-  = t('cart.empty')
+  .grid-12
+    = t('cart.empty')
+    p= link_to t('cart.back'), root_path
 - else
   = simple_nested_form_for @cart do |f|
     = f.fields_for :line_items
@@ -24,5 +26,8 @@
     .prefix-8.grid-4
         = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
 
-.grid-12
-  = button_to t('cart.empty_cart'), @cart, :method => :delete, :confirm => t('system.confirm_delete'), class: 'fancy'
+  .grid-12
+    em= t('cart.disclaimer')
+
+  .grid-12
+    = button_to t('cart.empty_cart'), @cart, :method => :delete, :confirm => t('system.confirm_delete'), class: 'fancy'

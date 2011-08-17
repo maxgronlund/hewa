@@ -1,7 +1,7 @@
 = "#{t('mailer.greeting', :user_name => @user.name || @user.email)}"
 = "\n"
 = "\n"
-= t('mailer.order_placed.info')
+= t('mailer.order_notification.info')
 = "\n"
 = "\n"
 = render 'order_details'
@@ -11,5 +11,5 @@
 = "\n"
 = "\n"
 = "\n"
-= t('mailer.footer')
+= t('mailer.order_notification.footer')
 = "\n"
