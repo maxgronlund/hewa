@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.Jcrop.min
+//= require jquery_nested_form
 //  require_tree .
 //= require_directory .
 //- require tiny_mce/tiny_mce
