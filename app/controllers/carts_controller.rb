@@ -37,6 +37,10 @@ class CartsController < InheritedResources::Base
     update! { is_checkout?? checkout_cart_path(@cart) : params[:rurl] || cart_path(@cart) }
   end
   
+  def destroy
+    destroy! { root_path }
+  end
+
 
 protected
 
