@@ -4,13 +4,19 @@ class ProductVariationsController < InheritedResources::Base
   helper :carts
   belongs_to :product , :optional => true
   
+  def create
+    update! { product_line_product_path(@product_variation.product.product_line, @product_variation.product) }
+  end
+  
   def update
     update! { product_line_product_path(@product_variation.product.product_line, @product_variation.product) }
   end
 
   def add_to_cart
     product_variation = ProductVariation.find(params[:id])
-    @line_item = current_cart.add_product_variation(product_variation)
+    quantity = params[:quantity].to_i
+    quantity = 1 if quantity <= 0
+    @line_item = current_cart.add_product_variation(product_variation, quantity)
 
     respond_to do |format|
       if @line_item.save

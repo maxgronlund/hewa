@@ -42,8 +42,9 @@ da:
         quantity: 'Antal'
         price_total: 'I alt'
       price:
-        price: 'pris'
-        quantity: 'antal'
+        language_id: 'Land'
+        price: 'Pris'
+        quantity: 'Antal'
       user:
         name: "navn"
         email: "email"
@@ -125,8 +126,8 @@ da:
     contact_email: 'hewa@hewa.dk'
 
   system:
-    are_you_sure: 'er du sikker?'
-    confirm_delete: 'er du sikker?'
+    are_you_sure: 'Er du sikker?'
+    confirm_delete: 'Er du sikker?'
     content_management: 'content management'
     delete: 'slet'
     do_not_edit: 'do not edit'
@@ -164,7 +165,11 @@ da:
   product_variation:
     buy: 'Køb'
     new_product_variation: 'Opret produkt variation'
+    new_title: 'Ny produkt variant'
     added_to_cart: '%{product} tilføjet til indkøbskurv' #'Line item was successfully created.'
+
+  price:
+    new_price: 'Tilføj pris'
 
   cart:
     heading: 'Din indkøbskurv'

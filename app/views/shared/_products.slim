@@ -13,12 +13,12 @@
     .grid-2.omega
       - if can?(:manage, Product)
         .edit
-          = link_to 'Edit', edit_product_line_product_path(product.product_line,product)
+          = link_to t('system.edit'), edit_product_line_product_path(product.product_line,product)
           | | 
-          = link_to 'Destroy', product_line_product_path(product.product_line,product), :confirm => 'Er du sikker?', :method => :delete
+          = link_to t('system.delete'), product_line_product_path(product.product_line,product), :confirm => t('system.confirm_delete'), :method => :delete
     div class="grid-6 alpha omega"
 
 
 .grid-9.alpha.omega
   -# !!! figure what to happen here, controller has to create a product variation to
-  = link_to 'new product', new_product_line_product_path(@product_line), :class =>"fancy-admin"
+  = link_to t('product.new_product'), new_product_line_product_path(@product_line), :class =>"fancy-admin"

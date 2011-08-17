@@ -1,0 +1,9 @@
+.table-row.clearfix
+  .grid-2.alpha
+    = f.input :language_id, :type => :select, :include_blank => false, :label => false, :collection => Language.to_select
+  .grid-3
+    = f.input :price, :label => false
+  .grid-3
+    = f.input :quantity, :label => false
+  .grid-4.omega
+    = f.link_to_remove t('system.remove'), :class => 'fancy-admin'
