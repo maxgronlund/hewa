@@ -29,7 +29,7 @@ da:
         image: 'Billede'
       product_variation:
         item_nr: 'item nr'
-        price: 'Pris'
+        price: 'Pris/stk'
         quantity: 'Antal'
         title: 'Produktnavn'
         title_suffix: 'suffix'
@@ -227,6 +227,7 @@ da:
     greeting: 'Kære %{user_name}'
     order_placed:
       subject: "User #{user_email} has placed an order"
+      info: 'Vi har modtaget din ordre med nedenstående indhold'
     order_notification:
       subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
       order_recieved: 'Vi har modtaget følgende ordre:'

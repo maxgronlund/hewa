@@ -1,13 +1,22 @@
-= "Ordrenummer: #{@cart.order_no}\n\n"
-= t('cart.line_items')
+= "Ordrenummer: #{@cart.order_no}"
+= "\n"
+= "\n"
+= t('cart.line_items') << ': '
+= "\n"
 - @cart.line_items.each do |line_item|
   = line_item.product_variation.display_name
-  ': 
-  = line_item.quantity
-  ' á 
-  = number_to_currency(line_item.price)
-  ' = 
-  = number_to_currency(line_item.quantity * line_item.price)
+  = "\n"
+  - line_item.quantity_price_lines.each do |quantity, price_quantity|
+    = "        "
+    = price_quantity[1]
+    '  á 
+    = number_to_currency(price_quantity[0])
+    '  / 
+    = quantity
+    '  stk
+    '  => 
+    = number_to_currency(price_quantity[0] * price_quantity[1])
+    = "\n"
   = "\n"
 = "\n"
 = t('cart.total_amount')

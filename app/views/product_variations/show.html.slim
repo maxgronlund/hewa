@@ -1,7 +1,7 @@
 .grid-12
 p
   b line:
-  = @product_variation.product.product_line.title if @product_variation.product.product_line?
+  = @product_variation.product.product_line.title if @product_variation.product.product_line.present?
   p
     b Product:
     = @product_variation.product.title

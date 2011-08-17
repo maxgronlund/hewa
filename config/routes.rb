@@ -18,7 +18,7 @@ RailsTemplateR31::Application.routes.draw do
 
   resources :carts do
     member { get 'checkout', 'order_confirmation'; put 'checkout' }
-    collection { get 'checkout', 'place_order' }
+    collection { get 'current', 'checkout', 'place_order' }
   end
   
   resources :addresses,

@@ -3,6 +3,10 @@ class CartsController < InheritedResources::Base
   #before_filter :authenticate_user!, :only => [:checkout, :place_order]
   before_filter :load_current_cart, :except => [:index, :order_confirmation]
   
+  def current
+    render 'show'
+  end
+  
   def checkout
     @cart.delivery_address = nil if params[:new_delivery_address] == '1'
     @cart.invoice_address = nil if params[:new_invoice_address] == '1'

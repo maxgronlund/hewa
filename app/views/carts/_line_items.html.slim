@@ -20,13 +20,13 @@ ul.simple
           = line_item.product_variation.product.title
           br/
           em= line_item.product_variation.title_suffix
-        .grid-1
-          = line_item.quantity
-        .grid-2
-          '  á 
-          = number_to_currency(line_item.price)
-        .grid-2.omega
-          = number_to_currency(line_item.quantity * line_item.price)
+        - line_item.quantity_price_lines.each do |quantity, price_quantity|
+          .grid-1
+            = price_quantity[1]
+          .grid-2
+            = "á #{number_to_currency(price_quantity[0])} / #{quantity} stk"
+          .grid-2.omega
+            = number_to_currency(price_quantity[0] * price_quantity[1])
 .grid-10.alpha.omega
   .grid-8.alpha
     strong= t('cart.total_amount')
