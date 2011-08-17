@@ -10,3 +10,7 @@ seems like mp4 and m4v is the only format needed
 
 
 
+size: 1012x632
+
+
+

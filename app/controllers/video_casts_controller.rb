@@ -12,9 +12,9 @@ class VideoCastsController < InheritedResources::Base
   def show
     
     if browser.firefox?
-      @video = VideoCast.find(params[:id]).mp4
+      @video = VideoCast.find(params[:id]).ogv
     elsif browser.safari?
-      @video = VideoCast.find(params[:id]).mp4
+      @video = VideoCast.find(params[:id]).m4v
     elsif browser.chrome?
       @video = VideoCast.find(params[:id]).mp4
     elsif browser.opera?
