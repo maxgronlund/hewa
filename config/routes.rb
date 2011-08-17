@@ -7,6 +7,8 @@ RailsTemplateR31::Application.routes.draw do
 
   resources :prices
 
+  resources :video_casts
+
   get "no_access/index"
   get "admin/index"
   get "about/index"

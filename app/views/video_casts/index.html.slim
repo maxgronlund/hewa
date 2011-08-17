@@ -1,0 +1,34 @@
+.headline
+  h1
+    = t('video_cast.index')
+
+.grid-12
+  = form_tag video_casts_path, :method => 'get', :id => "products_search" do
+    = text_field_tag :search, params[:search] 
+    = submit_tag t('system.search'), :title => nil
+    '
+    = link_to t('system.show_all'), video_casts_path
+.divider-12
+div class="sort-list-header grid-12"
+  .grid-2.alpha
+    = sortable 'title', t('video_cast.title')
+  .grid-2
+    = sortable 'body', t('video_cast.body')
+  .grid-8.omega
+
+- @video_casts.each do |video_cast|
+  div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+    .grid-2.alpha
+      = link_to video_cast.title, video_cast
+    .grid-8
+      = excerpt(video_cast.body, '', :radius => 32)
+    .grid-2.omega
+      = link_to t('system.show'), video_cast
+      | | 
+      = link_to t('system.edit'), edit_video_cast_path(video_cast)
+      | | 
+      = link_to t('system.delete'), video_cast, :confirm => 'Are you sure?', :method => :delete
+.pagination-12 
+  = paginate @video_casts
+.grid-12.edit
+  = link_to t('video_cast.new'), new_video_cast_path, class: 'fancy'

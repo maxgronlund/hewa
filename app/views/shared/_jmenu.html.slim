@@ -32,14 +32,11 @@
                 = link_to(news_blogs_path)  do
                   span Nyheder
               li
-                = link_to(screen_casts_path)  do
-                  span Screencasts
-
-                  span = t('user.index')
-              li
                 = link_to(text_contents_path)  do
                   span = t('text_content.index')
               li
+                = link_to(video_casts_path)  do
+                  span = t('video_cast.index')  
 
 
         
@@ -66,8 +63,5 @@
                 = link_to(product_line) do
                   span  = excerpt(product_line.title, '', :radius => 100)
       
-
-
-
 
 

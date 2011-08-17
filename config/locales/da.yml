@@ -225,7 +225,13 @@ da:
       subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
       order_recieved: 'Vi har modtaget følgende ordre:'
       footer: 'Tak for din ordre - Med venlig hilsen Hewa'
-
+      
+  text_content:
+    index: 'Tekster'
+    show: 'text'
+    edit: 'edit text'
+    new: 'new text'
+        
   views:  
     pagination:  
       first: 'first'
@@ -233,4 +239,10 @@ da:
       previous: "&lt; prev"  
       next: "next &gt;"  
       truncate: "&hellip;"
-
+      
+  video_cast:    
+    index: 'video casts'
+    show: 'video cast'
+    edit: 'edit video cast'
+    new: 'new video cast'
+  

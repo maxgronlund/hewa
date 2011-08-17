@@ -1,0 +1,15 @@
+= simple_form_for @video_cast do |f|
+  = render 'shared/error_messages', :taget => @video_cast
+  = f.input :title
+  = f.input :body
+  = f.input :mp4
+  = f.hidden_field :mp4_cache 
+  = f.input :m4v
+  = f.hidden_field :m4v_cache
+
+  .actions
+    -#= f.submit t('system.save')
+
+
+	= f.submit t('system.save'), disable_with: 'Saving...'
+    = image_tag "loader.gif", alt: "", width: "32", height: "32", style: "display: none;", class: 'spinner'

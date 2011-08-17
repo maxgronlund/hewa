@@ -13,6 +13,7 @@ en:
       news_blogs: 'news'
       screen_casts: 'screen casts'
       product_variations: 'product variations'
+      video_cast: "video cast"
 
 
     attributes:
@@ -130,7 +131,6 @@ en:
     other: 'Other products'
     show_on_front_page: 'Show on front page'
 
-  
   user:
     all_users: 'all users'
     create_user: 'create user'
@@ -151,6 +151,13 @@ en:
     show: 'show user'
     new: 'create user'
     edit: 'edit user'
+
+
+  video_cast:    
+    index: 'video casts'
+    show: 'video cast'
+    edit: 'edit video cast'
+    new: 'new video cast'
 
     
   views:  

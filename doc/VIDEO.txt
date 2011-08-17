@@ -1,0 +1,12 @@
+<source src="<%= @video_cast.mp4 %>" /> 		<%# -opera, +firefox, +safari, +crome%>
+<source src="<%= @video_cast.m4v %>" />			<%# -opera, +firefox, +safari, +crome%>
+<source src="<%= @video_cast.webm %>" />		<%# -opera, -firefox, -safari, + crome%>
+<source src="<%= @video_cast.ogv %>" />			<%# -opera, -firefox, -safari, + crome%>
+
+
+when code is slimifyed it cant play
+
+seems like mp4 and m4v is the only format needed
+
+
+

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-q:
-
-
-recrop all on first upload
-=======
-== This is a configuration template
-all the most common gemfiles is installed and configured
-example on how they are used is implemented
-
-
-
-How to's
-
 #####################################################
 			GETTING STARTED
 #####################################################
@@ -20,13 +6,24 @@ How to's
 3: Edit the db/seed.rb file 
 4: $ db:create db:migrate db:seed
 5: $ bundle install
+---
+6: Remove the .git file *1
+7: Add to git $ git init
+8: $ git add ..
+9: git commit
 
+*1 If the .git file is invisible 
+$ defaults write com.apple.finder AppleShowAllFiles TRUE
+$ killall Finder
 
 #####################################################
 			CREATE A PROJECT ON GITHUB
 #####################################################
 1: make a new project 
 2: $ git remote add origin git@github.com:YOURNAME/PROJECTNAME-.git
+---
+3: If you want to keep the project in sync with the template
+$ git remote add template git://github.com/maxgronlund/rails-template-31.git
 
 #####################################################
 			PREPARE HETZNER AND GITHUP 
@@ -85,12 +82,15 @@ How to's
 25: $ RAILS_ENV=production  rake ts:conf
 26: $ RAILS_ENV=production rake ts:index
 27: $ RAILS_ENV=production rake ts:start 
+28: log out $ ctrl-d
+--- 
+
 
 #####################################################
 			POINT THE DNS SERVER TO HETZNER
 #####################################################
 1: Open the DNS editor
-2: Set up the host records 
+2: Set up the host records         
 
 A (Host)
 Host Record	|	Points to 		|	TTL
@@ -126,18 +126,8 @@ _domainkey	|	"o=~"										|	14400
 
 
 
->>>>>>> cb06b05540d33120333cfaddea7bfd66706638b5
-
-fallback folder ?
-
-<<<<<<< HEAD
-	
-tinyMce is not working in production
-
-remove image on product
-falback image is missing/not working
-=======
 
 
 
->>>>>>> cb06b05540d33120333cfaddea7bfd66706638b5
+
+

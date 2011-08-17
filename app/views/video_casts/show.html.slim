@@ -1,0 +1,21 @@
+.headline
+  h1 
+    = @video_cast.title
+
+
+.grid-12
+  p#notice = notice
+
+.grid-12
+  = render 'video'
+
+.grid-4
+  = markdown(@video_cast.body)
+  -#= @browser
+.grid-4
+
+.grid-4
+
+.grid-12
+  = link_to t('system.edit'), edit_video_cast_path(@video_cast)
+
