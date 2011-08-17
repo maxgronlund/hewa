@@ -2,7 +2,7 @@ class VideoCast < ActiveRecord::Base
   
   mount_uploader :mp4, Mp4Uploader
   mount_uploader :m4v, M4vUploader
-
+  mount_uploader :ogv, OgvUploader
   
   def self.search(search)
     if search

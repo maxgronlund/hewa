@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110816104250) do
+ActiveRecord::Schema.define(:version => 20110817203607) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(:version => 20110816104250) do
     t.string   "m4v"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ogv"
   end
 
 end
