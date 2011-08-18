@@ -31,7 +31,7 @@ body{
 a, a:hover, a:active, a:visited, a:link {
   //@include link-font;
   color: $link-color;
-  padding: 2px;
+//  padding: 2px;
   text-decoration: none;
   &.fancy {
 		@include fancy-button($template-color-base, 14px 0.5em);
@@ -40,6 +40,23 @@ a, a:hover, a:active, a:visited, a:link {
 		@include fancy-button($color_red_algae, 14px 0.5em);
 	}
 }
+
+a:hover{
+	color: black;
+	//background-color:#000;
+	//* {
+	//	background-color:#000;
+	//}
+	//img { 
+	//	background-color:red; 
+	//	//border-style:none;
+	//	//border-width:0px;
+	//	//margin:0px 0px -3px 0px;
+	//	padding:-4;
+	//}
+}
+
+
 
 
 hr{
@@ -217,4 +234,27 @@ ul.simple {
 
 .top-margin-8{
 	margin-top:8px;
+}
+
+.border-box{
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	margin-bottom:12px;
+	margin-top:4px;
+}
+
+.border-box:hover{
+	background-color:#e0e0e0;
+}
+.inner-box{
+	margin:10px;
+	h4{
+		color:$color_red_algae;
+	}
+	p{
+		margin-bottom:10px;
+	}	
 }

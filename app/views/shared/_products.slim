@@ -1,22 +1,22 @@
 - products.each do |product|
-  div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
-    .grid-1.alpha
-      = image_tag product.image_url(:small)
-    .grid-4.alpha
+  div class="grid-7 suffix_2 alpha omega #{cycle('row-flip', 'row-flop')}"
+    .grid-5.alpha
       = link_to product.title, product_line_product_path(product.product_line, product)
       - if can?(:manage, Product)
         = ' [-]' if product.product_variations.none?
         = " [#{product.product_variations.count}]" if product.product_variations.many?
-    .grid-2
+
+      
+
+    .grid-2.omega.edit
       - if user_signed_in?
-        -#= button_to 'Add to Cart', line_items_path(:product_id => product)
-    .grid-2.omega
+        = link_to image_tag('search_16.png'), product_line_product_path(product.product_line, product)
+        '&nbsp;
       - if can?(:manage, Product)
-        .edit
-          = link_to t('system.edit'), edit_product_line_product_path(product.product_line,product)
-          | | 
-          = link_to t('system.delete'), product_line_product_path(product.product_line,product), :confirm => t('system.confirm_delete'), :method => :delete
-    div class="grid-6 alpha omega"
+        = link_to image_tag('pencil_16.png'), edit_product_line_product_path(product.product_line,product)
+        '&nbsp;
+        = link_to image_tag('delete_16.png'), product_line_product_path(product.product_line,product), :confirm => t('system.confirm_delete'), :method => :delete
+
 
 
 .grid-9.alpha.omega

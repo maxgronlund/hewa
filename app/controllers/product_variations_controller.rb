@@ -4,6 +4,8 @@ class ProductVariationsController < InheritedResources::Base
   helper :carts
   belongs_to :product , :optional => true
   
+  
+  
   def create
     update! { product_line_product_path(@product_variation.product.product_line, @product_variation.product) }
   end

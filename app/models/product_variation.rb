@@ -14,7 +14,11 @@ class ProductVariation < ActiveRecord::Base
   attr_accessible :product_id, :title_suffix, :item_nr, :in_stock, :on_sale
 
   def display_name
-    "#{product.title}#{' - '+title_suffix if title_suffix.present?}"
+    if "#{product.title}" ==  "#{title_suffix}"
+      "#{product.title}"
+    else
+      "#{product.title}#{' - '+title_suffix if title_suffix.present?}"
+    end
   end
 
   def price=(params)

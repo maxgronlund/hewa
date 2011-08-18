@@ -72,5 +72,3 @@ $ninesixty-gutter-width: 20px; 	// default: 20px
 header { @include grid-container; @include grid(12); }
 footer { @include grid-container; min-height:32px; text-align:center; }
 
-
-

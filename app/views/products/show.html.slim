@@ -17,7 +17,7 @@
   .grid-9.alpha.omega
     = render @product.product_variations
 
-  .grid-9.alpha.omega
+  .grid-9.alpha.omega.edit.top-margin
     - if can? :edit, Product
       = link_to t('product_variation.new_product_variation'), new_product_product_variation_path(@product), class: 'fancy-admin'
 

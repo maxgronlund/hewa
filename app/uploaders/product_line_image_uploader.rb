@@ -19,7 +19,7 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
   end
   
   def default_url
-    "/assets/fallback/" + [version_name, "default.jpg"].compact.join('_')
+    "images/fallback/" + [version_name, "default_product_line.jpg"].compact.join('_')
   end
   
   # Process files as they are uploaded:

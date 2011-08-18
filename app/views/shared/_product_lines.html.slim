@@ -2,7 +2,10 @@
   = render 'shared/cart_mini'
 
 .grid-3.alpha.omega
-  h4 = t('product_line.other')
-  ul.simple
-    - product_lines.each do |product_line|
-      li= link_to product_line.title, product_line
+  .border-box
+    .inner-box
+      h4 = t('product_line.other')
+      ul.simple
+        - product_lines.each do |product_line|
+          li= link_to product_line.title, product_line
+      
