@@ -1,6 +1,9 @@
 div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
   .grid-6.alpha
     h4
+      - if can_edit?
+        = link_to image_tag('pencil_16.png'), edit_product_product_variation_path(product_variation.product, product_variation)
+        '&nbsp;
       = product_variation.display_name
   .grid-3.omega
     - if current_user.present?
@@ -8,12 +11,10 @@ div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
         .grid-2.alpha
           = number_to_currency price.price
           = " (#{price.quantity} stk)" if price.quantity > 1
-          - if can_edit?
-	        '&nbsp &nbsp;
-	        = link_to image_tag('pencil_16.png'), edit_product_product_variation_path(product_variation.product, product_variation)
+          
 
         .grid-1.omega.edit
-          = link_to image_tag('buy_48.png'), add_to_cart_product_product_variation_path(product_variation.product, product_variation, :quantity => price.quantity)
+          = link_to image_tag('buy_32.png'), add_to_cart_product_product_variation_path(product_variation.product, product_variation, :quantity => price.quantity)
 
 
     

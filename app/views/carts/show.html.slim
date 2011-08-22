@@ -1,3 +1,4 @@
+
 .headline
   h1
     = t('cart.heading')
@@ -23,8 +24,8 @@
     .grid-5
       = t('cart.total_amount')
       = number_to_currency(@cart.total_price)
-    .prefix-8.grid-4
-        = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
+    .prefix-8.grid-4.edit
+        = f.submit t('cart.checkout_now'), :class => 'fancy'
 
   .grid-12
     em= t('cart.disclaimer')

@@ -13,5 +13,5 @@ div class="grid-12 #{cycle('row-flip', 'row-flop')}"
       br/
     .grid-2
      = number_to_currency(price_quantity[0] * price_quantity[1])
-  .grid-1.suffix-1.omega 
-    = f.link_to_remove t('cart.remove_item'), class: 'fancy'
+  .grid-2.omega.edit
+    = f.link_to_remove image_tag('delete_16.png'), class: 'fancy'

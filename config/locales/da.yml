@@ -43,8 +43,8 @@ da:
         price_total: 'I alt'
       price:
         language_id: 'Land'
-        price: 'Pris'
-        quantity: 'Antal'
+        price: 'Stk. Pris'
+        quantity: 'Mængde'
       user:
         name: "navn"
         email: "email"
@@ -140,6 +140,7 @@ da:
     show_all: 'vis alle'
     site_management: 'site management'
     user_management: 'user management'
+    edit_variation: 'rediger produkt-variation'
 
   news_blog:
     title: 'Hewa Nyt'

@@ -1,7 +1,12 @@
 .grid-3.alpha.omega
   .border-box
+    .grid-2.alpha.omega
+      .inner-box
+        h4= t('cart.mini.heading')
+    .grid-1.omega.omega
+        .inner-box
+        = link_to image_tag('buy_48.png'), current_carts_path
     .inner-box
-      h4= t('cart.mini.heading')
       - if current_cart.empty?
         p= t('cart.mini.empty')
       - else
@@ -9,7 +14,7 @@
           - current_cart.line_items.each do |line_item|
             li
               = line_item.quantity
-              '&nbsp;x
+              '&nbsp;
               = link_to line_item.product_variation.display_name, product_line_product_path(line_item.product_variation.product.product_line, line_item.product_variation.product)
         = simple_form_for current_cart do |f|
           = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
