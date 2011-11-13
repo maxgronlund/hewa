@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProductLineImageUploader < CarrierWave::Uploader::Base
+class ProductVariationImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
     
@@ -19,7 +19,7 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
   end
   
   def default_url
-    "/assets/fallback/" + [version_name, "default_product_line.jpg"].compact.join('_')
+    "/assets/fallback/" + [version_name, "default_product.jpg"].compact.join('_')
   end
   
   # Process files as they are uploaded:
@@ -29,9 +29,7 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
    # Create different versions of your uploaded files:  
    cattr_accessor :version_dimensions
    self.version_dimensions = {
-     :medium => [242,242],
-     :large => [410, 410],
-     :drill => [728,200],
+     :large => [410, 410]
    }
 
 
@@ -40,19 +38,14 @@ class ProductLineImageUploader < CarrierWave::Uploader::Base
 #     process :resize_to_fit => self.version_dimensions[:small]
 #   end
 
-   version :medium do
-     process :manualcrop
-     process :resize_to_fit => self.version_dimensions[:medium]
-   end
+#   version :medium do
+#     process :manualcrop
+#     process :resize_to_fit => self.version_dimensions[:medium]
+#   end
    
    version :large do
      process :manualcrop
      process :resize_to_fit => self.version_dimensions[:large]
-   end
-   
-   version :drill do
-     process :manualcrop
-     process :resize_to_fit => self.version_dimensions[:drill]
    end
   
    def manualcrop

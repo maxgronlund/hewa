@@ -1,14 +1,15 @@
 div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
-  .grid-6.alpha
-    h4
-      - if can_edit?
-        = link_to image_tag('pencil_16.png'), edit_product_product_variation_path(product_variation.product, product_variation)
-        '&nbsp;
-      = product_variation.display_name
+  .grid-5.alpha
+    - if can_edit?
+      = link_to image_tag('pencil_16.png'), edit_product_product_variation_path(product_variation.product, product_variation)
+      '&nbsp;
+    = product_variation.display_name
+  .grid-1
+    = product_variation.item_nr
   .grid-3.omega
     - if current_user.present?
       - product_variation.prices.for_current_locale.each do |price|
-        .grid-2.alpha
+        .grid-2.alpha.edit
           = number_to_currency price.price
           = " (#{price.quantity} stk)" if price.quantity > 1
           

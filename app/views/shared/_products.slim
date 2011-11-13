@@ -1,15 +1,28 @@
-'put sortable header here
+div class="sort-list-header grid-7 suffix_2 alpha omega"
+  .grid-4.alpha
+    /= sortable 'title', t('user.product')
+    'product
+  .grid-3.omega
+    /= sortable 'email', 'vare nummer'
+    'vare nummer
+
+
+
 - products.each do |product|
   div class="grid-7 suffix_2 alpha omega #{cycle('row-flip', 'row-flop')}"
-    .grid-5.alpha
+    .grid-4.alpha
       = link_to product.title, product_line_product_path(product.product_line, product)
       - if can?(:manage, Product)
         = ' [-]' if product.product_variations.none?
         = " [#{product.product_variations.count}]" if product.product_variations.many?
-
+    .grid-2
+      - if product.product_variations.length == 1
+        = product.product_variations.first.item_nr
+      - else
+        = link_to 'flere vare nummere', product_line_product_path(product.product_line, product)
       
 
-    .grid-2.omega.edit
+    .grid-1.omega.edit
       - if user_signed_in?
         = link_to image_tag('search_16.png'), product_line_product_path(product.product_line, product)
         '&nbsp;

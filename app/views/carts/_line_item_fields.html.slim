@@ -1,6 +1,6 @@
 div class="grid-12 #{cycle('row-flip', 'row-flop')}"
   .grid-1.alpha
-    = image_tag f.object.product_variation.product.image_url(:small)
+    -#= image_tag f.object.product_variation.product.image_url(:small)
   .grid-4
     = f.object.product_variation.product.title
     br/

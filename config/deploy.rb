@@ -8,7 +8,7 @@ set :rvm_type, :user
 require 'bundler/capistrano'
 
 # main details
-set :application, "hewa-sandbox"                                       # <<< change name
+set :application, "hewa-sandbox"                               
 server "46.4.64.81", :app, :web, :db, :primary => true
 
 # server details
@@ -21,7 +21,7 @@ set :use_sudo, false
 
 # repo details
 set :scm , :git
-set :repository, "git@github.com:maxgronlund/hewa.git"  # <<< change reposotory
+set :repository, "git@github.com:maxgronlund/hewa.git"  
 set :branch, "master"
 set :git_enable_submodules, 1
 

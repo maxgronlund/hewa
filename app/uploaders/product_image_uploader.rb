@@ -29,21 +29,19 @@ class ProductImageUploader < CarrierWave::Uploader::Base
    # Create different versions of your uploaded files:  
    cattr_accessor :version_dimensions
    self.version_dimensions = {
-     :small => [32, 32],
-     :medium => [152, 152],
-     :large => [324, 324]
+     :large => [410, 410]
    }
 
 
-   version :small do
-     process :manualcrop
-     process :resize_to_fit => self.version_dimensions[:small]
-   end
+#   version :small do
+#     process :manualcrop
+#     process :resize_to_fit => self.version_dimensions[:small]
+#   end
 
-   version :medium do
-     process :manualcrop
-     process :resize_to_fit => self.version_dimensions[:medium]
-   end
+#   version :medium do
+#     process :manualcrop
+#     process :resize_to_fit => self.version_dimensions[:medium]
+#   end
    
    version :large do
      process :manualcrop

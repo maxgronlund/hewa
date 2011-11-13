@@ -156,12 +156,14 @@ da:
     new_product: 'nyt produkt'
     edit_product: 'redigér produkt'
     search: 'søg produktnavn'
+    edit: 'rediger produkt'
 
   product_line:
     product_lines: 'produkt linier'
     new_product_line: "ny produkt linie"
     other: 'Andre produkter'
     search: 'søg navn'
+    edit: 'rediger produktlinie'
 
   product_variation:
     buy: 'Køb'

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817203607) do
+ActiveRecord::Schema.define(:version => 20111113092417) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -80,10 +81,11 @@ ActiveRecord::Schema.define(:version => 20110817203607) do
     t.datetime "updated_at"
     t.string   "image"
     t.string   "crop_params",           :limit => 1024
-    t.boolean  "promote_on_front_page",                 :default => true
     t.string   "c5_desc"
+    t.boolean  "promote_on_front_page",                 :default => true
     t.boolean  "show_in_menu",                          :default => true
     t.string   "image_size"
+    t.boolean  "cutter"
   end
 
   create_table "product_variations", :force => true do |t|
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20110817203607) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "cutter"
   end
 
   add_index "product_variations", ["product_id"], :name => "index_product_variations_on_product_id"
@@ -128,8 +131,8 @@ ActiveRecord::Schema.define(:version => 20110817203607) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                  :default => "",    :null => false
-    t.string   "encrypted_password",     :limit => 128,  :default => "",    :null => false
+    t.string   "email",                                  :default => "",   :null => false
+    t.string   "encrypted_password",     :limit => 128,  :default => "",   :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -150,7 +153,7 @@ ActiveRecord::Schema.define(:version => 20110817203607) do
     t.boolean  "thursday",                               :default => true
     t.boolean  "friday",                                 :default => true
     t.boolean  "grid"
-    t.boolean  "show_on_about_page",                     :default => false
+    t.boolean  "show_on_about_page"
     t.text     "cv"
   end
 
