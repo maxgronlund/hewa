@@ -1,7 +1,5 @@
-class AddCutterToProduct < ActiveRecord::Migration
+class UpdateCutters < ActiveRecord::Migration
   def up
-   # remove_column :products, :cutter
-    add_column :products, :cutter, :boolean
     
     ProductLine.all.each do |product_line|
       if product_line.id == 40
@@ -23,7 +21,7 @@ class AddCutterToProduct < ActiveRecord::Migration
     end
     
   end
+
   def down
-    remove_column :products, :cutter
   end
 end
