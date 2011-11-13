@@ -10,7 +10,7 @@
 //= require jquery_nested_form
 //  require_tree .
 //= require_directory .
-//- require tiny_mce/tiny_mce
+//= require tinymce-jquery
 //= require rails.validations
 
 $(function() {
