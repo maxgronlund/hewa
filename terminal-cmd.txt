@@ -53,3 +53,6 @@ rails g scaffold product_variation title_suffix:string item_nr:string in_stock:i
 rails g migration copy_products_to_product_variations
 
 rails g migration add_image_size_to_product_linds
+
+
+rails g migration AddCutterToProductLine cutter:boolean

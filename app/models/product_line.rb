@@ -9,7 +9,7 @@ class ProductLine < ActiveRecord::Base
   mount_uploader :image, ProductLineImageUploader
   include ImageCrop
   
-  PRODUCT_TYPE = %w[normal drill]
+#  PRODUCT_TYPE = %w[normal bord]
   
   
   def self.search(search)

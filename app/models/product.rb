@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   
   validates_presence_of :title
   validates_presence_of :body
-  attr_accessible :title, :body, :product_line_id, :product_variation
+  attr_accessible :title, :cutter, :body, :product_line_id, :product_variation
   
   serialize :crop_params, Hash
   mount_uploader :image, ProductImageUploader

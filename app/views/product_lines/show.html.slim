@@ -20,7 +20,10 @@
       = link_to t('product_line.edit'), edit_product_line_path(@product_line), class: 'fancy-admin'
       = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy-admin'
   .grid-9.alpha.omega.top-margin-8
-      = render "shared/products" , :products => @product_line.products
+      -if @product_line.cutter?
+        = render "shared/cutters" , :products => @product_line.products
+      -else
+        = render "shared/products" , :products => @product_line.products
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines
 

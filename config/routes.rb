@@ -1,6 +1,10 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+  get "cutters/index"
+
+  get "cutters/show"
+
   resources :product_variations
 
   get "help/index"
