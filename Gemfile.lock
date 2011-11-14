@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/chriseppstein/compass.git
-  revision: 22e2458b77519e8eb8463170c1a1fe4bab105f3e
-  branch: rails31
-  specs:
-    compass (0.12.0.alpha.0.22e2458)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-
-GIT
   remote: git://github.com/ryanb/nested_form.git
   revision: 57f32788f1952bcd633057b4b56b69b51df17610
   specs:
@@ -65,6 +55,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.3)
+    compass (0.11.5)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     compass-960-plugin (0.10.4)
       compass (>= 0.10.0)
     database_cleaner (0.7.0)
@@ -188,7 +182,7 @@ GEM
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
-      tilt (!= 1.3.0, ~> 1.1)
+      tilt (~> 1.1, != 1.3.0)
     subexec (0.1.0)
     temple (0.3.4)
     therubyracer (0.9.9)
@@ -220,7 +214,7 @@ DEPENDENCIES
   chunky_png
   client_side_validations
   coffee-script
-  compass!
+  compass
   compass-960-plugin
   database_cleaner
   devise

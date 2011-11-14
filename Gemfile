@@ -59,7 +59,7 @@ group :test do
 end
 
 
-gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
+gem "compass" #, :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
 gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
 gem "compass-960-plugin", :require => "ninesixty"
 
