@@ -1,5 +1,4 @@
-source 'http://rubygems.org'
-
+source 'http://rubygems.org' 
 gem 'rails', '~> 3.1.0'
 gem 'rails-i18n'
 
@@ -59,7 +58,7 @@ group :test do
 end
 
 
-gem "compass" #, :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
+gem "compass", :git => "git://github.com/chriseppstein/compass.git"
 gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
 gem "compass-960-plugin", :require => "ninesixty"
 
