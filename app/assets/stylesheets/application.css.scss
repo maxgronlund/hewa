@@ -225,6 +225,24 @@ i{@include font-plain(14px); color:#484848;  }
 	}
 }
 
+
+.cutter-image-box{
+	margin-bottom:8px;
+	@include border-radius(5px, 5px);
+	background-color:#eee;
+	border-style:solid;
+	border-width:1px;
+	border-color:#888;
+	width:754px;
+	height:296px;
+	display:block;
+	overflow:hidden;
+	img{ 
+		left:-4px;
+		position:relative;
+	}
+}
+
 ul.simple {
 	margin: 0;
 	padding: 0;
