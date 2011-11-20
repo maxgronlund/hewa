@@ -5,6 +5,7 @@
     = image_tag(@catalog.image_url :large) if @catalog.image?
   .grid-9.alpha.omega
     h1 = @catalog.title
+  .grid-6.suffix-3.alpha.omega
     = markdown(@catalog.body)
     -if can_edit? 
       .grid-9.alpha.omega.edit
@@ -14,6 +15,7 @@
   = link_to image_tag('download.png'), @catalog.file_url if @catalog.file?
   br
   = render "shared/product_lines", :product_lines => @product_lines
+  = render "shared/catalogs", :catalogs => @catalogs
 
 
 

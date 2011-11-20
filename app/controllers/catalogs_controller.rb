@@ -4,6 +4,7 @@ class CatalogsController < InheritedResources::Base
   
   def show
     session[:go_to_after_edit] = catalog_path(@catalog)
+    @catalogs = Catalog.all
     show!
   end
   

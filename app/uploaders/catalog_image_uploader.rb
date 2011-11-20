@@ -28,7 +28,7 @@ class CatalogImageUploader < CarrierWave::Uploader::Base
   self.version_dimensions = {
     :small => [66, 72],
     :medium => [152, 170],
-    :large => [238, 266],
+    :large => [756, 320],
   }
 
   RESIZE_GRAVITY = 'NorthWest'
