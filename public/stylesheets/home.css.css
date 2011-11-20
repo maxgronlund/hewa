@@ -1,0 +1,50 @@
+/* line 11, ../../app/assets/stylesheets/home.css.scss */
+body.home .medium-image-box {
+  margin-bottom: 20px;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px / 5px;
+  -o-border-radius: 5px / 5px;
+  -ms-border-radius: 5px / 5px;
+  -khtml-border-radius: 5px / 5px;
+  border-radius: 5px / 5px;
+  background-color: #eee;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #888;
+  width: 238px;
+  height: 238px;
+  display: block;
+  overflow: hidden;
+}
+/* line 22, ../../app/assets/stylesheets/home.css.scss */
+body.home .medium-image-box img {
+  left: -4px;
+  position: relative;
+}
+/* line 26, ../../app/assets/stylesheets/home.css.scss */
+body.home .medium-image-box .overlay-text {
+  background-color: #000;
+  width: 214px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=55);
+  opacity: 0.55;
+  top: -72px;
+  min-height: 60px;
+  position: relative;
+  padding: 8px;
+  width: 238px;
+}
+/* line 36, ../../app/assets/stylesheets/home.css.scss */
+body.home .medium-image-box h4 {
+  margin: 0px;
+}
+/* line 37, ../../app/assets/stylesheets/home.css.scss */
+body.home .medium-image-box a {
+  color: #fff;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 43, ../../app/assets/stylesheets/home.css.scss */
+body.home .medium-image-box:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}

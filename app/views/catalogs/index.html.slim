@@ -1,0 +1,44 @@
+.headline
+  h1
+    'Kataloger
+
+
+.divider-12
+.sort-list-header.grid-12
+  .grid-3.alpha
+    = sortable 'title'
+  .grid-3
+    = sortable 'body', 'tekst'
+  .grid-2
+    /= sortable 'promote_on_front_page', ProductLine.human_attribute_name(:show_on_front_page)
+  .grid-2
+    /= sortable 'show_in_menu', ProductLine.human_attribute_name(:show_in_menu)
+  .grid-2.omega
+- @catalogs.each do |catalog|
+  div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+    .grid-3.alpha
+      = link_to catalog.title, catalog
+    .grid-3
+      = excerpt(catalog.body, '', :radius => 32)
+    .grid-2
+      /- if product_line.promote_on_front_page
+        /= t('system.yes')
+    .grid-2
+      /- if product_line.show_in_menu?
+        /= t('system.yes')
+
+    .grid-2.omega.edit
+      = link_to t('system.show'), catalog
+      '&nbsp;|&nbsp; 
+      = link_to t('system.edit'), edit_catalog_path(catalog)
+      '&nbsp;|&nbsp; 
+      = link_to t('system.delete'), catalog, :confirm => 'Are you sure?', :method => :delete
+.pagination-12 
+  /= paginate @product_lines
+
+.divider-12
+.grid-12.edit
+  = link_to 'opret', new_catalog_path, class: 'fancy-admin'
+
+
+

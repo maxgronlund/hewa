@@ -56,3 +56,5 @@ rails g migration add_image_size_to_product_linds
 
 
 rails g migration AddCutterToProductLine cutter:boolean
+
+rails g scaffold catalog title:string body:text file:string image:string

@@ -1,0 +1,26 @@
+.divider-12
+
+.grid-9
+  .grid-9.alpha.omega
+    = image_tag(@catalog.image_url :large) if @catalog.image?
+  .grid-9.alpha.omega
+    h1 = @catalog.title
+    = markdown(@catalog.body)
+    -if can_edit? 
+      .grid-9.alpha.omega.edit
+        = link_to 'Edit', edit_catalog_path(@catalog), class: 'fancy'
+
+.grid-3
+  = link_to image_tag('download.png'), @catalog.file_url if @catalog.file?
+  br
+  = render "shared/product_lines", :product_lines => @product_lines
+
+
+
+
+
+
+
+
+
+

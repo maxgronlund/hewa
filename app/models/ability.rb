@@ -8,6 +8,7 @@ class Ability
 
       elsif user.admin?
         can :manage, Address
+        can :manage, Catalog
         can :manage, User
         can :manage, TextContent
         can :manage, NewsBlog

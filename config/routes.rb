@@ -1,6 +1,14 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+  resources :catalogs
+  resources :catalogs do
+    member do
+      get 'crop'
+      put 'crop_update'
+    end
+  end
+  
   get "cutters/index"
 
   get "cutters/show"
