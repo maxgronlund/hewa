@@ -6,7 +6,8 @@
       = f.association :product_line
 
     .field
-      = f.label :body
+      'beskrivelse
+      br
       = f.text_area :body
 
     - if @product.new_record?

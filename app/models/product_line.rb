@@ -11,7 +11,7 @@ class ProductLine < ActiveRecord::Base
   
 #  PRODUCT_TYPE = %w[normal bord]
   
-  
+
   def self.search(search)
     if search
       where('title LIKE ?', "%#{search}%")

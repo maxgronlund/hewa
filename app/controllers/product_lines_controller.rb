@@ -6,6 +6,8 @@ class ProductLinesController < InheritedResources::Base
     
     def show
      # @product_lines = ProductLine.order('title asc')
+      @product_line = ProductLine.find(params[:id])
+      @products = Product.where(:product_line_id => @product_line.id).order('title asc')
       session[:go_to_after_edit] = product_line_path(@product_line)
       show!
     end
