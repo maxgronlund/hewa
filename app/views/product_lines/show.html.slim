@@ -1,7 +1,12 @@
 .divider-12
 
 .grid-9
-  - if @product_line.image_size == 'normal'
+  - if @product_line.cutter?
+  .grid-9.alpha.omega
+      .cutter-image-box
+        = image_tag(@product_line.image_url :drill)
+
+  - else
     .grid-9.alpha.omega
       .grid-5.alpha
         .product-line-image-box
@@ -9,19 +14,19 @@
       .grid-4.omega
         h1 = @product_line.title
         = markdown(@product_line.body)
-  - else
-    .grid-9.alpha.omega
-      h1 = @product_line.title
-      = markdown(@product_line.body) 
-    .grid-9.alpha.omega
-      = image_tag(@product_line.image_url)
+  /- else
+  /  .grid-9.alpha.omega
+  /    h1 = @product_line.title
+  /    = markdown(@product_line.body) 
+  /  .grid-9.alpha.omega
+  /    = image_tag(@product_line.image_url)
   - if can_edit?
     .grid-9.alpha.omega
       = link_to t('product_line.edit'), edit_product_line_path(@product_line), class: 'fancy-admin'
       = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy-admin'
   .grid-9.alpha.omega.top-margin-8
       -if @product_line.cutter?
-        = render "shared/cutters" , :products => @product_line.products
+        = render "shared/cutters" , :products => @products
       -else
         = render "shared/products" , :products => @product_line.products
 .grid-3

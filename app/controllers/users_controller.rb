@@ -23,7 +23,7 @@ class UsersController < InheritedResources::Base
     @user = User.new(params[:user])  
     if @user.save  
       if params[:user][:image]
-        redirect_to crop_user_path, :notice => "Signed up!"
+        redirect_to crop_user_path(@user), :notice => "Signed up!"
       else
         redirect_to user_path(@user), :notice => "Signed up!"
       end
@@ -32,8 +32,6 @@ class UsersController < InheritedResources::Base
     end  
   end  
 
-  
-  
   def crop
     @crop_version = (params[:version] || :large).to_sym
     @user.get_crop_version! @crop_version

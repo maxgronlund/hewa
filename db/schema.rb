@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113181717) do
+ActiveRecord::Schema.define(:version => 20111120181007) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20111113181717) do
   end
 
   add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
+
+  create_table "catalogs", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.text     "crop_params"
+    t.string   "file"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "helps", :force => true do |t|
     t.string   "title"

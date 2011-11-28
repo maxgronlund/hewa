@@ -6,6 +6,8 @@ class ProductLinesController < InheritedResources::Base
     
     def show
      # @product_lines = ProductLine.order('title asc')
+      @product_line = ProductLine.find(params[:id])
+      @products = Product.where(:product_line_id => @product_line.id).order('title asc')
       session[:go_to_after_edit] = product_line_path(@product_line)
       show!
     end
@@ -15,11 +17,25 @@ class ProductLinesController < InheritedResources::Base
       @product_lines = ProductLine.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
     end
 
+#    def create
+#      goto = session[:go_to_after_edit] || product_lines_path
+#      session[:go_to_after_edit] = nil
+#      create! {goto}
+#    end
+
     def create
-      goto = session[:go_to_after_edit] || product_lines_path
-      session[:go_to_after_edit] = nil
-      create! {goto}
+      @product_line = ProductLine.new(params[:product_line])  
+      if @product_line.save  
+        if params[:product_line][:image]
+         redirect_to crop_product_line_path(@product_line), :notice => "Produkt linie oprettet!"
+        else
+          redirect_to product_line_path(@product_line), :notice => "Produkt linie oprettet!"
+        end
+      else  
+        render "new"  
+      end  
     end
+
 
     def update
       if params[:product_line][:image] && params[:product_line][:remove_image] != '1'
@@ -49,7 +65,7 @@ class ProductLinesController < InheritedResources::Base
       @product_line.crop_version = params[:product_line]["crop_version"]
       @product_line.save
 
-      redirect_to product_line_path(@product_line)
+      redirect_to edit_product_line_path(@product_line)
     end
     
     

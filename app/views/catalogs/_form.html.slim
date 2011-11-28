@@ -1,0 +1,32 @@
+= simple_form_for @catalog do |f|
+
+  .grid-4.alpha
+    = render 'shared/error_messages', :taget => @catalog
+  
+    br
+    = f.input :title, :label => 'titel'
+    br
+    = f.input :body, :label => 'beskrivelse'
+    br
+    'dokument
+    br
+    = f.file_field :file
+    br
+     = f.input :image, :label => 'billed'
+     = f.hidden_field :image_cache
+     - if @catalog.image.present?
+       br
+       = f.check_box :remove_image
+       = t('image.remove_image')
+     br
+     .actions.grid-5.alpha.omega.top-margin-8
+       = f.submit t('system.save'), :class  => 'fancy'
+  .grid-8.omega
+    - if @catalog.image.present?
+      - @catalog.image.version_dimensions.keys.each do |version|
+        = link_to t('image.re_crop'), crop_product_line_path(@catalog, :version => version)
+        br
+        = image_tag(@catalog.image_url version) if @catalog.image?
+        hr
+   
+  

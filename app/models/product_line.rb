@@ -3,7 +3,7 @@ class ProductLine < ActiveRecord::Base
   has_many :products, :dependent => :destroy
 
   validates_presence_of :title, :body
-  attr_accessible :image, :image_cache, :remote_image_url, :remove_image, :title, :body, :c5_desc, :promote_on_front_page, :show_in_menu, :image_size
+  attr_accessible :image, :image_cache, :remote_image_url, :remove_image, :title, :body, :c5_desc, :promote_on_front_page, :show_in_menu, :image_size, :cutter
 
   serialize :crop_params, Hash
   mount_uploader :image, ProductLineImageUploader
@@ -11,7 +11,7 @@ class ProductLine < ActiveRecord::Base
   
 #  PRODUCT_TYPE = %w[normal bord]
   
-  
+
   def self.search(search)
     if search
       where('title LIKE ?', "%#{search}%")

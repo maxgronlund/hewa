@@ -1,0 +1,10 @@
+.headline
+  h1 
+    = @catalog.title
+
+.grid-12
+  = render 'form'
+  
+  = link_to t('system.show'), @catalog
+  ' |
+  = link_to t('navigation.back'), catalogs_path

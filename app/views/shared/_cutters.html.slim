@@ -1,6 +1,4 @@
-'CUTTERS
-br
-div class="sort-list-header grid-7 suffix_2 alpha omega"
+div class="sort-list-header grid-9 alpha omega"
   .grid-4.alpha
     /= sortable 'title', t('user.product')
     'product
@@ -11,25 +9,30 @@ div class="sort-list-header grid-7 suffix_2 alpha omega"
 
 
 - products.each do |product|
-  div class="grid-7 suffix_2 alpha omega #{cycle('row-flip', 'row-flop')}"
-    .grid-4.alpha
-      = link_to image_tag(product.image_url :cutter), product_line_product_path(product.product_line, product)
-      = link_to product.title, product_line_product_path(product.product_line, product)
-      - if can?(:manage, Product)
-        = ' [-]' if product.product_variations.none?
-        = " [#{product.product_variations.count}]" if product.product_variations.many?
-    .grid-2
-      
-      
+  div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
+    .grid-9.alpha.omega
+      .grid-6.alpha
+        = link_to product.title, product_line_product_path(product.product_line, product)
+      .grid-2
+        - if product.product_variations.length == 1
+          = product.product_variations.first.item_nr
+        - else
+          = link_to 'flere vare nummere', product_line_product_path(product.product_line, product)
+      .grid-1.omega.edit
+        - if user_signed_in?
+          = link_to image_tag('search_16.png'), product_line_product_path(product.product_line, product)
+          '&nbsp;
+        - if can?(:manage, Product)
+          = link_to image_tag('pencil_16.png'), edit_product_line_product_path(product.product_line,product)
+          '&nbsp;
+          = link_to image_tag('delete_16.png'), product_line_product_path(product.product_line,product), :confirm => t('system.confirm_delete'), :method => :delete
+      .grid-9.alpha.omega
+        = link_to image_tag(product.image_url :cutter), product_line_product_path(product.product_line, product) if product.image?
 
-    .grid-1.omega.edit
-      - if user_signed_in?
-        = link_to image_tag('search_16.png'), product_line_product_path(product.product_line, product)
-        '&nbsp;
-      - if can?(:manage, Product)
-        = link_to image_tag('pencil_16.png'), edit_product_line_product_path(product.product_line,product)
-        '&nbsp;
-        = link_to image_tag('delete_16.png'), product_line_product_path(product.product_line,product), :confirm => t('system.confirm_delete'), :method => :delete
+/      br
+/      - if can?(:manage, Product)
+/        = ' [-]' if product.product_variations.none?
+/        = " [#{product.product_variations.count}]" if product.product_variations.many?
 
 
 
