@@ -1,4 +1,6 @@
 class OrderNotification < ActionMailer::Base
+  include Resque::Mailer
+
   default from: "webshop@hewa.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -6,8 +8,8 @@ class OrderNotification < ActionMailer::Base
   #
   #   en.order_notification.order_placed.subject
   #
-  def order_placed(cart)
-    @cart = cart
+  def order_placed(cart_id)
+    @cart = cart = Cart.find(cart_id)
     @user = cart.user
     @greeting = "User #{cart.user.name} <#{cart.user.email}> has placed an order"
 
@@ -19,8 +21,8 @@ class OrderNotification < ActionMailer::Base
   #
   #   en.order_notification.order_placed_confirmation.subject
   #
-  def order_placed_confirmation(cart)
-    @cart = cart
+  def order_placed_confirmation(cart_id)
+    @cart = cart = Cart.find(cart_id)
     @user = cart.user
     #@greeting = "Thank you for placing an order"
 
@@ -32,7 +34,8 @@ class OrderNotification < ActionMailer::Base
   #
   #   en.order_notification.order_confirmation.subject
   #
-  def order_confirmation(cart)
+  def order_confirmation(cart_id)
+    cart = Cart.find(cart_id)
     @greeting = "Your order #{cart.order_number} has been confirmed"
     # !!! TODO shipment etc
 

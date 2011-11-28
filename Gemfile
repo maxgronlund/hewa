@@ -24,6 +24,7 @@ gem 'tinymce-rails'
 gem 'simple_form'
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 gem "browser"
+gem "resque_mailer"
 
 # JavaScript runtime is required for Tails 3.1; this should work on Ubuntu
 gem 'therubyracer', '>= 0.8.2'

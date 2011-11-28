@@ -27,8 +27,8 @@ class CartsController < InheritedResources::Base
     remove_current_cart
 
     # !!! TODO put email sending onto a background task queue
-    OrderNotification.order_placed(@cart).deliver
-    OrderNotification.order_placed_confirmation(@cart).deliver
+    OrderNotification.order_placed(@cart.id).deliver
+    OrderNotification.order_placed_confirmation(@cart.id).deliver
 
     redirect_to order_confirmation_cart_path(@cart)
   end
