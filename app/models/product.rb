@@ -11,6 +11,8 @@ class Product < ActiveRecord::Base
   attr_accessible :image, :image_cache, :remote_image_url, :remove_image
   include ImageCrop
   
+  
+  
   def self.search(search)
      if search
        where('title LIKE ?', "%#{search}%")

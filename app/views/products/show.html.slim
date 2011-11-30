@@ -2,8 +2,8 @@
 
 .grid-9
   - if @product.cutter?
- 
-
+    h1 = @product.title
+    = markdown(@product.body)
     = image_tag(@product.image_url)
   -else 
     .grid-5.alpha

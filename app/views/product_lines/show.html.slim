@@ -3,8 +3,10 @@
 .grid-9
   - if @product_line.cutter?
   .grid-9.alpha.omega
-      .cutter-image-box
-        = image_tag(@product_line.image_url :drill)
+    .cutter-image-box
+      = image_tag(@product_line.image_url :drill)
+    h1 = @product_line.title
+    = markdown(@product_line.body)
 
   - else
     .grid-9.alpha.omega
