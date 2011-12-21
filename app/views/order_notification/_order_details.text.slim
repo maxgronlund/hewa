@@ -4,24 +4,24 @@
 = t('cart.line_items') << ': '
 = "\n"
 - @cart.line_items.each do |line_item|
-  .grid-12
-    .grid-2.alpha
-      = line_item.product_variation.item_nr
-    .grid-4
-      = line_item.product_variation.display_name
-    .grid-6
-      - line_item.quantity_price_lines.each do |quantity, price_quantity|
-        = "        "
-        = price_quantity[1]
-        '  á 
-        = number_to_currency(price_quantity[0])
-        '  / 
-        = quantity
-        '  stk
-        '  = 
-        = number_to_currency(price_quantity[0] * price_quantity[1])
-        = "\n"
-      = "\n"
+  
+  = line_item.product_variation.item_nr
+  = "          "
+  = line_item.product_variation.display_name
+  = "    "
+  /= "\n"
+  - line_item.quantity_price_lines.each do |quantity, price_quantity|
+    = "        "
+    = price_quantity[1]
+    '  á 
+    = number_to_currency(price_quantity[0])
+    '  / 
+    = quantity
+    '  stk
+    '  = 
+    = number_to_currency(price_quantity[0] * price_quantity[1])
+    = "\n------------------------------------------------------------------------------------------"
+  = "\n"
 = "\n"
 = t('cart.total_amount')
 = number_to_currency(@cart.total_price)
