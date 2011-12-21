@@ -4,6 +4,8 @@
 = t('cart.line_items') << ': '
 = "\n"
 - @cart.line_items.each do |line_item|
+  = line_item.product_variation.item_nr
+  = "\n"
   = line_item.product_variation.display_name
   = "\n"
   - line_item.quantity_price_lines.each do |quantity, price_quantity|
@@ -14,7 +16,7 @@
     '  / 
     = quantity
     '  stk
-    '  => 
+    '  = 
     = number_to_currency(price_quantity[0] * price_quantity[1])
     = "\n"
   = "\n"
