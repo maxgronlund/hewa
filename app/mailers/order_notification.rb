@@ -11,8 +11,8 @@ class OrderNotification < ActionMailer::Base
   def order_placed(cart)
     @cart = cart
     @user = cart.user
-
     @greeting = "#{cart.user.name} #{cart.user.email} har oprettet en ordre"
+    #@greeting = "#{cart.user.name} #{cart.user.email} har oprettet en ordre"
 
  #   mail to: "hewa@hewa.dk", :subject => t('mailer.order_placed.subject', user_email: cart.user.email)
     mail to: "max@synthmax.dk", :subject => t('mailer.order_placed.subject', user_email: cart.user.email)
