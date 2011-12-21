@@ -18,13 +18,14 @@ ul.simple
           = line_item.product_variation.product.title
           br/
           em= line_item.product_variation.title_suffix if line_item.product_variation.product.title != line_item.product_variation.title_suffix
-        - line_item.quantity_price_lines.each do |quantity, price_quantity|
-          .grid-1
-            = price_quantity[1]
-          .grid-3
-            = "á #{number_to_currency(price_quantity[0])} / #{quantity} stk"
-          .grid-2.omega
-            = number_to_currency(price_quantity[0] * price_quantity[1])
+        .grid-6.omega
+          - line_item.quantity_price_lines.each do |quantity, price_quantity|
+            .grid-1.alpha
+              = price_quantity[1]
+            .grid-3
+              = "á #{number_to_currency(price_quantity[0])} / #{quantity} stk"
+            .grid-2.omega
+              = number_to_currency(price_quantity[0] * price_quantity[1])
 .grid-12.alpha.omega
   hr/
   .grid-10.alpha
