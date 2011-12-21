@@ -1,5 +1,5 @@
 class OrderNotification < ActionMailer::Base
-  default from: "webshop@hewa.com"
+  default from: "hewa@hewa.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,9 +9,9 @@ class OrderNotification < ActionMailer::Base
   def order_placed(cart)
     @cart = cart
     @user = cart.user
-    @greeting = "User #{cart.user.name} <#{cart.user.email}> has placed an order"
+    @greeting = "#{cart.user.name} <#{cart.user.email}> har oprettet en ordrer"
 
-    mail to: "info@hewa.dk", :subject => t('mailer.order_placed.subject', user_email: cart.user.email)
+    mail to: "hewa@hewa.dk", :subject => t('mailer.order_placed.subject', user_email: cart.user.email)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -33,9 +33,9 @@ class OrderNotification < ActionMailer::Base
   #   en.order_notification.order_confirmation.subject
   #
   def order_confirmation(cart)
-    @greeting = "Your order #{cart.order_number} has been confirmed"
+    @greeting = "Din ordrer #{cart.order_number} er blevet modtaget"
     # !!! TODO shipment etc
 
-    mail to: cart.user.email, :subject => "Order confirmation for your Hewa order no #{order.order_number}"
+    mail to: cart.user.email, :subject => "Ordre bekræftigelse for din Hewa order no #{order.order_number}"
   end
 end
