@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class OrderNotification < ActionMailer::Base
   default from: "webshop@hewa.com"
 
