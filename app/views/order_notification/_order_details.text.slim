@@ -2,8 +2,9 @@
 = "\n"
 = "\n"
 = t('cart.line_items') << ': '
-= "\n"
+= "\n___________________________________________________________________________________________________"
 - @cart.line_items.each do |line_item|
+  = "\n"
   = line_item.product_variation.item_nr
   =":   "
   = line_item.product_variation.display_name
@@ -18,8 +19,6 @@
     '  stk
     '  = 
     = number_to_currency(price_quantity[0] * price_quantity[1])
-    = "\n"
-  = "\n___________________________________________________________________________________________________"
 = "\n"
 = t('cart.total_amount')
 = number_to_currency(@cart.total_price)
