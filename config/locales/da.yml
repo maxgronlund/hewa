@@ -231,7 +231,7 @@ da:
   mailer:
     greeting: 'Kære %{user_name}'
     order_placed:
-      subject: "User #{user_email} has placed an order"
+      subject: "%{user_email} har oprettet en ordre"
       info: 'Vi har modtaget følgende ordre:'
     order_notification:
       subject: "Din bestilling hos Hewa - ordre nr %{order_no}"
