@@ -2,15 +2,10 @@
 = "\n"
 = "\n"
 = t('cart.line_items') << ': '
-= "\n---------------------------------------------------------------------------------------------------------------"
 = "\n"
 - @cart.line_items.each do |line_item|
-  
-  = line_item.product_variation.item_nr
-  = "          "
   = line_item.product_variation.display_name
-  = "    "
-  /= "\n"
+  = "\n"
   - line_item.quantity_price_lines.each do |quantity, price_quantity|
     = "        "
     = price_quantity[1]
@@ -19,9 +14,9 @@
     '  / 
     = quantity
     '  stk
-    '  = 
+    '  => 
     = number_to_currency(price_quantity[0] * price_quantity[1])
-    = "\n---------------------------------------------------------------------------------------------------------------"
+    = "\n"
   = "\n"
 = "\n"
 = t('cart.total_amount')
@@ -30,4 +25,3 @@
 = t('cart.disclaimer')
 = "\n"
 = "\n"
-

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class OrderNotification < ActionMailer::Base
-  default from: "webshop@hewa.com"
+  default from: "hewa@hewa.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
