@@ -27,7 +27,7 @@ class OrderNotification < ActionMailer::Base
     @user = cart.user
     #@greeting = "Thank you for placing an order"
 
-    mail to: cart.user.email, :subject => t('mailer.order_placed.subject', order_no: cart.id)
+    mail to: cart.user.email, :subject => t('mailer.order_notification.subject', order_no: cart.id)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
