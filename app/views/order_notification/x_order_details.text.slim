@@ -1,0 +1,49 @@
+= "Ordrenummer: #{@cart.order_no}"
+= "\n"
+= "\n"
+= t('cart.line_items') << ': '
+= "\n"
+- @cart.line_items.each do |line_item|
+  
+  = line_item.product_variation.item_nr
+  = "          "
+  = line_item.product_variation.display_name
+  = "    "
+  /= "\n"
+  - line_item.quantity_price_lines.each do |quantity, price_quantity|
+    = "        "
+    = price_quantity[1]
+    '  á 
+    = number_to_currency(price_quantity[0])
+    '  / 
+    = quantity
+    '  stk
+    '  = 
+    = number_to_currency(price_quantity[0] * price_quantity[1])
+    = "\n------------------------------------------------------------------------------------------"
+  = "\n"
+= "\n"
+= t('cart.total_amount')
+= number_to_currency(@cart.total_price)
+= "\n"
+= t('cart.disclaimer')
+= "\n"
+= "\n"
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, <%= @user.name %></h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: <%= @user.login %>.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
