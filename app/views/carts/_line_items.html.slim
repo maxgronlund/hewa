@@ -22,16 +22,34 @@ ul.simple
           - line_item.quantity_price_lines.each do |quantity, price_quantity|
             .grid-1.alpha
               = price_quantity[1]
-            .grid-3
+            .grid-2
               = "á #{number_to_currency(price_quantity[0])} / #{quantity} stk"
-            .grid-2.omega
+            .grid-2.suffix-1.omega.edit
               = number_to_currency(price_quantity[0] * price_quantity[1])
+
+
 .grid-12.alpha.omega
   hr/
-  .grid-10.alpha
-    strong= t('cart.total_amount')
-  .grid-2.omega
-    strong= number_to_currency(@cart.total_price)
-.grid-12.alpha.omega
-  hr/
+  br/
+  br/
+.grid-6.prefix-6.alpha.omega
+  .grid-3.alpha
+    'I alt ex. moms
+  .grid-2.suffix-1.omega.edit
+    = number_to_currency(@cart.total_price )
+    
+.grid-6.prefix-6.alpha.omega
+  .grid-6.alpha.omega.sub-calculation
+    .grid-3.alpha
+      'Moms 25%
+    .grid-2.suffix-1.omega.edit
+      = number_to_currency(@cart.total_price * 0.25 )
   
+
+
+.grid-6.prefix-6.alpha.omega
+  .grid-3.alpha
+    'I alt incl. moms
+  .grid-2.suffix-1.omega.edit
+    = number_to_currency(@cart.total_price + (@cart.total_price * 0.25) )
+.grid-12.alpha.omega
