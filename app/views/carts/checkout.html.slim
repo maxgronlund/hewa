@@ -58,9 +58,10 @@
     = link_to t('system.edit'), edit_user_path(current_user, :rurl => request.url)
 
   .grid-12
-    p= f.button :submit, t('cart.checkout.place_order'), :class => 'fancy', :disabled => current_user.addresses.none?
-    - if current_user.addresses.none?
-      em= t('cart.address_required')
+    .pull-right
+      p= f.button :submit, t('cart.checkout.place_order'), :class => 'btn btn-primary btn-large', :disabled => current_user.addresses.none?
+      - if current_user.addresses.none?
+        em= t('cart.address_required')
 
 .grid-12
   hr/

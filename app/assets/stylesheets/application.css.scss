@@ -3,7 +3,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require kontrapunkt
- *= require normalize
+ * require normalize
  *= require clearfix
  *= require grid
  *= require_self
@@ -14,8 +14,8 @@
 @import "compass/css3";
 @import "compass/css3/border-radius";
 @import "compass/css3/opacity";
-@import "partials/color";
-@import "partials/font";
+/*@import "partials/color";*/
+/*@import "partials/font";*/
 @import "partials/dimentions";
 @import "partials/fancy-buttons";
 
@@ -23,22 +23,22 @@
 
 body{
   margin:0px;
-  @include font-plain;
-  color: $font-color;
+/*  @include font-plain;*/
+ /* color: $font-color;*/
 
 }
-
+/*
 // set link color
 a, a:hover, a:active, a:visited, a:link {
   //@include link-font;
-  color: $link-color;
+ color: $link-color;
 //  padding: 2px;
   text-decoration: none;
   &.fancy {
 		@include fancy-button($template-color-base, 14px 0.5em);
 	}
   &.fancy-admin {
-		@include fancy-button($color_red_algae, 14px 0.5em);
+	  @include fancy-button($color_red_algae, 14px 0.5em);
 	}
 }
 
@@ -57,7 +57,7 @@ a:hover{
 	//}
 }
 
-
+*/
 
 
 hr{
@@ -71,15 +71,23 @@ hr{
     overflow:hidden;
 }
 
-
+/*
 .row-flip{@include std-color-color($lagune, 50);}
 .row-flop{	@include std-color-color($aloe_vera, 40);}
 
 .row-flip2{@include std-color-color($stone, 80);}
 .row-flop2{	@include std-color-color($sand, 100);}
+*/
+
+.row-flip{background-color:#eee;}
+.row-flop{	background-color:#ddd;}
+
+.row-flip2{background-color:#eee;}
+.row-flop2{	background-color:#ddd;}
+
 
 .sort-list-header {
-	@include std-color-color($aloe_vera, 100);
+/*	@include std-color-color($aloe_vera, 100);*/
 	color:#000;
 	.asc {
 		padding-right:14px;
@@ -96,8 +104,8 @@ hr{
 		background-position:right top;
 	}
 	a, a:hover, a:visited{
-		@include  font-bold(14px);
-		color:#000;
+		/*@include  font-bold(14px);*/
+		/*color:#000;*/
 	}
 }
 
@@ -119,12 +127,16 @@ hr{
 
 .field{@include input_top_margin;}
 .label{	@include input_top_margin;}
+/*
 .headline { @include template-color; }
+*/
 .input{ display:inline; }
 .top-margin{@include input_top_margin;}
+/*
 .body-color{ @include body-color($color_white);}
 .content-color{ @include content-color($color_white);}
-
+*/
+/*
 h1{
 	@include font-header(36px);
 	margin:8px 0px 8px 0px;
@@ -140,6 +152,7 @@ h3{
 	margin:8px 0px 8px 0px;
 	color: $orange-color;
 }
+*/
 
 .notice{
 	color:#0a0;
@@ -167,10 +180,11 @@ h3{
 	}
 }
 
+/*
 p{ @include font-plain(14px); color:#484848; }
 b, strong{@include  font-bold(14px); color:#555;}
 i{@include font-plain(14px); color:#484848;  }
-
+*/
 .news-blog{
 	@include border-radius(5px, 5px);
 	background-color:#eee;
@@ -182,7 +196,7 @@ i{@include font-plain(14px); color:#484848;  }
 		margin:8px;
 	}
 	h4{
-		@include font-header(20px);
+		/*@include font-header(20px);*/
 		margin:8px 0px 8px 0px;
 	}
 }
@@ -271,7 +285,7 @@ ul.simple {
 .inner-box{
 	margin:10px;
 	h4{
-		color:$color_red_algae;
+		/*color:$color_red_algae;*/
 	}
 	p{
 		margin-bottom:10px;

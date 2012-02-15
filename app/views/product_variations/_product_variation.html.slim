@@ -1,7 +1,9 @@
 div class="grid-9 alpha omega #{cycle('row-flip', 'row-flop')}"
   .grid-5.alpha
     - if can_edit?
-      = link_to image_tag('pencil_16.png'), edit_product_product_variation_path(product_variation.product, product_variation)
+      = link_to edit_product_product_variation_path(product_variation.product, product_variation) do
+        i class="icon-pencil"
+      '&nbsp;
       '&nbsp;
     = product_variation.display_name
   .grid-1

@@ -5,8 +5,9 @@
 .grid-12
   = form_tag product_lines_path, :method => 'get', :id => "products_search" do
     = text_field_tag :search, params[:search] 
-    = submit_tag t('product_line.search'), :title => nil
-    '
+    '&nbsp;
+    = submit_tag t('product_line.search'), :title => nil, class: 'btn btn-success'
+    br
     = link_to t('system.show_all'), product_lines_path
 .divider-12
 .sort-list-header.grid-12
@@ -33,15 +34,19 @@
         = t('system.yes')
 
     .grid-2.omega
-      = link_to t('system.show'), product_line
-      | | 
-      = link_to t('system.edit'), edit_product_line_path(product_line)
-      | | 
-      = link_to t('system.delete'), product_line, :confirm => 'Are you sure?', :method => :delete
+      = link_to product_line do
+        i class="icon-eye-open"
+      '&nbsp; 
+ 
+      = link_to edit_product_line_path(product_line) do
+        i class="icon-pencil"
+      '&nbsp;
+      = link_to( product_line, :confirm => 'Are you sure?', :method => :delete) do
+        i class="icon-remove"
 .pagination-12 
   = paginate @product_lines
 
 .divider-12
 .grid-12.edit
-  = link_to t('product_line.new_product_line'), new_product_line_path, class: 'fancy-admin'
+  = link_to 'Opret ny produkt linie', new_product_line_path, class: 'btn btn-primary'
 

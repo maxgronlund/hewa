@@ -1,17 +1,18 @@
-div class="grid-12 #{cycle('row-flip', 'row-flop')}"
-  .grid-1.alpha
-    -#= image_tag f.object.product_variation.product.image_url(:small)
-  .grid-4
+/div class="grid-12 #{cycle('row-flip', 'row-flop')}"
+.grid-12
+  .grid-2.alpha
+    = f.input :quantity, :label => false, :input_html => {:size => 4, :maxlength => 5, :class => 'input-small'}
+  .grid-5
     = f.object.product_variation.product.title
     br/
     em=f.object.product_variation.title_suffix
-  .grid-1
-    = f.input :quantity, :label => false, :input_html => {:size => 4, :maxlength => 5}
+
+
   - f.object.quantity_price_lines.each do |quantity, price_quantity|
     .grid-2
       = "#{price_quantity[1]} á #{number_to_currency(price_quantity[0])} / #{quantity} stk"
       br/
-    .grid-2
+    .grid-1
      = number_to_currency(price_quantity[0] * price_quantity[1])
   .grid-2.omega.edit
-    = f.link_to_remove image_tag('delete_16.png'), class: 'fancy'
+    = f.link_to_remove image_tag('delete_16.png'), class: 'btn'

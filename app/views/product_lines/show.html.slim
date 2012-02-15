@@ -24,8 +24,10 @@
   /    = image_tag(@product_line.image_url)
   - if can_edit?
     .grid-9.alpha.omega
-      = link_to t('product_line.edit'), edit_product_line_path(@product_line), class: 'fancy-admin'
-      = link_to t('system.delete'), @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy-admin'
+      .pull-right
+        = link_to 'Rediger', edit_product_line_path(@product_line), class: 'btn btn-primary'
+        '&nbsp;
+        = link_to 'Slet', @product_line, :confirm => 'Are you sure?', :method => :delete,  class: 'btn btn-danger'
   .grid-9.alpha.omega.top-margin-8
       -if @product_line.cutter?
         = render "shared/cutters" , :products => @products

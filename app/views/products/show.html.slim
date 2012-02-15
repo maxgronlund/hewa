@@ -23,17 +23,17 @@
     
     - if can? :edit, Product
       .grid-9.alpha.omega
-        = link_to t('products.edit'), edit_product_path(@product), class: 'fancy-admin'
-        = link_to t('system.delete'), @product, :confirm => 'Are you sure?', :method => :delete,  class: 'fancy-admin'
-    
-  .grid-9.alpha.omega
+        = link_to 'Rediger', edit_product_path(@product), class: 'btn'
+        '&nbsp;
+        = link_to 'Slet', @product, :confirm => 'Are you sure?', :method => :delete,  class: 'btn btn-danger'
+        br
+  
+  .grid-9.alpha.omega.top-margin
     = render @product.product_variations
 
   .grid-9.alpha.omega.edit.top-margin
     - if can? :edit, Product
-      = link_to 'rediger', edit_product_path(@product), class: 'fancy-admin'
-      '&nbsp;
-      = link_to t('product_variation.new_product_variation'), new_product_product_variation_path(@product), class: 'fancy-admin'
+      = link_to t('product_variation.new_product_variation'), new_product_product_variation_path(@product), class: 'btn btn-primary'
 
 .grid-3
   = render "shared/product_lines", :product_lines => @product_lines

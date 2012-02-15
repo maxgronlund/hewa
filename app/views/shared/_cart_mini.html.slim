@@ -17,5 +17,6 @@
               '&nbsp;
               = link_to line_item.product_variation.display_name, product_line_product_path(line_item.product_variation.product.product_line, line_item.product_variation.product)
         = simple_form_for current_cart do |f|
-          = f.button :submit, t('cart.checkout_now'), :class => 'fancy'
-        p= link_to t('cart.mini.view_cart'), current_carts_path
+          .pull-right
+            = f.button :submit, t('cart.checkout_now'), :class => 'btn btn-primary'
+          = link_to 'Vis kurv', current_carts_path, :class => 'btn'
