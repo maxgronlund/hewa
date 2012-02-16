@@ -25,7 +25,10 @@ class ProductsController < InheritedResources::Base
   
   def index
 #    session[:go_to_after_edit] = product_line_products_path(@product.product_line)
-    @products = Product.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(75)
+    @promoted_product_lines = ProductLine.promote_on_front_page
+    @news_blogs = NewsBlog.all
+    @catalogs = Catalog.all
+    @products = Product.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(100)
   end
   
   def create

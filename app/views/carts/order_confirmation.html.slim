@@ -54,8 +54,5 @@
 .grid-12
   = render :partial => 'line_items', :locals => { :cart => @cart}
 
-.grid-12
-  em= t('cart.disclaimer')
-
-.grid-12
-  p= link_to t('cart.confirmation.back'), root_path, :class => 'fancy'
+.grid-12.margin-top
+  p= link_to '<< Tilbage til butikken', root_path, :class => 'btn btn-primary btn-large'

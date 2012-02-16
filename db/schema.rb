@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120181007) do
+ActiveRecord::Schema.define(:version => 20120216012834) do
 
   create_table "addresses", :force => true do |t|
     t.string   "send_to"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20111120181007) do
     t.integer  "delivery_address_id"
     t.integer  "invoice_address_id"
     t.string   "state"
+    t.boolean  "pay_online"
   end
 
   add_index "carts", ["user_id"], :name => "index_carts_on_user_id"

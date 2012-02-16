@@ -1,6 +1,8 @@
 RailsTemplateR31::Application.routes.draw do
 
 
+  get "terms/index"
+
   resources :catalogs
   resources :catalogs do
     member do

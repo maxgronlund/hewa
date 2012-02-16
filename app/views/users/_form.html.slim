@@ -1,9 +1,6 @@
 = simple_form_for @user, :validate => true do |f| 
   = render 'shared/error_messages', :taget => @user
 
-
-
-
   .grid-4
     .grid-3.alpha.suffix-1.omega
       - if can_edit?
@@ -28,8 +25,6 @@
       br
 
 
-    
-
     - if @user.admin_or_super?
       = f.input :show_on_about_page
     = f.input :name, :size => 2
@@ -40,7 +35,7 @@
       = f.input :role , :include_blank => false, :collection => User::ROLES unless @user.is_first_user?
 
     .grid-3.alpha.omega.suffix-1.edit.top-margin
-      = f.submit t('system.save')
+      = f.submit t('system.save'), :class =>'btn btn-primary'
   .grid-8
     b = t('user.delivery_dates')
     br
@@ -56,7 +51,7 @@
 
     - if can_edit?
       = f.label :cv
-      = f.text_area :cv, :class => "mceEditor"
+      = f.text_area :cv
 
 
 
