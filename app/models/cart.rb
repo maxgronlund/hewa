@@ -10,7 +10,7 @@ class Cart < ActiveRecord::Base
   attr_accessible :line_items_attributes
   
   validates_acceptance_of :terms_of_service
-  attr_accessible :terms_of_service
+  attr_accessible :terms_of_service, :pay_online
   
   def add_product_variation(product_variation, quantity)
     current_item = line_items.find_by_product_variation_id(product_variation.id)
@@ -57,6 +57,7 @@ class Cart < ActiveRecord::Base
   
   def place_order!
     update_attribute :state, 'placed'
+
   end
 
   def confirm_order!

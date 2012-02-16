@@ -12,6 +12,9 @@
     = Cart.human_attribute_name(:order_no) << ': '
     = @cart.order_no
     br/
+    = @cart.pay_online
+
+    br/
     = Cart.human_attribute_name(:order_state) << ': '
     = @cart.state
 

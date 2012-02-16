@@ -12,6 +12,7 @@ class CartsController < InheritedResources::Base
     @cart.invoice_address = nil if params[:new_invoice_address] == '1'
     @cart.ensure_user(current_user)
     @cart.update_attributes params[:cart]
+   # @cart.pay_online = params[:pay_online]
 
     if params[:new_delivery_address] == '1' or params[:new_invoice_address] == '1'
       redirect_to checkout_carts_path
