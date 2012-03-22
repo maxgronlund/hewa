@@ -3,7 +3,9 @@
     .news-blog
       .content
         h4 = news_blog.title
-        i = markdown(news_blog.body)
+        = link_to image_tag(news_blog.image_url :medium), news_blog
+        h5 = markdown(news_blog.sub_title)
+        = link_to 'Læs mere', news_blog, class: 'btn'
         - if can_edit?
           .edit
             = link_to 'edit', edit_news_blog_path(news_blog)

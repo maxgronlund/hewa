@@ -1,14 +1,16 @@
-p#notice = notice
+.grid-12
+  h1 = @news_blog.title
+.grid-3.suffix-1
+  = image_tag @news_blog.image_url :medium
 
-p
-  b Title:
-  = @news_blog.title
-p
-  b Body:
-  = @news_blog.body
-p
-  = link_to t('system.download'), @news_blog.newsletter.url
+.grid-4.suffix-4.top-margin
+  
+  = markdown(@news_blog.body)
+  br
+  hr
+  = link_to 'Download', @news_blog.newsletter.url, class: 'btn btn-large btn-primary'
 
-= link_to 'Edit', edit_news_blog_path(@news_blog)
-'|
-= link_to 'Back', news_blogs_path
+.grid-12
+  -if can_edit?
+    = link_to 'Edit', edit_news_blog_path(@news_blog), class: 'btn btn-primary'
+

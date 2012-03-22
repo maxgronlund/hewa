@@ -9,7 +9,8 @@ div class='grid-12'
       = f.input :password, :required => false
       = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
     .actions
-      = f.button :submit, t('session.sign_in')
+      br
+      = f.button :submit, t('session.sign_in'), class: 'btn btn-primary'
   = render :partial => "devise/shared/links"
 
   p

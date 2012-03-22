@@ -1,20 +1,36 @@
-= form_for @news_blog, :html => {:class => 'upload'} do |f|
+= simple_form_for @news_blog, :html => {:class => 'upload'} do |f|
   -if @news_blog.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@news_blog.errors.count, "error")} prohibited this news_blog from being saved:"
-      ul
-        - @news_blog.errors.full_messages.each do |msg|
-          li= msg
+    = render 'shared/error_messages', :taget => @news_blog
 
   .field
     = f.label :title
     = f.text_field :title
+  
+  'Kort version (til forsiden)
+  br
+  = f.text_area :sub_title, label: false, :style => "width: 410px; height: 60px;"
   .field
     = f.label :body
-    = f.text_area :body
+    = f.text_area :body,:style => "width: 410px; height: 233px;"
   .field
-    = f.label :newsletter
+  
+  = f.input :show_on_front, label: false
+  '&nbsp; Vis på forsiden
+  .field
+    'Nyheds brev (pdf)
+    br
     = f.file_field :newsletter
+    br
+    'Billed (jpeg, png, gif)
+    br
+    = f.file_field :image
+    = f.hidden_field :image_cache
+  - if @news_blog.image.present?
+     br
+     = f.check_box :remove_image
+     = t('image.remove_image')
+     
   .actions
-    = f.submit 'Save', :disable_with => 'Uploading...'
+    br
+    = f.submit 'Save', :disable_with => 'Uploading...', class: 'btn btn-primary'
     = image_tag "loader.gif", alt: "", width: "32", height: "32", style: "display: none;", class: 'spinner'

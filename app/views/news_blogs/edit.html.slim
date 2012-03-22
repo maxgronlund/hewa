@@ -1,8 +1,17 @@
-h1 Editing news_blog
-
-== render 'form'
-
-= link_to 'Show', @news_blog
-'|
-= link_to 'Back', news_blogs_path
+.grid-12
+  h1 Rediger Nyhed
+  
+.grid-12
+  
+  == render 'form'
+  
+.grid-12
+ 
+  - if @news_blog.image.present?
+    - @news_blog.image.version_dimensions.keys.each do |version|
+      span
+        = link_to t('image.re_crop'), crop_news_blog_path(@news_blog, :version => version)
+        br
+        = image_tag(@news_blog.image_url version) if @news_blog.image?
+  
 

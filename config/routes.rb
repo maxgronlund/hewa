@@ -44,7 +44,12 @@ RailsTemplateR31::Application.routes.draw do
             :screen_casts,
             :text_contents
 
-  resources :news_blogs, :except => :show
+  resources :news_blogs do
+    member do
+      get 'crop'
+      put 'crop_update'
+    end
+  end
 
   resources :product_lines do
     resources :products

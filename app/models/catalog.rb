@@ -1,10 +1,9 @@
 class Catalog < ActiveRecord::Base
   
   # content
-  attr_accessible :title, :body, :file
   mount_uploader :file, CatalogUploader
   # image
-  attr_accessible :image, :image_cache, :remote_image_url, :remove_image, :image_size
+  attr_accessible :image, :image_cache, :remove_image, :image_size
   serialize :crop_params, Hash
   mount_uploader :image, CatalogImageUploader
   include ImageCrop

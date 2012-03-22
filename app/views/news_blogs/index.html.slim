@@ -1,34 +1,34 @@
 .headline
-  h1= t('news_blog.title')
+  h1 Hewa Nyt <small>Tilbud og nyheder fra Hewa </small>
 
 .grid-12
-  .grid-6.alpha
-    section= t('news_blog.introduction')
+  .grid-5.suffix-1.alpha
+    h5 Et par gange årligt udkommer Hewa Nyt med nyheder og tilbud fra Hewa Health Care.
 
-    section.latest
-      p= t('news_blog.latest')
-      - if @news_blogs.any?
-        - news_blog = latest_news_blog = @news_blogs.shift
-        = link_to news_blog.title, news_blog.newsletter.url
-        - if can? :manage, NewsBlog
-          = link_to 'Edit', edit_news_blog_path(news_blog)
-          '  | 
-          = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
-
-    section.archive
-      p= t('news_blog.archive')
-      ul
-        - @news_blogs.each do |news_blog|
-          li
-            = link_to news_blog.title, news_blog.newsletter.url
-            - if can? :manage, NewsBlog
-              ' - 
-              = link_to 'Edit', edit_news_blog_path(news_blog)
-              '  | 
-              = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
-
+    hr
+    h3 Sidste nyt
+    - if @news_blogs.any?
+      - news_blog = latest_news_blog = @news_blogs.shift
+      = link_to news_blog.title, news_blog.newsletter.url
+      - if can? :manage, NewsBlog
+        = link_to 'Edit', edit_news_blog_path(news_blog)
+        '  | 
+        = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
+    hr
+    h3 Arkivet
+    ul
+      - @news_blogs.each do |news_blog|
+        li
+          = link_to news_blog.title, news_blog.newsletter.url
+          - if can? :manage, NewsBlog
+            ' - 
+            = link_to 'Edit', edit_news_blog_path(news_blog)
+            '  | 
+            = link_to 'Destroy', news_blog, :confirm => 'Are you sure?', :method => :delete
+    
     - if can? :manage, NewsBlog
-      = link_to 'New News blog', new_news_blog_path
+      = link_to 'Opret nyhed', new_news_blog_path, class: 'btn btn-primary'
 
   .grid-6.omega
+    h3 Download nyhedsbreve
     = link_to image_tag(latest_news_blog.newsletter.url.sub('.pdf', '.jpg')), latest_news_blog.newsletter.url if latest_news_blog

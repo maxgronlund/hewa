@@ -20,7 +20,7 @@
        = t('image.remove_image')
      br
      .actions.grid-5.alpha.omega.top-margin-8
-       = f.submit t('system.save'), :class  => 'fancy'
+       = f.submit t('system.save'), :class  => 'btn btn-brimary'
   .grid-8.omega
     - if @catalog.image.present?
       - @catalog.image.version_dimensions.keys.each do |version|
