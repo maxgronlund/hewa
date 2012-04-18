@@ -1,8 +1,8 @@
 class NewsBlogsController < InheritedResources::Base
-
+  load_and_authorize_resource
   def index
     @menu = 'news_blogs'
-    @news_blog = NewsBlog.all
+    @news_blog = NewsBlog.order("id desc")
     index!
   end
 
