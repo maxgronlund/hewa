@@ -25,11 +25,11 @@ div class="sort-list-header grid-7 suffix_2 alpha omega"
     .grid-1.omega.edit
       - if user_signed_in?
         = link_to product_line_product_path(product.product_line, product) do
-          i class="icon-eye-open
+          i class="icon-eye-open"
         '&nbsp;
       - if can?(:manage, Product)
         = link_to edit_product_line_product_path(product.product_line,product) do
-          i class="icon-pencil
+          i class="icon-pencil"
         '&nbsp;
         = link_to(product_line_product_path(product.product_line,product), :confirm => t('system.confirm_delete'), :method => :delete) do
           i class="icon-remove"

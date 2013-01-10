@@ -24,7 +24,7 @@
   br
   = render 'prices_header'
   = f.fields_for :prices
-  p= f.link_to_add t('price.new_price'), :prices, :class => 'fancy-admin'
+  = f.link_to_add t('price.new_price'), :prices
 
   .actions
     = f.submit 'Save'
