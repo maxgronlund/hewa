@@ -14,7 +14,7 @@ Syntax error: File to import not found or unreadable: partials/dimentions.
 3: 
 4: .simple_form{
 5: 	color:#333;
-6: 	@include input_top_margin;
+6: 	margin-top:12px;
 
 Backtrace:
 /Users/synthmax/Dropbox/hewa/app/assets/stylesheets/simple_form.css.scss:1
@@ -90,4 +90,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: partials/dimentions.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/synthmax/Dropbox/hewa/public/stylesheets/sass\A                 /Users/synthmax/Dropbox/hewa/app/assets/stylesheets\A                 /Users/synthmax/.rvm/gems/ruby-1.9.2-p290@railspre/gems/compass-0.11.5/frameworks/blueprint/stylesheets\A                 /Users/synthmax/.rvm/gems/ruby-1.9.2-p290@railspre/gems/compass-0.11.5/frameworks/compass/stylesheets\A                 /Users/synthmax/.rvm/gems/ruby-1.9.2-p290@railspre/gems/compass-960-plugin-0.10.4/stylesheets\A         on line 1 of /Users/synthmax/Dropbox/hewa/app/assets/stylesheets/simple_form.css.scss\A \A 1: @import \"partials/dimentions\";\A 2: @import \"compass/css3/border-radius\";\A 3: \A 4: .simple_form{\A 5: 	color:#333;\A 6: 	@include input_top_margin;"; }
+  content: "Syntax error: File to import not found or unreadable: partials/dimentions.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/synthmax/Dropbox/hewa/public/stylesheets/sass\A                 /Users/synthmax/Dropbox/hewa/app/assets/stylesheets\A                 /Users/synthmax/.rvm/gems/ruby-1.9.2-p290@railspre/gems/compass-0.11.5/frameworks/blueprint/stylesheets\A                 /Users/synthmax/.rvm/gems/ruby-1.9.2-p290@railspre/gems/compass-0.11.5/frameworks/compass/stylesheets\A                 /Users/synthmax/.rvm/gems/ruby-1.9.2-p290@railspre/gems/compass-960-plugin-0.10.4/stylesheets\A         on line 1 of /Users/synthmax/Dropbox/hewa/app/assets/stylesheets/simple_form.css.scss\A \A 1: @import \"partials/dimentions\";\A 2: @import \"compass/css3/border-radius\";\A 3: \A 4: .simple_form{\A 5: 	color:#333;\A 6: 	margin-top:12px;"; }
