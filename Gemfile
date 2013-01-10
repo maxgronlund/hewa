@@ -8,10 +8,16 @@ gem 'rails-i18n'
 gem 'mysql2'
 
 # Asset template engines
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails','~> 1.0.0.rc.2'
+  gem "compass"
+  gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
+  gem "compass-960-plugin", :require => "ninesixty"
+end
 
-gem 'sass-rails',   '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
 
 gem 'jquery-rails'
 gem 'inherited_resources'
@@ -50,12 +56,7 @@ group :test do
   #gem 'spork'
 end
 
-group :assets do
-  gem 'compass-rails','~> 1.0.0.rc.2'
-  gem "compass"
-  gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
-  gem "compass-960-plugin", :require => "ninesixty"
-end
+
 
 gem 'carrierwave'
 gem 'mini_magick'

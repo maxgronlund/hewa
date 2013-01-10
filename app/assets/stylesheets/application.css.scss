@@ -5,40 +5,40 @@
  *= require kontrapunkt
  * require normalize
  *= require clearfix
- *= require grid
+ *= require grid2
  *= require_self
  * require_tree . 
  *= require_directory . 
 */
 
-@import "compass/css3";
-@import "compass/css3/border-radius";
-@import "compass/css3/opacity";
+//@import "compass/css3";
+//@import "compass/css3/border-radius";
+//@import "compass/css3/opacity";
 /*@import "partials/color";*/
 /*@import "partials/font";*/
-@import "partials/dimentions";
-@import "partials/fancy-buttons";
+//@import "partials/dimentions";
+//@import "partials/fancy-buttons";
 
 
 
 body{
   margin:0px;
-/*  @include font-plain;*/
+/*  //@include font-plain;*/
  /* color: $font-color;*/
 
 }
 /*
 // set link color
 a, a:hover, a:active, a:visited, a:link {
-  //@include link-font;
+  ////@include link-font;
  color: $link-color;
 //  padding: 2px;
   text-decoration: none;
   &.fancy {
-		@include fancy-button($template-color-base, 14px 0.5em);
+		//@include fancy-button($template-color-base, 14px 0.5em);
 	}
   &.fancy-admin {
-	  @include fancy-button($color_red_algae, 14px 0.5em);
+	  //@include fancy-button($color_red_algae, 14px 0.5em);
 	}
 }
 
@@ -72,11 +72,11 @@ hr{
 }
 
 /*
-.row-flip{@include std-color-color($lagune, 50);}
-.row-flop{	@include std-color-color($aloe_vera, 40);}
+.row-flip{//@include std-color-color($lagune, 50);}
+.row-flop{	//@include std-color-color($aloe_vera, 40);}
 
-.row-flip2{@include std-color-color($stone, 80);}
-.row-flop2{	@include std-color-color($sand, 100);}
+.row-flip2{//@include std-color-color($stone, 80);}
+.row-flop2{	//@include std-color-color($sand, 100);}
 */
 
 .row-flip{background-color:#eee;}
@@ -87,7 +87,7 @@ hr{
 
 
 .sort-list-header {
-/*	@include std-color-color($aloe_vera, 100);*/
+/*	//@include std-color-color($aloe_vera, 100);*/
 	color:#000;
 	.asc {
 		padding-right:14px;
@@ -104,7 +104,7 @@ hr{
 		background-position:right top;
 	}
 	a, a:hover, a:visited{
-		/*@include  font-bold(14px);*/
+		/*//@include  font-bold(14px);*/
 		/*color:#000;*/
 	}
 }
@@ -125,30 +125,30 @@ hr{
 .logo-box{ margin:18px;}
 
 
-.field{@include input_top_margin;}
-.label{	@include input_top_margin;}
+.field{margin-top:12px;}
+.label{	margin-top:12px;}
 /*
-.headline { @include template-color; }
+.headline { //@include template-color; }
 */
 .input{ display:inline; }
-.top-margin{@include input_top_margin;}
+.top-margin{margin-top:12px;}
 /*
-.body-color{ @include body-color($color_white);}
-.content-color{ @include content-color($color_white);}
+.body-color{ //@include body-color($color_white);}
+.content-color{ //@include content-color($color_white);}
 */
 /*
 h1{
-	@include font-header(36px);
+	//@include font-header(36px);
 	margin:8px 0px 8px 0px;
 }
 
 h4{
-	@include font-header(21px);
+	//@include font-header(21px);
 	margin:8px 0px 8px 0px;
 }
 
 h3{
-	@include font-bold(32px);
+	//@include font-bold(32px);
 	margin:8px 0px 8px 0px;
 	color: $orange-color;
 }
@@ -157,7 +157,7 @@ h3{
 .notice{
 	color:#0a0;
 	background-color:#efe;
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	border-style:solid;
 	border-width:1px;
 	border-color:#888;
@@ -170,7 +170,7 @@ h3{
 .alert{	
 	color:#e00;
 	background-color:#fee;
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	border-style:solid;
 	border-width:1px;
 	border-color:#888;
@@ -181,12 +181,12 @@ h3{
 }
 
 /*
-p{ @include font-plain(14px); color:#484848; }
-b, strong{@include  font-bold(14px); color:#555;}
-i{@include font-plain(14px); color:#484848;  }
+p{ //@include font-plain(14px); color:#484848; }
+b, strong{//@include  font-bold(14px); color:#555;}
+i{//@include font-plain(14px); color:#484848;  }
 */
 .news-blog{
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	background-color:#eee;
 	border-style:solid;
 	border-width:1px;
@@ -196,7 +196,7 @@ i{@include font-plain(14px); color:#484848;  }
 		margin:8px;
 	}
 	h4{
-		/*@include font-header(20px);*/
+		/*//@include font-header(20px);*/
 		margin:8px 0px 8px 0px;
 	}
 }
@@ -207,7 +207,7 @@ i{@include font-plain(14px); color:#484848;  }
 
 .avatar-image-box{
 	margin-bottom:20px;
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	background-color:#eee;
 	border-style:solid;
 	border-width:1px;
@@ -224,7 +224,7 @@ i{@include font-plain(14px); color:#484848;  }
 
 .product-line-image-box{
 	margin-bottom:8px;
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	background-color:#eee;
 	border-style:solid;
 	border-width:1px;
@@ -242,7 +242,7 @@ i{@include font-plain(14px); color:#484848;  }
 
 .cutter-image-box{
 	margin-bottom:8px;
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	background-color:#eee;
 	border-style:solid;
 	border-width:1px;
@@ -270,7 +270,7 @@ ul.simple {
 }
 
 .border-box{
-	@include border-radius(5px, 5px);
+	//@include border-radius(5px, 5px);
 	background-color:#eee;
 	border-style:solid;
 	border-width:1px;
