@@ -62,6 +62,8 @@ gem 'mini_magick'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'rvm-capistrano'
+
 
 
 
