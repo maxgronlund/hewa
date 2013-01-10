@@ -50,10 +50,12 @@ group :test do
   #gem 'spork'
 end
 
-
-gem "compass", :git => "git://github.com/chriseppstein/compass.git"
-gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
-gem "compass-960-plugin", :require => "ninesixty"
+group :assets do
+  gem 'compass-rails','~> 1.0.0.rc.2'
+  gem "compass"
+  gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
+  gem "compass-960-plugin", :require => "ninesixty"
+end
 
 gem 'carrierwave'
 gem 'mini_magick'
