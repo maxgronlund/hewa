@@ -7,7 +7,7 @@
       =raw @about_text.body
       - if can?(:edit, @about_text) 
         .edit
-          = link_to t('system.edit'), edit_text_content_path(@about_text), class: 'fancy'
+          = link_to t('system.edit'), edit_text_content_path(@about_text), class: 'btn'
      
   .grid-7.prefix-1.omega
     - @users.each do |user|

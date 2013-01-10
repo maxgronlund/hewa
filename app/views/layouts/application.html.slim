@@ -16,7 +16,7 @@ html
     = yield :head 
 
   body.body-color class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]}")
-    .grid-container.content-color class=("background_grid" if grid_is_on?)
+    .container_12.content-color class=("background_grid" if grid_is_on?)
       = render "shared/jmenu"
       = render "shared/banner"
       = render 'shared/messages'

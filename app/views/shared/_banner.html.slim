@@ -3,16 +3,16 @@
     .logo-box
       = link_to image_tag('logo_grey_name.png') , root_path
   .grid-4
-
+    '&nbsp;
 
 
   .grid-5.omega
-    -#= link_to 'card', cart_path(@card)
+    
     
     .edit
       - if user_signed_in?
         = link_to current_user.email, current_user
-        |  |
+        '&nbsp;
         = link_to "Sign out", destroy_user_session_path, :method => :delete 
         /= link_to t('session.log_out'), destroy_user_session_path, :method => :delete
       - else

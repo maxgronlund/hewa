@@ -10,7 +10,7 @@
       h3 = screen_cast.title.capitalize
       = screen_cast.body
       br
-      = link_to 'Show', screen_cast, class: 'fancy'
+      = link_to 'Show', screen_cast, class: 'btn'
 
 
     .grid-12.alpha.omega
@@ -18,5 +18,5 @@
 
 -if super_user?
   .grid-12.edit
-    = link_to 'New Screen cast', new_screen_cast_path, class: 'fancy'
+    = link_to 'New Screen cast', new_screen_cast_path, class: 'btn'
   

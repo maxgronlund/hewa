@@ -1,6 +1,9 @@
 source 'http://rubygems.org' 
 gem 'rails', '3.2.11'
 gem 'rails-i18n'
+gem "compass", :git => "git://github.com/chriseppstein/compass.git"
+gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
+gem "compass-960-plugin", :require => "ninesixty"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -8,22 +11,20 @@ gem 'rails-i18n'
 gem 'mysql2'
 
 # Asset template engines
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  #gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails','~> 1.0.0.rc.2'
-  gem "compass"
-  gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
-  gem "compass-960-plugin", :require => "ninesixty"
 end
-
 
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem "cancan"
 gem "slim-rails"
-#gem 'client_side_validations'
+gem 'client_side_validations'
 gem 'kaminari'
 gem 'has_scope'
 #gem 'redcarpet'
@@ -33,10 +34,11 @@ gem 'simple_form'
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 gem "browser"
 gem 'turbolinks'
+#gem "twitter-bootstrap-rails"
 
 # JavaScript runtime is required for Tails 3.1; this should work on Ubuntu
 #gem 'therubyracer', '>= 0.8.2'
-gem "therubyracer"
+#gem "therubyracer"
 
 group :test do
   # Pretty printed test output
@@ -55,6 +57,7 @@ group :test do
   #gem 'watchr'
   #gem 'spork'
 end
+
 
 
 

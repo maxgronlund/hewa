@@ -13,7 +13,7 @@
 //  require_tree .
 //= require_directory .
 // require tinymce-jquery
-// require rails.validations
+//= require rails.validations
 
 $(function() {
 	$('form.upload').bind('submit', function() {

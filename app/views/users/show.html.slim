@@ -19,7 +19,7 @@
   - if can?(:manage, @user)
     .grid-3.alpha.omega.suffix-1.edit
       br/
-      = link_to t('system.edit'), edit_user_path(@user), class: 'fancy'
+      = link_to t('system.edit'), edit_user_path(@user), class: 'btn'
 
 .grid-8
 
@@ -47,8 +47,8 @@
       = address.city
       br
       = address.user_country
-      p= link_to t('address.edit'), edit_user_address_path(@user, address), class: 'fancy'
-      -#= link_to 'Destroy', @user.addresses.first, :confirm => 'Are you sure?', :method => :delete, class: 'fancy'
+      p= link_to t('address.edit'), edit_user_address_path(@user, address), class: 'btn'
+      -#= link_to 'Destroy', @user.addresses.first, :confirm => 'Are you sure?', :method => :delete, class: 'btn'
 
     hr
     h4 = t('user.delivery_dates')
