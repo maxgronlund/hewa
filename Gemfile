@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'inherited_resources'
 gem "cancan"
 gem "slim-rails"
-gem 'client_side_validations'
+#gem 'client_side_validations'
 gem 'kaminari'
 gem 'has_scope'
 #gem 'redcarpet'

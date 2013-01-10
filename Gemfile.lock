@@ -60,7 +60,6 @@ GEM
       activesupport (>= 3.2.0)
     choice (0.1.6)
     chunky_png (1.2.7)
-    client_side_validations (3.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -231,7 +230,6 @@ DEPENDENCIES
   capistrano
   carrierwave
   chunky_png
-  client_side_validations
   coffee-rails (~> 3.2.1)
   compass!
   compass-960-plugin
