@@ -27,7 +27,9 @@ RailsTemplateR31::Application.routes.draw do
   get "admin/index"
   get "about/index"
  
-  devise_for :users
+  devise_for :users do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
   
 
   root :to => "home#index"

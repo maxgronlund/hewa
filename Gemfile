@@ -1,5 +1,5 @@
 source 'http://rubygems.org' 
-gem 'rails', '~> 3.1.3'
+gem 'rails', '3.2.9'
 gem 'rails-i18n'
 
 # Bundle edge Rails instead:
@@ -8,9 +8,11 @@ gem 'rails-i18n'
 gem 'mysql2'
 
 # Asset template engines
-gem 'sass-rails', "~> 3.1.0"
-gem 'coffee-script'
-gem 'uglifier'
+
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'uglifier', '>= 1.0.3'
+
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem "cancan"
@@ -18,26 +20,17 @@ gem "slim-rails"
 gem 'client_side_validations'
 gem 'kaminari'
 gem 'has_scope'
-gem 'redcarpet'
+#gem 'redcarpet'
 gem 'devise'
-gem 'tinymce-rails'
+#gem 'tinymce-rails'
 gem 'simple_form'
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 gem "browser"
+gem 'turbolinks'
 
 # JavaScript runtime is required for Tails 3.1; this should work on Ubuntu
-gem 'therubyracer', '>= 0.8.2'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-# JavaScript runtime is required for Rails 3.1; this should work on Ubuntu
-gem 'therubyracer', '>= 0.8.2'
+#gem 'therubyracer', '>= 0.8.2'
+gem "therubyracer"
 
 group :test do
   # Pretty printed test output

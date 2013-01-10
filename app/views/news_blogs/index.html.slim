@@ -9,7 +9,7 @@
     h3 Sidste nyt
     - if @news_blogs.any?
       - news_blog = latest_news_blog = @news_blogs.shift
-      = link_to news_blog.title, news_blog.newsletter.url
+      = link_to news_blog.title, news_blog.newsletter_url
       - if can? :manage, NewsBlog
         = link_to 'Edit', edit_news_blog_path(news_blog)
         '  | 
@@ -19,7 +19,7 @@
     ul
       - @news_blogs.each do |news_blog|
         li
-          = link_to news_blog.title, news_blog.newsletter.url
+          = link_to news_blog.title, news_blog.newsletter_url
           - if can? :manage, NewsBlog
             ' - 
             = link_to 'Edit', edit_news_blog_path(news_blog)
@@ -30,6 +30,6 @@
       = link_to 'Opret nyhed', new_news_blog_path, class: 'btn btn-primary'
 
   .grid-6.omega
-    h3 = link_to 'Download nyhedsbreve', latest_news_blog.newsletter.url if latest_news_blog
+    h3 = link_to 'Download nyhedsbreve', latest_news_blog.newsletter_url if latest_news_blog
 
-    = link_to image_tag('emblem-downloads.png'), latest_news_blog.newsletter.url if latest_news_blog
+    = link_to image_tag('emblem-downloads.png'), latest_news_blog.newsletter_url if latest_news_blog

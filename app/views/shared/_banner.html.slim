@@ -13,7 +13,8 @@
       - if user_signed_in?
         = link_to current_user.email, current_user
         |  |
-        = link_to t('session.log_out'), destroy_user_session_path, :method => :delete
+        = link_to "Sign out", destroy_user_session_path, :method => :delete 
+        /= link_to t('session.log_out'), destroy_user_session_path, :method => :delete
       - else
         -#= link_to 'opret konto', new_user_registration_path # uncomment this if users can sign-up themself
         = link_to t('session.log_in'), user_session_path

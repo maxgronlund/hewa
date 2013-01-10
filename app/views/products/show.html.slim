@@ -3,7 +3,7 @@
 .grid-9
   - if @product.cutter?
     h1 = @product.title
-    = markdown(@product.body)
+    = simple_format(@product.body)
     = image_tag(@product.image_url)
   -else 
     .grid-5.alpha
@@ -18,7 +18,7 @@
     .grid-4.omega
       .grid-4.alpha.omega
         h1 = @product.title
-        = markdown(@product.body.html_safe) if @product.body
+        = simple_format(@product.body.html_safe) if @product.body
       .grid-4.alpha.omega
     
     - if can? :edit, Product

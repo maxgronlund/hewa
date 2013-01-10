@@ -5,7 +5,7 @@
 
 .grid-4.suffix-4.top-margin
   
-  = markdown(@news_blog.body)
+  = simple_format(@news_blog.body)
   br
   hr
   = link_to 'Download', @news_blog.newsletter.url, class: 'btn btn-large btn-primary'
