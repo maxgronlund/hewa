@@ -1,7 +1,8 @@
 source 'http://rubygems.org' 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 gem 'rails-i18n'
-gem "compass", :git => "git://github.com/chriseppstein/compass.git"
+#gem "compass", :git => "git://github.com/chriseppstein/compass.git"
+gem "compass", "~> 0.12.2"
 gem 'chunky_png' # compass HEAD uses this for sass sprites, but lacks dependency :(
 gem "compass-960-plugin", :require => "ninesixty"
 
